@@ -1,5 +1,5 @@
-test_files/
+/.quarto/
 *venv/
 _site/
 
-/.quarto/
+
