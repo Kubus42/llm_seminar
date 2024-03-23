@@ -1,0 +1,5 @@
+test_files/
+*venv/
+_site/
+
+/.quarto/

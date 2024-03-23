@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: docs
+
+format:
+  html:
+    theme: cosmo
+
+website:
+  navbar:
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://code.com
+          - text: Report a Bug
+            url:  https://bugs.com
+    title: "LLM Seminar"
+    left:
+      - text: "Seminar"
+        file: "index.qmd"
+      - text: "Resources"
+        file: "resources.qmd"
+    
+  sidebar:
+
+    - title: "Seminar"
+      search: false
+      
+      contents:
+        - section: "About"
+          contents:
+            - about.qmd
+        - section: "Basics"
+          contents:
+            - index.qmd
+        - section: "Exercises"
+          contents: 
+            - emb_exercise.ipynb
+      style: "docked"
+      
+    - title: "Resources"
+      contents:
+        - text: "Resource 1"
+          url: "resources.qmd"
+        - text: "Resource 2"
+          url: "test.qmd"
+      
+  page-footer: 
+    right: "Copyright 2024, Julian Rasch" 
