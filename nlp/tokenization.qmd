@@ -1,5 +1,5 @@
 ---
-title: "The seminar"
+title: "Tokenization"
 format:
   html:
     code-fold: true

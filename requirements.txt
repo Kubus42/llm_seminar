@@ -1,3 +1,6 @@
 jupyter 
 matplotlib
 plotly
+
+scikit-learn
+rapidfuzz

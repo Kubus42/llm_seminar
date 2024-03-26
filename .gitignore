@@ -2,4 +2,6 @@
 *venv/
 _site/
 
+config.txt
+*code-workspace
 

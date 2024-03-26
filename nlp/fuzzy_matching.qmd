@@ -1,5 +1,5 @@
 ---
-title: "The seminar"
+title: "Fuzzy matching"
 format:
   html:
     code-fold: true

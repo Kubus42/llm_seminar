@@ -1,0 +1,81 @@
+---
+title: "Visualization"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+
+```{python}
+# prerequisites
+
+import os
+from llm_utils.client import get_openai_client, OpenAIModels
+
+MODEL = OpenAIModels.EMBED.value
+
+# get the OpenAI client
+client = get_openai_client(
+    model=MODEL,
+    config_path=os.environ.get("CONFIG_PATH")
+)
+
+```
+
+```{python}
+import matplotlib.pyplot as plt
+
+from sklearn.manifold import TSNE
+
+```
+
+
+
+```{python}
+# Define a list of words to visualize
+words = ["king", "queen", "man", "woman", "apple", "banana", "grapes", "cat", "dog", "happy", "sad"]
+
+# Get embeddings for the words
+response = client.embeddings.create(
+    input=words,
+    model=MODEL
+)
+
+```
+
+
+```{python}
+#| label: tsne-visualization
+#| fig-cap: "t-SNE visualization of word embeddings"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+from sklearn.manifold import TSNE
+
+embeddings = [emb.embedding for emb in response.data]
+
+# Apply t-SNE dimensionality reduction
+tsne = TSNE(
+    n_components=2, 
+    random_state=42,
+    perplexity=5 # see documentation to set this correctly
+)
+embeddings_2d = tsne.fit_transform(np.array(embeddings))
+
+# Plot the embeddings in a two-dimensional scatter plot
+plt.figure(figsize=(10, 8))
+for i, word in enumerate(words):
+    x, y = embeddings_2d[i]
+    plt.scatter(x, y, marker='o', color='blue')
+    plt.text(x, y, word, fontsize=9)
+
+plt.xlabel("t-SNE dimension 1")
+plt.ylabel("t-SNE dimension 2")
+plt.grid(True)
+plt.xticks([])
+plt.yticks([])
+plt.show()
+
+```

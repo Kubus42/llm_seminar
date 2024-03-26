@@ -30,14 +30,40 @@ website:
       contents:
         - section: "About"
           contents:
-            - about.qmd
-        - section: "Basics"
-          contents:
             - index.qmd
+            - about/schedule.qmd
+            - about/projects.qmd
+            - about/assignment.qmd
+
+        - section: "Natural Language Processing"
+          contents:
+            - nlp/intro.qmd
+            - nlp/history.qmd
+            - nlp/tokenization.qmd
+            - nlp/exercises/ex_tokenization.ipynb
+            - nlp/fuzzy_matching.qmd
+
+        - section: "Large Language Models"
+
+        - section: "Embeddings"
+          contents: 
+            - embeddings/embeddings.qmd
+            - embeddings/exercises/ex_emb_similarity.ipynb
+            - embeddings/visualization.qmd
+            - embeddings/clustering.qmd
+
+        - section: "Parameterization"
+
+        - section: "Ethical Considerations"
+
+        - section: "Data Privacy"
+
         - section: "Exercises"
           contents: 
-            - emb_exercise.ipynb
+            - embeddings/exercises/ex_emb_similarity.ipynb
+          
       style: "docked"
+      collapse-level: 1
       
     - title: "Resources"
       contents:
