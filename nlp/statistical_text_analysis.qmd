@@ -1,0 +1,45 @@
+---
+title: "Statistical text analysis"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+
+- Bag of Words -> "Simple" form of embeddings
+- Exercise: Create a bag of words 
+- Term frequency 
+- TF-IDF
+- Clustering? -> Ref to embeddings later on
+
+```{python}
+text = ""
+with open("../assets/chapter1.txt", "r") as file:  
+    for line in file:
+        text += line.strip()
+        
+text = text.lower()
+
+
+from nltk.tokenize import wordpunct_tokenize
+
+tokens = wordpunct_tokenize(text)
+
+from string import punctuation
+no_punctuation = [t for t in tokens if t not in punctuation]
+
+
+from nltk.corpus import stopwords
+
+# python -m nltk.downloader stopwords -> run this in your console once to get the stopwords
+
+stop_words = stopwords.words("english")
+
+no_stopwords = [t for t in no_punctuation if t not in stop_words]
+
+from collections import Counter
+
+Counter(no_stopwords).most_common(15)
+
+```

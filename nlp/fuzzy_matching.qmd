@@ -2,6 +2,122 @@
 title: "Fuzzy matching"
 format:
   html:
-    code-fold: true
+    code-fold: false
+    code-tools: true
 jupyter: python3
 ---
+
+As can be seen from the previous example, the detection of certain keywords from a text can prove more difficult than one might expect. 
+The key issues stem from the fact that natural language has many facets such as conjugation, singular and plural forms, adjectives vs. adverbs etc. 
+But even when these are handled, there remain challenges for keywords detection. 
+In the previous example, our detection still fails when: 
+
+- keywords consist of multiple words (`product portfolio`),
+- keywords have different forms but mean the same (`advertisment` vs. `advertising`),
+- keywords have wrong spelling (`langscpe` vs. `landscape`),
+- keywords and target words are not exactly the same thing but closely related (`analysis` vs. `analyst`).
+
+The former case can be handled by using so called n-grams. 
+In contrast to the single words we used for word tokens, n-grams are sequences of `n` consecutive words in a text, thus capturing some more of the context in a simple way. 
+Let's see a simple example for 2-grams:
+
+```{python}
+from nltk import ngrams
+
+sentence = "The CEO announced plans to diversify the company's product portfolio..."
+
+for n_gram in ngrams(sentence.split(" "), n=2):
+  print(n_gram)
+```
+
+In order to detect keywords consisting of more than a single word we can now split our text into n-grams for different `n`(e.g., 2, 3, 4) and compare these to our keywords.
+
+
+In order to handle the other three cases, we a different approach. 
+So let us first notice that, for all three cases, the word we are trying to compare are very similar (in terms of the contained letters) but not exactly equal. 
+So what if we had a way to define a similarity between words and texts or, more generally, between any strings?
+One solution for this is **fuzzy matching**. 
+Instead of considering two strings a match if they are exactly equal, fuzzy matching assigns a score to the pair. 
+If the score is high enough, we might consider the pair a match. 
+
+<details>
+<summary>Some details about fuzzy matching</summary>
+Fuzzy string matching is a technique used to find strings that are approximately similar to a given pattern, even if there are differences in spelling, punctuation, or word order. It is particularly useful in situations where exact string matching is not feasible due to variations or errors in the data. Fuzzy matching algorithms compute a similarity score between pairs of strings, typically based on criteria such as character similarity, substring matching, or token-based similarity. These algorithms often employ techniques like Levenshtein distance, which measures the minimum number of single-character edits required to transform one string into another, or tokenization to compare sets or sorted versions of tokens. Overall, fuzzy string matching enables the identification of similar strings, facilitating tasks such as record linkage, spell checking, and approximate string matching in various applications, including natural language processing, data cleaning, and information retrieval.
+</details>
+
+Let's see how this works using the package [`rapidfuzz`](https://github.com/rapidfuzz/RapidFuzz?tab=readme-ov-file#description){.external}.
+
+```{python}
+#| code-link: true
+
+from rapidfuzz import fuzz
+
+word_pairs = [
+  ("advertisment", "advertising"),
+  ("landscpe", "landscape"),
+  ("analysis", "analyst")
+]
+
+for word_pair in word_pairs:
+  ratio = fuzz.ratio(
+    s1=word_pair[0], 
+    s2=word_pair[1]
+  )
+  print(f"Similarity score '{word_pair[0]} - '{word_pair[1]}': {round(ratio, 2)}.")
+
+```
+
+Let us use fuzzy matching on order to detect some of the missing keywords from the previous example.
+
+```{python}
+#| echo: false
+#| output: false
+text = "The company's latest quarterly earnings reports exceeded analysts' expectations, driving up the stock price. However, concerns about future growth prospects weighed on investor sentiment. The CEO announced plans to diversify the company's product portfolio and expand into new markets, aiming to sustain long-term profitability. The marketing team launched a new advertising campaign to promote the company's flagship product, targeting key demographics. Despite challenges in the competitive landscape, the company remains committed to innovation and customer satisfaction."
+
+keywords = [
+    "Announce", 
+    "Aim",
+    "Earnings",
+    "Quarter",
+    "Report",
+    "Investor",
+    "Analysis",
+    "Market",
+    "Diversity",
+    "Product portfolio",
+    "Advertisment",
+    "Stock",
+    "Landscpe" # yes, this is here on purpose
+]
+```
+
+```{python}
+from pprint import pprint
+from nltk.tokenize import wordpunct_tokenize
+
+tokenized_text = wordpunct_tokenize(text=text)
+
+min_score = 75
+
+matches = []
+for token in tokenized_text:
+  for keyword in keywords:
+    ratio = fuzz.ratio(
+      s1=token.lower(), 
+      s2=keyword.lower()
+    )
+    if ratio >= min_score:
+      matches.append(
+        (keyword, token, round(ratio, 2))
+      )
+
+pprint(matches)
+```
+
+As we can see we have now successfully found most of the keywords we were looking for. 
+However, we can also see a new caveat: We have now detected two possible matches for `Market`: `Marketing` and `Markets`. 
+In this case, we can simply pick the one with the higher score and we are good, but there will be cases where it is more difficult to decide, whether a match, even with a higher score, is actually a match. 
+
+Fuzzy matching can, of course, also be used to compare n-grams or even entire texts to each other (see also the documentation of `rapidfuzz` and the next exercise); however there are certain limits to how practical it can be. 
+But the concept in general already gives us some good evidence that, in order to compare words and text to each other, we would like to be able to somehow **calculate** with text. 
+In the next sections, we will see ways how to do that more efficiently.

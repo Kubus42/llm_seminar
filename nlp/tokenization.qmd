@@ -2,6 +2,74 @@
 title: "Tokenization"
 format:
   html:
-    code-fold: true
+    code-fold: false
 jupyter: python3
 ---
+
+TODO: Some introductory sentence.
+
+## Simple word tokenization
+A key element for a computer to understand the words we speak or type is the concept of word tokenization. 
+For a human, the sentence 
+
+```{python}
+sentence = "I love reading science fiction books or books about science."
+```
+
+is easy to understand since we are able to split the sentence into its individual parts in order to figure out the meaning of the full sentence.
+For a computer, the sentence is just a simple string of characters, like any other word or longer text.
+In order to make a computer understand the meaning of a sentence, we need to help break it down into its relevant parts.
+
+Simply put, word tokenization is the process of breaking down a piece of text into individual words or so-called tokens. 
+It is like taking a sentence and splitting it into smaller pieces, where each piece represents a word.
+Word tokenization involves analyzing the text character by character and identifying boundaries between words. 
+It uses various rules and techniques to decide where one word ends and the next one begins. 
+For example, spaces, punctuation marks, and special characters often serve as natural boundaries between words.
+
+So let's start breaking down the sentence into its individual parts.
+
+```{python}
+tokenized_sentence = sentence.split(" ")
+print(tokenized_sentence)
+```
+
+Once we have tokenized the sentence, we can start anaylzing it with some simple statistical methods. 
+For example, in order to figure out what the sentence might be about, we could count the most frequent words. 
+
+```{python}
+
+from collections import Counter
+
+token_counter = Counter(tokenized_sentence)
+print(token_counter.most_common(2))
+```
+
+Unfortunately, we already realize that we have not done the best job with our "tokenizer": The second occurence of the word `science` is missing do to the punctuation. 
+While this is great as it holds information about the ending of a sentence, it disturbs our analysis here, so let's get rid of it. 
+
+```{python}
+tokenized_sentence = sentence.replace(".", " ").split(" ")
+
+token_counter = Counter(tokenized_sentence)
+print(token_counter.most_common(2))
+```
+
+So that worked.
+As you can imagine, tokenization can get increasingly difficult when we have to deal with all sorts of situations in larger corpora of texts (see also the exercise). 
+So it is great that there are already all sorts of libraries available that can help us with this process. 
+
+
+
+```{python}
+from nltk.tokenize import wordpunct_tokenize
+from string import punctuation
+
+tokenized_sentence = wordpunct_tokenize(sentence)
+tokenized_sentence = [t for t in tokenized_sentence if t not in punctuation]
+print(tokenized_sentence)
+```
+
+
+## Advanced word tokenization
+
+TODO: Write

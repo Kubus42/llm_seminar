@@ -4,3 +4,7 @@ plotly
 
 scikit-learn
 rapidfuzz
+
+nltk
+spacy 
+tokenizers

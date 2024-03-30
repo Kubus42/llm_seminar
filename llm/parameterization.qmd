@@ -1,0 +1,7 @@
+---
+title: "Parameterization of GPT"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---

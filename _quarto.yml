@@ -12,9 +12,9 @@ website:
       - icon: github
         menu:
           - text: Source Code
-            url:  https://code.com
+            url:  https://github.com/Kubus42/llm_seminar
           - text: Report a Bug
-            url:  https://bugs.com
+            url:  https://github.com/Kubus42/llm_seminar/issues
     title: "LLM Seminar"
     left:
       - text: "Seminar"
@@ -41,9 +41,15 @@ website:
             - nlp/history.qmd
             - nlp/tokenization.qmd
             - nlp/exercises/ex_tokenization.ipynb
+            - nlp/exercises/ex_word_matching.ipynb
             - nlp/fuzzy_matching.qmd
+            - nlp/exercises/ex_fuzzy_matching.ipynb 
+            - nlp/statistical_text_analysis.qmd
 
         - section: "Large Language Models"
+          contents:
+            - llm/intro.qmd
+            - llm/parameterization.qmd
 
         - section: "Embeddings"
           contents: 
@@ -52,14 +58,18 @@ website:
             - embeddings/visualization.qmd
             - embeddings/clustering.qmd
 
-        - section: "Parameterization"
 
         - section: "Ethical Considerations"
+          contents: 
+            - ethics/bias.qmd
+            - ethics/data_privacy.qmd
 
-        - section: "Data Privacy"
-
+        - text: "---"
         - section: "Exercises"
           contents: 
+            - nlp/exercises/ex_tokenization.ipynb
+            - nlp/exercises/ex_word_matching.ipynb
+            - nlp/exercises/ex_fuzzy_matching.ipynb 
             - embeddings/exercises/ex_emb_similarity.ipynb
           
       style: "docked"

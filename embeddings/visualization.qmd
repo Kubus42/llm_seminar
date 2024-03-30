@@ -42,6 +42,7 @@ response = client.embeddings.create(
     model=MODEL
 )
 
+embeddings = [emb.embedding for emb in response.data]
 ```
 
 
@@ -53,8 +54,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from sklearn.manifold import TSNE
-
-embeddings = [emb.embedding for emb in response.data]
 
 # Apply t-SNE dimensionality reduction
 tsne = TSNE(
@@ -68,7 +67,7 @@ embeddings_2d = tsne.fit_transform(np.array(embeddings))
 plt.figure(figsize=(10, 8))
 for i, word in enumerate(words):
     x, y = embeddings_2d[i]
-    plt.scatter(x, y, marker='o', color='blue')
+    plt.scatter(x, y, marker='o', color='red')
     plt.text(x, y, word, fontsize=9)
 
 plt.xlabel("t-SNE dimension 1")

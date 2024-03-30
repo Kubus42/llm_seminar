@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tokenization</title>
+<title>Exercise: Word matching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,22 +57,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">LLM Seminar</span>
     </a>
   </div>
@@ -122,11 +122,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
 <span class="menu-text">Seminar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources.html"> 
+    <a class="nav-link" href="../../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nlp/intro.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../nlp/tokenization.html">Tokenization</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../nlp/intro.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../../nlp/exercises/ex_word_matching.html">Exercise: Word matching</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -178,25 +178,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The seminar</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about/schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/assignment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Academic assignment</span></a>
   </div>
 </li>
@@ -213,49 +213,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/history.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/history.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A short history of NLP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/tokenization.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../nlp/tokenization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Exercise: Word matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/fuzzy_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/fuzzy_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fuzzy matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Fuzzy matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/statistical_text_analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/statistical_text_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistical text analysis</span></a>
   </div>
 </li>
@@ -272,13 +272,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/parameterization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/parameterization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Parameterization of GPT</span></a>
   </div>
 </li>
@@ -295,25 +295,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/embeddings.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/embeddings.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Embeddings</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Embedding similarity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Clustering</span></a>
   </div>
 </li>
@@ -330,13 +330,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ethics/bias.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ethics/bias.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bias</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ethics/data_privacy.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ethics/data_privacy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Privacy</span></a>
   </div>
 </li>
@@ -354,25 +354,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Word matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Fuzzy matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Embedding similarity</span></a>
   </div>
 </li>
@@ -387,9 +387,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nlp/intro.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../nlp/tokenization.html">Tokenization</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../nlp/intro.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../../nlp/exercises/ex_word_matching.html">Exercise: Word matching</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tokenization</h1>
+<h1 class="title">Exercise: Word matching</h1>
 </div>
 
 
@@ -406,62 +406,129 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>TODO: Some introductory sentence.</p>
-<section id="simple-word-tokenization" class="level2">
-<h2 class="anchored" data-anchor-id="simple-word-tokenization">Simple word tokenization</h2>
-<p>A key element for a computer to understand the words we speak or type is the concept of word tokenization. For a human, the sentence</p>
-<div id="bfbecc14" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"I love reading science fiction books or books about science."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Task:</strong> For each element of the following list of keywords, determine whether it is contained in the text.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Transform the text to lower case and use your (or a) tokenizer to split the text into word tokens.</li>
+<li>First, use a simple comparison of strings to check whether the keywords match any token. When does this approach fail?</li>
+<li>Lemmatize the tokens from your text in order to handle some more matching cases. When does this approach still fail? Hint: Use the different options for <code>pos</code> in order to handle different types of words such as nouns, verbs etc.</li>
+</ul>
+<div id="cell-2" class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"The company's latest quarterly earnings reports exceeded analysts' expectations, driving up the stock price. However, concerns about future growth prospects weighed on investor sentiment. The CEO announced plans to diversify the company's product portfolio and expand into new markets, aiming to sustain long-term profitability. The marketing team launched a new advertising campaign to promote the company's flagship product, targeting key demographics. Despite challenges in the competitive landscape, the company remains committed to innovation and customer satisfaction."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>is easy to understand since we are able to split the sentence into its individual parts in order to figure out the meaning of the full sentence. For a computer, the sentence is just a simple string of characters, like any other word or longer text. In order to make a computer understand the meaning of a sentence, we need to help break it down into its relevant parts.</p>
-<p>Simply put, word tokenization is the process of breaking down a piece of text into individual words or so-called tokens. It is like taking a sentence and splitting it into smaller pieces, where each piece represents a word. Word tokenization involves analyzing the text character by character and identifying boundaries between words. It uses various rules and techniques to decide where one word ends and the next one begins. For example, spaces, punctuation marks, and special characters often serve as natural boundaries between words.</p>
-<p>So let’s start breaking down the sentence into its individual parts.</p>
-<div id="d301af36" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> sentence.split(<span class="st">" "</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tokenized_sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-3" class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>keywords <span class="op">=</span> [</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Announce"</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Aim"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Earnings"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Quarter"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Report"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Investor"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Analysis"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Market"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Diversity"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Product portfolio"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Advertisment"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Stock"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Landscpe"</span> <span class="co"># yes, this is here on purpose</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Solution:</strong></p>
+<div id="cell-5" class="cell" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>text_token <span class="op">=</span> wordpunct_tokenize(text<span class="op">=</span>text.lower())</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>detected_words <span class="op">=</span> [</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    (keyword, keyword.lower() <span class="kw">in</span> text_token) <span class="cf">for</span> keyword <span class="kw">in</span> keywords</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>pprint(detected_words)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Detected </span><span class="sc">{</span><span class="bu">sum</span>([x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> detected_words])<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span><span class="bu">len</span>(keywords)<span class="sc">}</span><span class="ss"> words."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['I', 'love', 'reading', 'science', 'fiction', 'books', 'or', 'books', 'about', 'science.']</code></pre>
+<pre><code>[('Announce', False),
+ ('Aim', False),
+ ('Earnings', True),
+ ('Quarter', False),
+ ('Report', False),
+ ('Investor', True),
+ ('Analysis', False),
+ ('Market', False),
+ ('Diversity', False),
+ ('Product portfolio', False),
+ ('Advertisment', False),
+ ('Stock', True),
+ ('Landscpe', False)]
+
+Detected 3/13 words.</code></pre>
 </div>
 </div>
-<p>Once we have tokenized the sentence, we can start anaylzing it with some simple statistical methods. For example, in order to figure out what the sentence might be about, we could count the most frequent words.</p>
-<div id="ceb686e9" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(token_counter.most_common(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-6" class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>wnl <span class="op">=</span> WordNetLemmatizer()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>lemmatized_text_token <span class="op">=</span> [</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    wnl.lemmatize(w) <span class="cf">for</span> w <span class="kw">in</span> text_token</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>detected_words <span class="op">=</span> [</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    (keyword, keyword.lower() <span class="kw">in</span> lemmatized_text_token) <span class="cf">for</span> keyword <span class="kw">in</span> keywords</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>pprint(detected_words)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Detected </span><span class="sc">{</span><span class="bu">sum</span>([x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> detected_words])<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span><span class="bu">len</span>(keywords)<span class="sc">}</span><span class="ss"> words."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[('books', 2), ('I', 1)]</code></pre>
+<pre><code>[('Announce', False),
+ ('Aim', False),
+ ('Earnings', True),
+ ('Quarter', False),
+ ('Report', True),
+ ('Investor', True),
+ ('Analysis', False),
+ ('Market', True),
+ ('Diversity', False),
+ ('Product portfolio', False),
+ ('Advertisment', False),
+ ('Stock', True),
+ ('Landscpe', False)]
+
+Detected 5/13 words.</code></pre>
 </div>
 </div>
-<p>Unfortunately, we already realize that we have not done the best job with our “tokenizer”: The second occurence of the word <code>science</code> is missing do to the punctuation. While this is great as it holds information about the ending of a sentence, it disturbs our analysis here, so let’s get rid of it.</p>
-<div id="09a04738" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> sentence.replace(<span class="st">"."</span>, <span class="st">" "</span>).split(<span class="st">" "</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(token_counter.most_common(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-7" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fully_lemmatized_text_token <span class="op">=</span> []</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> token <span class="kw">in</span> text_token:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    lemmatized_token <span class="op">=</span> token</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> pos <span class="kw">in</span> [<span class="st">"n"</span>, <span class="st">"v"</span>, <span class="st">"a"</span>]:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        lemmatized_token <span class="op">=</span> wnl.lemmatize(token, pos<span class="op">=</span>pos)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        fully_lemmatized_text_token.append(lemmatized_token)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>detected_words <span class="op">=</span> [</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    (keyword, keyword.lower() <span class="kw">in</span> fully_lemmatized_text_token) <span class="cf">for</span> keyword <span class="kw">in</span> keywords</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>pprint(detected_words)    </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Detected </span><span class="sc">{</span><span class="bu">sum</span>([x[<span class="dv">1</span>] <span class="cf">for</span> x <span class="kw">in</span> detected_words])<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span><span class="bu">len</span>(keywords)<span class="sc">}</span><span class="ss"> words."</span>)  </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[('science', 2), ('books', 2)]</code></pre>
+<pre><code>[('Announce', True),
+ ('Aim', True),
+ ('Earnings', True),
+ ('Quarter', False),
+ ('Report', True),
+ ('Investor', True),
+ ('Analysis', False),
+ ('Market', True),
+ ('Diversity', False),
+ ('Product portfolio', False),
+ ('Advertisment', False),
+ ('Stock', True),
+ ('Landscpe', False)]
+
+Detected 7/13 words.</code></pre>
 </div>
 </div>
-<p>So that worked. As you can imagine, tokenization can get increasingly difficult when we have to deal with all sorts of situations in larger corpora of texts (see also the exercise). So it is great that there are already all sorts of libraries available that can help us with this process.</p>
-<div id="22c0c581" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> wordpunct_tokenize(sentence)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> [t <span class="cf">for</span> t <span class="kw">in</span> tokenized_sentence <span class="cf">if</span> t <span class="kw">not</span> <span class="kw">in</span> punctuation]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tokenized_sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['I', 'love', 'reading', 'science', 'fiction', 'books', 'or', 'books', 'about', 'science']</code></pre>
-</div>
-</div>
-</section>
-<section id="advanced-word-tokenization" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-word-tokenization">Advanced word tokenization</h2>
-<p>TODO: Write</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
