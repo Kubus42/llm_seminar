@@ -10,6 +10,9 @@ format:
     theme: cosmo
 
 website:
+  page-navigation: true
+  back-to-top-navigation: true
+  
   navbar:
     tools:
       - icon: github
