@@ -1,0 +1,12 @@
+{
+  "hash": "c7c6aaa88acff3e085f8bcd0144e88ab",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: Applications\nformat:\n  html:\n    code-fold: true\n---\n\n",
+    "supporting": [
+      "applications_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

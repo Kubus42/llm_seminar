@@ -1,0 +1,12 @@
+{
+  "hash": "d275222bfd131bb309253a8e2266b6c1",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: Bias\nformat:\n  html:\n    code-fold: true\n---\n\n",
+    "supporting": [
+      "bias_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

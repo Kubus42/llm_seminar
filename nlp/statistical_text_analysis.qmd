@@ -6,40 +6,167 @@ format:
 jupyter: python3
 ---
 
-
+- Term frequency 
 - Bag of Words -> "Simple" form of embeddings
 - Exercise: Create a bag of words 
-- Term frequency 
-- TF-IDF
+- Exercise: TF-IDF
 - Clustering? -> Ref to embeddings later on
 
+TODO: Add problems with statistical analysis.
+
+
+## Term frequency
+
+So far we have mainly looked at the analysis of single words/token or n-grams. 
+But what about the analysis of a full text? 
+There are many approaches to this but a good way to get into the topic is a simple statistical analysis of a text. 
+For starters, let's simply count the number of appearances of each word in a text. 
+
+
 ```{python}
+from nltk.tokenize import wordpunct_tokenize
+from string import punctuation
+from collections import Counter
+from typing import List
+
+from nltk.corpus import stopwords
+# python -m nltk.downloader stopwords -> run this in your console once to get the stopwords
+
+
+# load a text from file
 text = ""
 with open("../assets/chapter1.txt", "r") as file:  
     for line in file:
         text += line.strip()
-        
-text = text.lower()
 
 
-from nltk.tokenize import wordpunct_tokenize
+def preprocess_text(text: str) -> List[str]:
+    # tokenize text
+    tokens = wordpunct_tokenize(text.lower())
 
-tokens = wordpunct_tokenize(text)
+    # remove punctuation
+    tokens = [t for t in tokens if t not in punctuation]
 
-from string import punctuation
-no_punctuation = [t for t in tokens if t not in punctuation]
+    # remove stopwords
+    stop_words = stopwords.words("english")
+    tokens = [t for t in tokens if t not in stop_words]
+
+    return tokens
+
+# count the most frequent words
+tokens = preprocess_text(text=text)
+
+for t in Counter(tokens).most_common(15):
+    print(f"{t[0]}: {t[1]}")
+```
+
+Just from the most frequent words, can you guess the text?
 
 
-from nltk.corpus import stopwords
+In many cases, just the simple number of appearances of a token in a text can determine its importance. 
+The concept of counting the term frequency is also known as **bag of words**. 
 
-# python -m nltk.downloader stopwords -> run this in your console once to get the stopwords
 
-stop_words = stopwords.words("english")
+## Bag of Words
+If we do the same with multiple texts, we can build up a vocabulary of words and compare different texts to each other based on the appearance of terms.
 
-no_stopwords = [t for t in no_punctuation if t not in stop_words]
-
+```{python}
 from collections import Counter
 
-Counter(no_stopwords).most_common(15)
+
+def create_bag_of_words(texts):
+    # Count the frequency of each word in the corpus
+    word_counts = Counter()
+    
+    for text in texts:
+        # Preprocess the text
+        words = preprocess_text(text)
+        
+        # Update word counts
+        word_counts.update(words)
+    
+    # Create vocabulary by sorting the words based on their frequency
+    vocabulary = [word for word, _ in sorted(word_counts.items())]
+    
+    # Create BoW vectors for each document
+    bow_vectors = []
+    for text in texts:
+        # Preprocess the text
+        words = preprocess_text(text)
+        
+        # Create a Counter object to count word frequencies
+        bow_vector = Counter(words)
+        
+        # Fill in missing words with zero counts
+        for word in vocabulary:
+            if word not in bow_vector:
+                bow_vector[word] = 0
+
+        # Sort the BoW vector based on the vocabulary order
+        sorted_bow_vector = [bow_vector[word] for word in vocabulary]
+        
+        # Append the BoW vector to the list
+        bow_vectors.append(sorted_bow_vector)
+    
+    return vocabulary, bow_vectors
+
+# Example texts
+texts = [
+    "This is the first document.",
+    "This document is the second document.",
+    "And this is the third one.",
+    "Is this the first document?",
+]
+
+# Create Bag of Words
+vocabulary, bow_vectors = create_bag_of_words(texts)
+
+# Print vocabulary
+print("Vocabulary:")
+print(vocabulary)
+
+# Print BoW vectors
+print("\nBag of Words Vectors:")
+for i, bow_vector in enumerate(bow_vectors):
+    print(f"Document {i + 1}: {bow_vector}")
 
 ```
+
+
+Bag of words actually gives us some vector representation of our texts with respect to the given vocabulary.
+We can even calculate with these vectors and try to determine a similarity between the texts.
+
+```{python}
+import numpy as np
+
+def cosine_similarity(vec1: np.array, vec2: np.array) -> float: 
+    return np.dot(vec1, vec2) / ( np.linalg.norm(vec1) * np.linalg.norm(vec2) )
+
+
+query = bow_vectors[3]
+
+similarities = []
+for i, bv in enumerate(bow_vectors):
+
+    similarity = cosine_similarity(
+            vec1=query, 
+            vec2=bv
+        )
+
+    similarities.append(
+        (texts[i], round(similarity, 2))
+    )
+
+similarities
+```
+
+
+Issues: 
+
+- Vocabulary gets very large
+- Words not in vocabulary are an issue 
+- No context
+- No structure
+
+
+## Clustering of BoW vectors 

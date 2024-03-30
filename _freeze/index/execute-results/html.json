@@ -1,0 +1,12 @@
+{
+  "hash": "9dd578ef6015cca32660a879a71b2806",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: The Sprint\nformat:\n  html:\n    code-fold: true\n---\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+execute:
+  freeze: auto  
+
 format:
   html:
     theme: cosmo
@@ -15,7 +18,7 @@ website:
             url:  https://github.com/Kubus42/llm_seminar
           - text: Report a Bug
             url:  https://github.com/Kubus42/llm_seminar/issues
-    title: "LLM Seminar"
+    title: "Sprint: Large Language Models"
     left:
       - text: "Seminar"
         file: "index.qmd"
@@ -37,19 +40,21 @@ website:
 
         - section: "Natural Language Processing"
           contents:
-            - nlp/intro.qmd
-            - nlp/history.qmd
+            - nlp/overview.qmd
             - nlp/tokenization.qmd
             - nlp/exercises/ex_tokenization.ipynb
             - nlp/exercises/ex_word_matching.ipynb
             - nlp/fuzzy_matching.qmd
             - nlp/exercises/ex_fuzzy_matching.ipynb 
             - nlp/statistical_text_analysis.qmd
+            - nlp/exercises/ex_tfidf.ipynb
 
         - section: "Large Language Models"
           contents:
             - llm/intro.qmd
+            - llm/gpt.qmd
             - llm/parameterization.qmd
+            - llm/exercises/ex_gpt_parameterization.ipynb
 
         - section: "Embeddings"
           contents: 
@@ -57,6 +62,7 @@ website:
             - embeddings/exercises/ex_emb_similarity.ipynb
             - embeddings/visualization.qmd
             - embeddings/clustering.qmd
+            - embeddings/applications.qmd
 
 
         - section: "Ethical Considerations"

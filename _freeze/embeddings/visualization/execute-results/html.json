@@ -1,0 +1,12 @@
+{
+  "hash": "d5ff22765fb7d3cedaf671c0a3260196",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: Visualization\nformat:\n  html:\n    code-fold: false\n---\n\n::: {#a1745e0e .cell execution_count=1}\n``` {.python .cell-code}\n# prerequisites\n\nimport os\nfrom llm_utils.client import get_openai_client, OpenAIModels\n\nMODEL = OpenAIModels.EMBED.value\n\n# get the OpenAI client\nclient = get_openai_client(\n    model=MODEL,\n    config_path=os.environ.get(\"CONFIG_PATH\")\n)\n```\n:::\n\n\n::: {#1a762f3f .cell execution_count=2}\n``` {.python .cell-code}\nimport matplotlib.pyplot as plt\n\nfrom sklearn.manifold import TSNE\n```\n:::\n\n\n::: {#b0dfb78f .cell execution_count=3}\n``` {.python .cell-code}\n# Define a list of words to visualize\nwords = [\"king\", \"queen\", \"man\", \"woman\", \"apple\", \"banana\", \"grapes\", \"cat\", \"dog\", \"happy\", \"sad\"]\n\n# Get embeddings for the words\nresponse = client.embeddings.create(\n    input=words,\n    model=MODEL\n)\n\nembeddings = [emb.embedding for emb in response.data]\n```\n:::\n\n\n::: {#cell-tsne-visualization .cell execution_count=4}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nfrom sklearn.manifold import TSNE\n\n# Apply t-SNE dimensionality reduction\ntsne = TSNE(\n    n_components=2, \n    random_state=42,\n    perplexity=5 # see documentation to set this correctly\n)\nembeddings_2d = tsne.fit_transform(np.array(embeddings))\n\n# Plot the embeddings in a two-dimensional scatter plot\nplt.figure(figsize=(10, 8))\nfor i, word in enumerate(words):\n    x, y = embeddings_2d[i]\n    plt.scatter(x, y, marker='o', color='red')\n    plt.text(x, y, word, fontsize=9)\n\nplt.xlabel(\"t-SNE dimension 1\")\nplt.ylabel(\"t-SNE dimension 2\")\nplt.grid(True)\nplt.xticks([])\nplt.yticks([])\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![t-SNE visualization of word embeddings](visualization_files/figure-html/tsne-visualization-output-1.png){#tsne-visualization width=789 height=629}\n:::\n:::\n\n\n",
+    "supporting": [
+      "visualization_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

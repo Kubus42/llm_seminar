@@ -1,0 +1,12 @@
+{
+  "hash": "c40a912a32ec970f19fa60f0a00edb82",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: Data Privacy\nformat:\n  html:\n    code-fold: true\n---\n\n",
+    "supporting": [
+      "data_privacy_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

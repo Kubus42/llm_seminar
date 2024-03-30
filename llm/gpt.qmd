@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "GPT"
 format:
   html:
     code-fold: true

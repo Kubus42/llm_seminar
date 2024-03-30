@@ -1,0 +1,231 @@
+---
+title: "Overview"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+## A short history of Natural Language Processing
+
+The field of Natural Language Processing (NLP) has undergone a remarkable evolution, spanning decades and driven by the convergence of computer science, artificial intelligence, and linguistics. 
+From its nascent stages to its current state, NLP has witnessed transformative shifts, propelled by groundbreaking research and technological advancements. 
+Today, it stands as a testament to humanity's quest to bridge the gap between human language and machine comprehension. 
+The journey through NLP's history offers profound insights into its trajectory and the challenges encountered along the way.
+
+#### Early Days: Rule-Based Approaches (1960s-1980s)
+In its infancy, NLP relied heavily on rule-based approaches, where researchers painstakingly crafted sets of linguistic rules to analyze and manipulate text. 
+This period, spanning from the 1960s to the 1980s, saw significant efforts in tasks such as part-of-speech tagging, named entity recognition, and machine translation. 
+However, rule-based systems struggled to cope with the inherent ambiguity and complexity of natural language. 
+Different languages presented unique challenges, necessitating the development of language-specific rulesets. Despite their limitations, rule-based approaches laid the groundwork for future advancements in NLP.
+
+#### Rise of Statistical Methods (1990s-2000s)
+The 1990s marked a pivotal shift in NLP with the emergence of statistical methods as a viable alternative to rule-based approaches. 
+Researchers began harnessing the power of statistics and probabilistic models to analyze large corpora of text. 
+Techniques like Hidden Markov Models and Conditional Random Fields gained prominence, offering improved performance in tasks such as text classification, sentiment analysis, and information extraction. 
+Statistical methods represented a departure from rigid rule-based systems, allowing for greater flexibility and adaptability. 
+However, they still grappled with the nuances and intricacies of human language, particularly in handling ambiguity and context.
+
+#### Machine Learning Revolution (2010s)
+The advent of the 2010s witnessed a revolution in NLP fueled by the rise of machine learning, particularly deep learning. 
+With the availability of vast amounts of annotated data and unprecedented computational power, researchers explored neural network architectures tailored for NLP tasks. 
+Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) gained traction, demonstrating impressive capabilities in tasks such as sentiment analysis, text classification, and sequence generation. 
+These models represented a significant leap forward in NLP, enabling more nuanced and context-aware language processing.
+
+#### Large Language Models: Transformers (2010s-Present)
+The latter half of the 2010s heralded the rise of large language models, epitomized by the revolutionary Transformer architecture.
+Powered by self-attention mechanisms, Transformers excel at capturing long-range dependencies in text and generating coherent and contextually relevant responses. 
+Pre-trained on massive text corpora, models like GPT (Generative Pretrained Transformer) have achieved unprecedented performance across a wide range of NLP tasks, including machine translation, question-answering, and language understanding. 
+Their ability to leverage vast amounts of data and learn intricate patterns has propelled NLP to new heights of sophistication.
+
+#### Challenges in NLP
+Despite the remarkable progress, NLP grapples with a myriad of challenges that continue to shape its trajectory:
+
+- **Ambiguity of Language**: The inherent ambiguity of natural language poses significant challenges in accurately interpreting meaning, especially in tasks like sentiment analysis and named entity recognition.
+  
+- **Different Languages**: NLP systems often struggle with languages other than English, facing variations in syntax, semantics, and cultural nuances, requiring tailored approaches for each language.
+
+- **Bias**: NLP models can perpetuate biases present in the training data, leading to unfair or discriminatory outcomes, particularly in tasks like text classification and machine translation.
+
+- **Importance of Context**: Understanding context is paramount for NLP tasks, as the meaning of words and phrases can vary drastically depending on the surrounding context.
+
+- **World Knowledge**: NLP systems lack comprehensive world knowledge, hindering their ability to understand references, idioms, and cultural nuances embedded in text.
+
+- **Common Sense Reasoning**: Despite advancements, NLP models still struggle with common sense reasoning, often producing nonsensical or irrelevant responses in complex scenarios.
+
+#### Conclusion
+The journey of NLP from rule-based systems to large language models has been marked by remarkable progress and continuous innovation. 
+While challenges persist, ongoing research and development efforts hold the promise of overcoming these obstacles and unlocking new frontiers in language understanding. 
+As NLP continues to evolve, driven by advancements in machine learning and computational resources, it brings us closer to the realization of truly intelligent systems capable of understanding and interacting with human language in profound ways.
+
+
+## Classic NLP tasks/applications
+
+#### Part-of-Speech Tagging
+Part-of-speech tagging involves labeling each word in a sentence with its corresponding grammatical category, such as noun, verb, adjective, or adverb. 
+For example, in the sentence "The cat is sleeping," part-of-speech tagging would identify "cat" as a noun and "sleeping" as a verb. 
+This task is crucial for many NLP applications, including language understanding, information retrieval, and machine translation. 
+Accurate part-of-speech tagging lays the foundation for deeper linguistic analysis and improves the performance of downstream tasks.
+
+<details>
+<summary>Code example</summary>
+```{python}
+import spacy
+
+# Load the English language model
+nlp = spacy.load("en_core_web_sm")
+
+# Example text
+text = "The sun sets behind the mountains, casting a golden glow across the sky."
+
+# Process the text with spaCy
+doc = nlp(text)
+
+# Find the maximum length of token text and POS tag
+max_token_length = max(len(token.text) for token in doc)
+max_pos_length = max(len(token.pos_) for token in doc)
+
+# Print each token along with its part-of-speech tag
+for token in doc:
+    print(f"Token: {token.text.ljust(max_token_length)} | POS Tag: {token.pos_.ljust(max_pos_length)}")
+```
+</details>
+
+
+
+#### Named Entity Recognition
+Named Entity Recognition (NER) involves identifying and classifying named entities in text, such as people, organizations, locations, dates, and more. For instance, in the sentence "Apple is headquartered in Cupertino," NER would identify "Apple" as an organization and "Cupertino" as a location. 
+NER is essential for various applications, including information retrieval, document summarization, and question-answering systems. Accurate NER enables machines to extract meaningful information from unstructured text data.
+
+<details>
+<summary>Code example</summary>
+```{python}
+import spacy
+
+# Load the English language model
+nlp = spacy.load("en_core_web_sm")
+
+# Example text
+text = "Apple is considering buying a startup called U.K. based company in London for $1 billion."
+
+# Process the text with spaCy
+doc = nlp(text)
+
+# Print each token along with its Named Entity label
+for ent in doc.ents:
+    print(f"Entity: {ent.text.ljust(20)} | Label: {ent.label_}")
+```
+
+</details>
+
+
+
+#### Machine Translation
+Machine Translation (MT) aims to automatically translate text from one language to another, facilitating communication across language barriers. 
+For example, translating a sentence from English to Spanish or vice versa. 
+MT systems utilize sophisticated algorithms and linguistic models to generate accurate translations while preserving the original meaning and nuances of the text. 
+MT has numerous practical applications, including cross-border communication, localization of software and content, and global commerce.
+
+#### Sentiment Analysis
+Sentiment Analysis involves analyzing text data to determine the sentiment or opinion expressed within it, such as positive, negative, or neutral. 
+For instance, analyzing product reviews to gauge customer satisfaction or monitoring social media sentiment towards a brand. 
+Sentiment Analysis employs machine learning algorithms to classify text based on sentiment, enabling businesses to understand customer feedback, track public opinion, and make data-driven decisions.
+
+<details>
+<summary>Code example</summary>
+```{python}
+# python -m textblob.download_corpora
+
+from textblob import TextBlob
+
+# Example text
+text = "I love TextBlob! It's an amazing library for natural language processing."
+
+# Perform sentiment analysis with TextBlob
+blob = TextBlob(text)
+sentiment_score = blob.sentiment.polarity
+
+# Determine sentiment label based on sentiment score
+if sentiment_score > 0:
+    sentiment_label = "Positive"
+elif sentiment_score < 0:
+    sentiment_label = "Negative"
+else:
+    sentiment_label = "Neutral"
+
+# Print sentiment analysis results
+print(f"Text: {text}")
+print(f"Sentiment Score: {sentiment_score:.2f}")
+print(f"Sentiment Label: {sentiment_label}")
+```
+</details>
+
+
+#### Text Classification
+Text Classification is the task of automatically categorizing text documents into predefined categories or classes. 
+For example, classifying news articles into topics like politics, sports, or entertainment. 
+Text Classification is widely used in various domains, including email spam detection, sentiment analysis, and content categorization. 
+It enables organizations to organize and process large volumes of textual data efficiently, leading to improved decision-making and information retrieval.
+
+<details>
+<summary>Code example</summary>
+```{python}
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.svm import SVC
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import LabelEncoder
+
+# Example labeled dataset
+texts = [
+    "I love this product!",
+    "This product is terrible.",
+    "Great service, highly recommended.",
+    "I had a bad experience with this company.",
+]
+labels = [
+    "Positive",
+    "Negative",
+    "Positive",
+    "Negative",
+]
+
+# Create a TF-IDF vectorizer
+vectorizer = TfidfVectorizer()
+
+# Encode labels as integers
+label_encoder = LabelEncoder()
+encoded_labels = label_encoder.fit_transform(labels)
+
+# Create a pipeline with TF-IDF vectorizer and SVM classifier
+classifier = make_pipeline(vectorizer, SVC(kernel='linear'))
+
+# Train the classifier
+classifier.fit(texts, encoded_labels)
+
+# Example test text
+test_text = "This product exceeded my expectations."
+
+# Predict the label for the test text
+predicted_label = classifier.predict([test_text])[0]
+
+# Decode the predicted label back to original label
+predicted_label_text = label_encoder.inverse_transform([predicted_label])[0]
+
+# Print the predicted label
+print(f"Text: {test_text}")
+print(f"Predicted Label: {predicted_label_text}")
+```
+</details>
+
+
+#### Information Extraction
+Information Extraction involves automatically extracting structured information from unstructured text data, such as documents, articles, or web pages. 
+This includes identifying entities, relationships, and events mentioned in the text. 
+For example, extracting names of people mentioned in news articles or detecting company acquisitions from financial reports. 
+Information Extraction plays a crucial role in tasks like knowledge base construction, data integration, and business intelligence.
+
+#### Question-Answering
+Question-Answering (QA) systems aim to automatically generate accurate answers to user queries posed in natural language. 
+These systems comprehend the meaning of questions and retrieve relevant information from a knowledge base or text corpus to provide precise responses. 
+For example, answering factual questions like "Who is the president of the United States?" or "What is the capital of France?". 
+QA systems are essential for information retrieval, virtual assistants, and educational applications, enabling users to access information quickly and efficiently.

@@ -1,0 +1,12 @@
+{
+  "hash": "ed968d8cc94d9558b0bf965f6a3a3035",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: GPT\nformat:\n  html:\n    code-fold: true\n---\n\n",
+    "supporting": [
+      "gpt_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

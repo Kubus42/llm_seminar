@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">LLM Seminar</span>
+    <span class="navbar-title">Sprint: Large Language Models</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nlp/intro.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../nlp/fuzzy_matching.html">Fuzzy matching</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nlp/overview.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../nlp/fuzzy_matching.html">Fuzzy matching</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -179,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The seminar</span></a>
+ <span class="menu-text">The Sprint</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -213,14 +213,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../nlp/history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A short history of NLP</span></a>
+  <a href="../nlp/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -259,6 +253,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Statistical text analysis</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/exercises/ex_tfidf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: TF-IDF</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -278,8 +278,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../llm/gpt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GPT</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../llm/parameterization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Parameterization of GPT</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../llm/exercises/ex_gpt_parameterization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: GPT Parameterization</span></a>
   </div>
 </li>
       </ul>
@@ -315,6 +327,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Clustering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../embeddings/applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applications</span></a>
   </div>
 </li>
       </ul>
@@ -387,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nlp/intro.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../nlp/fuzzy_matching.html">Fuzzy matching</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../nlp/overview.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../nlp/fuzzy_matching.html">Fuzzy matching</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Fuzzy matching</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -414,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>keywords and target words are not exactly the same thing but closely related (<code>analysis</code> vs.&nbsp;<code>analyst</code>).</li>
 </ul>
 <p>The former case can be handled by using so called n-grams. In contrast to the single words we used for word tokens, n-grams are sequences of <code>n</code> consecutive words in a text, thus capturing some more of the context in a simple way. Let’s see a simple example for 2-grams:</p>
-<div id="44952559" class="cell" data-execution_count="1">
+<div id="a482c8c7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> ngrams</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"The CEO announced plans to diversify the company's product portfolio..."</span></span>
@@ -442,7 +460,7 @@ Some details about fuzzy matching
 Fuzzy string matching is a technique used to find strings that are approximately similar to a given pattern, even if there are differences in spelling, punctuation, or word order. It is particularly useful in situations where exact string matching is not feasible due to variations or errors in the data. Fuzzy matching algorithms compute a similarity score between pairs of strings, typically based on criteria such as character similarity, substring matching, or token-based similarity. These algorithms often employ techniques like Levenshtein distance, which measures the minimum number of single-character edits required to transform one string into another, or tokenization to compare sets or sorted versions of tokens. Overall, fuzzy string matching enables the identification of similar strings, facilitating tasks such as record linkage, spell checking, and approximate string matching in various applications, including natural language processing, data cleaning, and information retrieval.
 </details>
 <p>Let’s see how this works using the package <a href="https://github.com/rapidfuzz/RapidFuzz?tab=readme-ov-file#description" class="external"><code>rapidfuzz</code></a>.</p>
-<div id="72bfee79" class="cell" data-code-link="true" data-execution_count="2">
+<div id="89c83b81" class="cell" data-code-link="true" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rapidfuzz <span class="im">import</span> fuzz</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>word_pairs <span class="op">=</span> [</span>
@@ -464,7 +482,7 @@ Similarity score 'analysis - 'analyst': 80.0.</code></pre>
 </div>
 </div>
 <p>Let us use fuzzy matching on order to detect some of the missing keywords from the previous example.</p>
-<div id="4b61fcef" class="cell" data-execution_count="4">
+<div id="fe23ce8b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pprint <span class="im">import</span> pprint</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
