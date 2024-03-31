@@ -22,3 +22,28 @@ jupyter: python3
 - **Repetition Penalty**: Repetition Penalty penalizes repeated tokens in the generated text by assigning higher penalties to tokens that appear multiple times within a short context window. This encourages the model to produce more varied outputs by avoiding unnecessary repetition of tokens. It's particularly useful for generating coherent and diverse text without excessive redundancy.
 
 - **Length Penalty**: Length Penalty penalizes the length of the generated text by applying a penalty factor to longer sequences. This helps to balance between generating concise and informative responses while avoiding excessively long or verbose outputs. Length Penalty is often used to control the length of the generated text and ensure that it remains coherent and contextually relevant.
+
+
+
+## Roles: 
+
+```{python}
+#| eval: false
+
+from openai import OpenAI
+client = OpenAI()
+
+completion = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
+    {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
+  ]
+)
+
+print(completion.choices[0].message)
+```
+
+
+## Function calling: 
+https://platform.openai.com/docs/guides/function-calling

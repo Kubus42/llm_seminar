@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GPT</title>
+<title>The OpenAI API</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../llm/gpt_api.html" rel="next">
-<link href="../llm/intro.html" rel="prev">
+<link href="../llm/exercises/ex_gpt_start.html" rel="next">
+<link href="../llm/gpt.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -123,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt.html">GPT</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt_api.html">The OpenAI API</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -246,13 +280,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/gpt.html" class="sidebar-item-text sidebar-link active">
+  <a href="../llm/gpt.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
+  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">The OpenAI API</span></a>
   </div>
 </li>
@@ -397,9 +431,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt.html">GPT</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt_api.html">The OpenAI API</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">GPT</h1>
+<h1 class="title">The OpenAI API</h1>
 </div>
 
 
@@ -416,44 +450,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<ul>
-<li><strong>Definition of GPT</strong>: GPT is a state-of-the-art large language model developed by OpenAI. It belongs to the family of Transformer-based architectures and is renowned for its ability to generate coherent and contextually relevant text across a wide range of tasks.</li>
-<li><strong>Key Features of GPT</strong>: Highlight the key features that distinguish GPT from other LLMs, such as its autoregressive nature, the use of self-attention mechanisms, and the ability to generate text of variable length.</li>
-<li><strong>Pre-training Objective</strong>: GPT is pre-trained using an unsupervised learning objective known as language modeling. During pre-training, it learns to predict the next word in a sequence based on the preceding context, which enables it to capture the statistical properties of natural language.</li>
-<li><strong>Architecture of GPT</strong>: Provide an overview of the architecture of GPT, which consists of multiple layers of Transformer blocks. Each block includes self-attention layers, feed-forward neural networks, and layer normalization, allowing GPT to process input sequences and generate output sequences effectively.</li>
-<li><strong>Fine-tuning and Adaptation</strong>: GPT can be fine-tuned on specific tasks or domains with labeled data to adapt its pre-trained knowledge to new tasks. This fine-tuning process allows GPT to achieve state-of-the-art performance on a wide range of natural language processing tasks.</li>
-<li><strong>Applications of GPT</strong>: Discuss the diverse applications of GPT across various domains, including text generation, summarization, translation, question-answering, conversation generation, and more. Highlight real-world examples and use cases where GPT has been deployed successfully.</li>
-<li><strong>Recent Advancements and Versions</strong>: Mention the evolution of GPT over time, including the release of different versions such as GPT-1, GPT-2, GPT-3, and any subsequent versions or variants. Discuss the improvements and advancements introduced in each iteration.</li>
-<li><strong>Challenges and Limitations:</strong> Acknowledge the challenges and limitations associated with GPT, such as the potential for generating biased or inappropriate content, the need for large-scale computational resources, and the difficulty of fine-tuning for specific tasks without overfitting.</li>
-</ul>
-<section id="completions-and-how-they-work" class="level2">
-<h2 class="anchored" data-anchor-id="completions-and-how-they-work">Completions and how they work</h2>
-<section id="prompt" class="level3">
-<h3 class="anchored" data-anchor-id="prompt">1. Prompt:</h3>
-<p>The prompt serves as the cornerstone of completion generation, acting as the initial input or context upon which the model bases its predictions and generates completions. Its significance lies in its ability to set the tone, theme, and direction for the subsequent text generation process. Prompts can vary widely in length and complexity, ranging from concise prompts that elicit specific responses to more extensive prompts that allow for nuanced and detailed completions. The effectiveness of the prompt in guiding the completion generation process depends on its clarity, relevance, and specificity to the desired task or objective.</p>
+<p>Resource: <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API docs</a></p>
+<p>Let’s get started with the OpenAI API for GPT.</p>
+<section id="authentication" class="level3">
+<h3 class="anchored" data-anchor-id="authentication">Authentication</h3>
+<p>Getting started with the OpenAI Chat Completions API requires signing up for an account on the OpenAI platform. Once you’ve registered, you’ll gain access to an API key, which serves as a unique identifier for your application to authenticate requests to the API. This key is essential for ensuring secure communication between your application and OpenAI’s servers. Without proper authentication, your requests will be rejected. You can create your own account, but for the seminar we will provide the client with the credential within the Jupyterlab (TODO: Link).</p>
+<div id="a9cb3d89" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setting up the client in Python</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    api_key<span class="op">=</span>os.environ.get(<span class="st">"OPENAI_API_KEY"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="model-architecture" class="level3">
-<h3 class="anchored" data-anchor-id="model-architecture">2. Model Architecture:</h3>
-<p>Completions derive their power from sophisticated machine learning models, with transformer-based architectures like GPT (Generative Pre-trained Transformer) leading the forefront. These models undergo extensive training on vast amounts of text data, spanning diverse domains and languages, to develop a deep understanding of human language. Through this training process, the models learn to capture the intricacies of grammar, syntax, semantics, and context inherent in natural language. The architecture of these models is designed to efficiently process and analyze input text, enabling them to capture long-range dependencies within text and generate coherent completions that align with the provided prompt.</p>
+<section id="requesting-completions" class="level3">
+<h3 class="anchored" data-anchor-id="requesting-completions">Requesting Completions</h3>
+<p>Most interaction with GPT and other models consist in generating completions for certain tasks (TODO: Link to completions)</p>
+<p>To request completions from the OpenAI API, we use Python to send HTTP requests to the designated API endpoint. These requests are structured to include various parameters that guide the generation of text completions. The most fundamental parameter is the prompt text, which sets the context for the completion. Additionally, you can specify the desired model configuration, such as the engine to use (e.g., “gpt-4”), as well as any constraints or preferences for the generated completions, such as the maximum number of tokens or the temperature for controlling creativity (TODO: Link parameterization)</p>
+<div id="662daa55" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a completion</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    messages<span class="op">=</span>[</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"content"</span>: <span class="st">"How old is the earth?"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gpt-3.5-turbo"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="tokenization" class="level3">
-<h3 class="anchored" data-anchor-id="tokenization">3. Tokenization:</h3>
-<p>Before processing the prompt and generating completions, the input text undergoes tokenization, a crucial preprocessing step that breaks it down into smaller units known as tokens. These tokens typically represent words or subwords and serve as the fundamental building blocks for the model’s understanding of the text. Tokenization enables the model to analyze the underlying structure of the text at a granular level, facilitating more effective learning and prediction. Each token encapsulates a discrete unit of meaning within the text and serves as input to the model during the completion generation process.</p>
+<section id="processing" class="level3">
+<h3 class="anchored" data-anchor-id="processing">Processing</h3>
+<p>Once the OpenAI API receives your request, it proceeds to process the provided prompt using the specified model. This process involves analyzing the context provided by the prompt and leveraging the model’s pre-trained knowledge to generate text completions. The model employs advanced natural language processing techniques to ensure that the generated completions are coherent and contextually relevant. By drawing from its extensive training data and understanding of human language, the model aims to produce responses that closely align with human-like communication.</p>
 </section>
-<section id="probability-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="probability-distribution">4. Probability Distribution:</h3>
-<p>Central to the completion generation process is the prediction of the likelihood of each possible token that could follow the prompt. This prediction is based on the model’s learned parameters and contextual understanding of the input text. The model computes a probability distribution over the vocabulary of tokens, assigning a probability score to each token to indicate its likelihood of occurrence given the context provided by the prompt. This probability distribution guides the selection of tokens during the completion generation process, ensuring that the generated completions are coherent and contextually relevant.</p>
+<section id="response" class="level3">
+<h3 class="anchored" data-anchor-id="response">Response</h3>
+<p>After processing your request, the OpenAI API returns a JSON-formatted response containing the generated text completions. Depending on the specifics of your request, you may receive multiple completions, each accompanied by additional information such as a confidence score indicating the model’s level of certainty in the generated text. This response provides valuable insights into the quality and relevance of the completions, allowing you to tailor your application’s behavior accordingly.</p>
 </section>
-<section id="sampling-strategy" class="level3">
-<h3 class="anchored" data-anchor-id="sampling-strategy">5. Sampling Strategy:</h3>
-<p>To generate completions, the model employs various sampling strategies to select tokens from the probability distribution. Greedy sampling, for example, selects the token with the highest probability at each step, favoring the most probable tokens but potentially leading to repetitive or predictable completions. In contrast, random sampling randomly selects tokens according to their probabilities, introducing variability and unpredictability into the generated completions. Top-k sampling restricts token selection to the top-k most probable tokens, striking a balance between diversity and coherence in the completions. Each sampling strategy offers unique trade-offs in terms of diversity, coherence, and computational efficiency, allowing users to tailor the completion generation process to their specific needs and preferences.</p>
-</section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion:</h3>
-<p>Completions represent a sophisticated approach to natural language processing, leveraging advanced machine learning models and algorithms to generate coherent and contextually relevant text based on given input. By understanding the underlying components and mechanisms of completions, users can harness their power to develop innovative applications and solutions across a wide range of domains and use cases. As research in NLP continues to advance, the capabilities and applications of completions are expected to evolve, driving further innovation and exploration in the field of human-computer interaction.</p>
+<section id="error-handling" class="level3">
+<h3 class="anchored" data-anchor-id="error-handling">Error Handling</h3>
+<p>While interacting with the OpenAI API, it’s crucial to implement robust error handling mechanisms to gracefully manage any potential issues that may arise. Common errors include providing invalid parameters, experiencing authentication failures due to an incorrect API key, or encountering rate limiting restrictions. B y handling errors effectively, you can ensure the reliability and resilience of your application, minimizing disruptions to the user experience and maintaining smooth operation under varying conditions. Implementing proper error handling practices is essential for building robust and dependable applications that leverage the capabilities of the OpenAI Chat Completions API effectively.</p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -868,13 +910,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../llm/intro.html" class="pagination-link" aria-label="Introduction to LLM">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to LLM</span>
+      <a href="../llm/gpt.html" class="pagination-link" aria-label="GPT">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GPT</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../llm/gpt_api.html" class="pagination-link" aria-label="The OpenAI API">
-        <span class="nav-page-text">The OpenAI API</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../llm/exercises/ex_gpt_start.html" class="pagination-link" aria-label="Exercise: OpenAI - Getting started">
+        <span class="nav-page-text">Exercise: OpenAI - Getting started</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

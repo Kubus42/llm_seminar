@@ -12,7 +12,7 @@ format:
 website:
   page-navigation: true
   back-to-top-navigation: true
-  
+
   navbar:
     tools:
       - icon: github
@@ -56,6 +56,10 @@ website:
           contents:
             - llm/intro.qmd
             - llm/gpt.qmd
+            - llm/gpt_api.qmd
+            - llm/exercises/ex_gpt_start.ipynb
+            - llm/exercises/ex_gpt_chatbot.ipynb
+            - llm/prompting.qmd
             - llm/parameterization.qmd
             - llm/exercises/ex_gpt_parameterization.ipynb
 

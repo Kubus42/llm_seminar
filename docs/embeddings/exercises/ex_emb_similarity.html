@@ -286,6 +286,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The OpenAI API</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../llm/exercises/ex_gpt_start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: OpenAI - Getting started</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../llm/exercises/ex_gpt_chatbot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: GPT Chatbot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../llm/prompting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prompting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../llm/parameterization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Parameterization of GPT</span></a>
   </div>
@@ -434,7 +458,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Calculate the cosine similarity between the embeddings to measure their similarity.</li>
 <li>Print the similarity score and interpret the results.</li>
 </ul>
-<p><strong>Solution</strong></p>
+<details>
+<summary>
+Show solution
+</summary>
 <div id="cell-3" class="cell" data-execution_count="24">
 <details class="code-fold">
 <summary>Code</summary>
@@ -493,6 +520,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Cosine similarity between king and pawn: 0.829.</code></pre>
 </div>
 </div>
+</details>
 <p><strong>Task:</strong> Use the OpenAI embeddings API and simple embedding arithmetics to introduce more context to word similarities.</p>
 <p><strong>Instructions:</strong></p>
 <ul>
@@ -501,8 +529,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Create another embedding for the word <code>reptile</code> and add it to <code>python</code>. You can use <code>numpy</code> for this.</li>
 <li>Calculate the cosine similarity between <code>python</code> and this sum. What do you notice?</li>
 </ul>
-<p><strong>Solution</strong></p>
-<div id="cell-9" class="cell" data-execution_count="28">
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-10" class="cell" data-execution_count="28">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"python"</span>, <span class="st">"snake"</span>, <span class="st">"javascript"</span>, <span class="st">"reptile"</span>]</span>
@@ -510,7 +541,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>embeddings <span class="op">=</span> [emb.embedding <span class="cf">for</span> emb <span class="kw">in</span> response.data]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-10" class="cell" data-execution_count="29">
+<div id="cell-11" class="cell" data-execution_count="29">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Similarity between '</span><span class="sc">{</span>words[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">' and '</span><span class="sc">{</span>words[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">': </span><span class="sc">{</span><span class="bu">round</span>(cosine_similarity(embeddings[<span class="dv">0</span>], embeddings[<span class="dv">1</span>]), <span class="dv">3</span>)<span class="sc">}</span><span class="ss">."</span>)</span>
@@ -523,6 +554,7 @@ Similarity between 'python' and 'javascript': 0.85.
 Similarity between 'python + reptile' and 'snake': 0.894.</code></pre>
 </div>
 </div>
+</details>
 
 
 

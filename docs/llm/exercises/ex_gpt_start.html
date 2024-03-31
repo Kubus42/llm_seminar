@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GPT</title>
+<title>Exercise: OpenAI - Getting started</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../llm/gpt_api.html" rel="next">
-<link href="../llm/intro.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../llm/exercises/ex_gpt_chatbot.html" rel="next">
+<link href="../../llm/gpt_api.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Sprint: Large Language Models</span>
     </a>
   </div>
@@ -90,11 +90,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
 <span class="menu-text">Seminar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources.html"> 
+    <a class="nav-link" href="../../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt.html">GPT</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../../llm/exercises/ex_gpt_start.html">Exercise: OpenAI - Getting started</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -146,25 +146,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The Sprint</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about/schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/assignment.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Academic assignment</span></a>
   </div>
 </li>
@@ -181,49 +181,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview of NLP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/tokenization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/tokenization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Word matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/fuzzy_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/fuzzy_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fuzzy matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Fuzzy matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/statistical_text_analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/statistical_text_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistical text analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_tfidf.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_tfidf.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: TF-IDF</span></a>
   </div>
 </li>
@@ -240,49 +240,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to LLM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/gpt.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../llm/gpt.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The OpenAI API</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/exercises/ex_gpt_start.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/exercises/ex_gpt_start.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Exercise: OpenAI - Getting started</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/exercises/ex_gpt_chatbot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/exercises/ex_gpt_chatbot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: GPT Chatbot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/prompting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/prompting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prompting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/parameterization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/parameterization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Parameterization of GPT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/exercises/ex_gpt_parameterization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/exercises/ex_gpt_parameterization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: GPT Parameterization</span></a>
   </div>
 </li>
@@ -299,31 +299,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/embeddings.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/embeddings.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Embeddings</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Embedding similarity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Clustering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/applications.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/applications.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Applications</span></a>
   </div>
 </li>
@@ -340,13 +340,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ethics/bias.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ethics/bias.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bias</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ethics/data_privacy.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ethics/data_privacy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Privacy</span></a>
   </div>
 </li>
@@ -364,25 +364,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Word matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Fuzzy matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Embedding similarity</span></a>
   </div>
 </li>
@@ -397,9 +397,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt.html">GPT</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../../llm/exercises/ex_gpt_start.html">Exercise: OpenAI - Getting started</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">GPT</h1>
+<h1 class="title">Exercise: OpenAI - Getting started</h1>
 </div>
 
 
@@ -416,45 +416,16 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><strong>Task:</strong> Explore the OpenAI <code>chat.completions</code> API.</p>
+<p><strong>Instructions:</strong></p>
 <ul>
-<li><strong>Definition of GPT</strong>: GPT is a state-of-the-art large language model developed by OpenAI. It belongs to the family of Transformer-based architectures and is renowned for its ability to generate coherent and contextually relevant text across a wide range of tasks.</li>
-<li><strong>Key Features of GPT</strong>: Highlight the key features that distinguish GPT from other LLMs, such as its autoregressive nature, the use of self-attention mechanisms, and the ability to generate text of variable length.</li>
-<li><strong>Pre-training Objective</strong>: GPT is pre-trained using an unsupervised learning objective known as language modeling. During pre-training, it learns to predict the next word in a sequence based on the preceding context, which enables it to capture the statistical properties of natural language.</li>
-<li><strong>Architecture of GPT</strong>: Provide an overview of the architecture of GPT, which consists of multiple layers of Transformer blocks. Each block includes self-attention layers, feed-forward neural networks, and layer normalization, allowing GPT to process input sequences and generate output sequences effectively.</li>
-<li><strong>Fine-tuning and Adaptation</strong>: GPT can be fine-tuned on specific tasks or domains with labeled data to adapt its pre-trained knowledge to new tasks. This fine-tuning process allows GPT to achieve state-of-the-art performance on a wide range of natural language processing tasks.</li>
-<li><strong>Applications of GPT</strong>: Discuss the diverse applications of GPT across various domains, including text generation, summarization, translation, question-answering, conversation generation, and more. Highlight real-world examples and use cases where GPT has been deployed successfully.</li>
-<li><strong>Recent Advancements and Versions</strong>: Mention the evolution of GPT over time, including the release of different versions such as GPT-1, GPT-2, GPT-3, and any subsequent versions or variants. Discuss the improvements and advancements introduced in each iteration.</li>
-<li><strong>Challenges and Limitations:</strong> Acknowledge the challenges and limitations associated with GPT, such as the potential for generating biased or inappropriate content, the need for large-scale computational resources, and the difficulty of fine-tuning for specific tasks without overfitting.</li>
+<li>Generate a chat completion and analyze the response object <code>ChatCompletion</code>. What information do you get with each completion?</li>
+<li>How can you access the actual completion of your prompt?</li>
+<li>Use the <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API documentation</a> to find out what <code>choices</code> are and how they are used.</li>
+<li>Play around with the parameters <code>temperature</code> and <code>top_p</code> for a simple prompt. What do you notice?</li>
 </ul>
-<section id="completions-and-how-they-work" class="level2">
-<h2 class="anchored" data-anchor-id="completions-and-how-they-work">Completions and how they work</h2>
-<section id="prompt" class="level3">
-<h3 class="anchored" data-anchor-id="prompt">1. Prompt:</h3>
-<p>The prompt serves as the cornerstone of completion generation, acting as the initial input or context upon which the model bases its predictions and generates completions. Its significance lies in its ability to set the tone, theme, and direction for the subsequent text generation process. Prompts can vary widely in length and complexity, ranging from concise prompts that elicit specific responses to more extensive prompts that allow for nuanced and detailed completions. The effectiveness of the prompt in guiding the completion generation process depends on its clarity, relevance, and specificity to the desired task or objective.</p>
-</section>
-<section id="model-architecture" class="level3">
-<h3 class="anchored" data-anchor-id="model-architecture">2. Model Architecture:</h3>
-<p>Completions derive their power from sophisticated machine learning models, with transformer-based architectures like GPT (Generative Pre-trained Transformer) leading the forefront. These models undergo extensive training on vast amounts of text data, spanning diverse domains and languages, to develop a deep understanding of human language. Through this training process, the models learn to capture the intricacies of grammar, syntax, semantics, and context inherent in natural language. The architecture of these models is designed to efficiently process and analyze input text, enabling them to capture long-range dependencies within text and generate coherent completions that align with the provided prompt.</p>
-</section>
-<section id="tokenization" class="level3">
-<h3 class="anchored" data-anchor-id="tokenization">3. Tokenization:</h3>
-<p>Before processing the prompt and generating completions, the input text undergoes tokenization, a crucial preprocessing step that breaks it down into smaller units known as tokens. These tokens typically represent words or subwords and serve as the fundamental building blocks for the model’s understanding of the text. Tokenization enables the model to analyze the underlying structure of the text at a granular level, facilitating more effective learning and prediction. Each token encapsulates a discrete unit of meaning within the text and serves as input to the model during the completion generation process.</p>
-</section>
-<section id="probability-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="probability-distribution">4. Probability Distribution:</h3>
-<p>Central to the completion generation process is the prediction of the likelihood of each possible token that could follow the prompt. This prediction is based on the model’s learned parameters and contextual understanding of the input text. The model computes a probability distribution over the vocabulary of tokens, assigning a probability score to each token to indicate its likelihood of occurrence given the context provided by the prompt. This probability distribution guides the selection of tokens during the completion generation process, ensuring that the generated completions are coherent and contextually relevant.</p>
-</section>
-<section id="sampling-strategy" class="level3">
-<h3 class="anchored" data-anchor-id="sampling-strategy">5. Sampling Strategy:</h3>
-<p>To generate completions, the model employs various sampling strategies to select tokens from the probability distribution. Greedy sampling, for example, selects the token with the highest probability at each step, favoring the most probable tokens but potentially leading to repetitive or predictable completions. In contrast, random sampling randomly selects tokens according to their probabilities, introducing variability and unpredictability into the generated completions. Top-k sampling restricts token selection to the top-k most probable tokens, striking a balance between diversity and coherence in the completions. Each sampling strategy offers unique trade-offs in terms of diversity, coherence, and computational efficiency, allowing users to tailor the completion generation process to their specific needs and preferences.</p>
-</section>
-<section id="conclusion" class="level3">
-<h3 class="anchored" data-anchor-id="conclusion">Conclusion:</h3>
-<p>Completions represent a sophisticated approach to natural language processing, leveraging advanced machine learning models and algorithms to generate coherent and contextually relevant text based on given input. By understanding the underlying components and mechanisms of completions, users can harness their power to develop innovative applications and solutions across a wide range of domains and use cases. As research in NLP continues to advance, the capabilities and applications of completions are expected to evolve, driving further innovation and exploration in the field of human-computer interaction.</p>
 
 
-</section>
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -868,13 +839,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../llm/intro.html" class="pagination-link" aria-label="Introduction to LLM">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to LLM</span>
+      <a href="../../llm/gpt_api.html" class="pagination-link" aria-label="The OpenAI API">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">The OpenAI API</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../llm/gpt_api.html" class="pagination-link" aria-label="The OpenAI API">
-        <span class="nav-page-text">The OpenAI API</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../llm/exercises/ex_gpt_chatbot.html" class="pagination-link" aria-label="Exercise: GPT Chatbot">
+        <span class="nav-page-text">Exercise: GPT Chatbot</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -286,6 +286,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The OpenAI API</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../llm/exercises/ex_gpt_start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: OpenAI - Getting started</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../llm/exercises/ex_gpt_chatbot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: GPT Chatbot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../llm/prompting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prompting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../llm/parameterization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Parameterization of GPT</span></a>
   </div>
@@ -430,13 +454,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="simple-word-tokenization" class="level2">
 <h2 class="anchored" data-anchor-id="simple-word-tokenization">Simple word tokenization</h2>
 <p>A key element for a computer to understand the words we speak or type is the concept of word tokenization. For a human, the sentence</p>
-<div id="712dd934" class="cell" data-execution_count="1">
+<div id="4561108d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"I love reading science fiction books or books about science."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>is easy to understand since we are able to split the sentence into its individual parts in order to figure out the meaning of the full sentence. For a computer, the sentence is just a simple string of characters, like any other word or longer text. In order to make a computer understand the meaning of a sentence, we need to help break it down into its relevant parts.</p>
 <p>Simply put, word tokenization is the process of breaking down a piece of text into individual words or so-called tokens. It is like taking a sentence and splitting it into smaller pieces, where each piece represents a word. Word tokenization involves analyzing the text character by character and identifying boundaries between words. It uses various rules and techniques to decide where one word ends and the next one begins. For example, spaces, punctuation marks, and special characters often serve as natural boundaries between words.</p>
 <p>So let’s start breaking down the sentence into its individual parts.</p>
-<div id="44e2a40a" class="cell" data-execution_count="2">
+<div id="36ccc15c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> sentence.split(<span class="st">" "</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tokenized_sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -444,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Once we have tokenized the sentence, we can start anaylzing it with some simple statistical methods. For example, in order to figure out what the sentence might be about, we could count the most frequent words.</p>
-<div id="345bd0ce" class="cell" data-execution_count="3">
+<div id="4b5bb732" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
@@ -454,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Unfortunately, we already realize that we have not done the best job with our “tokenizer”: The second occurence of the word <code>science</code> is missing do to the punctuation. While this is great as it holds information about the ending of a sentence, it disturbs our analysis here, so let’s get rid of it.</p>
-<div id="d420f19e" class="cell" data-execution_count="4">
+<div id="54b1654a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> sentence.replace(<span class="st">"."</span>, <span class="st">" "</span>).split(<span class="st">" "</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
@@ -464,7 +488,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>So that worked. As you can imagine, tokenization can get increasingly difficult when we have to deal with all sorts of situations in larger corpora of texts (see also the exercise). So it is great that there are already all sorts of libraries available that can help us with this process.</p>
-<div id="cd707ce2" class="cell" data-execution_count="5">
+<div id="7a06e431" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -479,6 +503,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="advanced-word-tokenization" class="level2">
 <h2 class="anchored" data-anchor-id="advanced-word-tokenization">Advanced word tokenization</h2>
 <p>TODO: Write</p>
+<p>From the docs:</p>
+<p>https://platform.openai.com/tokenizer</p>
+<p>A helpful rule of thumb is that one token generally corresponds to ~4 characters of text for common English text. This translates to roughly ¾ of a word (so 100 tokens ~= 75 words).</p>
 
 
 </section>

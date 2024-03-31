@@ -2,6 +2,44 @@
 title: "GPT"
 format:
   html:
-    code-fold: true
+    code-fold: false
 jupyter: python3
 ---
+
+
+- **Definition of GPT**: GPT is a state-of-the-art large language model developed by OpenAI. It belongs to the family of Transformer-based architectures and is renowned for its ability to generate coherent and contextually relevant text across a wide range of tasks.
+- **Key Features of GPT**: Highlight the key features that distinguish GPT from other LLMs, such as its autoregressive nature, the use of self-attention mechanisms, and the ability to generate text of variable length.
+- **Pre-training Objective**: GPT is pre-trained using an unsupervised learning objective known as language modeling. During pre-training, it learns to predict the next word in a sequence based on the preceding context, which enables it to capture the statistical properties of natural language.
+- **Architecture of GPT**: Provide an overview of the architecture of GPT, which consists of multiple layers of Transformer blocks. Each block includes self-attention layers, feed-forward neural networks, and layer normalization, allowing GPT to process input sequences and generate output sequences effectively.
+- **Fine-tuning and Adaptation**: GPT can be fine-tuned on specific tasks or domains with labeled data to adapt its pre-trained knowledge to new tasks. This fine-tuning process allows GPT to achieve state-of-the-art performance on a wide range of natural language processing tasks.
+- **Applications of GPT**: Discuss the diverse applications of GPT across various domains, including text generation, summarization, translation, question-answering, conversation generation, and more. Highlight real-world examples and use cases where GPT has been deployed successfully.
+- **Recent Advancements and Versions**: Mention the evolution of GPT over time, including the release of different versions such as GPT-1, GPT-2, GPT-3, and any subsequent versions or variants. Discuss the improvements and advancements introduced in each iteration.
+- **Challenges and Limitations:** Acknowledge the challenges and limitations associated with GPT, such as the potential for generating biased or inappropriate content, the need for large-scale computational resources, and the difficulty of fine-tuning for specific tasks without overfitting.
+
+
+
+## Completions and how they work
+
+### 1. Prompt:
+
+The prompt serves as the cornerstone of completion generation, acting as the initial input or context upon which the model bases its predictions and generates completions. Its significance lies in its ability to set the tone, theme, and direction for the subsequent text generation process. Prompts can vary widely in length and complexity, ranging from concise prompts that elicit specific responses to more extensive prompts that allow for nuanced and detailed completions. The effectiveness of the prompt in guiding the completion generation process depends on its clarity, relevance, and specificity to the desired task or objective.
+
+### 2. Model Architecture:
+
+Completions derive their power from sophisticated machine learning models, with transformer-based architectures like GPT (Generative Pre-trained Transformer) leading the forefront. These models undergo extensive training on vast amounts of text data, spanning diverse domains and languages, to develop a deep understanding of human language. Through this training process, the models learn to capture the intricacies of grammar, syntax, semantics, and context inherent in natural language. The architecture of these models is designed to efficiently process and analyze input text, enabling them to capture long-range dependencies within text and generate coherent completions that align with the provided prompt.
+
+### 3. Tokenization:
+
+Before processing the prompt and generating completions, the input text undergoes tokenization, a crucial preprocessing step that breaks it down into smaller units known as tokens. These tokens typically represent words or subwords and serve as the fundamental building blocks for the model's understanding of the text. Tokenization enables the model to analyze the underlying structure of the text at a granular level, facilitating more effective learning and prediction. Each token encapsulates a discrete unit of meaning within the text and serves as input to the model during the completion generation process.
+
+### 4. Probability Distribution:
+
+Central to the completion generation process is the prediction of the likelihood of each possible token that could follow the prompt. This prediction is based on the model's learned parameters and contextual understanding of the input text. The model computes a probability distribution over the vocabulary of tokens, assigning a probability score to each token to indicate its likelihood of occurrence given the context provided by the prompt. This probability distribution guides the selection of tokens during the completion generation process, ensuring that the generated completions are coherent and contextually relevant.
+
+### 5. Sampling Strategy:
+
+To generate completions, the model employs various sampling strategies to select tokens from the probability distribution. Greedy sampling, for example, selects the token with the highest probability at each step, favoring the most probable tokens but potentially leading to repetitive or predictable completions. In contrast, random sampling randomly selects tokens according to their probabilities, introducing variability and unpredictability into the generated completions. Top-k sampling restricts token selection to the top-k most probable tokens, striking a balance between diversity and coherence in the completions. Each sampling strategy offers unique trade-offs in terms of diversity, coherence, and computational efficiency, allowing users to tailor the completion generation process to their specific needs and preferences.
+
+### Conclusion:
+
+Completions represent a sophisticated approach to natural language processing, leveraging advanced machine learning models and algorithms to generate coherent and contextually relevant text based on given input. By understanding the underlying components and mechanisms of completions, users can harness their power to develop innovative applications and solutions across a wide range of domains and use cases. As research in NLP continues to advance, the capabilities and applications of completions are expected to evolve, driving further innovation and exploration in the field of human-computer interaction.
