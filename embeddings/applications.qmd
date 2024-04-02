@@ -5,3 +5,7 @@ format:
     code-fold: true
 jupyter: python3
 ---
+
+
+Build a bot that can answer questions based on documents!
+Resource: https://platform.openai.com/docs/tutorials/web-qa-embeddings

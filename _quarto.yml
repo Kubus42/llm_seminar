@@ -62,6 +62,7 @@ website:
             - llm/prompting.qmd
             - llm/parameterization.qmd
             - llm/exercises/ex_gpt_parameterization.ipynb
+            - llm/exercises/ex_gpt_ner_with_function_calls.ipynb
 
         - section: "Embeddings"
           contents: 

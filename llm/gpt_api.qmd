@@ -6,7 +6,10 @@ format:
 jupyter: python3
 ---
 
+::: {.callout-note}
 Resource: [OpenAI API docs](https://platform.openai.com/docs/introduction){.external}
+:::
+
 
 
 Let's get started with the OpenAI API for GPT. 

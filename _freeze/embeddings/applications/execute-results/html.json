@@ -1,8 +1,8 @@
 {
-  "hash": "c7c6aaa88acff3e085f8bcd0144e88ab",
+  "hash": "4dcd8d01a2de3b1e2e0f0407e336d87c",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: Applications\nformat:\n  html:\n    code-fold: true\n---\n\n",
+    "markdown": "---\ntitle: Applications\nformat:\n  html:\n    code-fold: true\n---\n\nBuild a bot that can answer questions based on documents!\nResource: https://platform.openai.com/docs/tutorials/web-qa-embeddings\n\n",
     "supporting": [
       "applications_files"
     ],

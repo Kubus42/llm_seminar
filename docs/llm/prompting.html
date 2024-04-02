@@ -286,6 +286,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Exercise: GPT Parameterization</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../llm/exercises/ex_gpt_ner_with_function_calls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: NER with tool calling</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -416,9 +422,82 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Resources:</strong> - https://platform.openai.com/docs/guides/prompt-engineering -</p>
+<p>Learning prompting is a science for itself. The difficulty lies in the probabilistic nature of the language models. That means, small changes to your prompt (that you might even find insignificant) can have a large impact on the result/the answer. In particular, the changes do not have to be “logical”, i.e., depend on your changes in a comprehensible or reproducible way. This can sometimes be frustrating, but can also be avoided in many cases when following the right instructions for prompting. To do so, let’s best follow the creators.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>The following is taken from the <a href="https://platform.openai.com/docs/guides/prompt-engineering" class="external">OpenAI Guide</a></em></p>
+</div>
+</div>
+<section id="write-clear-instructions" class="level4">
+<h4 class="anchored" data-anchor-id="write-clear-instructions">Write clear instructions</h4>
+<p>These models can’t read your mind. If outputs are too long, ask for brief replies. If outputs are too simple, ask for expert-level writing. If you dislike the format, demonstrate the format you’d like to see. The less the model has to guess at what you want, the more likely you’ll get it.</p>
+<p>Tactics:</p>
+<ul>
+<li>Include details in your query to get more relevant answers</li>
+<li>Ask the model to adopt a persona</li>
+<li>Use delimiters to clearly indicate distinct parts of the input</li>
+<li>Specify the steps required to complete a task</li>
+<li>Provide examples</li>
+<li>Specify the desired length of the output <br><br></li>
+</ul>
+</section>
+<section id="provide-reference-text" class="level4">
+<h4 class="anchored" data-anchor-id="provide-reference-text">Provide reference text</h4>
+<p>Language models can confidently invent fake answers, especially when asked about esoteric topics or for citations and URLs. In the same way that a sheet of notes can help a student do better on a test, providing reference text to these models can help in answering with fewer fabrications.</p>
+<p>Tactics:</p>
+<ul>
+<li>Instruct the model to answer using a reference text</li>
+<li>Instruct the model to answer with citations from a reference text <br><br></li>
+</ul>
+</section>
+<section id="split-complex-tasks-into-simpler-subtasks" class="level4">
+<h4 class="anchored" data-anchor-id="split-complex-tasks-into-simpler-subtasks">Split complex tasks into simpler subtasks</h4>
+<p>Just as it is good practice in software engineering to decompose a complex system into a set of modular components, the same is true of tasks - submitted to a language model. Complex tasks tend to have higher error rates than simpler tasks. Furthermore, complex tasks can often be re-defined as a workflow of simpler tasks in which the outputs of earlier tasks are used to construct the inputs to later tasks.</p>
+<p>Tactics:</p>
+<ul>
+<li>Use intent classification to identify the most relevant instructions for a user query</li>
+<li>For dialogue applications that require very long conversations, summarize or filter previous dialogue</li>
+<li>Summarize long documents piecewise and construct a full summary recursively <br><br></li>
+</ul>
+</section>
+<section id="give-the-model-time-to-think" class="level4">
+<h4 class="anchored" data-anchor-id="give-the-model-time-to-think">Give the model time to “think”</h4>
+<p>If asked to multiply 17 by 28, you might not know it instantly, but can still work it out with time. Similarly, models make more reasoning errors when trying to answer right away, rather than taking time to work out an answer. Asking for a “chain of thought” before an answer can help the model reason its way toward correct answers more reliably.</p>
+<p>Tactics:</p>
+<ul>
+<li>Instruct the model to work out its own solution before rushing to a conclusion</li>
+<li>Use inner monologue or a sequence of queries to hide the model’s reasoning process</li>
+<li>Ask the model if it missed anything on previous passes <br><br></li>
+</ul>
+</section>
+<section id="use-external-tools" class="level4">
+<h4 class="anchored" data-anchor-id="use-external-tools">Use external tools</h4>
+<p>Compensate for the weaknesses of the model by feeding it the outputs of other tools. For example, a text retrieval system (sometimes called RAG or retrieval augmented generation) can tell the model about relevant documents. A code execution engine like OpenAI’s Code Interpreter can help the model do math and run code. If a task can be done more reliably or efficiently by a tool rather than by a language model, offload it to get the best of both.</p>
+<p>Tactics:</p>
+<ul>
+<li>Use embeddings-based search to implement efficient knowledge retrieval</li>
+<li>Use code execution to perform more accurate calculations or call external APIs</li>
+<li>Give the model access to specific functions <br><br></li>
+</ul>
+</section>
+<section id="test-changes-systematically" class="level4">
+<h4 class="anchored" data-anchor-id="test-changes-systematically">Test changes systematically</h4>
+<p>Improving performance is easier if you can measure it. In some cases a modification to a prompt will achieve better performance on a few isolated examples but lead to worse overall performance on a more representative set of examples. Therefore to be sure that a change is net positive to performance it may be necessary to define a comprehensive test suite (also known an as an “eval”).</p>
+<p>Tactic:</p>
+<ul>
+<li>Evaluate model outputs with reference to gold-standard answers</li>
+</ul>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

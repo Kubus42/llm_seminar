@@ -320,6 +320,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Exercise: GPT Parameterization</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../llm/exercises/ex_gpt_ner_with_function_calls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: NER with tool calling</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -467,7 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="large-language-models-transformers-2010s-present" class="level4">
 <h4 class="anchored" data-anchor-id="large-language-models-transformers-2010s-present">Large Language Models: Transformers (2010s-Present)</h4>
-<p>The latter half of the 2010s heralded the rise of large language models, epitomized by the revolutionary Transformer architecture. Powered by self-attention mechanisms, Transformers excel at capturing long-range dependencies in text and generating coherent and contextually relevant responses. Pre-trained on massive text corpora, models like GPT (Generative Pretrained Transformer) have achieved unprecedented performance across a wide range of NLP tasks, including machine translation, question-answering, and language understanding. Their ability to leverage vast amounts of data and learn intricate patterns has propelled NLP to new heights of sophistication.</p>
+<p>The latter half of the 2010s heralded the rise of large language models, epitomized by the revolutionary Transformer architecture. Powered by self-attention mechanisms, Transformers excel at capturing long-range dependencies in text and generating coherent and contextually relevant responses. Pre-trained on massive text corpora, models like GPT (Generative Pre-trained Transformer) have achieved unprecedented performance across a wide range of NLP tasks, including machine translation, question-answering, and language understanding. Their ability to leverage vast amounts of data and learn intricate patterns has propelled NLP to new heights of sophistication.</p>
 </section>
 <section id="challenges-in-nlp" class="level4">
 <h4 class="anchored" data-anchor-id="challenges-in-nlp">Challenges in NLP</h4>
@@ -495,7 +501,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>
 Code example
 </summary>
-<div id="d87df8e1" class="cell" data-execution_count="1">
+<div id="1de29527" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the English language model</span></span>
@@ -541,7 +547,7 @@ Token: .         | POS Tag: PUNCT</code></pre>
 <summary>
 Code example
 </summary>
-<div id="acc47b23" class="cell" data-execution_count="2">
+<div id="e9d253d7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the English language model</span></span>
@@ -569,14 +575,14 @@ Entity: $1 billion           | Label: MONEY</code></pre>
 <h4 class="anchored" data-anchor-id="machine-translation">Machine Translation</h4>
 <p>Machine Translation (MT) aims to automatically translate text from one language to another, facilitating communication across language barriers. For example, translating a sentence from English to Spanish or vice versa. MT systems utilize sophisticated algorithms and linguistic models to generate accurate translations while preserving the original meaning and nuances of the text. MT has numerous practical applications, including cross-border communication, localization of software and content, and global commerce.</p>
 </section>
-<section id="sentiment-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="sentiment-analysis">Sentiment Analysis</h4>
+<section id="sec-sentiment-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="sec-sentiment-analysis">Sentiment Analysis</h4>
 <p>Sentiment Analysis involves analyzing text data to determine the sentiment or opinion expressed within it, such as positive, negative, or neutral. For instance, analyzing product reviews to gauge customer satisfaction or monitoring social media sentiment towards a brand. Sentiment Analysis employs machine learning algorithms to classify text based on sentiment, enabling businesses to understand customer feedback, track public opinion, and make data-driven decisions.</p>
 <details>
 <summary>
 Code example
 </summary>
-<div id="02b6acb2" class="cell" data-execution_count="3">
+<div id="8ee69b14" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># python -m textblob.download_corpora</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> textblob <span class="im">import</span> TextBlob</span>
@@ -615,7 +621,7 @@ Sentiment Label: Positive</code></pre>
 <summary>
 Code example
 </summary>
-<div id="356c23f3" class="cell" data-execution_count="4">
+<div id="b55c09cb" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVC</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
