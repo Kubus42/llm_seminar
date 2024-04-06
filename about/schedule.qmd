@@ -1,7 +1,0 @@
----
-title: "Schedule"
-format:
-  html:
-    code-fold: true
-jupyter: python3
----

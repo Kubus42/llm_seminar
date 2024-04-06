@@ -7,6 +7,8 @@ jupyter: python3
 ---
 
 
+## A simple introduction to GPT 
+
 - **Definition of GPT**: GPT is a state-of-the-art large language model developed by OpenAI. It belongs to the family of Transformer-based architectures and is renowned for its ability to generate coherent and contextually relevant text across a wide range of tasks.
 - **Key Features of GPT**: Highlight the key features that distinguish GPT from other LLMs, such as its autoregressive nature, the use of self-attention mechanisms, and the ability to generate text of variable length.
 - **Pre-training Objective**: GPT is pre-trained using an unsupervised learning objective known as language modeling. During pre-training, it learns to predict the next word in a sequence based on the preceding context, which enables it to capture the statistical properties of natural language.

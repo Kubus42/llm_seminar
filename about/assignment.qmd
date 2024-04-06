@@ -1,7 +1,0 @@
----
-title: "Academic assignment"
-format:
-  html:
-    code-fold: true
-jupyter: python3
----

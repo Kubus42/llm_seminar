@@ -37,9 +37,7 @@ website:
         - section: "About"
           contents:
             - index.qmd
-            - about/schedule.qmd
             - about/projects.qmd
-            - about/assignment.qmd
 
         - section: "Natural Language Processing"
           contents:

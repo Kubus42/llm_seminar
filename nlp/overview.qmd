@@ -6,6 +6,10 @@ format:
 jupyter: python3
 ---
 
+In order to understand and appreciate very advanced topics such as Large Language Models, it is often helpful to get a quick overview of the history and how things developed.
+So let's get started with a few basics. 
+
+
 ## A short history of Natural Language Processing
 
 The field of Natural Language Processing (NLP) has undergone a remarkable evolution, spanning decades and driven by the convergence of computer science, artificial intelligence, and linguistics. 
@@ -38,7 +42,7 @@ Powered by self-attention mechanisms, Transformers excel at capturing long-range
 Pre-trained on massive text corpora, models like GPT (Generative Pre-trained Transformer) have achieved unprecedented performance across a wide range of NLP tasks, including machine translation, question-answering, and language understanding. 
 Their ability to leverage vast amounts of data and learn intricate patterns has propelled NLP to new heights of sophistication.
 
-#### Challenges in NLP
+## Challenges in NLP
 Despite the remarkable progress, NLP grapples with a myriad of challenges that continue to shape its trajectory:
 
 - **Ambiguity of Language**: The inherent ambiguity of natural language poses significant challenges in accurately interpreting meaning, especially in tasks like sentiment analysis and named entity recognition.
@@ -53,10 +57,6 @@ Despite the remarkable progress, NLP grapples with a myriad of challenges that c
 
 - **Common Sense Reasoning**: Despite advancements, NLP models still struggle with common sense reasoning, often producing nonsensical or irrelevant responses in complex scenarios.
 
-#### Conclusion
-The journey of NLP from rule-based systems to large language models has been marked by remarkable progress and continuous innovation. 
-While challenges persist, ongoing research and development efforts hold the promise of overcoming these obstacles and unlocking new frontiers in language understanding. 
-As NLP continues to evolve, driven by advancements in machine learning and computational resources, it brings us closer to the realization of truly intelligent systems capable of understanding and interacting with human language in profound ways.
 
 
 ## Classic NLP tasks/applications

@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../nlp/tokenization.html" rel="next">
-<link href="../about/assignment.html" rel="prev">
+<link href="../about/projects.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -181,25 +181,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The Sprint</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../about/schedule.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
+ <span class="menu-text">Sprint: Large Language Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../about/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../about/assignment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Academic assignment</span></a>
   </div>
 </li>
       </ul>
@@ -456,6 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>In order to understand and appreciate very advanced topics such as Large Language Models, it is often helpful to get a quick overview of the history and how things developed. So let’s get started with a few basics.</p>
 <section id="a-short-history-of-natural-language-processing" class="level2">
 <h2 class="anchored" data-anchor-id="a-short-history-of-natural-language-processing">A short history of Natural Language Processing</h2>
 <p>The field of Natural Language Processing (NLP) has undergone a remarkable evolution, spanning decades and driven by the convergence of computer science, artificial intelligence, and linguistics. From its nascent stages to its current state, NLP has witnessed transformative shifts, propelled by groundbreaking research and technological advancements. Today, it stands as a testament to humanity’s quest to bridge the gap between human language and machine comprehension. The journey through NLP’s history offers profound insights into its trajectory and the challenges encountered along the way.</p>
@@ -475,8 +464,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="large-language-models-transformers-2010s-present">Large Language Models: Transformers (2010s-Present)</h4>
 <p>The latter half of the 2010s heralded the rise of large language models, epitomized by the revolutionary Transformer architecture. Powered by self-attention mechanisms, Transformers excel at capturing long-range dependencies in text and generating coherent and contextually relevant responses. Pre-trained on massive text corpora, models like GPT (Generative Pre-trained Transformer) have achieved unprecedented performance across a wide range of NLP tasks, including machine translation, question-answering, and language understanding. Their ability to leverage vast amounts of data and learn intricate patterns has propelled NLP to new heights of sophistication.</p>
 </section>
-<section id="challenges-in-nlp" class="level4">
-<h4 class="anchored" data-anchor-id="challenges-in-nlp">Challenges in NLP</h4>
+</section>
+<section id="challenges-in-nlp" class="level2">
+<h2 class="anchored" data-anchor-id="challenges-in-nlp">Challenges in NLP</h2>
 <p>Despite the remarkable progress, NLP grapples with a myriad of challenges that continue to shape its trajectory:</p>
 <ul>
 <li><p><strong>Ambiguity of Language</strong>: The inherent ambiguity of natural language poses significant challenges in accurately interpreting meaning, especially in tasks like sentiment analysis and named entity recognition.</p></li>
@@ -487,11 +477,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Common Sense Reasoning</strong>: Despite advancements, NLP models still struggle with common sense reasoning, often producing nonsensical or irrelevant responses in complex scenarios.</p></li>
 </ul>
 </section>
-<section id="conclusion" class="level4">
-<h4 class="anchored" data-anchor-id="conclusion">Conclusion</h4>
-<p>The journey of NLP from rule-based systems to large language models has been marked by remarkable progress and continuous innovation. While challenges persist, ongoing research and development efforts hold the promise of overcoming these obstacles and unlocking new frontiers in language understanding. As NLP continues to evolve, driven by advancements in machine learning and computational resources, it brings us closer to the realization of truly intelligent systems capable of understanding and interacting with human language in profound ways.</p>
-</section>
-</section>
 <section id="classic-nlp-tasksapplications" class="level2">
 <h2 class="anchored" data-anchor-id="classic-nlp-tasksapplications">Classic NLP tasks/applications</h2>
 <section id="part-of-speech-tagging" class="level4">
@@ -501,7 +486,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>
 Code example
 </summary>
-<div id="1de29527" class="cell" data-execution_count="1">
+<div id="ad415181" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the English language model</span></span>
@@ -547,7 +532,7 @@ Token: .         | POS Tag: PUNCT</code></pre>
 <summary>
 Code example
 </summary>
-<div id="e9d253d7" class="cell" data-execution_count="2">
+<div id="87883988" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the English language model</span></span>
@@ -582,7 +567,7 @@ Entity: $1 billion           | Label: MONEY</code></pre>
 <summary>
 Code example
 </summary>
-<div id="8ee69b14" class="cell" data-execution_count="3">
+<div id="a4a5a4f4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># python -m textblob.download_corpora</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> textblob <span class="im">import</span> TextBlob</span>
@@ -621,7 +606,7 @@ Sentiment Label: Positive</code></pre>
 <summary>
 Code example
 </summary>
-<div id="b55c09cb" class="cell" data-execution_count="4">
+<div id="029c772f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVC</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
@@ -1097,8 +1082,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../about/assignment.html" class="pagination-link" aria-label="Academic assignment">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Academic assignment</span>
+      <a href="../about/projects.html" class="pagination-link" aria-label="Projects">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Projects</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

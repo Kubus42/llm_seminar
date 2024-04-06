@@ -6,8 +6,6 @@ format:
 jupyter: python3
 ---
 
-TODO: Some introductory sentence.
-
 ## Simple word tokenization
 A key element for a computer to understand the words we speak or type is the concept of word tokenization. 
 For a human, the sentence 
