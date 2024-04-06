@@ -68,13 +68,29 @@ By drawing from its extensive training data and understanding of human language,
 
 ### Response
 
-After processing your request, the OpenAI API returns a JSON-formatted response containing the generated text completions. 
-Depending on the specifics of your request, you may receive multiple completions, each accompanied by additional information such as a confidence score indicating the model's level of certainty in the generated text. 
+After processing your request, the OpenAI API returns a response containing the generated text completions. 
+Depending on the specifics of your request, you may receive multiple completions, each accompanied by additional information such as the amount of token processed in the request, the reason why the model stopped the answer etc. 
 This response provides valuable insights into the quality and relevance of the completions, allowing you to tailor your application's behavior accordingly.
+Let's check it out briefly, before you explore the response object more in-depth in your next exercise.
+
+```{python}
+# check out the type of the response
+
+print(f"Response object type: {type(chat_completion)}") # a ChatCompletion object
+
+# print the message we want
+print(f"Response message: {chat_completion.choices[0].message.content}")
+
+# check the tokens used 
+print(f"Total tokens used: {chat_completion.usage.total_tokens}")
+
+```
 
 ### Error Handling
 
-While interacting with the OpenAI API, it's crucial to implement robust error handling mechanisms to gracefully manage any potential issues that may arise. 
-Common errors include providing invalid parameters, experiencing authentication failures due to an incorrect API key, or encountering rate limiting restrictions. B
-y handling errors effectively, you can ensure the reliability and resilience of your application, minimizing disruptions to the user experience and maintaining smooth operation under varying conditions. 
-Implementing proper error handling practices is essential for building robust and dependable applications that leverage the capabilities of the OpenAI Chat Completions API effectively.
+While interacting with the OpenAI API (or any API for that matter), it's crucial to implement some robust error handling mechanisms to manage any potential issues that may arise. 
+The kind of classic errors include providing invalid parameters, experiencing authentication failures due to an incorrect API key, or encountering rate limiting restrictions. 
+But for language models in particular, there are plenty more problems that can arise simply involving the answer we get from the model. 
+Some examples are requests involving explicit language or content or restricted content etc. which are typically blocked by the API.
+Other times it might simply happen that a model does not respond in a way you expected, for example, just repeating your input instead of responding properly, or not responding in the format you requested. 
+Whenever we are using language model for applications, we need to be aware of this and implement the right measures to handle these situations. 

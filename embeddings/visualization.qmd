@@ -1,10 +1,13 @@
 ---
-title: "Visualization"
+title: "Visualization & clustering of embeddings"
 format:
   html:
     code-fold: false
 jupyter: python3
 ---
+
+
+## Visualization of embeddings
 
 
 ```{python}
@@ -77,4 +80,65 @@ plt.xticks([])
 plt.yticks([])
 plt.show()
 
+```
+
+
+## Clustering of embeddings
+
+```{python}
+# do the clustering
+import numpy as np
+from sklearn.cluster import KMeans
+
+n_clusters = 5
+
+# define the model
+kmeans = KMeans(
+  n_clusters=n_clusters,
+  n_init="auto",
+  random_state=2 # do this to get the same output
+)
+
+# fit the model to the data
+kmeans.fit(np.array(embeddings))
+
+# get the cluster labels
+cluster_labels = kmeans.labels_
+```
+
+
+```{python}
+#| label: tsne-visualization of clustering
+#| fig-cap: "t-SNE visualization of word embedding clusters"
+
+import matplotlib.pyplot as plt
+
+from sklearn.manifold import TSNE
+
+# Apply t-SNE dimensionality reduction
+tsne = TSNE(
+  n_components=2, 
+  random_state=42,
+  perplexity=5 # see documentation to set this correctly
+)
+embeddings_2d = tsne.fit_transform(np.array(embeddings))
+
+# Define a color map for clusters
+colors = plt.cm.viridis(np.linspace(0, 1, n_clusters))
+
+# Plot the embeddings in a two-dimensional scatter plot
+plt.figure(figsize=(10, 8))
+for i, word in enumerate(words):
+    x, y = embeddings_2d[i]
+    cluster_label = cluster_labels[i]
+    color = colors[cluster_label]
+    plt.scatter(x, y, marker='o', color=color)
+    plt.text(x, y, word, fontsize=9)
+
+plt.xlabel("t-SNE dimension 1")
+plt.ylabel("t-SNE dimension 2")
+plt.grid(True)
+plt.xticks([])
+plt.yticks([])
+plt.show()
 ```

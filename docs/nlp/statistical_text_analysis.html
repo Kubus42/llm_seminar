@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -340,13 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clustering</span></a>
+ <span class="menu-text">Visualization &amp; clustering of embeddings</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -393,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -455,7 +449,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="term-frequency" class="level2">
 <h2 class="anchored" data-anchor-id="term-frequency">Term frequency</h2>
 <p>So far we have mainly looked at the analysis of single words/token or n-grams. But what about the analysis of a full text? There are many approaches to this but a good way to get into the topic is a simple statistical analysis of a text. For starters, let’s simply count the number of appearances of each word in a text.</p>
-<div id="d0a4adfa" class="cell" data-execution_count="1">
+<div id="fbc3b7f6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
@@ -514,7 +508,7 @@ seemed: 14</code></pre>
 <section id="bag-of-words" class="level2">
 <h2 class="anchored" data-anchor-id="bag-of-words">Bag of Words</h2>
 <p>If we do the same with multiple texts, we can build up a vocabulary of words and compare different texts to each other based on the appearance of terms.</p>
-<div id="a137fe9d" class="cell" data-execution_count="2">
+<div id="2e209433" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -585,7 +579,7 @@ Document 4: [1, 1, 0, 0, 0]</code></pre>
 </div>
 </div>
 <p>Bag of words actually gives us some vector representation of our texts with respect to the given vocabulary. We can even calculate with these vectors and try to determine a similarity between the texts.</p>
-<div id="107a57c2" class="cell" data-execution_count="3">
+<div id="c00d574a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cosine_similarity(vec1: np.array, vec2: np.array) <span class="op">-&gt;</span> <span class="bu">float</span>: </span>
@@ -624,6 +618,7 @@ Document 4: [1, 1, 0, 0, 0]</code></pre>
 </section>
 <section id="clustering-of-bow-vectors" class="level2">
 <h2 class="anchored" data-anchor-id="clustering-of-bow-vectors">Clustering of BoW vectors</h2>
+<p>TODO: Write</p>
 
 
 </section>

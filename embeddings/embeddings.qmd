@@ -6,6 +6,7 @@ format:
 jupyter: python3
 ---
 
+## What are embeddings? 
 
 - **Word Embeddings**: Word embeddings are dense vector representations of words in a continuous vector space. Each word is mapped to a high-dimensional vector where words with similar meanings or contexts are closer together in the vector space.
 - **Contextual Embeddings**: Contextual embeddings, also known as contextualized word embeddings, capture the contextual information of words based on their surrounding context in a given sentence or document. Unlike traditional word embeddings, contextual embeddings vary depending on the context in which a word appears.
@@ -15,3 +16,6 @@ jupyter: python3
 - **Pre-trained Models**: OpenAI provides pre-trained BERT and GPT models that have been trained on large-scale text corpora. These pre-trained models can be fine-tuned on specific tasks or domains with labeled data to adapt their knowledge and capabilities to new applications.
 - **Transfer Learning**: BERT and GPT embeddings support transfer learning, where the pre-trained models are used as feature extractors for downstream NLP tasks. By fine-tuning these models on task-specific data, users can leverage the knowledge encoded in the embeddings to achieve state-of-the-art performance on various natural language processing tasks.
 - **Applications**: BERT and GPT embeddings have a wide range of applications in natural language processing tasks such as text classification, named entity recognition, sentiment analysis, question-answering, and more. They provide powerful representations of text data that capture both semantic and syntactic information.
+
+
+## Matching with embeddings

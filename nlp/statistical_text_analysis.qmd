@@ -170,3 +170,5 @@ Issues:
 
 
 ## Clustering of BoW vectors 
+
+TODO: Write

@@ -67,7 +67,6 @@ website:
             - embeddings/embeddings.qmd
             - embeddings/exercises/ex_emb_similarity.ipynb
             - embeddings/visualization.qmd
-            - embeddings/clustering.qmd
             - embeddings/applications.qmd
 
 

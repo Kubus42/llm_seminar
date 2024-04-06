@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -340,13 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clustering</span></a>
+ <span class="menu-text">Visualization &amp; clustering of embeddings</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -393,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -447,13 +441,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="simple-word-tokenization" class="level2">
 <h2 class="anchored" data-anchor-id="simple-word-tokenization">Simple word tokenization</h2>
 <p>A key element for a computer to understand the words we speak or type is the concept of word tokenization. For a human, the sentence</p>
-<div id="03b4dbb1" class="cell" data-execution_count="1">
+<div id="1ee96b1c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"I love reading science fiction books or books about science."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>is easy to understand since we are able to split the sentence into its individual parts in order to figure out the meaning of the full sentence. For a computer, the sentence is just a simple string of characters, like any other word or longer text. In order to make a computer understand the meaning of a sentence, we need to help break it down into its relevant parts.</p>
 <p>Simply put, word tokenization is the process of breaking down a piece of text into individual words or so-called tokens. It is like taking a sentence and splitting it into smaller pieces, where each piece represents a word. Word tokenization involves analyzing the text character by character and identifying boundaries between words. It uses various rules and techniques to decide where one word ends and the next one begins. For example, spaces, punctuation marks, and special characters often serve as natural boundaries between words.</p>
 <p>So let’s start breaking down the sentence into its individual parts.</p>
-<div id="a97b4601" class="cell" data-execution_count="2">
+<div id="1fe31e5d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> sentence.split(<span class="st">" "</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tokenized_sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -461,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Once we have tokenized the sentence, we can start analyzing it with some simple statistical methods. For example, in order to figure out what the sentence might be about, we could count the most frequent words.</p>
-<div id="d691120c" class="cell" data-execution_count="3">
+<div id="a290ca34" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
@@ -471,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Unfortunately, we already realize that we have not done the best job with our “tokenizer”: The second occurrence of the word <code>science</code> is missing do to the punctuation. While this is great as it holds information about the ending of a sentence, it disturbs our analysis here, so let’s get rid of it.</p>
-<div id="199ecce5" class="cell" data-execution_count="4">
+<div id="2117c172" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> sentence.replace(<span class="st">"."</span>, <span class="st">" "</span>).split(<span class="st">" "</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
@@ -481,7 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>So that worked. As you can imagine, tokenization can get increasingly difficult when we have to deal with all sorts of situations in larger corpora of texts (see also the exercise). So it is great that there are already all sorts of libraries available that can help us with this process.</p>
-<div id="e0b2290a" class="cell" data-execution_count="5">
+<div id="05266806" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -495,9 +489,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="advanced-word-tokenization" class="level2">
 <h2 class="anchored" data-anchor-id="advanced-word-tokenization">Advanced word tokenization</h2>
+<p>As you can imagine, the idea of tokenization does not stop here, we have only touched the basic idea of it. As a general strategy, we can now start from our word tokens and refine the tokens in a way that we need. A classic problem arising with the token above is that we do not get word tokens in their standardized form. So if, for example, we were to take all our token together and use that as a dictionary, we would get two different token for every words that appears both in singular and plural form (with the added “s”). Or we would receive different tokens for every verb in different conjugations (for example, “speak”, “speaks”, and “spoken”). Depending on our task, a great idea is to try and find the basic form of each token, a process called <strong>lemmatization</strong>.</p>
+<section id="lemmatization" class="level3">
+<h3 class="anchored" data-anchor-id="lemmatization">Lemmatization</h3>
+<p>Lemmatization is a natural language processing technique used to reduce words to their base or canonical form, known as the lemma. The lemma represents the dictionary form of a word and is typically a valid word that exists in the language. Lemmatization helps in standardizing words so that different forms of the same word are treated as one, simplifying text analysis and improving accuracy in tasks such as text classification, information retrieval, and sentiment analysis.</p>
+<p>Unlike stemming, which simply chops off prefixes or suffixes to derive the root form of a word (sometimes resulting in non-existent or incorrect forms), lemmatization considers the context of the word and applies linguistic rules to transform it into its lemma. This ensures that the resulting lemma is a valid word in the language and retains its semantic meaning.</p>
+<p>Lemmatization involves part-of-speech tagging to determine the correct lemma for each word based on its role in the sentence. For example, the word “running” may be lemmatized to “run” as a verb, but to “running” as a noun. However, once we have lemmatized our text, we might lose some information due to the lost context.</p>
+<p>Luckily for us, there are already pre-built packages that we can use to try out lemmatization. Here is a quick example how to do it with <code>nltk</code>.</p>
+<div id="5e6340bb" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"The three brothers went over three big bridges"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>wnl <span class="op">=</span> WordNetLemmatizer()</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>lemmatized_sentence_token <span class="op">=</span> [</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    wnl.lemmatize(w, pos<span class="op">=</span><span class="st">"n"</span>) <span class="cf">for</span> w <span class="kw">in</span> sentence.split(<span class="st">" "</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lemmatized_sentence_token)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['The', 'three', 'brother', 'went', 'over', 'three', 'big', 'bridge']</code></pre>
+</div>
+</div>
+<p>Since we need to include the <code>pos</code> (part-of-speech) tag of each word and only choose a noun (<code>n</code>) here, the lemmatizer only takes care of nouns in the sentence. Let’s try it with verbs.</p>
+<div id="afa3dfd4" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lemmatized_sentence_token <span class="op">=</span> [</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    wnl.lemmatize(w, pos<span class="op">=</span><span class="st">"v"</span>) <span class="cf">for</span> w <span class="kw">in</span> sentence.split(<span class="st">" "</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lemmatized_sentence_token)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['The', 'three', 'brothers', 'go', 'over', 'three', 'big', 'bridge']</code></pre>
+</div>
+</div>
+<p>This works, however, we now encounter a different problem: The word <code>bridges</code> has been turned into <code>bridge</code>, since it exists also as the ver “to bridge”. So, as mentioned above, we need to involve some part of speech tagging in order to do it correctly. Let’s try to fix it manually.</p>
+<div id="cdbd401b" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pos_dict <span class="op">=</span> {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"brothers"</span>: <span class="st">"n"</span>, </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"went"</span>: <span class="st">"v"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"big"</span>: <span class="st">"a"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"bridges"</span>: <span class="st">"n"</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>lemmatized_sentence_token <span class="op">=</span> []</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> token <span class="kw">in</span> sentence.split(<span class="st">" "</span>):</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> token <span class="kw">in</span> pos_dict:</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>        lemma <span class="op">=</span> wnl.lemmatize(token, pos<span class="op">=</span>pos_dict[token])</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>: </span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>        lemma <span class="op">=</span> token <span class="co"># leave as it is</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    lemmatized_sentence_token.append(lemma)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lemmatized_sentence_token)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['The', 'three', 'brother', 'go', 'over', 'three', 'big', 'bridge']</code></pre>
+</div>
+</div>
+<p>Again, luckily there also some packages that we can use, <code>spaCy</code> is one example. Their models come with a lot of built-in functionality.</p>
+<div id="104e663c" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(sentence)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>lemmatized_words <span class="op">=</span> [(token.lemma_, token.pos_) <span class="cf">for</span> token <span class="kw">in</span> doc]</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lemmatized_words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[('the', 'DET'), ('three', 'NUM'), ('brother', 'NOUN'), ('go', 'VERB'), ('over', 'ADP'), ('three', 'NUM'), ('big', 'ADJ'), ('bridge', 'NOUN')]</code></pre>
+</div>
+</div>
+<p>Now that we have successfully lemmatized our document or text, we can start using the lemmas to do some further analysis. For example, we could build a dictionary and do some statistics on it. We will see more about that <a href="../nlp/statistical_text_analysis.html">later</a>.</p>
+</section>
+<section id="bit-pair-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="bit-pair-encoding">Bit Pair Encoding</h3>
 <p>The above ideas illustrate well the idea of tokenization of splitting text into smaller chunks that we can feed to a language model. In practice, especially in models like GPT, a critical component is the vocabulary or the set of unique words or tokens the model understands. Traditional approaches use fixed-size vocabularies, which means every unique word in the corpus has its own representation (index or embedding) in the model’s vocabulary. However, as the vocabulary size increases (for example, by including more languages), so does the memory requirement, which can be impractical for large-scale language models. One solution is the so-called bit-pair encoding. Bit pair encoding is a data compression technique specifically designed to tackle the issue of large vocabularies in language models. Instead of assigning a unique index or embedding to each token, bit pair encoding identifies frequent pairs of characters (bits) within the corpus and represents them as a single token. This effectively reduces the size of the vocabulary while preserving the essential information needed for language modeling tasks.</p>
-<section id="how-bit-pair-encoding-works" class="level3">
-<h3 class="anchored" data-anchor-id="how-bit-pair-encoding-works">How Bit Pair Encoding Works:</h3>
+<section id="how-it-works" class="level4">
+<h4 class="anchored" data-anchor-id="how-it-works">How it works</h4>
 <ol type="1">
 <li><p><strong>Tokenization</strong>: The first step in bit pair encoding is tokenization, where the text corpus is broken down into individual tokens. These tokens could be characters, subwords, or words, depending on the tokenization strategy used.</p></li>
 <li><p><strong>Pair Identification</strong>: Next, the algorithm identifies pairs of characters (bits) that occur frequently within the corpus. These pairs are typically consecutive characters in the text.</p></li>
@@ -521,16 +591,16 @@ Tip
 </div>
 </div>
 </section>
-<section id="advantages-of-bit-pair-encoding" class="level3">
-<h3 class="anchored" data-anchor-id="advantages-of-bit-pair-encoding">Advantages of Bit Pair Encoding:</h3>
+<section id="advantages-of-bit-pair-encoding" class="level4">
+<h4 class="anchored" data-anchor-id="advantages-of-bit-pair-encoding">Advantages of Bit Pair Encoding</h4>
 <ol type="1">
 <li><p><strong>Efficient Memory Usage</strong>: Bit pair encoding significantly reduces the size of the vocabulary, leading to more efficient memory usage, especially in large-scale language models.</p></li>
 <li><p><strong>Retains Information</strong>: Despite reducing the vocabulary size, bit pair encoding retains important linguistic information by capturing frequent character pairs.</p></li>
 <li><p><strong>Flexible</strong>: Bit pair encoding is flexible and can be adapted to different tokenization strategies and corpus characteristics.</p></li>
 </ol>
 </section>
-<section id="limitations-and-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="limitations-and-considerations">Limitations and Considerations:</h3>
+<section id="limitations-and-considerations" class="level4">
+<h4 class="anchored" data-anchor-id="limitations-and-considerations">Limitations and Considerations</h4>
 <ol type="1">
 <li><p><strong>Computational Overhead</strong>: The iterative nature of bit pair encoding can be computationally intensive, especially for large corpora.</p></li>
 <li><p><strong>Loss of Granularity</strong>: While bit pair encoding reduces vocabulary size, it may lead to a loss of granularity, especially for rare or out-of-vocabulary words.</p></li>
@@ -552,6 +622,7 @@ Tip
 </div>
 
 
+</section>
 </section>
 </section>
 
@@ -972,8 +1043,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../nlp/exercises/ex_tokenization.html" class="pagination-link" aria-label="Exercise: Tokenization">
-        <span class="nav-page-text">Exercise: Tokenization</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../nlp/exercises/ex_tokenization.html" class="pagination-link" aria-label="Exercise: Sentence tokenization">
+        <span class="nav-page-text">Exercise: Sentence tokenization</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

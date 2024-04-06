@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -340,13 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clustering</span></a>
+ <span class="menu-text">Visualization &amp; clustering of embeddings</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -393,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -457,17 +451,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Show solution
 </summary>
 <div id="cell-3" class="cell" data-execution_count="24">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cosine_similarity(vec1: np.array, vec2: np.array) <span class="op">-&gt;</span> <span class="bu">float</span>: </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.dot(vec1, vec2) <span class="op">/</span> ( np.linalg.norm(vec1) <span class="op">*</span> np.linalg.norm(vec2) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div id="cell-4" class="cell" data-tags="[]" data-execution_count="25">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llm_utils.client <span class="im">import</span> get_openai_client, OpenAIModels</span>
@@ -488,28 +477,21 @@ Show solution
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>embedding_1 <span class="op">=</span> response_1.data[<span class="dv">0</span>].embedding</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>response_2 <span class="op">=</span> client.embeddings.create(<span class="bu">input</span><span class="op">=</span>word_2, model<span class="op">=</span>MODEL)</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>embedding_2 <span class="op">=</span> response_2.data[<span class="dv">0</span>].embedding</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div id="cell-5" class="cell" data-execution_count="26">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the distance </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dist_12 <span class="op">=</span> cosine_similarity(embedding_1, embedding_2)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Cosine similarity between </span><span class="sc">{</span>word_1<span class="sc">}</span><span class="ss"> and </span><span class="sc">{</span>word_2<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">round</span>(dist_12, <span class="dv">3</span>)<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Cosine similarity between king and queen: 0.915.</code></pre>
 </div>
 </div>
 <div id="cell-6" class="cell" data-execution_count="27">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>word_3 <span class="op">=</span> <span class="st">"pawn"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>embedding_3 <span class="op">=</span> client.embeddings.create(<span class="bu">input</span><span class="op">=</span>word_3, model<span class="op">=</span>MODEL).data[<span class="dv">0</span>].embedding</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>dist_13 <span class="op">=</span> cosine_similarity(embedding_1, embedding_3)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Cosine similarity between </span><span class="sc">{</span>word_1<span class="sc">}</span><span class="ss"> and </span><span class="sc">{</span>word_3<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">round</span>(dist_13, <span class="dv">3</span>)<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Cosine similarity between king and pawn: 0.829.</code></pre>
 </div>
@@ -528,20 +510,14 @@ Show solution
 Show solution
 </summary>
 <div id="cell-10" class="cell" data-execution_count="28">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"python"</span>, <span class="st">"snake"</span>, <span class="st">"javascript"</span>, <span class="st">"reptile"</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.embeddings.create(<span class="bu">input</span><span class="op">=</span>words, model<span class="op">=</span>MODEL)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>embeddings <span class="op">=</span> [emb.embedding <span class="cf">for</span> emb <span class="kw">in</span> response.data]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div id="cell-11" class="cell" data-execution_count="29">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Similarity between '</span><span class="sc">{</span>words[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">' and '</span><span class="sc">{</span>words[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">': </span><span class="sc">{</span><span class="bu">round</span>(cosine_similarity(embeddings[<span class="dv">0</span>], embeddings[<span class="dv">1</span>]), <span class="dv">3</span>)<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Similarity between '</span><span class="sc">{</span>words[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">' and '</span><span class="sc">{</span>words[<span class="dv">2</span>]<span class="sc">}</span><span class="ss">': </span><span class="sc">{</span><span class="bu">round</span>(cosine_similarity(embeddings[<span class="dv">0</span>], embeddings[<span class="dv">2</span>]), <span class="dv">3</span>)<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Similarity between '</span><span class="sc">{</span>words[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> + </span><span class="sc">{</span>words[<span class="dv">3</span>]<span class="sc">}</span><span class="ss">' and '</span><span class="sc">{</span>words[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">': </span><span class="sc">{</span><span class="bu">round</span>(cosine_similarity(np.array(embeddings[<span class="dv">0</span>]) <span class="op">+</span> np.array(embeddings[<span class="dv">3</span>]), embeddings[<span class="dv">1</span>]), <span class="dv">3</span>)<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Similarity between 'python' and 'snake': 0.841.
 Similarity between 'python' and 'javascript': 0.85.
@@ -969,8 +945,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../embeddings/visualization.html" class="pagination-link" aria-label="Visualization">
-        <span class="nav-page-text">Visualization</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../embeddings/visualization.html" class="pagination-link" aria-label="Visualization &amp; clustering of embeddings">
+        <span class="nav-page-text">Visualization &amp; clustering of embeddings</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

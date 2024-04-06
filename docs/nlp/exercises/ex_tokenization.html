@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Exercise: Tokenization</title>
+<title>Exercise: Sentence tokenization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../nlp/overview.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../../nlp/exercises/ex_tokenization.html">Exercise: Tokenization</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../nlp/overview.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../../nlp/exercises/ex_tokenization.html">Exercise: Sentence tokenization</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -340,13 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clustering</span></a>
+ <span class="menu-text">Visualization &amp; clustering of embeddings</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -393,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -425,9 +419,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../nlp/overview.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../../nlp/exercises/ex_tokenization.html">Exercise: Tokenization</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../nlp/overview.html">Natural Language Processing</a></li><li class="breadcrumb-item"><a href="../../nlp/exercises/ex_tokenization.html">Exercise: Sentence tokenization</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Exercise: Tokenization</h1>
+<h1 class="title">Exercise: Sentence tokenization</h1>
 </div>
 
 
@@ -444,9 +438,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="cell-1" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># write/extend tokenizer </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Task:</strong> Write a sentence tokenizer that takes the given paragraph and tokenizes it into <em>sentences</em>. Then, count the number of sentences and display the result.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Start with just a simple punctuation (<code>.</code>) as the delimiter for sentences.</li>
+<li>Check out the regex library <code>re</code> and the function <code>re.split</code> to include also other delimiters. Try out the following regex <code>r'[.:;!?]\s*'</code>.</li>
+</ul>
+<div id="cell-2" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>paragraph <span class="op">=</span> <span class="st">"The distant planet, its surface shrouded in mystery and intrigue! With its swirling clouds and alien landscapes, the planet: a tantalizing enigma to explorers and scientists alike? Oh, the wonders it conceals: ancient ruins and extraterrestrial life forms, waiting to be discovered! As the spacecraft descended through the atmosphere, anticipation filled the hearts of the crew. Little did they know, their journey was about to unveil secrets beyond their wildest imagination."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<details>
+<summary>
+Show code
+</summary>
+<div id="cell-4" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> List</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tokenize_sentences_at_dot(paragraph: <span class="bu">str</span>) <span class="op">-&gt;</span> List[<span class="bu">str</span>]:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    sentence_tokens <span class="op">=</span> paragraph.split(<span class="st">"."</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    sentence_tokens <span class="op">=</span> [s.strip() <span class="cf">for</span> s <span class="kw">in</span> sentence_tokens] <span class="co"># remove white space after .</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sentence_tokens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> tokenize_sentences_at_dot(paragraph<span class="op">=</span>paragraph)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The paragraph contains </span><span class="sc">{</span><span class="bu">len</span>(tokenized_sentence)<span class="sc">}</span><span class="ss"> sentences."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The paragraph contains 3 sentences.</code></pre>
+</div>
+</div>
+<div id="cell-6" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tokenize_sentences_at_punctuation(paragraph: <span class="bu">str</span>) <span class="op">-&gt;</span> List[<span class="bu">str</span>]:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    sentence_tokens <span class="op">=</span> re.split(<span class="vs">r'[.:;!?]\s*'</span>, paragraph)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    sentence_tokens <span class="op">=</span> [s.strip() <span class="cf">for</span> s <span class="kw">in</span> sentence_tokens] <span class="co"># remove white space after .</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sentence_tokens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-7" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tokenized_sentence <span class="op">=</span> tokenize_sentences_at_punctuation(paragraph<span class="op">=</span>paragraph)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The paragraph contains </span><span class="sc">{</span><span class="bu">len</span>(tokenized_sentence)<span class="sc">}</span><span class="ss"> sentences."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The paragraph contains 8 sentences.</code></pre>
+</div>
+</div>
+<div id="cell-8" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sentence <span class="kw">in</span> tokenized_sentence:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The distant planet, its surface shrouded in mystery and intrigue
+With its swirling clouds and alien landscapes, the planet
+a tantalizing enigma to explorers and scientists alike
+Oh, the wonders it conceals
+ancient ruins and extraterrestrial life forms, waiting to be discovered
+As the spacecraft descended through the atmosphere, anticipation filled the hearts of the crew
+Little did they know, their journey was about to unveil secrets beyond their wildest imagination
+</code></pre>
+</div>
+</div>
+</details>
 
 
 

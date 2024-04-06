@@ -70,6 +70,101 @@ print(tokenized_sentence)
 
 ## Advanced word tokenization
 
+As you can imagine, the idea of tokenization does not stop here, we have only touched the basic idea of it. 
+As a general strategy, we can now start from our word tokens and refine the tokens in a way that we need. 
+A classic problem arising with the token above is that we do not get word tokens in their standardized form. 
+So if, for example, we were to take all our token together and use that as a dictionary, we would get two different token for every words that appears both in singular and plural form (with the added "s").
+Or we would receive different tokens for every verb in different conjugations (for example, "speak", "speaks", and "spoken").
+Depending on our task, a great idea is to try and find the basic form of each token, a process called **lemmatization**.
+
+
+### Lemmatization
+
+Lemmatization is a natural language processing technique used to reduce words to their base or canonical form, known as the lemma. 
+The lemma represents the dictionary form of a word and is typically a valid word that exists in the language. 
+Lemmatization helps in standardizing words so that different forms of the same word are treated as one, simplifying text analysis and improving accuracy in tasks such as text classification, information retrieval, and sentiment analysis.
+
+Unlike stemming, which simply chops off prefixes or suffixes to derive the root form of a word (sometimes resulting in non-existent or incorrect forms), lemmatization considers the context of the word and applies linguistic rules to transform it into its lemma. 
+This ensures that the resulting lemma is a valid word in the language and retains its semantic meaning.
+
+Lemmatization involves part-of-speech tagging to determine the correct lemma for each word based on its role in the sentence. 
+For example, the word "running" may be lemmatized to "run" as a verb, but to "running" as a noun.
+However, once we have lemmatized our text, we might lose some information due to the lost context.
+
+Luckily for us, there are already pre-built packages that we can use to try out lemmatization.
+Here is a quick example how to do it with `nltk`. 
+
+```{python}
+from nltk.stem import WordNetLemmatizer
+
+sentence = "The three brothers went over three big bridges"
+
+wnl = WordNetLemmatizer()
+
+lemmatized_sentence_token = [
+    wnl.lemmatize(w, pos="n") for w in sentence.split(" ")
+]
+
+print(lemmatized_sentence_token)
+```
+
+Since we need to include the `pos` (part-of-speech) tag of each word and only choose a noun (`n`) here, the lemmatizer only takes care of nouns in the sentence. 
+Let's try it with verbs.
+
+```{python}
+lemmatized_sentence_token = [
+    wnl.lemmatize(w, pos="v") for w in sentence.split(" ")
+]
+
+print(lemmatized_sentence_token)
+```
+
+This works, however, we now encounter a different problem: The word `bridges` has been turned into `bridge`, since it exists also as the ver "to bridge".
+So, as mentioned above, we need to involve some part of speech tagging in order to do it correctly.
+Let's try to fix it manually.
+
+```{python}
+pos_dict = {
+  "brothers": "n", 
+  "went": "v",
+  "big": "a",
+  "bridges": "n"
+}
+
+lemmatized_sentence_token = []
+for token in sentence.split(" "):
+    if token in pos_dict:
+        lemma = wnl.lemmatize(token, pos=pos_dict[token])
+    else: 
+        lemma = token # leave as it is
+
+    lemmatized_sentence_token.append(lemma)
+
+print(lemmatized_sentence_token)
+```
+
+Again, luckily there also some packages that we can use, `spaCy` is one example. 
+Their models come with a lot of built-in functionality.
+
+```{python}
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+
+doc = nlp(sentence)
+
+lemmatized_words = [(token.lemma_, token.pos_) for token in doc]
+
+print(lemmatized_words)
+```
+
+Now that we have successfully lemmatized our document or text, we can start using the lemmas to do some further analysis.
+For example, we could build a dictionary and do some statistics on it.
+We will see more about that [later](statistical_text_analysis.qmd). 
+
+
+### Bit Pair Encoding
+
 The above ideas illustrate well the idea of tokenization of splitting text into smaller chunks that we can feed to a language model.
 In practice, especially in models like GPT, a critical component is the vocabulary or the set of unique words or tokens the model understands.
 Traditional approaches use fixed-size vocabularies, which means every unique word in the corpus has its own representation (index or embedding) in the model's vocabulary. 
@@ -80,7 +175,7 @@ Instead of assigning a unique index or embedding to each token, bit pair encodin
 This effectively reduces the size of the vocabulary while preserving the essential information needed for language modeling tasks.
 
 
-### How Bit Pair Encoding Works:
+#### How it works
 
 1. **Tokenization**: The first step in bit pair encoding is tokenization, where the text corpus is broken down into individual tokens. These tokens could be characters, subwords, or words, depending on the tokenization strategy used.
 
@@ -104,7 +199,7 @@ Another detailed example can be found [here](https://www.geeksforgeeks.org/byte-
 
 
 
-### Advantages of Bit Pair Encoding:
+#### Advantages of Bit Pair Encoding
 
 1. **Efficient Memory Usage**: Bit pair encoding significantly reduces the size of the vocabulary, leading to more efficient memory usage, especially in large-scale language models.
 
@@ -113,7 +208,7 @@ Another detailed example can be found [here](https://www.geeksforgeeks.org/byte-
 3. **Flexible**: Bit pair encoding is flexible and can be adapted to different tokenization strategies and corpus characteristics.
 
 
-### Limitations and Considerations:
+#### Limitations and Considerations
 
 1. **Computational Overhead**: The iterative nature of bit pair encoding can be computationally intensive, especially for large corpora.
 

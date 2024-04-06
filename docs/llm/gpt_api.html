@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -340,13 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../embeddings/clustering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Clustering</span></a>
+ <span class="menu-text">Visualization &amp; clustering of embeddings</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -393,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Tokenization</span></a>
+ <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -461,7 +455,7 @@ Note
 <section id="authentication" class="level3">
 <h3 class="anchored" data-anchor-id="authentication">Authentication</h3>
 <p>Getting started with the OpenAI Chat Completions API requires signing up for an account on the OpenAI platform. Once you’ve registered, you’ll gain access to an API key, which serves as a unique identifier for your application to authenticate requests to the API. This key is essential for ensuring secure communication between your application and OpenAI’s servers. Without proper authentication, your requests will be rejected. You can create your own account, but for the seminar we will provide the client with the credential within the Jupyterlab (TODO: Link).</p>
-<div id="1c41ead3" class="cell" data-execution_count="1">
+<div id="3cf22889" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setting up the client in Python</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -476,7 +470,7 @@ Note
 <h3 class="anchored" data-anchor-id="requesting-completions">Requesting Completions</h3>
 <p>Most interaction with GPT and other models consist in generating completions for certain tasks (TODO: Link to completions)</p>
 <p>To request completions from the OpenAI API, we use Python to send HTTP requests to the designated API endpoint. These requests are structured to include various parameters that guide the generation of text completions. The most fundamental parameter is the prompt text, which sets the context for the completion. Additionally, you can specify the desired model configuration, such as the engine to use (e.g., “gpt-4”), as well as any constraints or preferences for the generated completions, such as the maximum number of tokens or the temperature for controlling creativity (TODO: Link parameterization)</p>
-<div id="a7e7ff6f" class="cell" data-execution_count="2">
+<div id="c30d5639" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a completion</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    messages<span class="op">=</span>[</span>
@@ -495,11 +489,27 @@ Note
 </section>
 <section id="response" class="level3">
 <h3 class="anchored" data-anchor-id="response">Response</h3>
-<p>After processing your request, the OpenAI API returns a JSON-formatted response containing the generated text completions. Depending on the specifics of your request, you may receive multiple completions, each accompanied by additional information such as a confidence score indicating the model’s level of certainty in the generated text. This response provides valuable insights into the quality and relevance of the completions, allowing you to tailor your application’s behavior accordingly.</p>
+<p>After processing your request, the OpenAI API returns a response containing the generated text completions. Depending on the specifics of your request, you may receive multiple completions, each accompanied by additional information such as the amount of token processed in the request, the reason why the model stopped the answer etc. This response provides valuable insights into the quality and relevance of the completions, allowing you to tailor your application’s behavior accordingly. Let’s check it out briefly, before you explore the response object more in-depth in your next exercise.</p>
+<div id="0c64b7fc" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check out the type of the response</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Response object type: </span><span class="sc">{</span><span class="bu">type</span>(chat_completion)<span class="sc">}</span><span class="ss">"</span>) <span class="co"># a ChatCompletion object</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print the message we want</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Response message: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># check the tokens used </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total tokens used: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>usage<span class="sc">.</span>total_tokens<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response object type: &lt;class 'openai.types.chat.chat_completion.ChatCompletion'&gt;
+Response message: The Earth is estimated to be around 4.54 billion years old.
+Total tokens used: 28</code></pre>
+</div>
+</div>
 </section>
 <section id="error-handling" class="level3">
 <h3 class="anchored" data-anchor-id="error-handling">Error Handling</h3>
-<p>While interacting with the OpenAI API, it’s crucial to implement robust error handling mechanisms to gracefully manage any potential issues that may arise. Common errors include providing invalid parameters, experiencing authentication failures due to an incorrect API key, or encountering rate limiting restrictions. B y handling errors effectively, you can ensure the reliability and resilience of your application, minimizing disruptions to the user experience and maintaining smooth operation under varying conditions. Implementing proper error handling practices is essential for building robust and dependable applications that leverage the capabilities of the OpenAI Chat Completions API effectively.</p>
+<p>While interacting with the OpenAI API (or any API for that matter), it’s crucial to implement some robust error handling mechanisms to manage any potential issues that may arise. The kind of classic errors include providing invalid parameters, experiencing authentication failures due to an incorrect API key, or encountering rate limiting restrictions. But for language models in particular, there are plenty more problems that can arise simply involving the answer we get from the model. Some examples are requests involving explicit language or content or restricted content etc. which are typically blocked by the API. Other times it might simply happen that a model does not respond in a way you expected, for example, just repeating your input instead of responding properly, or not responding in the format you requested. Whenever we are using language model for applications, we need to be aware of this and implement the right measures to handle these situations.</p>
 
 
 </section>
