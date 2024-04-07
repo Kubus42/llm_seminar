@@ -40,7 +40,7 @@ For the sake of your own learning process, try to solve the exercises yourselves
 If you're stuck, ask for a quick hint. 
 If you still feel like you do not advance any more, *then* check out the solution and try to understand it. 
 The solution of the exercises is not part of the evaluation, so it's really for your own progress!
-A "summary" of all exercises can be found in (TODO: Link).
+A "summary" of all exercises can be found [here](exercises.qmd).
 
 :::::: {.callout-important}
 A small disclaimer: As this is the first round of the seminar, this script is not (yet) ridiculously comprehensive.
@@ -101,6 +101,16 @@ All seminar participants will be evaluated in the following way.
 
 I will allow myself to give your evaluation a little extra boost for good activity during the seminar. 
 This seminar is designed for everyone to participate, so the more you do, the more fun it will be! 
+
+#### What is the summary? 
+As mentioned above, to finalize our seminar I want to you to take roughly a day to refine your prototype and then write a quick summary your project and your learnings.
+The summary should be 2-3 pages only (kind of like a small executive summary) and contain the following information:
+- What is your prototype? What can I do? 
+- What could be a business case for your prototype, or where can it be applied?
+- What are current limitations of your prototype and how could you overcome them?
+- What have been your main learnings during the creation of your prototype (and/or) the seminar itself?
+
+Just hand it in within a couple of weeks after the seminar, it will be a part of your evaluation.
 
 
 :::::: {.callout-note}

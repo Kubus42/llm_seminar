@@ -74,14 +74,6 @@ website:
           contents: 
             - ethics/bias.qmd
             - ethics/data_privacy.qmd
-
-        - text: "---"
-        - section: "Exercises"
-          contents: 
-            - nlp/exercises/ex_tokenization.ipynb
-            - nlp/exercises/ex_word_matching.ipynb
-            - nlp/exercises/ex_fuzzy_matching.ipynb 
-            - embeddings/exercises/ex_emb_similarity.ipynb
           
       style: "docked"
       collapse-level: 1
@@ -89,9 +81,9 @@ website:
     - title: "Resources"
       contents:
         - text: "Resource 1"
-          url: "resources.qmd"
-        - text: "Resource 2"
-          url: "test.qmd"
-      
+          url: resources.qmd
+        - text: "List of exercises"
+          url: exercises.qmd
+            
   page-footer: 
     right: "Copyright 2024, Julian Rasch" 
