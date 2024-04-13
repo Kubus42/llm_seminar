@@ -5,8 +5,134 @@ format:
     code-fold: true
 jupyter: python3
 ---
+:::{.callout-note}
+In this seminar, we will not go into detail about the technicalities of large language models and, in particular, the transformers used in GPT. However, it is useful to have at least a rough understanding of how modern large language models work in general such that we can both appreciate their capabilities, but also understand and be aware of their limitations. This is the goal of the following sections.
+:::
 
-- **Definition of Large Language Models**: Large Language Models (LLMs) are deep learning models trained on vast amounts of text data to understand and generate human-like text. They use advanced techniques such as Transformers and self-attention mechanisms to process and generate sequences of words.
-- **Pre-training and Fine-tuning**: LLMs are typically pre-trained on large text corpora using unsupervised learning techniques, where they learn the statistical properties of natural language. After pre-training, they can be fine-tuned on specific tasks or domains with labeled data to adapt their knowledge and capabilities.
-- **Transformer Architecture**: Transformers are the backbone of LLMs, consisting of multiple layers of self-attention mechanisms and feed-forward neural networks. They excel at capturing long-range dependencies in sequential data, making them well-suited for NLP tasks.
-- **Self-Attention Mechanism**: Self-attention allows LLMs to weigh the importance of each word in a sequence based on its relationship with other words in the sequence. This mechanism enables them to capture contextual information effectively and generate coherent text.
+
+With the rise of machine learning and deep learning in the 2000s, the focus of NLP significantly shifted into this direction as well and researchers began employing neural networks for tasks such as text classification and sentiment analysis.
+The major difference to other machine learning applications is in the way the input to the neural networks is processed. 
+Traditionally, neural networks require numerical input which is fed into the network and processed by the different layers. 
+In natural language processing, the input data is text, however, so how would we feed text into a neural network? 
+
+
+Luckily, we have already seen part of the solution to this problem: word and text embeddings or vectorization. 
+A very simple example we have encountered is a [Bag of Words](../nlp/statistical_text_analysis.qmd#bag-of-words), but there are many better ideas available.
+We will dive more into the details in the section about [embeddings](../embeddings/embeddings.qmd), but essentially embeddings constitute a numerical representation of the input text, that we can use them to feed text into a classical neural network.    
+
+A simple architecture could look like this: 
+```{mermaid}
+flowchart LR
+  A(Input Text) --> B(Tokenization)
+  B --> C(Token processing)
+  C --> D(Embedding Layer)
+  D --> E(Hidden Layers)
+  E --> F(Output Layer)
+```
+
+In this kind of architecture, the input text serves is the raw text data, which then undergoes preprocessing steps like cleaning, tokenization and stop word removal to make it machine-readable.
+Next, the token are fed into an embedding layer, where they are transformed into a vector representation, turning text into numerical values. 
+If we do it well, these embeddings capture the semantic meaning of words, enabling the model to understand the text and its context.
+Recalling or [BoW example](../nlp/statistical_text_analysis.qmd#bag-of-words), the first three stages could look like this:
+
+```{mermaid}
+flowchart LR
+  A(A cat does cat things) --> B{" "}
+  B --> C(A)
+  B --> D(cat)
+  B --> E(does)
+  B --> F(cat)
+  B --> G(things)
+  D --> H(cat)
+  E --> I(do)
+  F --> J(cat)
+  G --> K(thing)
+
+  H --> L(cat: 2)
+  J --> L
+  I --> M(do: 1)
+  K --> N(thing: 1)
+
+  L --> O(2)
+  M --> P(1)
+  N --> Q(1)
+
+```
+
+
+This numerical representation of our text then flows through the neural network. 
+It passes through one or more hidden layers consisting of neurons that learn patterns and relationships within the input data, helping the model extract relevant features and information.
+Finally, the processed data reaches the output layer, where the model produces its final output. 
+Depending on the task at hand, this output could take various forms, such as sentiment class probabilities or text labels. 
+As an example, let's have a look at text classification.
+
+
+#### Example: Text classification with a neural network
+The first step, as usual in machine learning tasks, is to gather a dataset consisting of text documents along with their corresponding labels or categories. 
+For example, if we're classifying news articles into categories like sports, politics, and entertainment, we would need a dataset where each article is labeled with its respective category.
+Once we have enough labeled data at hand, the text data needs to be preprocessed to convert it into a format suitable for training. 
+This typically involves the steps we have already encountered like tokenization (splitting text into words or subwords), removing punctuation and stop words, and converting words to lowercase for easier processing.
+Next, the text data is converted into numerical vectors that can be fed into a neural network. 
+This is usually done by representing each word as a unique index or by using techniques like word embeddings (e.g., Word2Vec, GloVe) to represent words as dense vectors.
+
+The model training then follows in a usual setting: The preprocessed and vectorized data is split into training and validation sets. 
+The training set is used to train the neural network, while the validation set is used to evaluate its performance and tune the hyper parameters of the network or its general structure.
+During training, the neural network learns to map input text vectors to their corresponding class labels by iteratively adjusting the weights of the network to minimize a loss function, which measures the difference between the predicted labels and the true labels.
+If we think of, for example, think of BoW embeddings again, the frequency of certain words in the input text might increase of decrease the likelihood for certain labels in the output. 
+
+
+### Sequence generation and language modeling
+A special NLP problem that is worth having a look at is the idea of sequence generation, where models are trained to generate sequences of data, such as text, images, or music, based on given input or context. 
+These models learn to understand the underlying patterns and relationships in the data and generate new sequences that resemble the training data. 
+Sequence generation has diverse applications, including natural language generation, image captioning, and music composition. 
+An important part of text sequences (as opposed to, for example, text classification), is that they require an inherent understanding of the structure of the language (because otherwise the text sequences will be nonsense). 
+So if models are able to perform this task, they must have "understood" the concept and structure of language to a certain extent.
+
+This idea leads to an even more important concept: **language modeling**.
+Language modeling is a fundamental task that aims to understand and predict the structure, context, and semantics of human language. 
+At its core, language modeling involves training a model to predict the probability distribution of words or tokens in a sequence given the preceding context. 
+In simple words, given a sequence of words or token, which tokens are most likely to appear next? 
+
+```{mermaid}
+flowchart LR
+  A(The) --> B(bird)
+  B --> C(flew)
+  C --> D(over)
+  D --> E(the)
+  E --> F{?}
+  F --> G("p(rooftops)=0.31")
+  F --> H("p(trees)=0.14")
+  F --> J("p(guitar)=0.001")
+```
+
+This predictive capability allows language models to generate coherent and contextually relevant text.
+The training process of a language model typically involves exposing the model to large amounts of text data (also called a corpus) and teaching it to learn the statistical properties of language. 
+This includes capturing syntactic structures, semantic relationships, and contextual nuances present in natural language. 
+The great part is that the training process can happen in an unsupervised fashion: we do not require any labeled data, but can virtually use any type of text available. 
+In particular with the internet as an open source to mainly text data, we have massive amounts of data available to perform language modeling on.
+
+One of the key challenges in language modeling, however, is handling the vast and diverse nature of human language. 
+Language exhibits complex patterns, variations, and ambiguities, making it inherently challenging for models to accurately capture its richness and diversity. 
+Additionally, language models must contend with issues such as out-of-vocabulary words, long-range dependencies, and domain-specific knowledge, requiring robust architectures and sophisticated algorithms to address these challenges effectively.
+Despite these challenges, language modeling continues to be a rapidly evolving field of research, with lots of advancements in model architectures, training techniques, and evaluation methodologies. 
+Recent breakthroughs in deep learning, particularly with transformer-based architectures like BERT (Bidirectional Encoder Representations from Transformers) and GPT (Generative Pre-trained Transformer), have significantly pushed the boundaries of language understanding and generation, achieving remarkable performance across a wide range of NLP tasks.
+
+
+### Fine-tuning models
+
+In most applications, a model which has been trained to do language modeling is not the end of the story.
+Instead, it is often referred to as a "pre-trained" model that can now be **fine-tuned** to a specific task.
+Fine-tuning in general is a powerful technique in machine learning that allows practitioners to adapt pre-trained language models to specific tasks. 
+At its core, it aims to leverage the knowledge and representations learned by a pre-trained LLM on a large corpus of text data, and tries to further train it on task-specific labeled data to tailor its capabilities to a particular task.
+The concept draws inspiration from transfer learning and enables practitioners to capitalize on the wealth of linguistic knowledge encoded within pre-trained models and adapt it to new tasks without the need for extensive training from scratch.
+
+The fine-tuning process usually begins in a similar fashion as training a model from scratch.
+We select a specific downstream task that the model is intended to perform, such as text classification, sentiment analysis or language generation. 
+The next step is to gather task-specific labeled data that is relevant to the chosen task. 
+To recall a known example, if the objective is sentiment analysis, a dataset comprising text samples labeled with sentiment categories (positive, negative, neutral) would be required.
+With the task-specific data in hand, the fine-tuning process unfolds as follows: first, the pre-trained LLM is initialized with its learned parameters from pre-training, which serves as the starting point for further training. 
+Then, the model is trained on the task-specific data using supervised learning techniques, where the objective is to minimize a task-specific loss function. 
+This process involves adjusting the parameters of the model to better capture the patterns and relationships present in the task-specific data.
+Fine-tuning a model often involves replacing the output layer and/or freezing or adding hidden layers of the model.
+
+In this seminar, we won't go into the details of fine-tuning, however, it is an important concept that makes the current quality of large language models possible.

@@ -128,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Seminar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources.html"> 
+    <a class="nav-link" href="../resources/packages.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -402,18 +402,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<ul>
-<li>Term frequency</li>
-<li>Bag of Words -&gt; “Simple” form of embeddings</li>
-<li>Exercise: Create a bag of words</li>
-<li>Exercise: TF-IDF</li>
-<li>Clustering? -&gt; Ref to embeddings later on</li>
-</ul>
-<p>TODO: Add problems with statistical analysis.</p>
-<section id="term-frequency" class="level2">
-<h2 class="anchored" data-anchor-id="term-frequency">Term frequency</h2>
-<p>So far we have mainly looked at the analysis of single words/token or n-grams. But what about the analysis of a full text? There are many approaches to this but a good way to get into the topic is a simple statistical analysis of a text. For starters, let’s simply count the number of appearances of each word in a text.</p>
-<div id="fbc3b7f6" class="cell" data-execution_count="1">
+<p>So far we have mainly looked at the analysis of single words/token or n-grams. But what about the analysis of a full text? There are many approaches to this but a good way to get into the topic is a simple statistical analysis of a text. For starters, let’s simply count the number of appearances of each word in a text, also known as <strong>term frequency</strong>.</p>
+<div id="9df561a5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
@@ -467,12 +457,11 @@ seemed: 14</code></pre>
 </div>
 </div>
 <p>Just from the most frequent words, can you guess the text?</p>
-<p>In many cases, just the simple number of appearances of a token in a text can determine its importance. The concept of counting the term frequency is also known as <strong>bag of words</strong>.</p>
-</section>
+<p>In many cases, just the simple number of appearances of a token in a text can determine its importance. The concept of counting the term frequency across multiple documents in order to create a fixed vocabulary is also known as <strong>bag of words</strong>.</p>
 <section id="bag-of-words" class="level2">
 <h2 class="anchored" data-anchor-id="bag-of-words">Bag of Words</h2>
 <p>If we do the same with multiple texts, we can build up a vocabulary of words and compare different texts to each other based on the appearance of terms.</p>
-<div id="2e209433" class="cell" data-execution_count="2">
+<div id="8c9945f4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -543,7 +532,7 @@ Document 4: [1, 1, 0, 0, 0]</code></pre>
 </div>
 </div>
 <p>Bag of words actually gives us some vector representation of our texts with respect to the given vocabulary. We can even calculate with these vectors and try to determine a similarity between the texts.</p>
-<div id="c00d574a" class="cell" data-execution_count="3">
+<div id="d2cb8b31" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cosine_similarity(vec1: np.array, vec2: np.array) <span class="op">-&gt;</span> <span class="bu">float</span>: </span>
@@ -565,24 +554,122 @@ Document 4: [1, 1, 0, 0, 0]</code></pre>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>similarities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="91">
 <pre><code>[('This is the first document.', 1.0),
  ('This document is the second document.', 0.63),
  ('And this is the third one.', 0.0),
  ('Is this the first document?', 1.0)]</code></pre>
 </div>
 </div>
-<p>Issues:</p>
-<ul>
-<li>Vocabulary gets very large</li>
-<li>Words not in vocabulary are an issue</li>
-<li>No context</li>
-<li>No structure</li>
-</ul>
 </section>
-<section id="clustering-of-bow-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="clustering-of-bow-vectors">Clustering of BoW vectors</h2>
-<p>TODO: Write</p>
+<section id="limitations-of-term-frequency-and-bag-of-words" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-of-term-frequency-and-bag-of-words">Limitations of Term Frequency and Bag of Words</h2>
+<p>Pure statistical text analysis methods like Term Frequency (also its extension Term Frequency-Inverse Document Frequency) or Bag of Words are usually a convenient starting point for text analysis. However, while they offer useful insights into textual data, they are not without their limitations.</p>
+<p>One significant drawback is the sheer size of the vocabulary they handle. As the corpus grows, so does the vocabulary, which can become overwhelmingly large, leading to computational inefficiencies and increased memory requirements.</p>
+<p>Moreover, the mentioned methods struggle with out-of-vocabulary words. Since the vocabulary is fixed after the training has finished (the bag of words has been created with plenty of documents), words not present in the vocabulary are often either ignored, leading to information loss, or arbitrarily handled, potentially skewing the analysis results. This limitation becomes particularly pronounced in domains with specialized jargon or evolving lexicons.</p>
+<p>Another critical limitation is the lack of context in these approaches. By treating each word independently and ignoring their sequential and syntactical relationships, TF and Bag of Words fail to capture the nuanced meanings embedded in language. This deficiency hampers their ability to comprehend subtleties such as sarcasm, irony, or metaphors, limiting their applicability in tasks requiring deeper semantic understanding.</p>
+<p>Last but not least, these methods lack structural awareness. They disregard the hierarchical and syntactic structures inherent in language, missing out on essential cues provided by sentence and paragraph boundaries. Thus they often struggle to differentiate between sentences with similar word distributions but differing in meaning or intent.</p>
+<p>As a consequence, more sophisticated methods are required to really start understanding human language in a more sophisticated way. But before we get to such methods, let’s try one more thing.</p>
+</section>
+<section id="clustering-of-bag-of-word-vectors" class="level2">
+<h2 class="anchored" data-anchor-id="clustering-of-bag-of-word-vectors">Clustering of Bag of Word vectors</h2>
+<p>As we’ve seen above, the idea of BoW already gives us a rather simple possibility to compare texts to each other. Whenever we can compare different entities to each other (here: the texts), a pretty straight-forward extension is to try and find <strong>clusters</strong>, that is, groups of similar texts.</p>
+<p>Clustering using bag-of-word vectors is a common technique in text analysis for grouping similar documents together based on the similarity of their word distributions. As seen above, each document is represented as a high-dimensional vector, with each dimension corresponding to a unique word in the vocabulary and its value reflecting the frequency of that word in the document. By treating documents as points in a high-dimensional space, clustering algorithms such as K-means or hierarchical clustering can be applied to partition the documents into coherent groups. The similarity between documents is typically measured using distance metrics such as cosine similarity or Euclidean distance, which quantify the degree of overlap between their word distributions.</p>
+<p>One advantage of using bag-of-word vectors for clustering is its simplicity and scalability. Since the vectors only capture the frequency of words without considering their order or context, the computational complexity remains manageable even for large datasets with extensive vocabularies. However, clustering based on bag-of-word vectors also has its limitations. One major drawback is the reliance on word frequency alone, which may overlook important semantic similarities between documents. Additionally, the curse of dimensionality can become a challenge as the size of the vocabulary increases, leading to decreased clustering performance and increased computational overhead. Despite these limitations, clustering using bag-of-word vectors serves as a foundational approach in text analysis, providing valuable insights into document similarity and aiding tasks such as document organization, topic modeling, and information retrieval.</p>
+<p>Let’s finish up with a small code example.</p>
+<div id="433dbb81" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># do K-means clustering</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>n_clusters <span class="op">=</span> <span class="dv">2</span>  <span class="co"># specify the number of clusters</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>kmeans <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>n_clusters, n_init<span class="op">=</span><span class="st">"auto"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>cluster_labels <span class="op">=</span> kmeans.fit_predict(bow_vectors)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Cluster labels:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, label <span class="kw">in</span> <span class="bu">enumerate</span>(cluster_labels):</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Document </span><span class="sc">{</span>i <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss"> belongs to Cluster </span><span class="sc">{</span>label <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cluster labels:
+
+Document 1 belongs to Cluster 1
+Document 2 belongs to Cluster 2
+Document 3 belongs to Cluster 1
+Document 4 belongs to Cluster 1</code></pre>
+</div>
+</div>
+<p>Let’s maybe do this with some “texts” that are more likely to actually create some clusters. And, of course, there are packages that can do the Bag of Words for us. Here we use <code>scikit-learn</code>.</p>
+<div id="d1fd6c37" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Example texts representing different topics</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>texts <span class="op">=</span> [</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"apple orange banana"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"apple orange mango"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"banana apple kiwi"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"strawberry raspberry blueberry"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"strawberry raspberry blackberry"</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># create Bag of Words using CountVectorizer</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>vectorizer <span class="op">=</span> CountVectorizer()</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>bow_matrix <span class="op">=</span> vectorizer.fit_transform(texts)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bag of Word vectors:"</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bow_matrix.toarray())</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># perform K-means clustering</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>num_clusters <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>kmeans <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>num_clusters, n_init<span class="op">=</span><span class="st">"auto"</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>cluster_labels <span class="op">=</span> kmeans.fit_predict(bow_matrix)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Cluster labels:"</span>)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, label <span class="kw">in</span> <span class="bu">enumerate</span>(cluster_labels):</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Document </span><span class="sc">{</span>i <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss"> belongs to Cluster </span><span class="sc">{</span>label <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Bag of Word vectors:
+[[1 1 0 0 0 0 1 0 0]
+ [1 0 0 0 0 1 1 0 0]
+ [1 1 0 0 1 0 0 0 0]
+ [0 0 0 1 0 0 0 1 1]
+ [0 0 1 0 0 0 0 1 1]]
+
+Cluster labels:
+Document 1 belongs to Cluster 2
+Document 2 belongs to Cluster 2
+Document 3 belongs to Cluster 2
+Document 4 belongs to Cluster 1
+Document 5 belongs to Cluster 1</code></pre>
+</div>
+</div>
+<div id="ea722de5" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the vocabulary</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>vocabulary <span class="op">=</span> vectorizer.get_feature_names_out()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print the vocabulary</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Vocabulary:"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vocabulary)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># print the Bag of Words matrix with corresponding words</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Bag of Words matrix with corresponding words:"</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>bow_matrix_array <span class="op">=</span> bow_matrix.toarray()</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, document_vector <span class="kw">in</span> <span class="bu">enumerate</span>(bow_matrix_array):</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    words_in_document <span class="op">=</span> [(word, frequency) <span class="cf">for</span> word, frequency <span class="kw">in</span> <span class="bu">zip</span>(vocabulary, document_vector) <span class="cf">if</span> frequency <span class="op">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Document </span><span class="sc">{</span>i <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>words_in_document<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Vocabulary:
+['apple' 'banana' 'blackberry' 'blueberry' 'kiwi' 'mango' 'orange'
+ 'raspberry' 'strawberry']
+
+Bag of Words matrix with corresponding words:
+Document 1: [('apple', 1), ('banana', 1), ('orange', 1)]
+Document 2: [('apple', 1), ('mango', 1), ('orange', 1)]
+Document 3: [('apple', 1), ('banana', 1), ('kiwi', 1)]
+Document 4: [('blueberry', 1), ('raspberry', 1), ('strawberry', 1)]
+Document 5: [('blackberry', 1), ('raspberry', 1), ('strawberry', 1)]</code></pre>
+</div>
+</div>
 
 
 </section>

@@ -26,7 +26,7 @@ website:
       - text: "Seminar"
         file: "index.qmd"
       - text: "Resources"
-        file: "resources.qmd"
+        file: resources/packages.qmd
     
   sidebar:
 
@@ -80,10 +80,10 @@ website:
       
     - title: "Resources"
       contents:
-        - text: "Resource 1"
-          url: resources.qmd
+        - text: "Python packages"
+          url: resources/packages.qmd
         - text: "List of exercises"
-          url: exercises.qmd
+          url: resources/exercises.qmd
             
   page-footer: 
     right: "Copyright 2024, Julian Rasch" 

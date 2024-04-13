@@ -16,14 +16,14 @@ On this website, you will find all the information you need about and around the
 ### About the seminar
 The seminar is roughly divided into 3 parts of equal size: theory, training and application. 
 In the theoretical part, you will learn about the most important topics and ideas when it comes to natural language processing and large language models. 
-We will discuss topics like tokenization, matching, statistical text analysis and embeddings to get you started before eventually dealing with large language models themselves and their applications themselves.
+We will discuss topics like tokenization, matching, statistical text analysis and embeddings to get you started before eventually dealing with large language models and their applications themselves.
 Already during the theory, we will make sure to code in `Python` alongside all the concepts and see coding examples to get familiar with it.
 
 After each small input session on a new topic, we will get to some hands-on training so that you can consolidate the knowledge you just acquired. 
 You will solve a few (coding) exercises around all the topics yourselves. 
 To get everyone fired up as quickly as possible, we have prepared a [Jupyterlab](https://jupyter.fh-muenster.de/){.external} environment that everyone can use for the solution of the exercises.
 
-In the final part of the seminar we will go ahead and apply our newly acquired knowledge in *our own projects*.
+In the final part of the seminar we will go ahead and apply our newly acquired knowledge in our own projects.
 All participants will team up in teams of 2-3 and try to develop and implement their own little prototype for a small application involving a language model.
 More information and ideas for these projects can be found [here](about/projects.qmd).
 
@@ -40,7 +40,7 @@ For the sake of your own learning process, try to solve the exercises yourselves
 If you're stuck, ask for a quick hint. 
 If you still feel like you do not advance any more, *then* check out the solution and try to understand it. 
 The solution of the exercises is not part of the evaluation, so it's really for your own progress!
-A "summary" of all exercises can be found [here](exercises.qmd).
+A "summary" of all exercises can be found [here](/resources/exercises.qmd).
 
 :::::: {.callout-important}
 A small disclaimer: As this is the first round of the seminar, this script is not (yet) ridiculously comprehensive.

@@ -6,21 +6,11 @@ format:
 jupyter: python3
 ---
 
-- Term frequency 
-- Bag of Words -> "Simple" form of embeddings
-- Exercise: Create a bag of words 
-- Exercise: TF-IDF
-- Clustering? -> Ref to embeddings later on
-
-TODO: Add problems with statistical analysis.
-
-
-## Term frequency
 
 So far we have mainly looked at the analysis of single words/token or n-grams. 
 But what about the analysis of a full text? 
 There are many approaches to this but a good way to get into the topic is a simple statistical analysis of a text. 
-For starters, let's simply count the number of appearances of each word in a text. 
+For starters, let's simply count the number of appearances of each word in a text, also known as **term frequency**. 
 
 
 ```{python}
@@ -64,7 +54,7 @@ Just from the most frequent words, can you guess the text?
 
 
 In many cases, just the simple number of appearances of a token in a text can determine its importance. 
-The concept of counting the term frequency is also known as **bag of words**. 
+The concept of counting the term frequency across multiple documents in order to create a fixed vocabulary is also known as **bag of words**. 
 
 
 ## Bag of Words
@@ -161,14 +151,110 @@ similarities
 ```
 
 
-Issues: 
+## Limitations of Term Frequency and Bag of Words
+Pure statistical text analysis methods like Term Frequency (also its extension Term Frequency-Inverse Document Frequency) or Bag of Words are usually a convenient starting point for text analysis.
+However, while they offer useful insights into textual data, they are not without their limitations. 
 
-- Vocabulary gets very large
-- Words not in vocabulary are an issue 
-- No context
-- No structure
+One significant drawback is the sheer size of the vocabulary they handle. 
+As the corpus grows, so does the vocabulary, which can become overwhelmingly large, leading to computational inefficiencies and increased memory requirements.
+
+Moreover, the mentioned methods struggle with out-of-vocabulary words. 
+Since the vocabulary is fixed after the training has finished (the bag of words has been created with plenty of documents), words not present in the vocabulary are often either ignored, leading to information loss, or arbitrarily handled, potentially skewing the analysis results. 
+This limitation becomes particularly pronounced in domains with specialized jargon or evolving lexicons.
+
+Another critical limitation is the lack of context in these approaches. 
+By treating each word independently and ignoring their sequential and syntactical relationships, TF and Bag of Words fail to capture the nuanced meanings embedded in language. 
+This deficiency hampers their ability to comprehend subtleties such as sarcasm, irony, or metaphors, limiting their applicability in tasks requiring deeper semantic understanding.
+
+Last but not least, these methods lack structural awareness. 
+They disregard the hierarchical and syntactic structures inherent in language, missing out on essential cues provided by sentence and paragraph boundaries. 
+Thus they often struggle to differentiate between sentences with similar word distributions but differing in meaning or intent.
+
+As a consequence, more sophisticated methods are required to really start understanding human language in a more sophisticated way.
+But before we get to such methods, let's try one more thing.
+
+## Clustering of Bag of Word vectors 
+
+As we've seen above, the idea of BoW already gives us a rather simple possibility to compare texts to each other.
+Whenever we can compare different entities to each other (here: the texts), a pretty straight-forward extension is to try and find **clusters**, that is, groups of similar texts. 
+
+Clustering using bag-of-word vectors is a common technique in text analysis for grouping similar documents together based on the similarity of their word distributions. 
+As seen above, each document is represented as a high-dimensional vector, with each dimension corresponding to a unique word in the vocabulary and its value reflecting the frequency of that word in the document.
+By treating documents as points in a high-dimensional space, clustering algorithms such as K-means or hierarchical clustering can be applied to partition the documents into coherent groups. 
+The similarity between documents is typically measured using distance metrics such as cosine similarity or Euclidean distance, which quantify the degree of overlap between their word distributions.
+
+One advantage of using bag-of-word vectors for clustering is its simplicity and scalability. 
+Since the vectors only capture the frequency of words without considering their order or context, the computational complexity remains manageable even for large datasets with extensive vocabularies.
+However, clustering based on bag-of-word vectors also has its limitations. 
+One major drawback is the reliance on word frequency alone, which may overlook important semantic similarities between documents. 
+Additionally, the curse of dimensionality can become a challenge as the size of the vocabulary increases, leading to decreased clustering performance and increased computational overhead.
+Despite these limitations, clustering using bag-of-word vectors serves as a foundational approach in text analysis, providing valuable insights into document similarity and aiding tasks such as document organization, topic modeling, and information retrieval.
+
+Let's finish up with a small code example. 
+
+```{python}
+from sklearn.cluster import KMeans
+
+# do K-means clustering
+n_clusters = 2  # specify the number of clusters
+kmeans = KMeans(n_clusters=n_clusters, n_init="auto")
+cluster_labels = kmeans.fit_predict(bow_vectors)
+
+print("Cluster labels:\n")
+for i, label in enumerate(cluster_labels):
+    print(f"Document {i + 1} belongs to Cluster {label + 1}")
+```
+
+Let's maybe do this with some "texts" that are more likely to actually create some clusters.
+And, of course, there are packages that can do the Bag of Words for us. 
+Here we use `scikit-learn`.
+
+```{python}
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.cluster import KMeans
+import numpy as np
+
+# Example texts representing different topics
+texts = [
+    "apple orange banana",
+    "apple orange mango",
+    "banana apple kiwi",
+    "strawberry raspberry blueberry",
+    "strawberry raspberry blackberry"
+]
+
+# create Bag of Words using CountVectorizer
+vectorizer = CountVectorizer()
+bow_matrix = vectorizer.fit_transform(texts)
+
+print("Bag of Word vectors:")
+print(bow_matrix.toarray())
+
+# perform K-means clustering
+num_clusters = 2
+kmeans = KMeans(n_clusters=num_clusters, n_init="auto")
+cluster_labels = kmeans.fit_predict(bow_matrix)
+
+print("\nCluster labels:")
+for i, label in enumerate(cluster_labels):
+    print(f"Document {i + 1} belongs to Cluster {label + 1}")
+
+```
+
+```{python}
+# Get the vocabulary
+vocabulary = vectorizer.get_feature_names_out()
+
+# print the vocabulary
+print("Vocabulary:")
+print(vocabulary)
+
+# print the Bag of Words matrix with corresponding words
+print("\nBag of Words matrix with corresponding words:")
+bow_matrix_array = bow_matrix.toarray()
+for i, document_vector in enumerate(bow_matrix_array):
+    words_in_document = [(word, frequency) for word, frequency in zip(vocabulary, document_vector) if frequency > 0]
+    print(f"Document {i + 1}: {words_in_document}")
 
 
-## Clustering of BoW vectors 
-
-TODO: Write
+```

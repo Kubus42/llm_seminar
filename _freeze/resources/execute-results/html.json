@@ -1,0 +1,12 @@
+{
+  "hash": "2de5680001088313e863d6846d9a9df9",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: Resources\nformat:\n  html:\n    code-fold: true\n---\n\nThis section contains some resources that are relevant to the seminar. \nFeel free to browse them!\n\n",
+    "supporting": [
+      "resources_files/figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
