@@ -7,7 +7,12 @@ jupyter: python3
 ---
 
 
-## Visualization of embeddings
+### Visualization of embeddings
+Let's go a little bit further down the road of similarities between words or texts in general. 
+Wouldn't it be great if we could somehow visualize a text as a point in space and see how other texts relate to it? 
+Embeddings allow us to do that as well, with one caveat: Embeddings have too many dimensions to visualize (usually a few thousand).
+Luckily, there are tools such as principal component analysis or T-SNE available to reduce the dimension of vectors (for example, to two dimensions), while preserving most of the relations between them.
+Let's see how this works.
 
 
 ```{python}
@@ -27,15 +32,6 @@ client = get_openai_client(
 ```
 
 ```{python}
-import matplotlib.pyplot as plt
-
-from sklearn.manifold import TSNE
-
-```
-
-
-
-```{python}
 # Define a list of words to visualize
 words = ["king", "queen", "man", "woman", "apple", "banana", "grapes", "cat", "dog", "happy", "sad"]
 
@@ -47,7 +43,6 @@ response = client.embeddings.create(
 
 embeddings = [emb.embedding for emb in response.data]
 ```
-
 
 ```{python}
 #| label: tsne-visualization
@@ -79,11 +74,13 @@ plt.grid(True)
 plt.xticks([])
 plt.yticks([])
 plt.show()
-
 ```
 
 
 ## Clustering of embeddings
+The great thing is, we can already see that there are some clusters forming. 
+We can again use models like KMeans to find them explicitly. 
+In this case, we obviously have five clusters, so let's try to identify them.
 
 ```{python}
 # do the clustering
@@ -108,7 +105,7 @@ cluster_labels = kmeans.labels_
 
 
 ```{python}
-#| label: tsne-visualization of clustering
+#| label: tsne-clusters
 #| fig-cap: "t-SNE visualization of word embedding clusters"
 
 import matplotlib.pyplot as plt
@@ -142,3 +139,8 @@ plt.xticks([])
 plt.yticks([])
 plt.show()
 ```
+
+That, again, is great news. 
+Embeddings allow us to find clusters in texts, based on the semantics included. 
+This helps in many applications where documents need to be analyzed without having been seen by a human.
+Maybe you can use it in your project?

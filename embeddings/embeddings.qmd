@@ -2,47 +2,106 @@
 title: "Embeddings"
 format:
   html:
-    code-fold: true
+    code-fold: false
 jupyter: python3
 ---
 
+Let us quickly re-visit the concept of embeddings we have already encountered before.
+We have seen them as a means of transforming text into numerical vectors that can be fed to neural network architectures for language models.
+But interestingly, we can do a lot more with embeddings than simply this. 
+
+One of the key benefits of embeddings is their ability to capture semantic similarities and relationships between words. 
+When created with an appropriate model, embeddings do not only transform text into vectors, but they do it while **compressing** the contained information.
+More simply put, words with similar meanings or contexts tend to have embeddings that are close together in the vector space, while words with different meanings are farther apart. 
+This enables algorithms (and us!) to perform tasks such as word similarity calculation more effectively.
+But let's start with a quick recap of what embeddings are.
+
+
 ## What are embeddings? 
-Embeddings play a crucial role in representing words as dense vectors in a continuous vector space. 
-
-
-
-While the bag of words model has been a simple and widely-used approach for representing text, it has certain limitations, including a fixed vocabulary and the inability to capture nuanced semantic relationships between words.
-
-Embeddings address these shortcomings by leveraging the power of contextual representations. 
+As mentioned, embeddings play a crucial role in representing words as dense vectors in a continuous vector space. 
+While, for example, the bag of words model has been a simple and widely-used approach for representing text, it has its limitations, including a fixed vocabulary and the inability to capture nuanced semantic relationships between words.
+Embeddings address these shortcomings by leveraging the power of **contextual representations**. 
 Instead of representing each word in the vocabulary as a one-hot encoded vector, where each word is represented by a binary vector with a dimension equal to the vocabulary size, embeddings generate dense vector representations for words that encode rich semantic information.
 
-Unlike the bag of words model, embeddings are context-aware, meaning they capture the meaning of words based on their surrounding context in the text. 
+Unlike the bag of words model, embeddings are thus context-aware, meaning they capture the meaning of words based on their surrounding context in the text. 
 This contextual understanding allows embeddings to capture subtle semantic relationships between words, such as synonymy, antonymy, and semantic similarity.
+Moreover, embeddings offer a more compact representation of words compared to the sparse vectors used in the bag of words model. 
+By compressing the information into dense vectors of fixed dimensionality, embeddings reduce the dimensionality of the input space, making it more manageable for downstream tasks and allowing for more efficient computation.
 
-Moreover, embeddings offer a more compact representation of words compared to the sparse vectors used in the bag of words model. By compressing the information into dense vectors of fixed dimensionality, embeddings reduce the dimensionality of the input space, making it more manageable for downstream tasks and allowing for more efficient computation.
-
-
-
-
-#### Word2Vec
-
-Word2Vec is a popular technique for generating word embeddings based on distributed representations of words in a continuous vector space. 
+There are plenty of different approaches to generate embeddings, and often embeddings are created as some sort of byproduct of training large. language models.
+As an example, we will have a quick look at Word2Vec, which is a popular technique for generating word embeddings based on distributed representations of words in a continuous vector space. 
 The key idea behind Word2Vec is to train a neural network model to predict the surrounding words (context) of a given target word in a large corpus of text. 
 This process can be done using either the continuous bag of words (CBOW) or skip-gram architectures. 
 In the CBOW model, the input is the context words, and the output is the target word, while in the skip-gram model, the input is the target word, and the output is the context words. 
-By training the model on a large corpus of text, Word2Vec learns to encode semantic relationships between words in the form of dense vector representations (embeddings). 
-These embeddings capture syntactic and semantic similarities between words, allowing for tasks like word similarity calculation, analogy completion, and even downstream NLP tasks like sentiment analysis and machine translation. 
-Word2Vec embeddings are widely used in NLP applications due to their simplicity, efficiency, and effectiveness in capturing word semantics.
+By training the model on a large corpus of text, Word2Vec then learns to encode semantic relationships between words in the form of dense vector representations, our embeddings. 
 
-
-
-
-
-
-- **Word Embeddings**: Word embeddings are dense vector representations of words in a continuous vector space. Each word is mapped to a high-dimensional vector where words with similar meanings or contexts are closer together in the vector space.
-- **Contextual Embeddings**: Contextual embeddings, also known as contextualized word embeddings, capture the contextual information of words based on their surrounding context in a given sentence or document. Unlike traditional word embeddings, contextual embeddings vary depending on the context in which a word appears.
-- **BERT Embeddings**: BERT (Bidirectional Encoder Representations from Transformers) embeddings are contextual embeddings provided by OpenAI. They are generated by pre-training a Transformer-based neural network model on a large corpus of text data using masked language modeling and next sentence prediction tasks.
-- **GPT Embeddings**: GPT (Generative Pre-trained Transformer) embeddings are also contextual embeddings provided by OpenAI. They are generated by pre-training a Transformer-based neural network model on a large corpus of text data using an autoregressive language modeling objective.
+But, of course, embeddings can also be obtained by transformer architectures such as GPT. 
+We will use the embeddings provided by [OpenAI](https://platform.openai.com/docs/guides/embeddings){.external} for some demonstration.
 
 
 ## Matching with embeddings
+Let's do a quick example and re-visit our idea of matching a search prompt with documents.
+In the previous section we have used a bag of words to compare the three texts to the prompt and realized that this technique is not particularly good. 
+Using embeddings, we can do the same and be a lot better.
+
+```{python}
+texts = [
+  "This is the first document.",
+  "This document is the second document.",
+  "And this is the third one."
+]
+
+prompt = "Is this the first document?"
+```
+
+```{python}
+# prerequisites
+
+import os
+from llm_utils.client import get_openai_client, OpenAIModels
+
+MODEL = OpenAIModels.EMBED.value # choose the embedding model
+
+# get the OpenAI client
+client = get_openai_client(
+    model=MODEL,
+    config_path=os.environ.get("CONFIG_PATH")
+)
+
+```
+
+```{python}
+# get the embeddings
+response = client.embeddings.create(
+    input=texts,
+    model=MODEL
+)
+
+text_embeddings = [emb.embedding for emb in response.data]
+
+response = client.embeddings.create(
+    input=[prompt],
+    model=MODEL
+)
+
+prompt_embedding = response.data[0].embedding
+```
+
+```{python}
+import numpy as np
+
+def cosine_similarity(vec1: np.array, vec2: np.array) -> float: 
+    return np.dot(vec1, vec2) / ( np.linalg.norm(vec1) * np.linalg.norm(vec2) )
+
+
+for text, text_embedding in zip(texts, text_embeddings):
+    similarity = cosine_similarity(text_embedding, prompt_embedding)
+    print(f"{text}: {round(similarity, 2)}")
+
+```
+
+As we can see, there is a clear winner in terms of similarity, and that would have been exactly the document we would have needed.
+So embeddings provide a great tool to identify matching documents (or texts in general), and are applicable in many different use cases. 
+An almost classic one is creating a chatbot, that can answer questions based on documents: 
+When a user provides a prompt, we use embeddings to find the best matching documents, and then use the content to provide an answer. 
+An example can be found [here](https://platform.openai.com/docs/tutorials/web-qa-embeddings){.external}.

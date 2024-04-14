@@ -67,8 +67,6 @@ website:
             - embeddings/embeddings.qmd
             - embeddings/exercises/ex_emb_similarity.ipynb
             - embeddings/visualization.qmd
-            - embeddings/applications.qmd
-
 
         - section: "Ethical Considerations"
           contents: 
@@ -84,6 +82,8 @@ website:
           url: resources/packages.qmd
         - text: "List of exercises"
           url: resources/exercises.qmd
+        - text: "Language model APIs"
+          url: resources/apis.qmd
             
   page-footer: 
     right: "Copyright 2024, Julian Rasch" 

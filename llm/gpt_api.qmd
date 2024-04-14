@@ -11,8 +11,9 @@ Resource: [OpenAI API docs](https://platform.openai.com/docs/introduction){.exte
 :::
 
 
-
-Let's get started with the OpenAI API for GPT. 
+Let's finally get started working with GPT. 
+In this seminar, we will use the OpenAI API to work with, but there are many alternatives out there. 
+We have collected a few in the [resources](../resources/apis.qmd).
 
 
 ### Authentication
@@ -21,7 +22,7 @@ Getting started with the OpenAI Chat Completions API requires signing up for an 
 Once you've registered, you'll gain access to an API key, which serves as a unique identifier for your application to authenticate requests to the API. 
 This key is essential for ensuring secure communication between your application and OpenAI's servers. 
 Without proper authentication, your requests will be rejected.
-You can create your own account, but for the seminar we will provide the client with the credential within the Jupyterlab (TODO: Link).
+You can create your own account, but for the seminar we will provide the client with the credential within the University's [Jupyterlab](https://jupyter.fh-muenster.de/){.external}.
 
 ```{python}
 # setting up the client in Python
@@ -38,7 +39,7 @@ client = OpenAI(
 
 ### Requesting Completions
 
-Most interaction with GPT and other models consist in generating completions for certain tasks (TODO: Link to completions)
+Most interaction with GPT and other models consist in generating completions for prompts, i.e., providing some text with instructions and letting the language model **complete** the text one token after the other as seen [here](../llm/intro.qmd).
 
 To request completions from the OpenAI API, we use Python to send HTTP requests to the designated API endpoint. 
 These requests are structured to include various parameters that guide the generation of text completions. 
@@ -54,7 +55,7 @@ chat_completion = client.chat.completions.create(
             "content": "How old is the earth?",
         }
     ],
-    model="gpt-3.5-turbo"
+    model="gpt-3.5-turbo" # choose the model
 )
 ```
 
@@ -79,10 +80,10 @@ Let's check it out briefly, before you explore the response object more in-depth
 print(f"Response object type: {type(chat_completion)}") # a ChatCompletion object
 
 # print the message we want
-print(f"Response message: {chat_completion.choices[0].message.content}")
+print(f"\nResponse message: {chat_completion.choices[0].message.content}")
 
 # check the tokens used 
-print(f"Total tokens used: {chat_completion.usage.total_tokens}")
+print(f"\nTotal tokens used: {chat_completion.usage.total_tokens}")
 
 ```
 
