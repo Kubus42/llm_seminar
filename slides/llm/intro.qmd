@@ -1,0 +1,164 @@
+---
+title: "Large Language Models: A Quick Introduction"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Sprint: LLM, 2024"
+        logo: ../../assets/logo.svg
+        fig-align: center
+---
+
+## Background
+
+- Rise of machine learning and deep learning in the 2000s
+ 
+::: {.incremental}
+- **Idea:** Use neural networks for NLP tasks
+- Challenge: How do we feed text into a neural network? 
+:::
+
+::: {.fragment}
+
+Answer: Text embeddings! 
+
+:::
+
+
+## Example from Bag of Words
+```{mermaid}
+flowchart LR
+  A(A cat does cat things) --> B{" "}
+  B --> C(A)
+  B --> D(cat)
+  B --> E(does)
+  B --> F(cat)
+  B --> G(things)
+  D --> H(cat)
+  E --> I(do)
+  F --> J(cat)
+  G --> K(thing)
+
+  H --> L(cat: 2)
+  J --> L
+  I --> M(do: 1)
+  K --> N(thing: 1)
+
+  L --> O(2)
+  M --> P(1)
+  N --> Q(1)
+
+```
+
+
+## How could a neural network look like? 
+
+```{mermaid}
+flowchart LR
+  A(Input Text) --> B(Tokenization)
+  B --> C(Token processing)
+  C --> D(Embedding Layer)
+  D --> E(Hidden Layers)
+  E --> F(Output Layer)
+```
+
+- The hidden layers and output layers depend on the application
+- The rest of the layers can be pre-trained (later)
+
+
+## Example: Text classification
+
+```{mermaid}
+flowchart LR
+  A(Input Text) --> B(Tokenization)
+  B --> C(Token processing)
+  C --> D(Embedding Layer)
+  D --> E(Hidden Layers)
+  E --> F(Output Layer)
+```
+
+- Classifying news articles into categories (sports, politics, ...)
+
+::: {.incremental}
+  
+  - Training data: Dataset with corresponding category or label
+  - Data processing: Tokenization, stop words, lower casing etc.
+  - Training: 
+    - Measure the difference between predicted and true labels and adjust network weights
+    - Example: BoW embeddings - frequency of words affects label likelihood.
+:::
+
+# Sequence Generation and Language Modeling
+
+## Sequence generation 
+- **Idea:** Models are trained to generate sequences of data (mostly: text) based on input/context.
+- Sequences have to resemble the training data.
+- Application: Text generation, music composition, image captioning
+- Requires **understanding language structure** for meaningful output!
+
+
+## Language modeling 
+
+&nbsp;
+
+**Idea:** Train a model to predict the probability distribution of words or tokens in a sequence given the preceding context!
+
+&nbsp;
+
+```{mermaid}
+flowchart LR
+  A(The) --> B(bird)
+  B --> C(flew)
+  C --> D(over)
+  D --> E(the)
+  E --> F{?}
+  F --> G("p(rooftops)=0.31")
+  F --> H("p(trees)=0.14")
+  F --> J("p(guitar)=0.001")
+```
+
+
+## Training Process
+
+- Expose the model to large text datasets (great: we have the internet!)
+- Teach the model statistical properties of language (Which token comes next?)
+- Capture syntactic structures, semantic relationships, and contextual nuances
+- Training happens in an unsupervised fashion (we require no labels!)
+  
+
+## Challenges
+- Handling vast and diverse nature of human language.
+- Complex patterns, variations, and ambiguities.
+- Out-of-vocabulary words, long-range dependencies, domain-specific knowledge.
+- Requires robust architectures and sophisticated algorithms.
+
+**BUT:** They did it and it works!
+
+
+# GPT: Generative Pre-trained Transformer
+
+## What is GPT? 
+
+- current state-of-the-art language model
+- introduced in the paper "Attention is All You Need" by Vaswani et al. in 2017
+- GPT belongs to the family of transformer-based models
+- key advantage over previous approaches: 
+  - self-attention 
+  - scalability
+
+## What is a transformer? 
+
+- Traditional approach: 
+  - information flow constrained by fixed-length context windows or recurrent connections
+  - One token at a time (in RNNs)
+
+---
+
+- New approach: 
+  - Each word in a sentence can attend to all other words simultaneously (self-attention)
+  - Dynamically weigh the importance of each word in the context of the entire sequence
+  - Semantically related words receive higher attention weights 
+  - Irrelevant or less informative words receive lower weights
+  - Processing all sequences in parallel
+
+# But: Let's get started!

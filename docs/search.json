@@ -608,5 +608,677 @@
       "Natural Language Processing",
       "Fuzzy matching"
     ]
+  },
+  {
+    "objectID": "slides/test.html#getting-up",
+    "href": "slides/test.html#getting-up",
+    "title": "Habits",
+    "section": "Getting up",
+    "text": "Getting up\n\nTurn off alarm\nGet out of bed"
+  },
+  {
+    "objectID": "slides/test.html#going-to-sleep",
+    "href": "slides/test.html#going-to-sleep",
+    "title": "Habits",
+    "section": "Going to sleep",
+    "text": "Going to sleep\n\nGet in bed\nCount sheep"
+  },
+  {
+    "objectID": "slides/test.html#breakfast",
+    "href": "slides/test.html#breakfast",
+    "title": "Habits",
+    "section": "Breakfast",
+    "text": "Breakfast\n\nEat eggs\nDrink coffee"
+  },
+  {
+    "objectID": "slides/test.html#dinner",
+    "href": "slides/test.html#dinner",
+    "title": "Habits",
+    "section": "Dinner",
+    "text": "Dinner\n\nEat spaghetti\nDrink wine"
+  },
+  {
+    "objectID": "slides/test.html#early-days-rule-based-approaches-1960s-1980s",
+    "href": "slides/test.html#early-days-rule-based-approaches-1960s-1980s",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Early Days: Rule-Based Approaches (1960s-1980s)",
+    "text": "Early Days: Rule-Based Approaches (1960s-1980s)\n\nRely heavily on rule-based approaches\nSignificant efforts in tasks like part-of-speech tagging, named entity recognition, and machine translation\nStruggled with ambiguity and complexity of natural language"
+  },
+  {
+    "objectID": "slides/test.html#rise-of-statistical-methods-1990s-2000s",
+    "href": "slides/test.html#rise-of-statistical-methods-1990s-2000s",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Rise of Statistical Methods (1990s-2000s)",
+    "text": "Rise of Statistical Methods (1990s-2000s)\n\nEmergence of statistical methods\nTechniques like Hidden Markov Models and Conditional Random Fields gained prominence\nImproved performance in tasks such as text classification, sentiment analysis, and information extraction"
+  },
+  {
+    "objectID": "slides/test.html#machine-learning-revolution-2010s",
+    "href": "slides/test.html#machine-learning-revolution-2010s",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Machine Learning Revolution (2010s)",
+    "text": "Machine Learning Revolution (2010s)\n\nRise of machine learning, particularly deep learning\nExploration of neural network architectures tailored for NLP tasks\nRecurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) gained traction"
+  },
+  {
+    "objectID": "slides/test.html#large-language-models-transformers-2010s-present",
+    "href": "slides/test.html#large-language-models-transformers-2010s-present",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Large Language Models: Transformers (2010s-Present)",
+    "text": "Large Language Models: Transformers (2010s-Present)\n\nRise of large language models, epitomized by the Transformer architecture\nPowered by self-attention mechanisms\nAchieved unprecedented performance across a wide range of NLP tasks"
+  },
+  {
+    "objectID": "slides/test.html#challenges-in-nlp",
+    "href": "slides/test.html#challenges-in-nlp",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Challenges in NLP",
+    "text": "Challenges in NLP\n\n\nAmbiguity of language\nDifferent languages\nBias\nImportance of context\nWorld knowledge\nCommon sense reasoning\n“Incomparability” of language\n\n\n\n\nPoses challenges in accurately interpreting meaning\nNLP systems struggle with languages other than English\nNLP models can perpetuate biases present in the training data\nUnderstanding context is paramount for NLP tasks\nNLP systems lack comprehensive world knowledge\n\n\n\n\n\n\nSprint: LLM, 2024"
+  },
+  {
+    "objectID": "slides/test.html#different-languages",
+    "href": "slides/test.html#different-languages",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Different Languages",
+    "text": "Different Languages\n\nNLP systems struggle with languages other than English"
+  },
+  {
+    "objectID": "slides/test.html#bias",
+    "href": "slides/test.html#bias",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Bias",
+    "text": "Bias\n\nNLP models can perpetuate biases present in the training data"
+  },
+  {
+    "objectID": "slides/test.html#importance-of-context",
+    "href": "slides/test.html#importance-of-context",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Importance of Context",
+    "text": "Importance of Context\n\nUnderstanding context is paramount for NLP tasks"
+  },
+  {
+    "objectID": "slides/test.html#world-knowledge",
+    "href": "slides/test.html#world-knowledge",
+    "title": "A Short History of Natural Language Processing",
+    "section": "World Knowledge",
+    "text": "World Knowledge\n\nNLP systems lack comprehensive world knowledge"
+  },
+  {
+    "objectID": "slides/test.html#common-sense-reasoning",
+    "href": "slides/test.html#common-sense-reasoning",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Common Sense Reasoning",
+    "text": "Common Sense Reasoning\n\nNLP models still struggle with common sense reasoning\n\n\nTest"
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#early-days-rule-based-approaches-1960s-1980s",
+    "href": "slides/nlp/short_history.html#early-days-rule-based-approaches-1960s-1980s",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Early Days: Rule-Based Approaches (1960s-1980s)",
+    "text": "Early Days: Rule-Based Approaches (1960s-1980s)\n\nRely heavily on rule-based approaches\nSignificant efforts in tasks like part-of-speech tagging, named entity recognition, and machine translation\nStruggled with ambiguity and complexity of natural language"
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#rise-of-statistical-methods-1990s-2000s",
+    "href": "slides/nlp/short_history.html#rise-of-statistical-methods-1990s-2000s",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Rise of Statistical Methods (1990s-2000s)",
+    "text": "Rise of Statistical Methods (1990s-2000s)\n\nEmergence of statistical methods\nTechniques like Hidden Markov Models and Conditional Random Fields gained prominence\nImproved performance in tasks such as text classification, sentiment analysis, and information extraction"
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#machine-learning-revolution-2010s",
+    "href": "slides/nlp/short_history.html#machine-learning-revolution-2010s",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Machine Learning Revolution (2010s)",
+    "text": "Machine Learning Revolution (2010s)\n\nRise of machine learning, particularly deep learning\nExploration of neural network architectures tailored for NLP tasks\nRecurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) gained traction"
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#large-language-models-transformers-2010s-present",
+    "href": "slides/nlp/short_history.html#large-language-models-transformers-2010s-present",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Large Language Models: Transformers (2010s-Present)",
+    "text": "Large Language Models: Transformers (2010s-Present)\n\nRise of large language models, epitomized by the Transformer architecture\nPowered by self-attention mechanisms\nAchieved unprecedented performance across a wide range of NLP tasks"
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#challenges-in-nlp",
+    "href": "slides/nlp/short_history.html#challenges-in-nlp",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Challenges in NLP",
+    "text": "Challenges in NLP\n\n\nAmbiguity of language\nDifferent languages\nBias\nImportance of context\nWorld knowledge\nCommon sense reasoning\n“Incomparability” of language\n\n\n\n\nPoses challenges in accurately interpreting meaning\nNLP systems struggle with languages other than English\nNLP models can perpetuate biases present in the training data\nUnderstanding context is paramount for NLP tasks\nNLP systems lack comprehensive world knowledge"
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#part-of-speech-tagging",
+    "href": "slides/nlp/short_history.html#part-of-speech-tagging",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Part-of-Speech Tagging",
+    "text": "Part-of-Speech Tagging\n\nLabeling each word with its grammatical category\nCrucial for language understanding, information retrieval, and machine translation\n\n\nApple is considering buying a U.K.-based startup called LanguageHero located in London for $1 billion."
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#part-of-speech-tagging-pos",
+    "href": "slides/nlp/short_history.html#part-of-speech-tagging-pos",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Part-of-Speech Tagging (POS)",
+    "text": "Part-of-Speech Tagging (POS)\n\nLabeling each word with its grammatical category\nCrucial for language understanding, information retrieval, and machine translation\n\n\nThe sun sets behind the mountains, casting a golden glow across the sky."
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#named-entity-recognition-ner",
+    "href": "slides/nlp/short_history.html#named-entity-recognition-ner",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Named-Entity Recognition (NER)",
+    "text": "Named-Entity Recognition (NER)\n\nIdentifying and classifying named entities in text\nEssential for information retrieval, document summarization, and question-answering systems\n\n\nApple is considering buying a U.K. based startup called LanguageHero located in London for $1 billion."
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#sentiment-analysis",
+    "href": "slides/nlp/short_history.html#sentiment-analysis",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Sentiment Analysis",
+    "text": "Sentiment Analysis\n\nAnalyzing text to determine sentiment (e.g., positive, negative, neutral)\nUsed for gauging customer satisfaction, monitoring social media sentiment, etc.\n\n\nI love TextBlob! It’s an amazing library for natural language processing."
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#text-classification",
+    "href": "slides/nlp/short_history.html#text-classification",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Text Classification",
+    "text": "Text Classification\n\nCategorizing text documents into predefined classes\nWidely used in email spam detection, sentiment analysis, and content categorization"
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#information-extraction",
+    "href": "slides/nlp/short_history.html#information-extraction",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Information Extraction",
+    "text": "Information Extraction\n\nExtracting structured information from unstructured text data\nCrucial for knowledge base construction, data integration, and business intelligence"
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#question-answering",
+    "href": "slides/nlp/short_history.html#question-answering",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Question-Answering",
+    "text": "Question-Answering\n\nGenerating accurate answers to user queries in natural language\nEssential for information retrieval, virtual assistants, and educational applications"
+  },
+  {
+    "objectID": "slides/nlp/short_history.html#machine-translation",
+    "href": "slides/nlp/short_history.html#machine-translation",
+    "title": "A Short History of Natural Language Processing",
+    "section": "Machine Translation",
+    "text": "Machine Translation\n\nAutomatically translating text from one language to another\nFacilitates communication across language barriers\n\n\n\n\n\nSprint: LLM, 2024"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#asd",
+    "href": "slides/nlp/tokenization.html#asd",
+    "title": "Tokenization",
+    "section": "asd",
+    "text": "asd\n\nPair Identification: Identifies frequent pairs of characters\nReplacement with Single Token: Replaces pairs with single token\nIterative Process: Continues until stopping criterion met\nVocabulary Construction: Construct vocabulary with single tokens\nEncoding and Decoding: Text encoded and decoded using constructed vocabulary\nEfficient Memory Usage: Reduces vocabulary size, efficient memory usage\nRetains Information: Captures frequent character pairs, retains linguistic information\nFlexible: Adaptable to different tokenization strategies and corpus characteristics\nComputational Overhead: Iterative nature can be computationally intensive\nLoss of Granularity: May lead to loss of granularity, especially for rare words\nTokenization Strategy: Effectiveness depends on tokenization strategy and corpus characteristics\n\n\n\n\n\nSprint: LLM, 2024"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#tokenization",
+    "href": "slides/nlp/tokenization.html#tokenization",
+    "title": "Tokenization",
+    "section": "Tokenization",
+    "text": "Tokenization\n\nsentence = \"I love reading science fiction books or books about science.\"\n\n \n\n\n\n\n\n\n\n\nDefinition\n\n\nTokenization is the process of breaking down a text into smaller units called tokens.\n\n\n\n\n\n \n\n\ntokenized_sentence = sentence.split(\" \")\nprint(tokenized_sentence)\n\n['I', 'love', 'reading', 'science', 'fiction', 'books', 'or', 'books', 'about', 'science.']"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#section",
+    "href": "slides/nlp/tokenization.html#section",
+    "title": "Tokenization",
+    "section": "",
+    "text": "tokenized_sentence = sentence.split(\" \")\nprint(tokenized_sentence)\n\n['I', 'love', 'reading', 'science', 'fiction', 'books', 'or', 'books', 'about', 'science.']\n\n\n:::\n\n\n\n\nSprint: LLM, 2024"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#nltk",
+    "href": "slides/nlp/tokenization.html#nltk",
+    "title": "Tokenization",
+    "section": "NLTK",
+    "text": "NLTK\n\nfrom nltk.tokenize import wordpunct_tokenize\nfrom string import punctuation\n\ntokenized_sentence = wordpunct_tokenize(sentence)\ntokenized_sentence = [t for t in tokenized_sentence if t not in punctuation]\nprint(tokenized_sentence)\n\n['I', 'love', 'reading', 'science', 'fiction', 'books', 'or', 'books', 'about', 'science']\n\n\n\n\n\n\nSprint: LLM, 2024"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#nltk-tokenization",
+    "href": "slides/nlp/tokenization.html#nltk-tokenization",
+    "title": "Tokenization",
+    "section": "NLTK tokenization",
+    "text": "NLTK tokenization\n\nfrom nltk.tokenize import wordpunct_tokenize\nfrom string import punctuation\n\ntokenized_sentence = wordpunct_tokenize(sentence)\ntokenized_sentence = [t for t in tokenized_sentence if t not in punctuation]\nprint(tokenized_sentence)\n\n['I', 'love', 'reading', 'science', 'fiction', 'books', 'or', 'books', 'about', 'science']"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#lemmatization",
+    "href": "slides/nlp/tokenization.html#lemmatization",
+    "title": "Tokenization",
+    "section": "Lemmatization",
+    "text": "Lemmatization\n\nReduce words to their base or canonical form\nRepresents the dictionary form of a word (lemma)\nStandardizes words for better text analysis accuracy\nExample: meeting –&gt; meet (verb)"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#counting-token",
+    "href": "slides/nlp/tokenization.html#counting-token",
+    "title": "Tokenization",
+    "section": "Counting token",
+    "text": "Counting token\n\nfrom collections import Counter\n\ntoken_counter = Counter(tokenized_sentence)\nprint(token_counter.most_common(3))\n\n[('books', 2), ('I', 1), ('love', 1)]\n\n\n \n\n\ntokenized_sentence = sentence.replace(\".\", \" \").split(\" \")\n\ntoken_counter = Counter(tokenized_sentence)\nprint(token_counter.most_common(2))\n\n[('science', 2), ('books', 2)]"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#bit-pair-encoding",
+    "href": "slides/nlp/tokenization.html#bit-pair-encoding",
+    "title": "Tokenization",
+    "section": "Bit Pair Encoding",
+    "text": "Bit Pair Encoding\n\nTokenization: Breaking text into smaller chunks (tokens)\nTraditional vocabularies: Fixed-size, memory-intensive\nBit pair encoding: Compression technique for large vocabularies"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#bit-pair-encoding-why",
+    "href": "slides/nlp/tokenization.html#bit-pair-encoding-why",
+    "title": "Tokenization",
+    "section": "Bit Pair Encoding: Why?",
+    "text": "Bit Pair Encoding: Why?\n\nTokenization: Breaking text into smaller chunks (tokens)\nTraditional vocabularies: Fixed-size, memory-intensive\nBit pair encoding: Compression technique for large vocabularies"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#bit-pair-encoding-how",
+    "href": "slides/nlp/tokenization.html#bit-pair-encoding-how",
+    "title": "Tokenization",
+    "section": "Bit Pair Encoding: How?",
+    "text": "Bit Pair Encoding: How?\n\nPair Identification: Identifies frequent pairs of characters\nReplacement with Single Token: Replaces pairs with single token\nIterative Process: Continues until stopping criterion met\nVocabulary Construction: Construct vocabulary with single tokens\nEncoding and Decoding: Text encoded and decoded using constructed vocabulary"
+  },
+  {
+    "objectID": "slides/nlp/tokenization.html#bit-pair-encoding-pros-and-cons",
+    "href": "slides/nlp/tokenization.html#bit-pair-encoding-pros-and-cons",
+    "title": "Tokenization",
+    "section": "Bit Pair Encoding: Pros and Cons",
+    "text": "Bit Pair Encoding: Pros and Cons\n\nEfficient Memory Usage\nRetains Information\nFlexibility\nComputational Overhead\nLoss of Granularity\n\n\n\nReduces vocabulary size, efficient memory usage\nCaptures frequent character pairs, retains linguistic information\nAdaptable to different tokenization strategies and corpus characteristics\nIterative nature can be computationally intensive\nMay lead to loss of granularity, especially for rare words\nEffectiveness depends on tokenization strategy and corpus characteristics\n\n\n\n\n\n\nSprint: LLM, 2024"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#term-frequency-simple-token-counting",
+    "href": "slides/nlp/statistics.html#term-frequency-simple-token-counting",
+    "title": "Simple statistical text analysis",
+    "section": "Term frequency: Simple token counting",
+    "text": "Term frequency: Simple token counting\n\nfrom nltk.tokenize import wordpunct_tokenize\nfrom string import punctuation\nfrom collections import Counter\nfrom typing import List\n\nfrom nltk.corpus import stopwords\n# python -m nltk.downloader stopwords -&gt; run this in your console once to get the stopwords\n\n\n# load a text from file\ntext = \"\"\nwith open(\"../../assets/chapter1.txt\", \"r\") as file:  \n    for line in file:\n        text += line.strip()\n\n\ndef preprocess_text(text: str) -&gt; List[str]:\n    # tokenize text\n    tokens = wordpunct_tokenize(text.lower())\n\n    # remove punctuation\n    tokens = [t for t in tokens if t not in punctuation]\n\n    # remove stopwords\n    stop_words = stopwords.words(\"english\")\n    tokens = [t for t in tokens if t not in stop_words]\n\n    return tokens\n\n# count the most frequent words\ntokens = preprocess_text(text=text)\n\nfor t in Counter(tokens).most_common(15):\n    print(f\"{t[0]}: {t[1]}\")"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#term-frequency-simple-token-counting-output",
+    "href": "slides/nlp/statistics.html#term-frequency-simple-token-counting-output",
+    "title": "Simple statistical text analysis",
+    "section": "Term frequency: Simple token counting",
+    "text": "Term frequency: Simple token counting\n\none: 35\nwinston: 32\nface: 28\neven: 24\n--: 24\nbig: 22\ncould: 19\nparty: 18\nwould: 18\nmoment: 18\nlike: 17\nbrother: 15\ngoldstein: 15\ntelescreen: 14\nseemed: 14"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#bag-of-words-creating-a-vocabulary",
+    "href": "slides/nlp/statistics.html#bag-of-words-creating-a-vocabulary",
+    "title": "Simple statistical text analysis",
+    "section": "Bag of Words: Creating a vocabulary",
+    "text": "Bag of Words: Creating a vocabulary\n\nfrom collections import Counter\n\n\ndef create_bag_of_words(texts):\n    # Count the frequency of each word in the corpus\n    word_counts = Counter()\n    \n    for text in texts:\n        # Preprocess the text\n        words = preprocess_text(text)\n        \n        # Update word counts\n        word_counts.update(words)\n    \n    # Create vocabulary by sorting the words based on their frequency\n    vocabulary = [word for word, _ in sorted(word_counts.items())]\n    \n    # Create BoW vectors for each document\n    bow_vectors = []\n    for text in texts:\n        # Preprocess the text\n        words = preprocess_text(text)\n        \n        # Create a Counter object to count word frequencies\n        bow_vector = Counter(words)\n        \n        # Fill in missing words with zero counts\n        for word in vocabulary:\n            if word not in bow_vector:\n                bow_vector[word] = 0\n\n        # Sort the BoW vector based on the vocabulary order\n        sorted_bow_vector = [bow_vector[word] for word in vocabulary]\n        \n        # Append the BoW vector to the list\n        bow_vectors.append(sorted_bow_vector)\n    \n    return vocabulary, bow_vectors\n\n# Example texts\ntexts = [\n    \"This is the first document.\",\n    \"This document is the second document.\",\n    \"And this is the third one.\",\n    \"Is this the first document?\",\n]\n\n# Create Bag of Words\nvocabulary, bow_vectors = create_bag_of_words(texts)\n\n# Print vocabulary\nprint(\"Vocabulary:\")\nprint(vocabulary)\n\n# Print BoW vectors\nprint(\"\\nBag of Words Vectors:\")\nfor i, bow_vector in enumerate(bow_vectors):\n    print(f\"Document {i + 1}: {bow_vector}\")"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#term-frequency-token-counting",
+    "href": "slides/nlp/statistics.html#term-frequency-token-counting",
+    "title": "Simple statistical text analysis",
+    "section": "Term frequency: Token counting",
+    "text": "Term frequency: Token counting\n\nfrom nltk.tokenize import wordpunct_tokenize\nfrom string import punctuation\nfrom collections import Counter\nfrom typing import List\n\nfrom nltk.corpus import stopwords\n# python -m nltk.downloader stopwords -&gt; run this in your console once to get the stopwords\n\n\n# load a text from file\ntext = \"\"\nwith open(\"../../assets/chapter1.txt\", \"r\") as file:  \n    for line in file:\n        text += line.strip()\n\n\ndef preprocess_text(text: str) -&gt; List[str]:\n    # tokenize text\n    tokens = wordpunct_tokenize(text.lower())\n\n    # remove punctuation\n    tokens = [t for t in tokens if t not in punctuation]\n\n    # remove stopwords\n    stop_words = stopwords.words(\"english\")\n    tokens = [t for t in tokens if t not in stop_words]\n\n    return tokens\n\n# count the most frequent words\ntokens = preprocess_text(text=text)\n\nfor t in Counter(tokens).most_common(15):\n    print(f\"{t[0]}: {t[1]}\")"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#term-frequency-token-counting-output",
+    "href": "slides/nlp/statistics.html#term-frequency-token-counting-output",
+    "title": "Simple statistical text analysis",
+    "section": "Term frequency: Token counting",
+    "text": "Term frequency: Token counting\n\none: 35\nwinston: 32\nface: 28\neven: 24\n--: 24\nbig: 22\ncould: 19\nparty: 18\nwould: 18\nmoment: 18\nlike: 17\nbrother: 15\ngoldstein: 15\ntelescreen: 14\nseemed: 14"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#bag-of-words-creating-a-vocabulary-output",
+    "href": "slides/nlp/statistics.html#bag-of-words-creating-a-vocabulary-output",
+    "title": "Simple statistical text analysis",
+    "section": "Bag of Words: Creating a vocabulary",
+    "text": "Bag of Words: Creating a vocabulary\n\nVocabulary:\n['document', 'first', 'one', 'second', 'third']\n\nBag of Words Vectors:\nDocument 1: [1, 1, 0, 0, 0]\nDocument 2: [2, 0, 0, 1, 0]\nDocument 3: [0, 0, 1, 0, 1]\nDocument 4: [1, 1, 0, 0, 0]"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#statistical-similarity-of-texts",
+    "href": "slides/nlp/statistics.html#statistical-similarity-of-texts",
+    "title": "Simple statistical text analysis",
+    "section": "Statistical similarity of texts",
+    "text": "Statistical similarity of texts\n\nimport numpy as np\n\ndef cosine_similarity(vec1: np.array, vec2: np.array) -&gt; float: \n    return np.dot(vec1, vec2) / ( np.linalg.norm(vec1) * np.linalg.norm(vec2) )\n\nquery = bow_vectors[3]\n\nsimilarities = []\nfor i, bv in enumerate(bow_vectors):\n    similarity = cosine_similarity(\n            vec1=query, \n            vec2=bv\n        )\n    similarities.append(\n        (texts[i], round(similarity, 2))\n    )\n\nsimilarities\n\n\n\n[('This is the first document.', 1.0),\n ('This document is the second document.', 0.63),\n ('And this is the third one.', 0.0),\n ('Is this the first document?', 1.0)]"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#vocabulary",
+    "href": "slides/nlp/statistics.html#vocabulary",
+    "title": "Simple statistical text analysis",
+    "section": "Vocabulary",
+    "text": "Vocabulary\n\nGrows with corpus size\nLeads to computational inefficiencies and increased memory requirements\nFixed vocabulary after training, handling out-of-vocabulary words difficult"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#context-strcuture",
+    "href": "slides/nlp/statistics.html#context-strcuture",
+    "title": "Simple statistical text analysis",
+    "section": "Context & strcuture",
+    "text": "Context & strcuture\n\nTreats each word independently\nFails to capture sequential and syntactical relationships\nLimits understanding of sarcasm, irony, and metaphors\nLack of structural awareness (sentences with similar word distributions but differing meanings or intents)\n\n\n\n\n\nSprint: LLM, 2024"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#context-structure",
+    "href": "slides/nlp/statistics.html#context-structure",
+    "title": "Simple statistical text analysis",
+    "section": "Context & structure",
+    "text": "Context & structure\n\nTreats each word independently\nFails to capture sequential and syntactical relationships\nLimits understanding of sarcasm, irony, and metaphors\nLack of structural awareness (sentences with similar word distributions but differing meanings or intents)"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#general-idea",
+    "href": "slides/nlp/statistics.html#general-idea",
+    "title": "Simple statistical text analysis",
+    "section": "General idea",
+    "text": "General idea\n\nClustering a common technique in text analysis\nGroups similar documents based on word distributions\nEach document represented as high-dimensional vector (e.g., BoW)\nDimensions correspond to unique words\nValues reflect frequency of words in document"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#approach",
+    "href": "slides/nlp/statistics.html#approach",
+    "title": "Simple statistical text analysis",
+    "section": "Approach",
+    "text": "Approach\n\nClustering algorithms applied to partition documents\nSimilarity measured using distance metrics (cosine similarity, Euclidean distance)\nAdvantages:\n\nSimplicity and scalability\nManageable computational complexity\n\nLimitations:\n\nReliance on word frequency alone\nCurse of dimensionality with large vocabularies"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#code-example",
+    "href": "slides/nlp/statistics.html#code-example",
+    "title": "Simple statistical text analysis",
+    "section": "Code example",
+    "text": "Code example\n\nfrom sklearn.feature_extraction.text import CountVectorizer\nfrom sklearn.cluster import KMeans\nimport numpy as np\n\n# Example texts representing different topics\ntexts = [\n    \"apple orange banana\",\n    \"apple orange mango\",\n    \"banana apple kiwi\",\n    \"strawberry raspberry blueberry\",\n    \"strawberry raspberry blackberry\"\n]\n\n# create Bag of Words using CountVectorizer\nvectorizer = CountVectorizer()\nbow_matrix = vectorizer.fit_transform(texts)\n\nprint(\"Bag of Word vectors:\")\nprint(bow_matrix.toarray())\n\n# perform K-means clustering\nnum_clusters = 2\nkmeans = KMeans(n_clusters=num_clusters, n_init=\"auto\")\ncluster_labels = kmeans.fit_predict(bow_matrix)\n\nprint(\"\\nCluster labels:\")\nfor i, label in enumerate(cluster_labels):\n    print(f\"Document {i + 1} belongs to Cluster {label + 1}\")"
+  },
+  {
+    "objectID": "slides/nlp/statistics.html#code-example-output",
+    "href": "slides/nlp/statistics.html#code-example-output",
+    "title": "Simple statistical text analysis",
+    "section": "Code example",
+    "text": "Code example\n\nBag of Word vectors:\n[[1 1 0 0 0 0 1 0 0]\n [1 0 0 0 0 1 1 0 0]\n [1 1 0 0 1 0 0 0 0]\n [0 0 0 1 0 0 0 1 1]\n [0 0 1 0 0 0 0 1 1]]\n\nCluster labels:\nDocument 1 belongs to Cluster 2\nDocument 2 belongs to Cluster 2\nDocument 3 belongs to Cluster 2\nDocument 4 belongs to Cluster 1\nDocument 5 belongs to Cluster 1"
+  },
+  {
+    "objectID": "slides/about/intro.html#about-the-seminar",
+    "href": "slides/about/intro.html#about-the-seminar",
+    "title": "Sprint: Large Language Models",
+    "section": "About the seminar",
+    "text": "About the seminar\n\nRoughly divided into 3 parts: theory, training, and application\nTheory:\n\nLearn about important topics in natural language processing\nTopics include tokenization, matching, statistical text analysis, and embeddings\nCoding examples in Python alongside theoretical concepts"
+  },
+  {
+    "objectID": "slides/about/intro.html#goal",
+    "href": "slides/about/intro.html#goal",
+    "title": "Sprint: Large Language Models",
+    "section": "Goal",
+    "text": "Goal\n\n4-day introduction to language models\nAim: Simple overview to start working with language model APIs\nUnderstand basics, know how to apply in own applications\nHave fun!"
+  },
+  {
+    "objectID": "slides/about/intro.html#day-1-24.04.2024",
+    "href": "slides/about/intro.html#day-1-24.04.2024",
+    "title": "Sprint: Large Language Models",
+    "section": "Day 1 (24.04.2024):",
+    "text": "Day 1 (24.04.2024):\n\nGetting to know each other + intro survey (experiences & expectations) (1h)\nLearning goals & final evaluation criteria (0.5h)\nIntroduction & overview of the topic (0.5h)\nIntroduction to natural language processing & setup of the development environment (4h)\nIntroduction to LLM & getting to know the OpenAI API: Part 1 (2h)"
+  },
+  {
+    "objectID": "slides/about/intro.html#day-2-25.04.2024",
+    "href": "slides/about/intro.html#day-2-25.04.2024",
+    "title": "Sprint: Large Language Models",
+    "section": "Day 2 (25.04.2024):",
+    "text": "Day 2 (25.04.2024):\n\nIntroduction to LLM & getting to know the OpenAI API: Part 2 (3h)\nPrompting (1h)\nEmbeddings (2h)\nGroup brainstorming session: Designing a simple app concept involving GPT (2h)\n\n→ At home until next week: refine project ideas (1h)"
+  },
+  {
+    "objectID": "slides/about/intro.html#day-3-30.04.2024",
+    "href": "slides/about/intro.html#day-3-30.04.2024",
+    "title": "Sprint: Large Language Models",
+    "section": "Day 3 (30.04.2024):",
+    "text": "Day 3 (30.04.2024):\n\nAdvanced GPT-related topics (1h)\nBusiness-related topics (1h)\nTeam building for hackathon → develop app concepts (1h)\nWork on prototypes (5h)"
+  },
+  {
+    "objectID": "slides/about/intro.html#day-4-02.05.2024",
+    "href": "slides/about/intro.html#day-4-02.05.2024",
+    "title": "Sprint: Large Language Models",
+    "section": "Day 4 (02.05.2024):",
+    "text": "Day 4 (02.05.2024):\n\nFinal touches for the prototypes (3h)\nPresentation of app prototypes, peer feedback & evaluation (2h)\nReflections on the seminar (1h)\nEthics & data privacy considerations (backup)"
+  },
+  {
+    "objectID": "slides/about/intro.html#after-the-seminar-1d",
+    "href": "slides/about/intro.html#after-the-seminar-1d",
+    "title": "Sprint: Large Language Models",
+    "section": "After the seminar (~1d):",
+    "text": "After the seminar (~1d):\n\nPrototype refinement\nCode review & documentation\nRefine business case & potential applications of prototype\nReflections & lessons learned → Hand in 2-page summary"
+  },
+  {
+    "objectID": "slides/about/intro.html#evaluation",
+    "href": "slides/about/intro.html#evaluation",
+    "title": "Sprint: Large Language Models",
+    "section": "Evaluation",
+    "text": "Evaluation\n\nYour presentation on the last day of the seminar: 25%\nYour prototype: 35%\nYour summary: 25%\nYour activity during the seminar: 15%"
+  },
+  {
+    "objectID": "slides/about/intro.html#what-is-the-summary",
+    "href": "slides/about/intro.html#what-is-the-summary",
+    "title": "Sprint: Large Language Models",
+    "section": "What is the summary?",
+    "text": "What is the summary?\n\n2-3 pages only!\nWhat is your prototype? What can I do?\nWhat could be a business case for your prototype, or where can it be applied?\nWhat are current limitations of your prototype and how could you overcome them?\nWhat have been your main learnings during the creation of your prototype (and/or) the seminar itself?"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#revisiting-what-we-know",
+    "href": "slides/embeddings/embeddings.html#revisiting-what-we-know",
+    "title": "Embeddings",
+    "section": "Revisiting what we know",
+    "text": "Revisiting what we know\nEmbeddings …\n\ntransform text into numerical vectors\nare used in neural network architectures\nKey benefit: Capture semantic similarities and relationships between words\n\n \n\nAlready seen: Bag of Words\nIssue: These embeddings do not compress!"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#what-are-embeddings",
+    "href": "slides/embeddings/embeddings.html#what-are-embeddings",
+    "title": "Embeddings",
+    "section": "What are embeddings?",
+    "text": "What are embeddings?\n\nRepresent words and text as dense, numerical vectors\nCapture rich semantic information\nContext-aware, based on surrounding text\nCapture subtle semantic relationships\nCompact representation compared to simple techniques such as bag of words"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#approaches-to-generate-embeddings",
+    "href": "slides/embeddings/embeddings.html#approaches-to-generate-embeddings",
+    "title": "Embeddings",
+    "section": "Approaches to generate embeddings:",
+    "text": "Approaches to generate embeddings:\n\nWord2Vec, GloVe, FastText\n\nTrain neural network to predict surrounding words\nCBOW or skip-gram architectures\nLearns semantic relationships in continuous vector space\n\nTransformer architectures like GPT\nWord embeddings provided by OpenAI"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#task-find-the-right-document-for-a-prompt",
+    "href": "slides/embeddings/embeddings.html#task-find-the-right-document-for-a-prompt",
+    "title": "Embeddings",
+    "section": "Task: Find the right document for a prompt",
+    "text": "Task: Find the right document for a prompt\n\ntexts = [\n  \"This is the first document.\",\n  \"This document is the second document.\",\n  \"And this is the third one.\"\n]\n\nprompt = \"Is this the first document?\"\n\n\n\n\n\nSprint: LLM, 2024"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#task-find-the-matching-document-for-a-prompt",
+    "href": "slides/embeddings/embeddings.html#task-find-the-matching-document-for-a-prompt",
+    "title": "Embeddings",
+    "section": "Task: Find the matching document for a prompt",
+    "text": "Task: Find the matching document for a prompt\n\ntexts = [\n  \"This is the first document.\",\n  \"This document is the second document.\",\n  \"And this is the third one.\"\n]\n\nprompt = \"Is this the first document?\""
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#get-the-openai-client",
+    "href": "slides/embeddings/embeddings.html#get-the-openai-client",
+    "title": "Embeddings",
+    "section": "Get the OpenAI client",
+    "text": "Get the OpenAI client\n\n# prerequisites\n\nimport os\nfrom llm_utils.client import get_openai_client, OpenAIModels\n\nMODEL = OpenAIModels.EMBED.value # choose the embedding model\n\n# get the OpenAI client\nclient = get_openai_client(\n    model=MODEL,\n    config_path=os.environ.get(\"CONFIG_PATH\")\n)"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#get-the-embeddings",
+    "href": "slides/embeddings/embeddings.html#get-the-embeddings",
+    "title": "Embeddings",
+    "section": "Get the embeddings",
+    "text": "Get the embeddings\n\n# get the embeddings\nresponse = client.embeddings.create(\n    input=texts,\n    model=MODEL\n)\n\ntext_embeddings = [emb.embedding for emb in response.data]\n\nresponse = client.embeddings.create(\n    input=[prompt],\n    model=MODEL\n)\n\nprompt_embedding = response.data[0].embedding"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#compute-the-similarity",
+    "href": "slides/embeddings/embeddings.html#compute-the-similarity",
+    "title": "Embeddings",
+    "section": "Compute the similarity",
+    "text": "Compute the similarity\n\nimport numpy as np \n\ndef cosine_similarity(vec1: np.array, vec2: np.array) -&gt; float: \n    return np.dot(vec1, vec2) / ( np.linalg.norm(vec1) * np.linalg.norm(vec2) )\n\n\nfor text, text_embedding in zip(texts, text_embeddings):\n    similarity = cosine_similarity(text_embedding, prompt_embedding)\n    print(f\"{text}: {round(similarity, 2)}\")\n\n\n\nThis is the first document.: 0.95\nThis document is the second document.: 0.88\nAnd this is the third one.: 0.8"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#define-some-words-to-visualize",
+    "href": "slides/embeddings/embeddings.html#define-some-words-to-visualize",
+    "title": "Embeddings",
+    "section": "Define some words to visualize",
+    "text": "Define some words to visualize\n\n# Define a list of words to visualize\nwords = [\n    \"king\", \"queen\", \"man\", \"woman\", \"apple\", \"banana\", \n    \"grapes\", \"cat\", \"dog\", \"happy\", \"sad\"\n]\n\n# Get embeddings for the words\nresponse = client.embeddings.create(\n    input=words,\n    model=MODEL\n)\n\nembeddings = [emb.embedding for emb in response.data]"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#apply-t-sne-to-the-embedding-vectors",
+    "href": "slides/embeddings/embeddings.html#apply-t-sne-to-the-embedding-vectors",
+    "title": "Embeddings",
+    "section": "Apply T-SNE to the embedding vectors",
+    "text": "Apply T-SNE to the embedding vectors\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nfrom sklearn.manifold import TSNE\n\n# Apply t-SNE dimensionality reduction\ntsne = TSNE(\n    n_components=2, \n    random_state=42,\n    perplexity=5 # see documentation to set this correctly\n)\nembeddings_2d = tsne.fit_transform(np.array(embeddings))\n\n# Plot the embeddings in a two-dimensional scatter plot\nplt.figure(figsize=(9, 7))\nfor i, word in enumerate(words):\n    x, y = embeddings_2d[i]\n    plt.scatter(x, y, marker='o', color='red')\n    plt.text(x, y, word, fontsize=9)\n\nplt.xlabel(\"t-SNE dimension 1\")\nplt.ylabel(\"t-SNE dimension 2\")\nplt.grid(True)\nplt.xticks([])\nplt.yticks([])\nplt.show()"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#apply-t-sne-to-the-embedding-vectors-output",
+    "href": "slides/embeddings/embeddings.html#apply-t-sne-to-the-embedding-vectors-output",
+    "title": "Embeddings",
+    "section": "Apply T-SNE to the embedding vectors",
+    "text": "Apply T-SNE to the embedding vectors"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#cluster-the-embeddings",
+    "href": "slides/embeddings/embeddings.html#cluster-the-embeddings",
+    "title": "Embeddings",
+    "section": "Cluster the embeddings",
+    "text": "Cluster the embeddings\n\n# do the clus#| tering\nimport numpy as np\nfrom sklearn.cluster import KMeans\n\nn_clusters = 5\n\n# define the model\nkmeans = KMeans(\n  n_clusters=n_clusters,\n  n_init=\"auto\",\n  random_state=2 # do this to get the same output\n)\n\n# fit the model to the data\nkmeans.fit(np.array(embeddings))\n\n# get the cluster labels\ncluster_labels = kmeans.labels_"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#visualize-with-t-sne",
+    "href": "slides/embeddings/embeddings.html#visualize-with-t-sne",
+    "title": "Embeddings",
+    "section": "Visualize with T-SNE",
+    "text": "Visualize with T-SNE\n\nimport matplotlib.pyplot as plt\n\nfrom sklearn.manifold import TSNE\n\n# Apply t-SNE dimensionality reduction\ntsne = TSNE(\n  n_components=2, \n  random_state=42,\n  perplexity=5 # see documentation to set this correctly\n)\nembeddings_2d = tsne.fit_transform(np.array(embeddings))\n\n# Define a color map for clusters\ncolors = plt.cm.viridis(np.linspace(0, 1, n_clusters))\n\n# Plot the embeddings in a two-dimensional scatter plot\nplt.figure(figsize=(9, 7))\nfor i, word in enumerate(words):\n    x, y = embeddings_2d[i]\n    cluster_label = cluster_labels[i]\n    color = colors[cluster_label]\n    plt.scatter(x, y, marker='o', color=color)\n    plt.text(x, y, word, fontsize=9)\n\nplt.xlabel(\"t-SNE dimension 1\")\nplt.ylabel(\"t-SNE dimension 2\")\nplt.grid(True)\nplt.xticks([])\nplt.yticks([])\nplt.show()\n\n\n\n\n\n\nSprint: LLM, 2024"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#visualize-with-t-sne-output",
+    "href": "slides/embeddings/embeddings.html#visualize-with-t-sne-output",
+    "title": "Embeddings",
+    "section": "Visualize with T-SNE",
+    "text": "Visualize with T-SNE"
+  },
+  {
+    "objectID": "slides/embeddings/embeddings.html#what-does-it-look-like",
+    "href": "slides/embeddings/embeddings.html#what-does-it-look-like",
+    "title": "Embeddings",
+    "section": "What does it look like?",
+    "text": "What does it look like?\nTrain a model to:\n\npredict the target word based on the (surrounding) context words, or\npredict the context words given a target word\n\n\n\n\n\n\nflowchart LR\n  A[\"Input Layer (One Hot)\"] \n  A --&gt; B[\"Embedding Layer\"]\n  B --&gt; C[\"Sum/Average Layer\"]\n  C --&gt; D[\"Output Layer\"]\n\n\n\n\n\n\n\n\nUse of the model\nThrow away the parts after the embedding layer!\n\n\n\n\n\nflowchart LR\n  A[\"Input Layer (One Hot)\"] \n  A --&gt; B[\"Embedding Layer\"]"
+  },
+  {
+    "objectID": "slides/llm/intro.html#background",
+    "href": "slides/llm/intro.html#background",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "Background",
+    "text": "Background\n\nRise of machine learning and deep learning in the 2000s\n\n\n\nIdea: Use neural networks for NLP tasks\nChallenge: How do we feed text into a neural network?\n\n\n\nAnswer: Text embeddings!"
+  },
+  {
+    "objectID": "slides/llm/intro.html#example-from-bag-of-words",
+    "href": "slides/llm/intro.html#example-from-bag-of-words",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "Example from Bag of Words",
+    "text": "Example from Bag of Words\n\n\n\n\n\nflowchart LR\n  A(A cat does cat things) --&gt; B{\" \"}\n  B --&gt; C(A)\n  B --&gt; D(cat)\n  B --&gt; E(does)\n  B --&gt; F(cat)\n  B --&gt; G(things)\n  D --&gt; H(cat)\n  E --&gt; I(do)\n  F --&gt; J(cat)\n  G --&gt; K(thing)\n\n  H --&gt; L(cat: 2)\n  J --&gt; L\n  I --&gt; M(do: 1)\n  K --&gt; N(thing: 1)\n\n  L --&gt; O(2)\n  M --&gt; P(1)\n  N --&gt; Q(1)"
+  },
+  {
+    "objectID": "slides/llm/intro.html#example-text-classification",
+    "href": "slides/llm/intro.html#example-text-classification",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "Example: Text classification",
+    "text": "Example: Text classification\n\n\n\n\n\nflowchart LR\n  A(Input Text) --&gt; B(Tokenization)\n  B --&gt; C(Token processing)\n  C --&gt; D(Embedding Layer)\n  D --&gt; E(Hidden Layers)\n  E --&gt; F(Output Layer)\n\n\n\n\n\n\n\nClassifying news articles into categories (sports, politics, …)\n\n\n\nTraining data: Dataset with corresponding category or label\nData processing: Tokenization, stop words, lower casing etc.\nTraining:\n\nMeasure the difference between predicted and true labels and adjust network weights\nExample: BoW embeddings - frequency of words affects label likelihood."
+  },
+  {
+    "objectID": "slides/llm/intro.html#how-could-a-neural-network-look-like",
+    "href": "slides/llm/intro.html#how-could-a-neural-network-look-like",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "How could a neural network look like?",
+    "text": "How could a neural network look like?\n\n\n\n\n\nflowchart LR\n  A(Input Text) --&gt; B(Tokenization)\n  B --&gt; C(Token processing)\n  C --&gt; D(Embedding Layer)\n  D --&gt; E(Hidden Layers)\n  E --&gt; F(Output Layer)\n\n\n\n\n\n\n\nThe hidden layers and output layers depend on the application\nThe rest of the layers can be pre-trained (later)"
+  },
+  {
+    "objectID": "slides/llm/intro.html#sequence-generation",
+    "href": "slides/llm/intro.html#sequence-generation",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "Sequence generation",
+    "text": "Sequence generation\n\nIdea: Models are trained to generate sequences of data (mostly: text) based on input/context.\nSequences have to resemble the training data.\nApplication: Text generation, music composition, image captioning\nRequires understanding language structure for meaningful output!"
+  },
+  {
+    "objectID": "slides/llm/intro.html#language-modeling",
+    "href": "slides/llm/intro.html#language-modeling",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "Language modeling",
+    "text": "Language modeling\n \nIdea: Train a model to predict the probability distribution of words or tokens in a sequence given the preceding context!\n \n\n\n\n\n\nflowchart LR\n  A(The) --&gt; B(bird)\n  B --&gt; C(flew)\n  C --&gt; D(over)\n  D --&gt; E(the)\n  E --&gt; F{?}\n  F --&gt; G(\"p(rooftops)=0.31\")\n  F --&gt; H(\"p(trees)=0.14\")\n  F --&gt; J(\"p(guitar)=0.001\")"
+  },
+  {
+    "objectID": "slides/llm/intro.html#challenges",
+    "href": "slides/llm/intro.html#challenges",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "Challenges",
+    "text": "Challenges\n\nHandling vast and diverse nature of human language.\nComplex patterns, variations, and ambiguities.\nOut-of-vocabulary words, long-range dependencies, domain-specific knowledge.\nRequires robust architectures and sophisticated algorithms.\n\nBUT: They did it and it works!"
+  },
+  {
+    "objectID": "slides/llm/intro.html#training-process",
+    "href": "slides/llm/intro.html#training-process",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "Training Process",
+    "text": "Training Process\n\nExpose the model to large text datasets (great: we have the internet!)\nTeach the model statistical properties of language (Which token comes next?)\nCapture syntactic structures, semantic relationships, and contextual nuances\nTraining happens in an unsupervised fashion (we require no labels!)"
+  },
+  {
+    "objectID": "slides/llm/intro.html#what-is-gpt",
+    "href": "slides/llm/intro.html#what-is-gpt",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "What is GPT?",
+    "text": "What is GPT?\n\ncurrent state-of-the-art language model\nintroduced in the paper “Attention is All You Need” by Vaswani et al. in 2017\nGPT belongs to the family of transformer-based models\nkey advantage over previous approaches:\n\nself-attention\nscalability"
+  },
+  {
+    "objectID": "slides/llm/intro.html#what-is-a-transformer",
+    "href": "slides/llm/intro.html#what-is-a-transformer",
+    "title": "Large Language Models: A Quick Introduction",
+    "section": "What is a transformer?",
+    "text": "What is a transformer?\n\nTraditional approach:\n\ninformation flow constrained by fixed-length context windows or recurrent connections\nOne token at a time (in RNNs)"
+  },
+  {
+    "objectID": "slides/about/projects.html#introduction",
+    "href": "slides/about/projects.html#introduction",
+    "title": "Projects: Large Language Models",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "slides/about/projects.html#question-answering-chatbot",
+    "href": "slides/about/projects.html#question-answering-chatbot",
+    "title": "Projects: Large Language Models",
+    "section": "Question-Answering Chatbot",
+    "text": "Question-Answering Chatbot\nBuild a chatbot that can answer questions posed by users on a specific topic provided in form of documents. Users input their questions, the chatbot retrieves relevant information from a pre-defined set of documents, and uses the information to answer the question."
+  },
+  {
+    "objectID": "slides/about/projects.html#document-tagging-classification",
+    "href": "slides/about/projects.html#document-tagging-classification",
+    "title": "Projects: Large Language Models",
+    "section": "Document tagging / classification",
+    "text": "Document tagging / classification\nUse GPT and its tools (e.g., function calls) and/or embeddings to classify documents or assign tags to them. Example: Sort bug reports or complaints into categories depending on the problem."
+  },
+  {
+    "objectID": "slides/about/projects.html#clustering-of-text-based-entities",
+    "href": "slides/about/projects.html#clustering-of-text-based-entities",
+    "title": "Projects: Large Language Models",
+    "section": "Clustering of text-based entities",
+    "text": "Clustering of text-based entities\nCreate a small tool that can cluster text-based entities based on embeddings, for example, groups of texts or keywords. Example: Structure a folder of text files based on their content."
+  },
+  {
+    "objectID": "slides/about/projects.html#text-based-rpg-game",
+    "href": "slides/about/projects.html#text-based-rpg-game",
+    "title": "Projects: Large Language Models",
+    "section": "Text-based RPG Game",
+    "text": "Text-based RPG Game\nDevelop a text-based role-playing game where players interact with characters and navigate through a story generated by GPT. Players make choices that influence the direction of the narrative."
+  },
+  {
+    "objectID": "slides/about/projects.html#sentiment-analysis-tool",
+    "href": "slides/about/projects.html#sentiment-analysis-tool",
+    "title": "Projects: Large Language Models",
+    "section": "Sentiment Analysis Tool",
+    "text": "Sentiment Analysis Tool\nBuild an app that analyzes the sentiment of text inputs (e.g., social media posts, customer reviews) using GPT. Users can input text, and the app provides insights into the overall sentiment expressed in the text."
+  },
+  {
+    "objectID": "slides/about/projects.html#text-summarization-tool",
+    "href": "slides/about/projects.html#text-summarization-tool",
+    "title": "Projects: Large Language Models",
+    "section": "Text Summarization Tool",
+    "text": "Text Summarization Tool\nCreate an application that summarizes long blocks of text into shorter, concise summaries. Users can input articles, essays, or documents, and the tool generates a summarized version."
+  },
+  {
+    "objectID": "slides/about/projects.html#language-translation-tool",
+    "href": "slides/about/projects.html#language-translation-tool",
+    "title": "Projects: Large Language Models",
+    "section": "Language Translation Tool",
+    "text": "Language Translation Tool\nBuild a simple translation app that utilizes GPT to translate text between different languages. Users can input text in one language, and the app outputs the translated text in the desired language. Has to include some nice tweaks."
+  },
+  {
+    "objectID": "slides/about/projects.html#personalized-recipe-generator",
+    "href": "slides/about/projects.html#personalized-recipe-generator",
+    "title": "Projects: Large Language Models",
+    "section": "Personalized Recipe Generator",
+    "text": "Personalized Recipe Generator\nDevelop an app that generates personalized recipes based on user preferences and dietary restrictions. Users input their preferred ingredients and dietary needs, and the app generates custom recipes using GPT."
+  },
+  {
+    "objectID": "slides/about/projects.html#lyrics-generator",
+    "href": "slides/about/projects.html#lyrics-generator",
+    "title": "Projects: Large Language Models",
+    "section": "Lyrics Generator",
+    "text": "Lyrics Generator\nCreate a lyrics generation tool that generates lyrics based on user input such as themes, music style, emotions, or keywords. Users can explore different poetic styles and themes generated by GPT.\n\n\n\n\nSprint: LLM, 2024"
   }
 ]

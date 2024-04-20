@@ -1,0 +1,123 @@
+---
+title: "Tokenization"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Sprint: LLM, 2024"
+        logo: ../../assets/logo.svg
+---
+
+## Tokenization
+
+
+```{python}
+#| echo: true
+sentence = "I love reading science fiction books or books about science."
+```
+
+&nbsp;
+
+::: {.fragment}
+::: {.callout-note title="Definition"}
+Tokenization is the process of breaking down a text into smaller units called tokens. 
+:::
+:::
+
+&nbsp;
+
+::: {.fragment}
+```{python}
+#| echo: true
+tokenized_sentence = sentence.split(" ")
+print(tokenized_sentence)
+```
+:::
+
+
+## Counting token
+
+```{python}
+#| echo: true
+from collections import Counter
+
+token_counter = Counter(tokenized_sentence)
+print(token_counter.most_common(3))
+```
+
+&nbsp;
+
+::: {.fragment}
+```{python}
+#| echo: true
+tokenized_sentence = sentence.replace(".", " ").split(" ")
+
+token_counter = Counter(tokenized_sentence)
+print(token_counter.most_common(2))
+```
+:::
+
+
+## NLTK tokenization
+```{python}
+#| echo: true
+from nltk.tokenize import wordpunct_tokenize
+from string import punctuation
+
+tokenized_sentence = wordpunct_tokenize(sentence)
+tokenized_sentence = [t for t in tokenized_sentence if t not in punctuation]
+print(tokenized_sentence)
+```
+
+
+## Lemmatization
+
+- Reduce words to their base or canonical form
+- Represents the dictionary form of a word (lemma)
+- Standardizes words for better text analysis accuracy
+- Example: `meeting` --> `meet` (verb)
+
+
+--- 
+- Helps in tasks such as text classification, information retrieval, and sentiment analysis
+- Considers context and linguistic rules
+- Retains semantic meaning of words
+- Has to involve part-of-speech tagging (see example below)
+- Determines correct lemma based on word's role in sentence
+
+```{mermaid}
+flowchart LR
+    A(meeting)
+    A --> B("meet (verb)")
+    A --> C("meeting (noun)")
+```
+
+
+## Bit Pair Encoding: Why?
+
+- Tokenization: Breaking text into smaller chunks (tokens)
+- Traditional vocabularies: Fixed-size, memory-intensive
+- Bit pair encoding: Compression technique for large vocabularies
+
+## Bit Pair Encoding: How?
+- Pair Identification: Identifies frequent pairs of characters
+- Replacement with Single Token: Replaces pairs with single token
+- Iterative Process: Continues until stopping criterion met
+- Vocabulary Construction: Construct vocabulary with single tokens
+- Encoding and Decoding: Text encoded and decoded using constructed vocabulary
+
+## Bit Pair Encoding: Pros and Cons
+- Efficient Memory Usage
+- Retains Information
+- Flexibility
+- Computational Overhead
+- Loss of Granularity
+
+::: {.notes}
+- Reduces vocabulary size, efficient memory usage
+- Captures frequent character pairs, retains linguistic information
+- Adaptable to different tokenization strategies and corpus characteristics
+- Iterative nature can be computationally intensive
+- May lead to loss of granularity, especially for rare words
+- Effectiveness depends on tokenization strategy and corpus characteristics
+:::

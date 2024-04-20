@@ -1,0 +1,10 @@
+---
+title: "The OpenAI API"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Sprint: LLM, 2024"
+        logo: ../../assets/logo.svg
+        fig-align: center
+---

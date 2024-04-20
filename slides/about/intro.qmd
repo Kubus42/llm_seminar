@@ -1,0 +1,95 @@
+---
+title: "Sprint: Large Language Models"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Sprint: LLM, 2024"
+        logo: ../../assets/logo.svg
+---
+
+## About the seminar
+- Roughly divided into 3 parts: theory, training, and application
+- Theory:
+  - Learn about important topics in natural language processing
+  - Topics include tokenization, matching, statistical text analysis, and embeddings
+  - Coding examples in Python alongside theoretical concepts
+
+---
+
+- Training:
+  - Hands-on exercises after each topic
+  - Solve coding exercises to consolidate knowledge
+  - Utilize Jupyterlab environment for exercises
+
+&nbsp;
+
+- Application:
+  - Apply knowledge in own projects
+  - Teams of 2-3 develop and implement prototypes
+  - Small application involving a language model
+
+
+## Goal
+- 4-day introduction to language models
+- Aim: Simple overview to start working with language model APIs
+- Understand basics, know how to apply in own applications
+- **Have fun!**
+
+
+# Content 
+TODO!
+
+# The schedule
+
+## Day 1 (24.04.2024):
+- Getting to know each other + intro survey (experiences & expectations) (1h)
+- Learning goals & final evaluation criteria (0.5h)
+- Introduction & overview of the topic (0.5h)
+- Introduction to natural language processing & setup of the development environment (4h)
+- Introduction to LLM & getting to know the OpenAI API: Part 1 (2h)
+
+## Day 2 (25.04.2024):
+- Introduction to LLM & getting to know the OpenAI API: Part 2 (3h)
+- Prompting (1h)
+- Embeddings (2h)
+- Group brainstorming session: Designing a simple app concept involving GPT (2h)
+  
+→ At home until next week: refine project ideas (1h)
+
+## Day 3 (30.04.2024):
+- Advanced GPT-related topics (1h)
+- Business-related topics (1h)
+- Team building for hackathon → develop app concepts (1h)
+- Work on prototypes (5h)
+
+## Day 4 (02.05.2024):
+- Final touches for the prototypes (3h)
+- Presentation of app prototypes, peer feedback & evaluation (2h)
+- Reflections on the seminar (1h)
+- Ethics & data privacy considerations (backup)
+
+## After the seminar (~1d):
+- Prototype refinement
+- Code review & documentation
+- Refine business case & potential applications of prototype
+- Reflections & lessons learned
+→ *Hand in 2-page summary*
+
+
+## Evaluation
+- Your presentation on the last day of the seminar: 25%
+- Your prototype: 35%
+- Your summary: 25%
+- Your activity during the seminar: 15%
+
+## What is the summary? 
+- 2-3 pages only!
+- What is your prototype? What can I do? 
+- What could be a business case for your prototype, or where can it be applied?
+- What are current limitations of your prototype and how could you overcome them?
+- What have been your main learnings during the creation of your prototype (and/or) the seminar itself?
+
+
+# Code, Exercises & Prototypes
+TODO!

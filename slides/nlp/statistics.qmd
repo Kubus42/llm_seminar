@@ -1,0 +1,238 @@
+---
+title: "Simple statistical text analysis"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Sprint: LLM, 2024"
+        logo: ../../assets/logo.svg
+        code-block-height: 450px
+---
+
+## Term frequency: Token counting
+
+```{python}
+#| echo: true
+#| output-location: slide
+#| 
+from nltk.tokenize import wordpunct_tokenize
+from string import punctuation
+from collections import Counter
+from typing import List
+
+from nltk.corpus import stopwords
+# python -m nltk.downloader stopwords -> run this in your console once to get the stopwords
+
+
+# load a text from file
+text = ""
+with open("../../assets/chapter1.txt", "r") as file:  
+    for line in file:
+        text += line.strip()
+
+
+def preprocess_text(text: str) -> List[str]:
+    # tokenize text
+    tokens = wordpunct_tokenize(text.lower())
+
+    # remove punctuation
+    tokens = [t for t in tokens if t not in punctuation]
+
+    # remove stopwords
+    stop_words = stopwords.words("english")
+    tokens = [t for t in tokens if t not in stop_words]
+
+    return tokens
+
+# count the most frequent words
+tokens = preprocess_text(text=text)
+
+for t in Counter(tokens).most_common(15):
+    print(f"{t[0]}: {t[1]}")
+```
+
+
+## Bag of Words: Creating a vocabulary
+
+
+```{python}
+#| echo: true
+#| output-location: slide
+#| 
+from collections import Counter
+
+
+def create_bag_of_words(texts):
+    # Count the frequency of each word in the corpus
+    word_counts = Counter()
+    
+    for text in texts:
+        # Preprocess the text
+        words = preprocess_text(text)
+        
+        # Update word counts
+        word_counts.update(words)
+    
+    # Create vocabulary by sorting the words based on their frequency
+    vocabulary = [word for word, _ in sorted(word_counts.items())]
+    
+    # Create BoW vectors for each document
+    bow_vectors = []
+    for text in texts:
+        # Preprocess the text
+        words = preprocess_text(text)
+        
+        # Create a Counter object to count word frequencies
+        bow_vector = Counter(words)
+        
+        # Fill in missing words with zero counts
+        for word in vocabulary:
+            if word not in bow_vector:
+                bow_vector[word] = 0
+
+        # Sort the BoW vector based on the vocabulary order
+        sorted_bow_vector = [bow_vector[word] for word in vocabulary]
+        
+        # Append the BoW vector to the list
+        bow_vectors.append(sorted_bow_vector)
+    
+    return vocabulary, bow_vectors
+
+# Example texts
+texts = [
+    "This is the first document.",
+    "This document is the second document.",
+    "And this is the third one.",
+    "Is this the first document?",
+]
+
+# Create Bag of Words
+vocabulary, bow_vectors = create_bag_of_words(texts)
+
+# Print vocabulary
+print("Vocabulary:")
+print(vocabulary)
+
+# Print BoW vectors
+print("\nBag of Words Vectors:")
+for i, bow_vector in enumerate(bow_vectors):
+    print(f"Document {i + 1}: {bow_vector}")
+
+```
+
+## Statistical similarity of texts
+```{python}
+#| echo: true
+#| output-location: fragment
+import numpy as np
+
+def cosine_similarity(vec1: np.array, vec2: np.array) -> float: 
+    return np.dot(vec1, vec2) / ( np.linalg.norm(vec1) * np.linalg.norm(vec2) )
+
+query = bow_vectors[3]
+
+similarities = []
+for i, bv in enumerate(bow_vectors):
+    similarity = cosine_similarity(
+            vec1=query, 
+            vec2=bv
+        )
+    similarities.append(
+        (texts[i], round(similarity, 2))
+    )
+
+similarities
+```
+
+
+# Limitations of Term Frequency and Bag of Words
+
+## Vocabulary
+- Grows with corpus size
+- Leads to computational inefficiencies and increased memory requirements
+- Fixed vocabulary after training, handling out-of-vocabulary words difficult
+
+
+## Context & structure
+- Treats each word independently
+- Fails to capture sequential and syntactical relationships
+- Limits understanding of sarcasm, irony, and metaphors
+- Lack of structural awareness (sentences with similar word distributions but differing meanings or intents)
+
+
+# Idea: Clustering of Bag of Word vectors
+
+## General idea
+- Clustering a common technique in text analysis
+- Groups similar documents based on word distributions
+- Each document represented as high-dimensional vector (e.g., BoW)
+- Dimensions correspond to unique words
+- Values reflect frequency of words in document
+
+
+## Approach
+- Clustering algorithms applied to partition documents
+- Similarity measured using distance metrics (**cosine similarity**, Euclidean distance)
+- Advantages:
+  - Simplicity and scalability
+  - Manageable computational complexity
+- Limitations:
+  - Reliance on word frequency alone
+  - Curse of dimensionality with large vocabularies
+
+## Code example
+```{python}
+#| echo: true
+#| output-location: slide
+
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.cluster import KMeans
+import numpy as np
+
+# Example texts representing different topics
+texts = [
+    "apple orange banana",
+    "apple orange mango",
+    "banana apple kiwi",
+    "strawberry raspberry blueberry",
+    "strawberry raspberry blackberry"
+]
+
+# create Bag of Words using CountVectorizer
+vectorizer = CountVectorizer()
+bow_matrix = vectorizer.fit_transform(texts)
+
+print("Bag of Word vectors:")
+print(bow_matrix.toarray())
+
+# perform K-means clustering
+num_clusters = 2
+kmeans = KMeans(n_clusters=num_clusters, n_init="auto")
+cluster_labels = kmeans.fit_predict(bow_matrix)
+
+print("\nCluster labels:")
+for i, label in enumerate(cluster_labels):
+    print(f"Document {i + 1} belongs to Cluster {label + 1}")
+
+```
+
+--- 
+
+```{python}
+#| echo: true
+#| output-location: fragment
+
+# Get the vocabulary
+vocabulary = vectorizer.get_feature_names_out()
+
+# print the vocabulary
+print("Vocabulary:")
+print(vocabulary)
+
+# print the Bag of Words matrix with corresponding words
+print("\nBag of Words matrix with corresponding words:")
+bow_matrix_array = bow_matrix.toarray()
+for i, document_vector in enumerate(bow_matrix_array):
+    words_in_document = [(word, frequency) for word, frequency in zip(vocabulary, document_vector) if frequency > 0]
+    print(f"Document {i + 1}: {words_in_document}")
+```

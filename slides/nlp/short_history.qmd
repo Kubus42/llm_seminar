@@ -1,0 +1,219 @@
+---
+title: "A Short History of Natural Language Processing"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Sprint: LLM, 2024"
+        logo: ../../assets/logo.svg
+---
+
+## Early Days: Rule-Based Approaches (1960s-1980s)
+- Rely heavily on rule-based approaches
+- Significant efforts in tasks like part-of-speech tagging, named entity recognition, and machine translation
+- Struggled with ambiguity and complexity of natural language
+
+
+## Rise of Statistical Methods (1990s-2000s)
+- Emergence of statistical methods
+- Techniques like Hidden Markov Models and Conditional Random Fields gained prominence
+- Improved performance in tasks such as text classification, sentiment analysis, and information extraction
+
+
+## Machine Learning Revolution (2010s)
+- Rise of machine learning, particularly deep learning
+- Exploration of neural network architectures tailored for NLP tasks
+- Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) gained traction
+
+
+## Large Language Models: Transformers (2010s-Present)
+- Rise of large language models, epitomized by the Transformer architecture
+- Powered by self-attention mechanisms
+- Achieved unprecedented performance across a wide range of NLP tasks
+
+
+# Challenges in NLP
+::: {.incremental}
+- Ambiguity of language
+- Different languages
+- Bias
+- Importance of context
+- World knowledge
+- Common sense reasoning
+- "Incomparability" of language
+:::
+
+::: {.notes}
+- Poses challenges in accurately interpreting meaning
+- NLP systems struggle with languages other than English
+- NLP models can perpetuate biases present in the training data
+- Understanding context is paramount for NLP tasks
+- NLP systems lack comprehensive world knowledge
+:::
+
+
+# Classic NLP tasks & applications
+
+
+## Part-of-Speech Tagging (POS)
+- Labeling each word with its grammatical category
+- Crucial for language understanding, information retrieval, and machine translation
+
+> The sun sets behind the mountains, casting a golden glow across the sky.
+
+--- 
+```{python}
+#| echo: true
+#| code-overflow: wrap
+#| output-location: slide
+import spacy
+
+# Load the English language model
+nlp = spacy.load("en_core_web_sm")
+
+# Example text
+text = "The sun sets behind the mountains, casting a golden glow across the sky."
+
+# Process the text with spaCy
+doc = nlp(text)
+
+# Find the maximum length of token text and POS tag
+max_token_length = max(len(token.text) for token in doc)
+max_pos_length = max(len(token.pos_) for token in doc)
+
+# Print each token along with its part-of-speech tag
+for token in doc:
+    print(f"Token: {token.text.ljust(max_token_length)} | POS Tag: {token.pos_.ljust(max_pos_length)}")
+```
+
+## Named-Entity Recognition (NER)
+- Identifying and classifying named entities in text
+- Essential for information retrieval, document summarization, and question-answering systems
+
+> Apple is considering buying a U.K. based startup called LanguageHero located in London for $1 billion.
+
+---
+```{python} 
+#| echo: true
+#| code-overflow: wrap
+#| output-location: fragment
+import spacy
+
+# Load the English language model
+nlp = spacy.load("en_core_web_sm")
+
+# Example text
+text = "Apple is considering buying a U.K. based startup called LanguageHero located in London for $1 billion."
+
+# Process the text with spaCy
+doc = nlp(text)
+
+# Print each token along with its Named Entity label
+for ent in doc.ents:
+    print(f"Entity: {ent.text.ljust(20)} | Label: {ent.label_}")
+```
+
+
+## Sentiment Analysis
+- Analyzing text to determine sentiment (e.g., positive, negative, neutral)
+- Used for gauging customer satisfaction, monitoring social media sentiment, etc.
+
+> I love TextBlob! It's an amazing library for natural language processing.
+
+--- 
+```{python}
+#| echo: true
+#| code-overflow: wrap
+#| output-location: fragment
+
+# python -m textblob.download_corpora
+from textblob import TextBlob
+
+# Example text
+text = "I love TextBlob! It's an amazing library for natural language processing."
+
+# Perform sentiment analysis with TextBlob
+blob = TextBlob(text)
+sentiment_score = blob.sentiment.polarity
+
+# Determine sentiment label based on sentiment score
+if sentiment_score > 0:
+    sentiment_label = "Positive"
+elif sentiment_score < 0:
+    sentiment_label = "Negative"
+else:
+    sentiment_label = "Neutral"
+
+# Print sentiment analysis results
+print(f"Text: {text}")
+print(f"Sentiment Score: {sentiment_score:.2f}")
+print(f"Sentiment Label: {sentiment_label}")
+```
+
+## Text Classification
+- Categorizing text documents into predefined classes
+- Widely used in email spam detection, sentiment analysis, and content categorization
+
+--- 
+```{python}
+#| echo: true
+#| code-overflow: wrap
+#| output-location: fragment
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.svm import SVC
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import LabelEncoder
+
+# Example labeled dataset
+texts = [
+    "I love this product!",
+    "This product is terrible.",
+    "Great service, highly recommended.",
+    "I had a bad experience with this company.",
+]
+labels = [
+    "Positive",
+    "Negative",
+    "Positive",
+    "Negative",
+]
+
+# Create a TF-IDF vectorizer
+vectorizer = TfidfVectorizer()
+
+# Encode labels as integers
+label_encoder = LabelEncoder()
+encoded_labels = label_encoder.fit_transform(labels)
+
+# Create a pipeline with TF-IDF vectorizer and SVM classifier
+classifier = make_pipeline(vectorizer, SVC(kernel='linear'))
+
+# Train the classifier
+classifier.fit(texts, encoded_labels)
+
+# Example test text
+test_text = "I love what this product can do."
+
+# Predict the label for the test text
+predicted_label = classifier.predict([test_text])[0]
+
+# Decode the predicted label back to original label
+predicted_label_text = label_encoder.inverse_transform([predicted_label])[0]
+
+# Print the predicted label
+print(f"Text: {test_text}")
+print(f"Predicted Label: {predicted_label_text}")
+```
+
+
+## Information Extraction
+- Extracting structured information from unstructured text data
+- Crucial for knowledge base construction, data integration, and business intelligence
+
+## Question-Answering
+- Generating accurate answers to user queries in natural language
+- Essential for information retrieval, virtual assistants, and educational applications
+
+## Machine Translation
+- Automatically translating text from one language to another
+- Facilitates communication across language barriers

@@ -106,7 +106,7 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 
 # Example text
-text = "Apple is considering buying a startup called U.K. based company in London for $1 billion."
+text = "Apple is considering buying a U.K. based startup called LanguageHero located in London for $1 billion."
 
 # Process the text with spaCy
 doc = nlp(text)
@@ -203,7 +203,7 @@ classifier = make_pipeline(vectorizer, SVC(kernel='linear'))
 classifier.fit(texts, encoded_labels)
 
 # Example test text
-test_text = "This product exceeded my expectations."
+test_text = "I love what this product can do."
 
 # Predict the label for the test text
 predicted_label = classifier.predict([test_text])[0]
