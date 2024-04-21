@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.551">
 
-  <title>A Short History of Natural Language Processing</title>
+  <title>Prompting &amp; Parameterization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,14 +28,79 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
-  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -327,102 +392,392 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">A Short History of Natural Language Processing</h1>
+  <h1 class="title">Prompting &amp; Parameterization</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="early-days-rule-based-approaches-1960s-1980s" class="slide level2">
-<h2>Early Days: Rule-Based Approaches (1960s-1980s)</h2>
-<ul>
-<li>Rely heavily on rule-based approaches</li>
-<li>Significant efforts in tasks like part-of-speech tagging, named entity recognition, and machine translation</li>
-<li>Struggled with ambiguity and complexity of natural language</li>
-</ul>
-</section>
-<section id="rise-of-statistical-methods-1990s-2000s" class="slide level2">
-<h2>Rise of Statistical Methods (1990s-2000s)</h2>
-<ul>
-<li>Emergence of statistical methods</li>
-<li>Techniques like Hidden Markov Models and Conditional Random Fields gained prominence</li>
-<li>Improved performance in tasks such as text classification, sentiment analysis, and information extraction</li>
-</ul>
-</section>
-<section id="machine-learning-revolution-2010s" class="slide level2">
-<h2>Machine Learning Revolution (2010s)</h2>
-<ul>
-<li>Rise of machine learning, particularly deep learning</li>
-<li>Exploration of neural network architectures tailored for NLP tasks</li>
-<li>Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) gained traction</li>
-</ul>
-</section>
-<section id="large-language-models-transformers-2010s-present" class="slide level2">
-<h2>Large Language Models: Transformers (2010s-Present)</h2>
-<ul>
-<li>Rise of large language models, epitomized by the Transformer architecture</li>
-<li>Powered by self-attention mechanisms</li>
-<li>Achieved unprecedented performance across a wide range of NLP tasks</li>
-</ul>
-</section>
-<section id="challenges-in-nlp" class="slide level2">
-<h2>Challenges in NLP</h2>
-<div>
-<ul>
-<li class="fragment">Ambiguity of language</li>
-<li class="fragment">Different languages</li>
-<li class="fragment">Bias</li>
-<li class="fragment">Importance of context</li>
-<li class="fragment">World knowledge</li>
-<li class="fragment">Common sense reasoning</li>
-<li class="fragment">“Incomparability” of language</li>
-</ul>
+<section>
+<section id="prompting" class="title-slide slide level1 center">
+<h1>Prompting</h1>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<aside class="notes">
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><em>The following is taken from the <a href="https://platform.openai.com/docs/guides/prompt-engineering" class="external">OpenAI Guide</a></em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="write-clear-instructions" class="slide level2">
+<h2>Write clear instructions</h2>
+<p>These models can’t read your mind. If outputs are too long, ask for brief replies. If you dislike the format, demonstrate the format you’d like to see.</p>
 <ul>
-<li>Poses challenges in accurately interpreting meaning</li>
-<li>NLP systems struggle with languages other than English</li>
-<li>NLP models can perpetuate biases present in the training data</li>
-<li>Understanding context is paramount for NLP tasks</li>
-<li>NLP systems lack comprehensive world knowledge</li>
+<li>Include details in your query to get more relevant answers</li>
+<li>Ask the model to adopt a persona</li>
+<li>Use delimiters to clearly indicate distinct parts of the input</li>
+<li>Specify the steps required to complete a task</li>
+<li>Provide examples</li>
+<li>Specify the desired length of the output</li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</section>
+<section id="provide-reference-text" class="slide level2">
+<h2>Provide reference text</h2>
+<p>Language models can confidently invent fake answers, especially when asked about esoteric topics or for citations and URLs. In the same way that a sheet of notes can help a student do better on a test, providing reference text to these models can help in answering with fewer fabrications.</p>
+<ul>
+<li>Instruct the model to answer using a reference text</li>
+<li>Instruct the model to answer with citations from a reference text</li>
+</ul>
+</section>
+<section id="split-tasks-into-simpler-subtasks" class="slide level2">
+<h2>Split tasks into simpler subtasks</h2>
+<p>Complex tasks tend to have higher error rates than simpler tasks. But they can often be re-defined as a workflow of simpler tasks in which the outputs of earlier tasks are used to construct the inputs to later tasks.</p>
+<ul>
+<li>Use intent classification to identify the most relevant instructions for a user query</li>
+<li>For dialogue applications that require very long conversations, summarize or filter previous dialogue</li>
+<li>Summarize long documents piecewise and construct a full summary recursively</li>
+</ul>
+</section>
+<section id="give-the-model-time-to-think" class="slide level2">
+<h2>Give the model time to “think”</h2>
+<p>Asking for a “chain of thought” before an answer can help the model reason its way toward correct answers more reliably.</p>
+<ul>
+<li>Instruct the model to work out its own solution before rushing to a conclusion</li>
+<li>Use inner monologue or a sequence of queries to hide the model’s reasoning process</li>
+<li>Ask the model if it missed anything on previous passes</li>
+</ul>
+</section>
+<section id="use-external-tools" class="slide level2">
+<h2>Use external tools</h2>
+<p>Compensate for the weaknesses of the model by feeding it the outputs of other tools.</p>
+<ul>
+<li>Use embeddings-based search to implement efficient knowledge retrieval</li>
+<li>Use code execution to perform more accurate calculations or call external APIs</li>
+<li>Give the model access to specific functions</li>
+</ul>
+</section>
+<section id="test-changes-systematically" class="slide level2">
+<h2>Test changes systematically</h2>
+<p>Improving performance is easier if you can measure it. In some cases a modification to a prompt will achieve better performance on a few isolated examples but lead to worse overall performance on a more representative set of examples. Therefore to be sure that a change is net positive to performance it may be necessary to define a comprehensive test suite (also known an as an “eval”).</p>
+<ul>
+<li>Evaluate model outputs with reference to gold-standard answers</li>
+</ul>
+</section></section>
+<section>
+<section id="parameterization" class="title-slide slide level1 center">
+<h1>Parameterization</h1>
+
+</section>
+<section id="parameters-1" class="slide level2">
+<h2>Parameters 1</h2>
+<p><strong>Temperature</strong> (<code>temperature</code>):</p>
+<ul>
+<li>Controls the randomness of the generated text</li>
+<li>Lower temperatures = deterministic outputs</li>
+<li>Higher temperatures = more randomness</li>
+<li>Balance between safety and creativity</li>
+</ul>
+<p><strong>Max Tokens</strong> (<code>max_tokens</code>):</p>
+<ul>
+<li>Limits the maximum length of the generated text</li>
+</ul>
+</section>
+<section id="parameters-2" class="slide level2">
+<h2>Parameters 2</h2>
+<p><strong>Top P (Nucleus Sampling)</strong> (<code>top_p</code>):</p>
+<ul>
+<li>Dynamically selects a subset of the most likely tokens based on their cumulative probability</li>
+<li>Ensures diversity in the generated text while still prioritizing tokens with higher probabilities</li>
+<li>For generating diverse and contextually relevant responses</li>
+</ul>
+<p><strong>Stop Sequence</strong> (<code>stop</code>):</p>
+<ul>
+<li>Specifies a sequence of tokens that, if generated by the model, signals it to stop</li>
+</ul>
+</section>
+<section id="parameters-3" class="slide level2">
+<h2>Parameters 3</h2>
+<p><strong>Frequency Penalty</strong> (<code>frequency_penalty</code>):</p>
+<ul>
+<li>Penalizes tokens based on their frequency in the generated text</li>
+<li>Discourage the model from repeatedly generating common or redundant tokens</li>
+<li>Promote diversity in the generated text</li>
+</ul>
+<p><strong>Presence Penalty</strong> (<code>presence_penalty</code>):</p>
+<ul>
+<li>Penalizes tokens that are already in the input prompt</li>
+<li>Discourages the model from simply echoing the input text</li>
+</ul>
+</section></section>
+<section>
+<section id="roles" class="title-slide slide level1 center">
+<h1>Roles</h1>
+
+</section>
+<section id="openai-chat-roles" class="slide level2">
+<h2>OpenAI chat roles</h2>
+<ul>
+<li>Define different roles in the chat</li>
+<li>Roles: <code>system</code>, <code>assistant</code>, <code>user</code>, <code>tools</code></li>
+</ul>
+<p><strong>User Role</strong></p>
+<ul>
+<li>Corresponds to the actual user prompting the model.</li>
+<li>Inputs queries or prompts to the model.</li>
+</ul>
+<p><strong>Assistant Role</strong></p>
+<ul>
+<li>Model responds to user queries or prompts.</li>
+<li>Provides answers and assistance to the user.</li>
+</ul>
+</section>
+<section id="openai-chat-roles-1" class="slide level2">
+<h2>OpenAI chat roles</h2>
+<p><strong>System Role</strong></p>
+<ul>
+<li>Provides additional instructions to the model.</li>
+<li>Not a user input.</li>
+<li>Example: Setting response style.</li>
+</ul>
+<p><strong>Tools Role</strong></p>
+<ul>
+<li>Used for debugging or monitoring purposes.</li>
+<li>Provides insights into model behavior or performance.</li>
+</ul>
+</section>
+<section id="code" class="slide level2">
+<h2>Code</h2>
+<div id="e5c485fe" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a></a><span class="im">from</span> llm_utils.client <span class="im">import</span> get_openai_client</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a>MODEL <span class="op">=</span> <span class="st">"gpt4"</span></span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>client <span class="op">=</span> get_openai_client(</span>
+<span id="cb1-7"><a></a>    model<span class="op">=</span>MODEL,</span>
+<span id="cb1-8"><a></a>    config_path<span class="op">=</span>os.environ.get(<span class="st">"CONFIG_PATH"</span>)</span>
+<span id="cb1-9"><a></a>)</span>
+<span id="cb1-10"><a></a></span>
+<span id="cb1-11"><a></a>completion <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb1-12"><a></a>  model<span class="op">=</span><span class="st">"MODEL"</span>,</span>
+<span id="cb1-13"><a></a>  messages<span class="op">=</span>[</span>
+<span id="cb1-14"><a></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="st">"You are an annoyed technician working in a help center for dish washers, who answers in short, unfriendly bursts."</span>},</span>
+<span id="cb1-15"><a></a>    {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"My dish washer does not clean the dishes, what could be the reason."</span>}</span>
+<span id="cb1-16"><a></a>  ]</span>
+<span id="cb1-17"><a></a>)</span>
+<span id="cb1-18"><a></a></span>
+<span id="cb1-19"><a></a><span class="bu">print</span>(completion.choices[<span class="dv">0</span>].message.content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="1">
+<div class="cell-output cell-output-stdout">
+<pre><code>Dishwasher filter could be clogged, water spray arms may not function, rinse aid dispenser might be empty, or your detergent sucks. Check 'em.</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="function-calling" class="title-slide slide level1 center">
+<h1>Function calling</h1>
+
+</section>
+<section id="get-more-consistent-output-of-language-models" class="slide level2">
+<h2>Get more consistent output of language models</h2>
+<ul>
+<li>So far: language model “freely” answering</li>
+<li>Not always a practical format if we want to use a language model for very specific purposes</li>
+<li>Business applications often require consistent output</li>
+</ul>
+</section>
+<section id="example-sentiment-analysis" class="slide level2">
+<h2>Example: Sentiment analysis</h2>
+<div id="12531afb" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>sentiment_categories <span class="op">=</span> [<span class="st">"positive"</span>, <span class="st">"negative"</span>, <span class="st">"neutral"</span>, <span class="st">"mixed"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>&nbsp;</p>
+<div id="dc7eff8e" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>messages <span class="op">=</span> []</span>
+<span id="cb4-2"><a></a>messages.append(</span>
+<span id="cb4-3"><a></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="ss">f"Classify the given text into one of the following sentiment categories: </span><span class="sc">{</span>sentiment_categories<span class="sc">}</span><span class="ss">."</span>}</span>
+<span id="cb4-4"><a></a>)</span>
+<span id="cb4-5"><a></a>messages.append(</span>
+<span id="cb4-6"><a></a>    {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"I really did not like the movie."</span>}</span>
+<span id="cb4-7"><a></a>)</span>
+<span id="cb4-8"><a></a></span>
+<span id="cb4-9"><a></a>response <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb4-10"><a></a>    messages<span class="op">=</span>messages,</span>
+<span id="cb4-11"><a></a>    model<span class="op">=</span>MODEL</span>
+<span id="cb4-12"><a></a>)</span>
+<span id="cb4-13"><a></a></span>
+<span id="cb4-14"><a></a><span class="bu">print</span>(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="763158af" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: 'Category: Negative'</code></pre>
+</div>
+</div>
+</section>
+<section id="function-calling-1" class="slide level2">
+<h2>Function calling</h2>
+<ul>
+<li>OpenAI allows for “function calling” or “tool calling”</li>
+<li>This allows us to specify the output format of GPT</li>
+<li><a href="https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models" class="external">Function calling (cookbook)</a></li>
+<li><a href="https://platform.openai.com/docs/guides/function-calling" class="external">Function calling</a></li>
+</ul>
+</section>
+<section id="example-continued" class="slide level2">
+<h2>Example: continued</h2>
+<div id="cfadd998" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># this looks intimidating but isn't that complicated</span></span>
+<span id="cb6-2"><a></a>tools <span class="op">=</span> [</span>
+<span id="cb6-3"><a></a>    {</span>
+<span id="cb6-4"><a></a>        <span class="st">"type"</span>: <span class="st">"function"</span>,</span>
+<span id="cb6-5"><a></a>        <span class="st">"function"</span>: {</span>
+<span id="cb6-6"><a></a>            <span class="st">"name"</span>: <span class="st">"analyze_sentiment"</span>,</span>
+<span id="cb6-7"><a></a>            <span class="st">"description"</span>: <span class="st">"Analyze the sentiment in a given text."</span>,</span>
+<span id="cb6-8"><a></a>            <span class="st">"parameters"</span>: {</span>
+<span id="cb6-9"><a></a>                <span class="st">"type"</span>: <span class="st">"object"</span>,</span>
+<span id="cb6-10"><a></a>                <span class="st">"properties"</span>: {</span>
+<span id="cb6-11"><a></a>                    <span class="st">"sentiment"</span>: {</span>
+<span id="cb6-12"><a></a>                        <span class="st">"type"</span>: <span class="st">"string"</span>,</span>
+<span id="cb6-13"><a></a>                        <span class="st">"enum"</span>: sentiment_categories,</span>
+<span id="cb6-14"><a></a>                        <span class="st">"description"</span>: <span class="ss">f"The sentiment of the text."</span></span>
+<span id="cb6-15"><a></a>                    }</span>
+<span id="cb6-16"><a></a>                },</span>
+<span id="cb6-17"><a></a>                <span class="st">"required"</span>: [<span class="st">"sentiment"</span>],</span>
+<span id="cb6-18"><a></a>            }</span>
+<span id="cb6-19"><a></a>        }</span>
+<span id="cb6-20"><a></a>    }</span>
+<span id="cb6-21"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="9ef6d8e7" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>messages <span class="op">=</span> []</span>
+<span id="cb7-2"><a></a>messages.append(</span>
+<span id="cb7-3"><a></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="ss">f"Classify the given text into one of the following sentiment categories: </span><span class="sc">{</span>sentiment_categories<span class="sc">}</span><span class="ss">."</span>}</span>
+<span id="cb7-4"><a></a>)</span>
+<span id="cb7-5"><a></a>messages.append(</span>
+<span id="cb7-6"><a></a>    {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"I really did not like the movie."</span>}</span>
+<span id="cb7-7"><a></a>)</span>
+<span id="cb7-8"><a></a></span>
+<span id="cb7-9"><a></a>response <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb7-10"><a></a>    messages<span class="op">=</span>messages,</span>
+<span id="cb7-11"><a></a>    model<span class="op">=</span>MODEL,</span>
+<span id="cb7-12"><a></a>    tools<span class="op">=</span>tools,</span>
+<span id="cb7-13"><a></a>    tool_choice<span class="op">=</span>{</span>
+<span id="cb7-14"><a></a>        <span class="st">"type"</span>: <span class="st">"function"</span>, </span>
+<span id="cb7-15"><a></a>        <span class="st">"function"</span>: {<span class="st">"name"</span>: <span class="st">"analyze_sentiment"</span>}}</span>
+<span id="cb7-16"><a></a>)</span>
+<span id="cb7-17"><a></a></span>
+<span id="cb7-18"><a></a><span class="bu">print</span>(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>tool_calls[<span class="dv">0</span>]<span class="sc">.</span>function<span class="sc">.</span>arguments<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: '{
+"sentiment": "negative"
+}'</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="b9b67173" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> json </span>
+<span id="cb9-2"><a></a>result <span class="op">=</span> json.loads(response.choices[<span class="dv">0</span>].message.tool_calls[<span class="dv">0</span>].function.arguments) <span class="co"># remember that the answer is a string</span></span>
+<span id="cb9-3"><a></a><span class="bu">print</span>(result[<span class="st">"sentiment"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>negative</code></pre>
+</div>
+</div>
+</section>
+<section id="including-multiple-parameters" class="slide level2">
+<h2>Including multiple parameters</h2>
+<div id="5ed692e7" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>tools <span class="op">=</span> [</span>
+<span id="cb11-2"><a></a>    {</span>
+<span id="cb11-3"><a></a>        <span class="st">"type"</span>: <span class="st">"function"</span>,</span>
+<span id="cb11-4"><a></a>        <span class="st">"function"</span>: {</span>
+<span id="cb11-5"><a></a>            <span class="st">"name"</span>: <span class="st">"analyze_sentiment"</span>,</span>
+<span id="cb11-6"><a></a>            <span class="st">"description"</span>: <span class="st">"Analyze the sentiment in a given text."</span>,</span>
+<span id="cb11-7"><a></a>            <span class="st">"parameters"</span>: {</span>
+<span id="cb11-8"><a></a>                <span class="st">"type"</span>: <span class="st">"object"</span>,</span>
+<span id="cb11-9"><a></a>                <span class="st">"properties"</span>: {</span>
+<span id="cb11-10"><a></a>                    <span class="st">"sentiment"</span>: {</span>
+<span id="cb11-11"><a></a>                        <span class="st">"type"</span>: <span class="st">"string"</span>,</span>
+<span id="cb11-12"><a></a>                        <span class="st">"enum"</span>: sentiment_categories,</span>
+<span id="cb11-13"><a></a>                        <span class="st">"description"</span>: <span class="ss">f"The sentiment of the text."</span></span>
+<span id="cb11-14"><a></a>                    },</span>
+<span id="cb11-15"><a></a>                    <span class="st">"reason"</span>: {</span>
+<span id="cb11-16"><a></a>                        <span class="st">"type"</span>: <span class="st">"string"</span>,</span>
+<span id="cb11-17"><a></a>                        <span class="st">"description"</span>: <span class="st">"The reason for the sentiment in few words. If there is no information, do not make assumptions and leave blank."</span></span>
+<span id="cb11-18"><a></a>                    }</span>
+<span id="cb11-19"><a></a>                },</span>
+<span id="cb11-20"><a></a>                <span class="st">"required"</span>: [<span class="st">"sentiment"</span>, <span class="st">"reason"</span>],</span>
+<span id="cb11-21"><a></a>            }</span>
+<span id="cb11-22"><a></a>        }</span>
+<span id="cb11-23"><a></a>    }</span>
+<span id="cb11-24"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="b019fb52" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>messages <span class="op">=</span> []</span>
+<span id="cb12-2"><a></a>messages.append(</span>
+<span id="cb12-3"><a></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="ss">f"Classify the given text into one of the following sentiment categories: </span><span class="sc">{</span>sentiment_categories<span class="sc">}</span><span class="ss">. If you can, also extract the reason."</span>}</span>
+<span id="cb12-4"><a></a>)</span>
+<span id="cb12-5"><a></a>messages.append(</span>
+<span id="cb12-6"><a></a>    {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"I loved the movie, Johnny Depp is a great actor."</span>}</span>
+<span id="cb12-7"><a></a>)</span>
+<span id="cb12-8"><a></a></span>
+<span id="cb12-9"><a></a>response <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb12-10"><a></a>    messages<span class="op">=</span>messages,</span>
+<span id="cb12-11"><a></a>    model<span class="op">=</span>MODEL,</span>
+<span id="cb12-12"><a></a>    tools<span class="op">=</span>tools,</span>
+<span id="cb12-13"><a></a>    tool_choice<span class="op">=</span>{</span>
+<span id="cb12-14"><a></a>        <span class="st">"type"</span>: <span class="st">"function"</span>, </span>
+<span id="cb12-15"><a></a>        <span class="st">"function"</span>: {<span class="st">"name"</span>: <span class="st">"analyze_sentiment"</span>}}</span>
+<span id="cb12-16"><a></a>)</span>
+<span id="cb12-17"><a></a></span>
+<span id="cb12-18"><a></a><span class="bu">print</span>(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>tool_calls[<span class="dv">0</span>]<span class="sc">.</span>function<span class="sc">.</span>arguments<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: '{
+"sentiment": "positive",
+"reason": "The text expresses love for the movie and admiration for Johnny Depp's acting."
+}'</code></pre>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
-<p><img src="../assets/logo.svg" class="slide-logo"></p>
+<p><img src="../../assets/logo.svg" class="slide-logo"></p>
 <div class="footer footer-default">
 <p>Sprint: LLM, 2024</p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

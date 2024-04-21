@@ -6,6 +6,7 @@ format:
         chalkboard: true
         footer: "Sprint: LLM, 2024"
         logo: ../../assets/logo.svg
+        fig-align: center
 ---
 
 ## Tokenization
@@ -78,7 +79,8 @@ print(tokenized_sentence)
 - Example: `meeting` --> `meet` (verb)
 
 
---- 
+---
+
 - Helps in tasks such as text classification, information retrieval, and sentiment analysis
 - Considers context and linguistic rules
 - Retains semantic meaning of words
@@ -92,6 +94,65 @@ flowchart LR
     A --> C("meeting (noun)")
 ```
 
+
+## Lemmatization with WordNet: Nouns
+
+```{python}
+#| echo: true
+#| output-location: fragment
+from nltk.stem import WordNetLemmatizer
+
+sentence = "The three brothers went over three big bridges"
+
+wnl = WordNetLemmatizer()
+
+lemmatized_sentence_token = [
+    wnl.lemmatize(w, pos="n") for w in sentence.split(" ")
+]
+
+print(lemmatized_sentence_token)
+```
+
+
+## Lemmatization with WordNet: Verbs
+
+```{python}
+#| echo: true
+#| output-location: fragment
+lemmatized_sentence_token = [
+    wnl.lemmatize(w, pos="v") for w in sentence.split(" ")
+]
+
+print(lemmatized_sentence_token)
+```
+
+
+## Lemmatization with WordNet and POS-tagging
+```{python}
+#| echo: true
+#| output-location: fragment
+
+pos_dict = {
+  "brothers": "n", 
+  "went": "v",
+  "big": "a",
+  "bridges": "n"
+}
+
+lemmatized_sentence_token = []
+for token in sentence.split(" "):
+    if token in pos_dict:
+        lemma = wnl.lemmatize(token, pos=pos_dict[token])
+    else: 
+        lemma = token # leave as it is
+
+    lemmatized_sentence_token.append(lemma)
+
+print(lemmatized_sentence_token)
+```
+
+
+# Bit Pair Encoding
 
 ## Bit Pair Encoding: Why?
 

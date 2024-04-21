@@ -438,7 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>
 Code example
 </summary>
-<div id="ad415181" class="cell" data-execution_count="1">
+<div id="8990f9a1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the English language model</span></span>
@@ -484,14 +484,14 @@ Token: .         | POS Tag: PUNCT</code></pre>
 <summary>
 Code example
 </summary>
-<div id="87883988" class="cell" data-execution_count="2">
+<div id="6a307086" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the English language model</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Example text</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Apple is considering buying a startup called U.K. based company in London for $1 billion."</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Apple is considering buying a U.K. based startup called LanguageHero located in London for $1 billion."</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Process the text with spaCy</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
@@ -502,6 +502,7 @@ Code example
 <div class="cell-output cell-output-stdout">
 <pre><code>Entity: Apple                | Label: ORG
 Entity: U.K.                 | Label: GPE
+Entity: LanguageHero         | Label: PRODUCT
 Entity: London               | Label: GPE
 Entity: $1 billion           | Label: MONEY</code></pre>
 </div>
@@ -519,7 +520,7 @@ Entity: $1 billion           | Label: MONEY</code></pre>
 <summary>
 Code example
 </summary>
-<div id="a4a5a4f4" class="cell" data-execution_count="3">
+<div id="6fea94f6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># python -m textblob.download_corpora</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> textblob <span class="im">import</span> TextBlob</span>
@@ -558,7 +559,7 @@ Sentiment Label: Positive</code></pre>
 <summary>
 Code example
 </summary>
-<div id="029c772f" class="cell" data-execution_count="4">
+<div id="5e864f2f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVC</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
@@ -592,7 +593,7 @@ Code example
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>classifier.fit(texts, encoded_labels)</span>
 <span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Example test text</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>test_text <span class="op">=</span> <span class="st">"This product exceeded my expectations."</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>test_text <span class="op">=</span> <span class="st">"I love what this product can do."</span></span>
 <span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict the label for the test text</span></span>
 <span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>predicted_label <span class="op">=</span> classifier.predict([test_text])[<span class="dv">0</span>]</span>
@@ -604,8 +605,8 @@ Code example
 <span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Text: </span><span class="sc">{</span>test_text<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Predicted Label: </span><span class="sc">{</span>predicted_label_text<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Text: This product exceeded my expectations.
-Predicted Label: Negative</code></pre>
+<pre><code>Text: I love what this product can do.
+Predicted Label: Positive</code></pre>
 </div>
 </div>
 </details>

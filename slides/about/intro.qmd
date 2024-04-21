@@ -37,8 +37,24 @@ format:
 - **Have fun!**
 
 
-# Content 
-TODO!
+## Content 1
+- Quick overview of classic NLP 
+  - Text processing (Tokenization, Lemmatization, etc.)
+  - Applications (Classification, Sentiment Analysis, Matching, etc.)
+  - Challenges
+- Introduction to LLM 
+  - Text processing with neural networks
+  - Sequence generation & language modeling
+
+## Content 2
+- Introduction to the OpenAI API
+  - Prompting
+  - Parameterization
+  - Function calling
+- Introduction to embeddings
+  - Similarity
+  - Visualization & Clustering
+- (Ethics & Privacy)
 
 # The schedule
 
@@ -92,4 +108,15 @@ TODO!
 
 
 # Code, Exercises & Prototypes
-TODO!
+
+## Jupyterlab & Exercises
+&nbsp;
+
+### Jupyterlab
+To get started right away, we have prepared a [Jupyterlab](https://jupyter.fh-muenster.de/){.external}! 
+
+&nbsp;
+
+### Exercises
+All exercises can be solved in the Jupyterlab, all packages and datasets are pre-installed!
+

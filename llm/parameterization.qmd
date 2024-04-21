@@ -10,7 +10,7 @@ jupyter: python3
 The GPT models provided by OpenAI provide a variety of parameters that can change the way the language model responds. 
 Below you can find a list of the most important ones.
 
-- **Temperature**: Temperature (`temperaure`) is a parameter that controls the randomness of the generated text. Lower temperatures result in more deterministic outputs, where the model tends to choose the most likely tokens at each step. Higher temperatures introduce more randomness, allowing the model to explore less likely tokens and produce more creative outputs. It's often used to balance between generating safe, conservative responses and more novel, imaginative ones.
+- **Temperature**: Temperature (`temperature`) is a parameter that controls the randomness of the generated text. Lower temperatures result in more deterministic outputs, where the model tends to choose the most likely tokens at each step. Higher temperatures introduce more randomness, allowing the model to explore less likely tokens and produce more creative outputs. It's often used to balance between generating safe, conservative responses and more novel, imaginative ones.
 
 - **Max Tokens**: Max Tokens (`max_tokens`) limits the maximum length of the generated text by specifying the maximum number of tokens (words or subwords) allowed in the output. This parameter helps to control the length of the response and prevent the model from generating overly long or verbose outputs, which may not be suitable for certain applications or contexts.
 

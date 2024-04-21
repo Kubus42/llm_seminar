@@ -386,6 +386,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -400,7 +403,7 @@
 </section>
 <section id="tokenization" class="slide level2">
 <h2>Tokenization</h2>
-<div id="d7c0bb2b" class="cell" data-execution_count="1">
+<div id="f6b61e6b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>sentence <span class="op">=</span> <span class="st">"I love reading science fiction books or books about science."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>&nbsp;</p>
@@ -423,7 +426,7 @@
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div id="60cf144b" class="cell" data-execution_count="2">
+<div id="fdcdadae" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>tokenized_sentence <span class="op">=</span> sentence.split(<span class="st">" "</span>)</span>
 <span id="cb2-2"><a></a><span class="bu">print</span>(tokenized_sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -434,7 +437,7 @@
 </section>
 <section id="counting-token" class="slide level2">
 <h2>Counting token</h2>
-<div id="5ff918ca" class="cell" data-execution_count="3">
+<div id="f3b143c8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
@@ -445,7 +448,7 @@
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div id="5eadfd75" class="cell" data-execution_count="4">
+<div id="1948dc77" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>tokenized_sentence <span class="op">=</span> sentence.replace(<span class="st">"."</span>, <span class="st">" "</span>).split(<span class="st">" "</span>)</span>
 <span id="cb6-2"><a></a></span>
 <span id="cb6-3"><a></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
@@ -458,7 +461,7 @@
 </section>
 <section id="nltk-tokenization" class="slide level2">
 <h2>NLTK tokenization</h2>
-<div id="2ccffcff" class="cell" data-execution_count="5">
+<div id="001d43fa" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
 <span id="cb8-2"><a></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
 <span id="cb8-3"><a></a></span>
@@ -488,10 +491,89 @@
 <li>Has to involve part-of-speech tagging (see example below)</li>
 <li>Determines correct lemma based on word’s role in sentence</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {mermaid} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>flowchart LR</span>
-<span id="cb10-2"><a></a>    A(meeting)</span>
-<span id="cb10-3"><a></a>    A --&gt; B("meet (verb)")</span>
-<span id="cb10-4"><a></a>    A --&gt; C("meeting (noun)")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A(meeting)
+    A --&gt; B("meet (verb)")
+    A --&gt; C("meeting (noun)")
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="lemmatization-with-wordnet-nouns" class="slide level2">
+<h2>Lemmatization with WordNet: Nouns</h2>
+<div id="0c63f98a" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a>sentence <span class="op">=</span> <span class="st">"The three brothers went over three big bridges"</span></span>
+<span id="cb10-4"><a></a></span>
+<span id="cb10-5"><a></a>wnl <span class="op">=</span> WordNetLemmatizer()</span>
+<span id="cb10-6"><a></a></span>
+<span id="cb10-7"><a></a>lemmatized_sentence_token <span class="op">=</span> [</span>
+<span id="cb10-8"><a></a>    wnl.lemmatize(w, pos<span class="op">=</span><span class="st">"n"</span>) <span class="cf">for</span> w <span class="kw">in</span> sentence.split(<span class="st">" "</span>)</span>
+<span id="cb10-9"><a></a>]</span>
+<span id="cb10-10"><a></a></span>
+<span id="cb10-11"><a></a><span class="bu">print</span>(lemmatized_sentence_token)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="6">
+<div class="cell-output cell-output-stdout">
+<pre><code>['The', 'three', 'brother', 'went', 'over', 'three', 'big', 'bridge']</code></pre>
+</div>
+</div>
+</section>
+<section id="lemmatization-with-wordnet-verbs" class="slide level2">
+<h2>Lemmatization with WordNet: Verbs</h2>
+<div id="f787a80c" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>lemmatized_sentence_token <span class="op">=</span> [</span>
+<span id="cb12-2"><a></a>    wnl.lemmatize(w, pos<span class="op">=</span><span class="st">"v"</span>) <span class="cf">for</span> w <span class="kw">in</span> sentence.split(<span class="st">" "</span>)</span>
+<span id="cb12-3"><a></a>]</span>
+<span id="cb12-4"><a></a></span>
+<span id="cb12-5"><a></a><span class="bu">print</span>(lemmatized_sentence_token)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="7">
+<div class="cell-output cell-output-stdout">
+<pre><code>['The', 'three', 'brothers', 'go', 'over', 'three', 'big', 'bridge']</code></pre>
+</div>
+</div>
+</section>
+<section id="lemmatization-with-wordnet-and-pos-tagging" class="slide level2">
+<h2>Lemmatization with WordNet and POS-tagging</h2>
+<div id="7e6031b2" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>pos_dict <span class="op">=</span> {</span>
+<span id="cb14-2"><a></a>  <span class="st">"brothers"</span>: <span class="st">"n"</span>, </span>
+<span id="cb14-3"><a></a>  <span class="st">"went"</span>: <span class="st">"v"</span>,</span>
+<span id="cb14-4"><a></a>  <span class="st">"big"</span>: <span class="st">"a"</span>,</span>
+<span id="cb14-5"><a></a>  <span class="st">"bridges"</span>: <span class="st">"n"</span></span>
+<span id="cb14-6"><a></a>}</span>
+<span id="cb14-7"><a></a></span>
+<span id="cb14-8"><a></a>lemmatized_sentence_token <span class="op">=</span> []</span>
+<span id="cb14-9"><a></a><span class="cf">for</span> token <span class="kw">in</span> sentence.split(<span class="st">" "</span>):</span>
+<span id="cb14-10"><a></a>    <span class="cf">if</span> token <span class="kw">in</span> pos_dict:</span>
+<span id="cb14-11"><a></a>        lemma <span class="op">=</span> wnl.lemmatize(token, pos<span class="op">=</span>pos_dict[token])</span>
+<span id="cb14-12"><a></a>    <span class="cf">else</span>: </span>
+<span id="cb14-13"><a></a>        lemma <span class="op">=</span> token <span class="co"># leave as it is</span></span>
+<span id="cb14-14"><a></a></span>
+<span id="cb14-15"><a></a>    lemmatized_sentence_token.append(lemma)</span>
+<span id="cb14-16"><a></a></span>
+<span id="cb14-17"><a></a><span class="bu">print</span>(lemmatized_sentence_token)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell fragment" data-execution_count="8">
+<div class="cell-output cell-output-stdout">
+<pre><code>['The', 'three', 'brother', 'go', 'over', 'three', 'big', 'bridge']</code></pre>
+</div>
+</div>
+</section>
+<section>
+<section id="bit-pair-encoding" class="title-slide slide level1 center">
+<h1>Bit Pair Encoding</h1>
+
 </section>
 <section id="bit-pair-encoding-why" class="slide level2">
 <h2>Bit Pair Encoding: Why?</h2>
@@ -547,7 +629,7 @@
 <p>Sprint: LLM, 2024</p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

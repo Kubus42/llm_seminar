@@ -398,7 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>The GPT models provided by OpenAI provide a variety of parameters that can change the way the language model responds. Below you can find a list of the most important ones.</p>
 <ul>
-<li><p><strong>Temperature</strong>: Temperature (<code>temperaure</code>) is a parameter that controls the randomness of the generated text. Lower temperatures result in more deterministic outputs, where the model tends to choose the most likely tokens at each step. Higher temperatures introduce more randomness, allowing the model to explore less likely tokens and produce more creative outputs. It’s often used to balance between generating safe, conservative responses and more novel, imaginative ones.</p></li>
+<li><p><strong>Temperature</strong>: Temperature (<code>temperature</code>) is a parameter that controls the randomness of the generated text. Lower temperatures result in more deterministic outputs, where the model tends to choose the most likely tokens at each step. Higher temperatures introduce more randomness, allowing the model to explore less likely tokens and produce more creative outputs. It’s often used to balance between generating safe, conservative responses and more novel, imaginative ones.</p></li>
 <li><p><strong>Max Tokens</strong>: Max Tokens (<code>max_tokens</code>) limits the maximum length of the generated text by specifying the maximum number of tokens (words or subwords) allowed in the output. This parameter helps to control the length of the response and prevent the model from generating overly long or verbose outputs, which may not be suitable for certain applications or contexts.</p></li>
 <li><p><strong>Top P (Nucleus Sampling)</strong>: Top P (<code>top_p</code>), also known as nucleus sampling, dynamically selects a subset of the most likely tokens based on their cumulative probability until the cumulative probability exceeds a certain threshold (specified by the parameter). This approach ensures diversity in the generated text while still prioritizing tokens with higher probabilities. It’s particularly useful for generating diverse and contextually relevant responses.</p></li>
 <li><p><strong>Frequency Penalty</strong>: Frequency Penalty (<code>frequency_penalty</code>) penalizes tokens based on their frequency in the generated text. Tokens that appear more frequently are assigned higher penalties, discouraging the model from repeatedly generating common or redundant tokens. This helps to promote diversity in the generated text and prevent the model from producing overly repetitive outputs.</p></li>
@@ -409,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="roles">Roles</h2>
 <p>In order to cover most tasks you want to perform using a chat format, the OpenAI API let’s you define different <code>roles</code> in the chat. The available roles are <code>system</code>, <code>assistant</code>, <code>user</code> and <code>tools</code>. You should already be familiar with two of them by now: The <code>user</code> role corresponds to the actual user prompting the language model, all answers are given with the <code>assisstant</code> role.</p>
 <p>The <code>system</code> role can now be given to provide some additional general instructions to the language model that are typically not a user input, for example, the style in which the model responds. In this case, an example is better than any explanation.</p>
-<div id="e74e4b3e" class="cell" data-execution_count="1">
+<div id="15167724" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llm_utils.client <span class="im">import</span> get_openai_client</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -430,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(completion.choices[<span class="dv">0</span>].message.content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Could be a lot of things. Filter might be clogged. Try cleaning it. Could be using wrong detergents, change them. Water might not get hot enough, check temperature. Beat it, too busy here.</code></pre>
+<pre><code>Check your water temperature. Too cold? Heat it. Dishwasher spray arms not spinning? Clean 'em. Using cheap detergent? Get a better one. Not loading properly? Sort it out. Not running a full cycle? Reset it. Not rocket science.</code></pre>
 </div>
 </div>
 </section>
@@ -438,7 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="function-calling">Function calling</h2>
 <p>As we have seen, most interactions with a language model happen in form of a chat with almost “free” question or instructions and answers. While this seems the most natural in most cases, it is not always a practical format if we want to use a language model for very specific purposes. This happens particularly often when we want to employ a language model in business situations, where we require a consistent output of the model.</p>
 <p>As an example, let us try to use GPT for sentiment analysis (see also <a href="../nlp/overview.html#sec-sentiment-analysis">here</a>). Let’s say we want GPT to classify a text into one of the following four categories:</p>
-<div id="41e479dc" class="cell" data-execution_count="2">
+<div id="5fa812fd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sentiment_categories <span class="op">=</span> [</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"positive"</span>, </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"negative"</span>,</span>
@@ -447,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We could do the following:</p>
-<div id="f4364a2e" class="cell" data-execution_count="4">
+<div id="d7941576" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>messages <span class="op">=</span> []</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>messages.append(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="ss">f"Classify the given text into one of the following sentiment categories: </span><span class="sc">{</span>sentiment_categories<span class="sc">}</span><span class="ss">."</span>}</span>
@@ -463,14 +463,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="4803c736" class="cell" data-execution_count="5">
+<div id="a83755ee" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>Response: 'Category: Negative'</code></pre>
 </div>
 </div>
 <p>It is easy to spot the problem: GPT does not necessarily answer in the way we expect or want it to. In this case, instead of simply returning the correct category, it also returns the string <code>Category:</code> alongside it (and capitalized <code>Negative</code>). So if we were to use the answer in a program or data base, we’d now again have to use some NLP techniques to parse it in order eventually retrieve <strong>exactly</strong> the category we were looking for: <code>negative</code>. What we need instead is a way to constrain GPT to a specific way of answering, and this is where <code>functions</code> or <code>tools</code> come into play (see also <a href="https://platform.openai.com/docs/guides/function-calling" class="external">Function calling</a> and <a href="https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models" class="external">Function calling (cookbook)</a>).</p>
 <p>This concept allows us to specify the exact output format we expect to receive from GPT (it is called functions since ideally we want to call a function directly on the output of GPT so it has to be in a specific format).</p>
-<div id="7111ce46" class="cell" data-execution_count="6">
+<div id="32f23312" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this looks intimidating but isn't that complicated</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tools <span class="op">=</span> [</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    {</span>
@@ -493,7 +493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="513bc7e4" class="cell" data-execution_count="7">
+<div id="d1a23be6" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>messages <span class="op">=</span> []</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>messages.append(</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="ss">f"Classify the given text into one of the following sentiment categories: </span><span class="sc">{</span>sentiment_categories<span class="sc">}</span><span class="ss">."</span>}</span>
@@ -519,7 +519,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We can now easily extract what we need:</p>
-<div id="462571a2" class="cell" data-execution_count="8">
+<div id="ddb17753" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> json.loads(response.choices[<span class="dv">0</span>].message.tool_calls[<span class="dv">0</span>].function.arguments) <span class="co"># remember that the answer is a string</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result[<span class="st">"sentiment"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -528,7 +528,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We can also include multiple function parameters if our desired output has multiple components. Let’s try to include another parameter which includes the <code>reason</code> for the sentiment.</p>
-<div id="8483f5fd" class="cell" data-execution_count="9">
+<div id="e657feec" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tools <span class="op">=</span> [</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    {</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"type"</span>: <span class="st">"function"</span>,</span>
@@ -554,7 +554,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f26e67ca" class="cell" data-execution_count="10">
+<div id="3793be52" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>messages <span class="op">=</span> []</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>messages.append(</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="ss">f"Classify the given text into one of the following sentiment categories: </span><span class="sc">{</span>sentiment_categories<span class="sc">}</span><span class="ss">. If you can, also extract the reason."</span>}</span>
@@ -576,7 +576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>Response: '{
 "sentiment": "positive",
-"reason": "The text expresses admiration for both the movie and the actor, Johnny Depp."
+"reason": "The text expresses love for the movie and admiration for Johnny Depp's acting skills."
 }'</code></pre>
 </div>
 </div>

@@ -400,7 +400,7 @@
 </section>
 <section id="term-frequency-token-counting" class="slide level2">
 <h2>Term frequency: Token counting</h2>
-<div id="093965c6" class="cell" data-execution_count="1">
+<div id="5eee409d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
 <span id="cb1-2"><a></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
 <span id="cb1-3"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
@@ -458,7 +458,7 @@ seemed: 14</code></pre>
 </div>
 </div></section><section id="bag-of-words-creating-a-vocabulary" class="slide level2">
 <h2>Bag of Words: Creating a vocabulary</h2>
-<div id="603fd925" class="cell" data-execution_count="2">
+<div id="80dfe579" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
 <span id="cb3-2"><a></a></span>
 <span id="cb3-3"><a></a></span>
@@ -533,7 +533,7 @@ Document 4: [1, 1, 0, 0, 0]</code></pre>
 </div>
 </div></section><section id="statistical-similarity-of-texts" class="slide level2">
 <h2>Statistical similarity of texts</h2>
-<div id="0818c3aa" class="cell" data-execution_count="3">
+<div id="495e5c44" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a></a></span>
 <span id="cb5-3"><a></a><span class="kw">def</span> cosine_similarity(vec1: np.array, vec2: np.array) <span class="op">-&gt;</span> <span class="bu">float</span>: </span>
@@ -618,7 +618,7 @@ Document 4: [1, 1, 0, 0, 0]</code></pre>
 </section>
 <section id="code-example" class="slide level2">
 <h2>Code example</h2>
-<div id="1f9887bc" class="cell" data-execution_count="4">
+<div id="712e3fe9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer</span>
 <span id="cb7-2"><a></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
 <span id="cb7-3"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -668,7 +668,7 @@ Document 5 belongs to Cluster 1</code></pre>
 </div>
 </div></section><section class="slide level2">
 
-<div id="91f26355" class="cell" data-execution_count="5">
+<div id="f72f2382" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># Get the vocabulary</span></span>
 <span id="cb9-2"><a></a>vocabulary <span class="op">=</span> vectorizer.get_feature_names_out()</span>
 <span id="cb9-3"><a></a></span>

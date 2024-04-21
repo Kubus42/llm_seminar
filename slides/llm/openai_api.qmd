@@ -8,3 +8,87 @@ format:
         logo: ../../assets/logo.svg
         fig-align: center
 ---
+
+## Let's get started 
+
+The great thing about APIs is that we can start right away without too much preparation! 
+
+In this sprint, we will use the OpenAI API for completions and embeddings.
+
+Resource: [OpenAI API docs](https://platform.openai.com/docs/introduction){.external}
+
+## Authentication
+
+Typically, it's as simple as this:
+
+```{python}
+#| echo: true
+#| eval: false
+
+# setting up the client in Python
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY")
+)
+
+```
+
+
+## Authentication for the seminar
+For the sprint, we have hosted some models in Azure. 
+
+``` {python}
+#| echo: true
+import os
+from llm_utils.client import get_openai_client, OpenAIModels
+
+print(f"GPT3: {OpenAIModels.GPT_3.value}")
+print(f"GPT4: {OpenAIModels.GPT_4.value}")
+print(f"Embedding model: {OpenAIModels.EMBED.value}")
+
+MODEL = OpenAIModels.GPT_4.value
+
+client = get_openai_client(
+    model=MODEL,
+    config_path=os.environ.get("CONFIG_PATH")
+)
+```
+
+
+
+## Creating a completion
+
+```{python}
+#| echo: true
+chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "How old is the earth?",
+        }
+    ],
+    model=MODEL 
+)
+
+# check out the type of the response
+
+print(f"Response: {type(chat_completion)}") # a ChatCompletion object
+
+```
+
+
+## Retrieving the response 
+
+```{python}
+#| echo: true
+
+
+
+# print the message we want
+print(f"\nResponse message: {chat_completion.choices[0].message.content}")
+
+# check the tokens used 
+print(f"\nTotal tokens used: {chat_completion.usage.total_tokens}")
+```
