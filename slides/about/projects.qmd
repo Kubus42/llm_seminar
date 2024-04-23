@@ -8,13 +8,7 @@ format:
         logo: ../../assets/logo.svg
 ---
 
-# How to develop an app with a language model
-
-## What do I have to keep in mind?
-
-## What can go wrong? 
-
-## What do I need?
+# How to develop an app with a language model: DEMO
 
 
 # Project ideas

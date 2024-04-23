@@ -9,22 +9,22 @@ format:
 ---
 
 ## About the seminar
-- Roughly divided into 3 parts: theory, training, and application
-- Theory:
+- Roughly divided into 3 parts: **theory**, **training**, and **application**
+- **Theory**:
   - Learn about important topics in natural language processing
-  - Topics include tokenization, matching, statistical text analysis, and embeddings
+  - Topics include tokenization, matching, statistical text analysis, language models, and embeddings
   - Coding examples in Python alongside theoretical concepts
 
 ---
 
-- Training:
+- **Training**:
   - Hands-on exercises after each topic
   - Solve coding exercises to consolidate knowledge
   - Utilize Jupyterlab environment for exercises
 
 &nbsp;
 
-- Application:
+- **Application**:
   - Apply knowledge in own projects
   - Teams of 2-3 develop and implement prototypes
   - Small application involving a language model

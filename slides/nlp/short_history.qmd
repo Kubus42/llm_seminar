@@ -8,50 +8,6 @@ format:
         logo: ../../assets/logo.svg
 ---
 
-## Early Days: Rule-Based Approaches (1960s-1980s)
-- Rely heavily on rule-based approaches
-- Significant efforts in tasks like part-of-speech tagging, named entity recognition, and machine translation
-- Struggled with ambiguity and complexity of natural language
-
-
-## Rise of Statistical Methods (1990s-2000s)
-- Emergence of statistical methods
-- Techniques like Hidden Markov Models and Conditional Random Fields gained prominence
-- Improved performance in tasks such as text classification, sentiment analysis, and information extraction
-
-
-## Machine Learning Revolution (2010s)
-- Rise of machine learning, particularly deep learning
-- Exploration of neural network architectures tailored for NLP tasks
-- Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) gained traction
-
-
-## Large Language Models: Transformers (2010s-Present)
-- Rise of large language models, epitomized by the Transformer architecture
-- Powered by self-attention mechanisms
-- Achieved unprecedented performance across a wide range of NLP tasks
-
-
-# Challenges in NLP
-::: {.incremental}
-- Ambiguity of language
-- Different languages
-- Bias
-- Importance of context
-- World knowledge
-- Common sense reasoning
-- "Incomparability" of language
-:::
-
-::: {.notes}
-- Poses challenges in accurately interpreting meaning
-- NLP systems struggle with languages other than English
-- NLP models can perpetuate biases present in the training data
-- Understanding context is paramount for NLP tasks
-- NLP systems lack comprehensive world knowledge
-:::
-
-
 # Classic NLP tasks & applications
 
 
@@ -217,3 +173,50 @@ print(f"Predicted Label: {predicted_label_text}")
 ## Machine Translation
 - Automatically translating text from one language to another
 - Facilitates communication across language barriers
+
+
+
+## Early Days: Rule-Based Approaches (1960s-1980s)
+- Rely heavily on rule-based approaches
+- Significant efforts in tasks like part-of-speech tagging, named entity recognition, and machine translation
+- Struggled with ambiguity and complexity of natural language
+
+
+## Rise of Statistical Methods (1990s-2000s)
+- Emergence of statistical methods
+- Techniques like Hidden Markov Models and Conditional Random Fields gained prominence
+- Improved performance in tasks such as text classification, sentiment analysis, and information extraction
+
+
+## Machine Learning Revolution (2010s)
+- Rise of machine learning, particularly deep learning
+- Exploration of neural network architectures tailored for NLP tasks
+- Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) gained traction
+
+
+## Large Language Models: Transformers (2010s-Present)
+- Rise of large language models, epitomized by the Transformer architecture
+- Powered by self-attention mechanisms
+- Achieved unprecedented performance across a wide range of NLP tasks
+
+
+# Challenges in NLP
+::: {.incremental}
+- Ambiguity of language
+- Different languages
+- Bias
+- Importance of context
+- World knowledge
+- Common sense reasoning
+- "Incomparability" of language
+:::
+
+::: {.notes}
+- Poses challenges in accurately interpreting meaning
+- NLP systems struggle with languages other than English
+- NLP models can perpetuate biases present in the training data
+- Understanding context is paramount for NLP tasks
+- NLP systems lack comprehensive world knowledge
+:::
+
+

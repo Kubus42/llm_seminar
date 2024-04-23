@@ -1174,7 +1174,7 @@
     "href": "slides/nlp/short_history.html#machine-translation",
     "title": "A Short History of Natural Language Processing",
     "section": "Machine Translation",
-    "text": "Machine Translation\n\nAutomatically translating text from one language to another\nFacilitates communication across language barriers\n\n\n\n\n\nSprint: LLM, 2024"
+    "text": "Machine Translation\n\nAutomatically translating text from one language to another\nFacilitates communication across language barriers"
   },
   {
     "objectID": "slides/nlp/statistics.html#term-frequency-token-counting",

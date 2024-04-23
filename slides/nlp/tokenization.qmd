@@ -167,6 +167,8 @@ print(lemmatized_sentence_token)
 - Vocabulary Construction: Construct vocabulary with single tokens
 - Encoding and Decoding: Text encoded and decoded using constructed vocabulary
 
+# [OpenAI Tokenizer](https://platform.openai.com/tokenizer){.external}
+
 ## Bit Pair Encoding: Pros and Cons
 - Efficient Memory Usage
 - Retains Information

@@ -398,72 +398,6 @@
 </div>
 
 </section>
-<section id="early-days-rule-based-approaches-1960s-1980s" class="slide level2">
-<h2>Early Days: Rule-Based Approaches (1960s-1980s)</h2>
-<ul>
-<li>Rely heavily on rule-based approaches</li>
-<li>Significant efforts in tasks like part-of-speech tagging, named entity recognition, and machine translation</li>
-<li>Struggled with ambiguity and complexity of natural language</li>
-</ul>
-</section>
-<section id="rise-of-statistical-methods-1990s-2000s" class="slide level2">
-<h2>Rise of Statistical Methods (1990s-2000s)</h2>
-<ul>
-<li>Emergence of statistical methods</li>
-<li>Techniques like Hidden Markov Models and Conditional Random Fields gained prominence</li>
-<li>Improved performance in tasks such as text classification, sentiment analysis, and information extraction</li>
-</ul>
-</section>
-<section id="machine-learning-revolution-2010s" class="slide level2">
-<h2>Machine Learning Revolution (2010s)</h2>
-<ul>
-<li>Rise of machine learning, particularly deep learning</li>
-<li>Exploration of neural network architectures tailored for NLP tasks</li>
-<li>Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) gained traction</li>
-</ul>
-</section>
-<section id="large-language-models-transformers-2010s-present" class="slide level2">
-<h2>Large Language Models: Transformers (2010s-Present)</h2>
-<ul>
-<li>Rise of large language models, epitomized by the Transformer architecture</li>
-<li>Powered by self-attention mechanisms</li>
-<li>Achieved unprecedented performance across a wide range of NLP tasks</li>
-</ul>
-</section>
-<section id="challenges-in-nlp" class="title-slide slide level1 center">
-<h1>Challenges in NLP</h1>
-<div>
-<ul>
-<li class="fragment">Ambiguity of language</li>
-<li class="fragment">Different languages</li>
-<li class="fragment">Bias</li>
-<li class="fragment">Importance of context</li>
-<li class="fragment">World knowledge</li>
-<li class="fragment">Common sense reasoning</li>
-<li class="fragment">“Incomparability” of language</li>
-</ul>
-</div>
-<aside class="notes">
-<ul>
-<li>Poses challenges in accurately interpreting meaning</li>
-<li>NLP systems struggle with languages other than English</li>
-<li>NLP models can perpetuate biases present in the training data</li>
-<li>Understanding context is paramount for NLP tasks</li>
-<li>NLP systems lack comprehensive world knowledge</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
 <section>
 <section id="classic-nlp-tasks-applications" class="title-slide slide level1 center">
 <h1>Classic NLP tasks &amp; applications</h1>
@@ -481,7 +415,7 @@
 </section>
 <section class="slide level2">
 
-<div id="7bc88ed6" class="cell" data-execution_count="1">
+<div id="da281b73" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> spacy</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a><span class="co"># Load the English language model</span></span>
@@ -533,7 +467,7 @@ Token: .         | POS Tag: PUNCT</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="f72d424c" class="cell" data-execution_count="2">
+<div id="55609968" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> spacy</span>
 <span id="cb3-2"><a></a></span>
 <span id="cb3-3"><a></a><span class="co"># Load the English language model</span></span>
@@ -571,7 +505,7 @@ Entity: $1 billion           | Label: MONEY</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="79131118" class="cell" data-execution_count="3">
+<div id="7efd8248" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># python -m textblob.download_corpora</span></span>
 <span id="cb5-2"><a></a><span class="im">from</span> textblob <span class="im">import</span> TextBlob</span>
 <span id="cb5-3"><a></a></span>
@@ -612,7 +546,7 @@ Sentiment Label: Positive</code></pre>
 </section>
 <section class="slide level2">
 
-<div id="ba7f27eb" class="cell" data-execution_count="4">
+<div id="0b5cfd5c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> TfidfVectorizer</span>
 <span id="cb7-2"><a></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVC</span>
 <span id="cb7-3"><a></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
@@ -685,6 +619,71 @@ Predicted Label: Positive</code></pre>
 <li>Automatically translating text from one language to another</li>
 <li>Facilitates communication across language barriers</li>
 </ul>
+</section>
+<section id="early-days-rule-based-approaches-1960s-1980s" class="slide level2">
+<h2>Early Days: Rule-Based Approaches (1960s-1980s)</h2>
+<ul>
+<li>Rely heavily on rule-based approaches</li>
+<li>Significant efforts in tasks like part-of-speech tagging, named entity recognition, and machine translation</li>
+<li>Struggled with ambiguity and complexity of natural language</li>
+</ul>
+</section>
+<section id="rise-of-statistical-methods-1990s-2000s" class="slide level2">
+<h2>Rise of Statistical Methods (1990s-2000s)</h2>
+<ul>
+<li>Emergence of statistical methods</li>
+<li>Techniques like Hidden Markov Models and Conditional Random Fields gained prominence</li>
+<li>Improved performance in tasks such as text classification, sentiment analysis, and information extraction</li>
+</ul>
+</section>
+<section id="machine-learning-revolution-2010s" class="slide level2">
+<h2>Machine Learning Revolution (2010s)</h2>
+<ul>
+<li>Rise of machine learning, particularly deep learning</li>
+<li>Exploration of neural network architectures tailored for NLP tasks</li>
+<li>Recurrent Neural Networks (RNNs) and Convolutional Neural Networks (CNNs) gained traction</li>
+</ul>
+</section>
+<section id="large-language-models-transformers-2010s-present" class="slide level2">
+<h2>Large Language Models: Transformers (2010s-Present)</h2>
+<ul>
+<li>Rise of large language models, epitomized by the Transformer architecture</li>
+<li>Powered by self-attention mechanisms</li>
+<li>Achieved unprecedented performance across a wide range of NLP tasks</li>
+</ul>
+</section></section>
+<section id="challenges-in-nlp" class="title-slide slide level1 center">
+<h1>Challenges in NLP</h1>
+<div>
+<ul>
+<li class="fragment">Ambiguity of language</li>
+<li class="fragment">Different languages</li>
+<li class="fragment">Bias</li>
+<li class="fragment">Importance of context</li>
+<li class="fragment">World knowledge</li>
+<li class="fragment">Common sense reasoning</li>
+<li class="fragment">“Incomparability” of language</li>
+</ul>
+</div>
+<aside class="notes">
+<ul>
+<li>Poses challenges in accurately interpreting meaning</li>
+<li>NLP systems struggle with languages other than English</li>
+<li>NLP models can perpetuate biases present in the training data</li>
+<li>Understanding context is paramount for NLP tasks</li>
+<li>NLP systems lack comprehensive world knowledge</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../assets/logo.svg" class="slide-logo"></p>
@@ -692,7 +691,7 @@ Predicted Label: Positive</code></pre>
 <p>Sprint: LLM, 2024</p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
