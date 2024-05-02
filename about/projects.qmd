@@ -25,4 +25,4 @@ The following list can serve as inspiration.
 
 
 ### Project setup
-TODO: Describe the idea of Dash and the app in Jupyterlab.
+See slides.
