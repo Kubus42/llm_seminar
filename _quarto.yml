@@ -21,7 +21,7 @@ website:
             url:  https://github.com/Kubus42/llm_seminar
           - text: Report a Bug
             url:  https://github.com/Kubus42/llm_seminar/issues
-    title: "Sprint: Large Language Models"
+    title: "Seminar: Large Language Models"
     left:
       - text: "Seminar"
         file: "index.qmd"

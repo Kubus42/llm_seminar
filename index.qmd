@@ -1,5 +1,5 @@
 ---
-title: "Sprint: Large Language Models"
+title: "Seminar: Large Language Models"
 format:
   html:
     code-fold: true
@@ -9,7 +9,7 @@ jupyter: python3
 ![Robot by DALL-E](assets/dall-e-robot.jpeg){width=350 fig-align="left"}
 
 
-Hello and welcome to the sprint seminar **Large Language Models** in the summer semester of 2024 at the University of Applied Sciences in Münster.
+Hello and welcome to the seminar **Large Language Models** in the winter semester of 2024/25 at the University of Applied Sciences in Münster.
 On this website, you will find all the information you need about and around the seminar. 
 
 
@@ -43,13 +43,13 @@ The solution of the exercises is not part of the evaluation, so it's really for 
 A "summary" of all exercises can be found [here](/resources/exercises.qmd).
 
 :::::: {.callout-important}
-A small disclaimer: As this is the first round of the seminar, this script is not (yet) ridiculously comprehensive.
+A small disclaimer: This script is not (yet) ridiculously comprehensive.
 And, of course, we cannot cover the full realm of NLP and LLM within a 4-days-course. However, you should find everything we will do in the seminar also in this script. If there is something missing, I will make sure to include it as soon as possible, just give me a note. 
 :::
 
 
 ### What you will learn
-As this seminar is only a 4-days introduction to understanding and working with language models, we can obviously not cover everything and offer deep insights into all the details. 
+As this seminar is meant to be an introduction to understanding and working with language models, so we can obviously not cover everything and offer deep insights into all the details. 
 Instead, we aim to give you a simple overview of all the necessities to start working with language models APIs and understand why things are working the way they do and how you can apply them in your own applications. 
 The content can already be seen from the navigation bar, but here's a quick walk-through.
 More precisely, we will walk you through a quick history of natural language processing with some of its challenges and limitations, and introduce you to text processing and analysis techniques such as tokenization, term frequency or bag of words as well as applications such as text classification or sentiment analysis.
@@ -59,35 +59,7 @@ Have fun!
 
 
 ### The schedule
-This seminar is spread over 4 days of roughly 8 hours, of course with some breaks and modifications if we need them.
-The schedule for this semester is the following (the included hours are just some estimations):
-
-#### Day 1 (24.04.2024):
-  - Getting to know each other + intro survey (experiences & expectations) (1h)
-  - Learning goals & final evaluation criteria (0.5h)
-  - Introduction & overview of the topic (0.5h)
-  - Introduction to natural language processing & setup of the development environment (4h)
-  - Introduction to LLM & getting to know the OpenAI API: Part 1 (2h)
-
-#### Day 2 (25.04.2024):
-  - Introduction to LLM & getting to know the OpenAI API: Part 2 (3h)
-  - Prompting (1h)
-  - Embeddings (2h)
-  - Group brainstorming session: Designing a simple app concept involving GPT (2h)
-  
-→ At home until next week: refine project ideas (1h)
-
-#### Day 3 (30.04.2024):
-  - Advanced GPT-related topics (1h)
-  - Business-related topics (1h)
-  - Team building for hackathon → develop app concepts (1h)
-  - Work on prototypes (5h)
-
-#### Day 4 (02.05.2024):
-  - Final touches for the prototypes (3h)
-  - Presentation of app prototypes, peer feedback & evaluation (2h)
-  - Reflections on the seminar (1h)
-  - Ethics & data privacy considerations (backup)
+TBD
 
 #### After the seminar (~1d):
   - Prototype refinement

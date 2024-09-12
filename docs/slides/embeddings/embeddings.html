@@ -8,7 +8,7 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.551">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>Embeddings</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +69,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +83,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -488,7 +488,7 @@
 </section>
 <section id="task-find-the-matching-document-for-a-prompt" class="slide level2">
 <h2>Task: Find the matching document for a prompt</h2>
-<div id="f2e2f7c7" class="cell" data-execution_count="1">
+<div id="24f7e75d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>texts <span class="op">=</span> [</span>
 <span id="cb1-2"><a></a>  <span class="st">"This is the first document."</span>,</span>
 <span id="cb1-3"><a></a>  <span class="st">"This document is the second document."</span>,</span>
@@ -500,7 +500,7 @@
 </section>
 <section id="get-the-openai-client" class="slide level2">
 <h2>Get the OpenAI client</h2>
-<div id="45714e17" class="cell" data-execution_count="2">
+<div id="f196ee8b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># prerequisites</span></span>
 <span id="cb2-2"><a></a></span>
 <span id="cb2-3"><a></a><span class="im">import</span> os</span>
@@ -517,7 +517,7 @@
 </section>
 <section id="get-the-embeddings" class="slide level2">
 <h2>Get the embeddings</h2>
-<div id="8c247e09" class="cell" data-execution_count="3">
+<div id="fda06e38" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># get the embeddings</span></span>
 <span id="cb3-2"><a></a>response <span class="op">=</span> client.embeddings.create(</span>
 <span id="cb3-3"><a></a>    <span class="bu">input</span><span class="op">=</span>texts,</span>
@@ -536,7 +536,7 @@
 </section>
 <section id="compute-the-similarity" class="slide level2">
 <h2>Compute the similarity</h2>
-<div id="0dbffcf7" class="cell" data-execution_count="4">
+<div id="ac26d827" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a><span class="kw">def</span> cosine_similarity(vec1: np.array, vec2: np.array) <span class="op">-&gt;</span> <span class="bu">float</span>: </span>
@@ -562,7 +562,7 @@ And this is the third one.: 0.8</code></pre>
 </section>
 <section id="define-some-words-to-visualize" class="slide level2">
 <h2>Define some words to visualize</h2>
-<div id="02a80e22" class="cell" data-execution_count="5">
+<div id="7d50f6a4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Define a list of words to visualize</span></span>
 <span id="cb6-2"><a></a>words <span class="op">=</span> [</span>
 <span id="cb6-3"><a></a>    <span class="st">"king"</span>, <span class="st">"queen"</span>, <span class="st">"man"</span>, <span class="st">"woman"</span>, <span class="st">"apple"</span>, <span class="st">"banana"</span>, </span>
@@ -580,7 +580,7 @@ And this is the third one.: 0.8</code></pre>
 </section>
 <section id="apply-t-sne-to-the-embedding-vectors" class="slide level2">
 <h2>Apply T-SNE to the embedding vectors</h2>
-<div id="9785ce16" class="cell" data-execution_count="6">
+<div id="0aebc3b2" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-3"><a></a></span>
@@ -614,13 +614,13 @@ And this is the third one.: 0.8</code></pre>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="embeddings_files/figure-revealjs/cell-7-output-1.png" class="quarto-figure quarto-figure-center" width="718" height="555"></p>
+<p><img data-src="embeddings_files/figure-revealjs/cell-7-output-1.png" class="quarto-figure quarto-figure-center" width="707" height="555"></p>
 </figure>
 </div>
 </div>
 </div></section><section id="cluster-the-embeddings" class="slide level2">
 <h2>Cluster the embeddings</h2>
-<div id="77ac9d72" class="cell" data-execution_count="7">
+<div id="d402e489" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="co"># do the clus#| tering</span></span>
 <span id="cb8-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-3"><a></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
@@ -643,7 +643,7 @@ And this is the third one.: 0.8</code></pre>
 </section>
 <section id="visualize-with-t-sne" class="slide level2">
 <h2>Visualize with T-SNE</h2>
-<div id="80a31df2" class="cell" data-execution_count="8">
+<div id="d4f78b5e" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-2"><a></a></span>
 <span id="cb9-3"><a></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> TSNE</span>
@@ -680,14 +680,14 @@ And this is the third one.: 0.8</code></pre>
 <div class="quarto-auto-generated-content">
 <p><img src="../../assets/logo.svg" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Sprint: LLM, 2024</p>
+<p>Seminar: LLM, WiSe 2024/25</p>
 </div>
 </div>
 </section><section id="visualize-with-t-sne-output" class="slide level2 output-location-slide"><h2>Visualize with T-SNE</h2><div class="cell output-location-slide" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="embeddings_files/figure-revealjs/cell-9-output-1.png" class="quarto-figure quarto-figure-center" width="718" height="555"></p>
+<p><img data-src="embeddings_files/figure-revealjs/cell-9-output-1.png" class="quarto-figure quarto-figure-center" width="707" height="555"></p>
 </figure>
 </div>
 </div>
@@ -936,18 +936,7 @@ And this is the third one.: 0.8</code></pre>
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -979,7 +968,29 @@ And this is the third one.: 0.8</code></pre>
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -987,7 +998,7 @@ And this is the third one.: 0.8</code></pre>
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

@@ -4,7 +4,7 @@ format:
     revealjs:
         theme: default
         chalkboard: true
-        footer: "Sprint: LLM, 2024"
+        footer: "Seminar: LLM, WiSe 2024/25"
         logo: ../../assets/logo.svg
 ---
 
