@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The OpenAI API</title>
+<title>Conditional Statements</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../llm/exercises/ex_gpt_start.html" rel="next">
-<link href="../llm/gpt.html" rel="prev">
+<link href="../nlp/overview.html" rel="next">
+<link href="../python_intro/functions.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt_api.html">The OpenAI API</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../python_intro/conditional_statements.html">Conditional Statements</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -194,13 +194,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Python Crash Course</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python_intro/overview.html" class="sidebar-item-text sidebar-link">
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/conditional_statements.html" class="sidebar-item-text sidebar-link">
+  <a href="../python_intro/conditional_statements.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Conditional Statements</span></a>
   </div>
 </li>
@@ -306,13 +306,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Large Language Models</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../llm/intro.html" class="sidebar-item-text sidebar-link">
@@ -327,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link active">
+  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The OpenAI API</span></a>
   </div>
 </li>
@@ -430,9 +430,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt_api.html">The OpenAI API</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../python_intro/conditional_statements.html">Conditional Statements</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">The OpenAI API</h1>
+<h1 class="title">Conditional Statements</h1>
 </div>
 
 
@@ -449,82 +449,216 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Resource: <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API docs</a></p>
-</div>
-</div>
-<p>Let’s finally get started working with GPT. In this seminar, we will use the OpenAI API to work with, but there are many alternatives out there. We have collected a few in the <a href="../resources/apis.html">resources</a>.</p>
-<section id="authentication" class="level3">
-<h3 class="anchored" data-anchor-id="authentication">Authentication</h3>
-<p>Getting started with the OpenAI Chat Completions API requires signing up for an account on the OpenAI platform. Once you’ve registered, you’ll gain access to an API key, which serves as a unique identifier for your application to authenticate requests to the API. This key is essential for ensuring secure communication between your application and OpenAI’s servers. Without proper authentication, your requests will be rejected. You can create your own account, but for the seminar we will provide the client with the credential within the University’s <a href="https://jupyter.fh-muenster.de/" class="external">Jupyterlab</a>.</p>
-<div id="168232d8" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setting up the client in Python</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    api_key<span class="op">=</span>os.environ.get(<span class="st">"OPENAI_API_KEY"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Conditional statements allow you to control the flow of your program based on different conditions. In Python, the most common conditional statement is the <strong><code>if</code> statement</strong>, which lets you execute code only when a certain condition is true. This is essential for decision-making in your programs. For example, when working with NLP tasks, you might want to process text differently based on certain conditions, like whether a word is in uppercase, whether a sentence contains a keyword, or whether the length of a string exceeds a certain threshold.</p>
+<p>Let’s explore how conditional statements work in Python.</p>
+<section id="the-if-statement" class="level2">
+<h2 class="anchored" data-anchor-id="the-if-statement">The <code>if</code> Statement</h2>
+<p>The <code>if</code> statement checks a condition (usually a comparison between values) and executes a block of code if the condition evaluates to <strong>True</strong>. If the condition is <strong>False</strong>, the code inside the <code>if</code> block is skipped.</p>
+<section id="basic-syntax" class="level4">
+<h4 class="anchored" data-anchor-id="basic-syntax"><strong>Basic Syntax:</strong></h4>
+<div id="639f22a6" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code to be executed if the condition is True</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="requesting-completions" class="level3">
-<h3 class="anchored" data-anchor-id="requesting-completions">Requesting Completions</h3>
-<p>Most interaction with GPT and other models consist in generating completions for prompts, i.e., providing some text with instructions and letting the language model <strong>complete</strong> the text one token after the other as seen <a href="../llm/intro.html">here</a>.</p>
-<p>To request completions from the OpenAI API, we use Python to send HTTP requests to the designated API endpoint. These requests are structured to include various parameters that guide the generation of text completions. The most fundamental parameter is the prompt text, which sets the context for the completion. Additionally, you can specify the desired model configuration, such as the engine to use (e.g., “gpt-4”), as well as any constraints or preferences for the generated completions, such as the maximum number of tokens or the temperature for controlling creativity (TODO: Link parameterization)</p>
-<div id="8533d111" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a completion</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    messages<span class="op">=</span>[</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        {</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"content"</span>: <span class="st">"How old is the earth?"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    ],</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gpt-3.5-turbo"</span> <span class="co"># choose the model</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="processing" class="level3">
-<h3 class="anchored" data-anchor-id="processing">Processing</h3>
-<p>Once the OpenAI API receives your request, it proceeds to process the provided prompt using the specified model. This process involves analyzing the context provided by the prompt and leveraging the model’s pre-trained knowledge to generate text completions. The model employs advanced natural language processing techniques to ensure that the generated completions are coherent and contextually relevant. By drawing from its extensive training data and understanding of human language, the model aims to produce responses that closely align with human-like communication.</p>
-</section>
-<section id="response" class="level3">
-<h3 class="anchored" data-anchor-id="response">Response</h3>
-<p>After processing your request, the OpenAI API returns a response containing the generated text completions. Depending on the specifics of your request, you may receive multiple completions, each accompanied by additional information such as the amount of token processed in the request, the reason why the model stopped the answer etc. This response provides valuable insights into the quality and relevance of the completions, allowing you to tailor your application’s behavior accordingly. Let’s check it out briefly, before you explore the response object more in-depth in your next exercise.</p>
-<div id="4968b9cd" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check out the type of the response</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Response object type: </span><span class="sc">{</span><span class="bu">type</span>(chat_completion)<span class="sc">}</span><span class="ss">"</span>) <span class="co"># a ChatCompletion object</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print the message we want</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Response message: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># check the tokens used </span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total tokens used: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>usage<span class="sc">.</span>total_tokens<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example:</h3>
+<div id="95bd00e2" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is greater than 5"</span>)  <span class="co"># Output: x is greater than 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response object type: &lt;class 'openai.types.chat.chat_completion.ChatCompletion'&gt;
-
-Response message: The Earth is approximately 4.54 billion years old.
-
-Total tokens used: 25</code></pre>
+<pre><code>x is greater than 5</code></pre>
 </div>
 </div>
+<p>In this example, the condition <code>x &gt; 5</code> is checked. Since <code>x</code> is 10, which is greater than 5, the print statement is executed.</p>
 </section>
-<section id="error-handling" class="level3">
-<h3 class="anchored" data-anchor-id="error-handling">Error Handling</h3>
-<p>While interacting with the OpenAI API (or any API for that matter), it’s crucial to implement some robust error handling mechanisms to manage any potential issues that may arise. The kind of classic errors include providing invalid parameters, experiencing authentication failures due to an incorrect API key, or encountering rate limiting restrictions. But for language models in particular, there are plenty more problems that can arise simply involving the answer we get from the model. Some examples are requests involving explicit language or content or restricted content etc. which are typically blocked by the API. Other times it might simply happen that a model does not respond in a way you expected, for example, just repeating your input instead of responding properly, or not responding in the format you requested. Whenever we are using language model for applications, we need to be aware of this and implement the right measures to handle these situations.</p>
+</section>
+<section id="the-else-statement" class="level2">
+<h2 class="anchored" data-anchor-id="the-else-statement">The <code>else</code> Statement</h2>
+<p>You can use the <code>else</code> statement to define what happens if the condition in the <code>if</code> statement is <strong>False</strong>. The <code>else</code> block will run when all previous conditions are false.</p>
+<section id="example-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-1">Example:</h4>
+<div id="54bcf190" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is greater than 5"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is not greater than 5"</span>)  <span class="co"># Output: x is not greater than 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is not greater than 5</code></pre>
+</div>
+</div>
+<p>In this example, since <code>x</code> is 3 (which is not greater than 5), the <code>else</code> block is executed, and the message “x is not greater than 5” is printed.</p>
+</section>
+</section>
+<section id="the-elif-statement" class="level2">
+<h2 class="anchored" data-anchor-id="the-elif-statement">The <code>elif</code> Statement</h2>
+<p>If you want to check multiple conditions, you can use <code>elif</code> (short for “else if”). The <code>elif</code> statement allows you to test additional conditions if the previous <code>if</code> condition was False.</p>
+<section id="example-2" class="level4">
+<h4 class="anchored" data-anchor-id="example-2">Example:</h4>
+<div id="48aa8c43" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is greater than 10"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is greater than 5 but less than or equal to 10"</span>)  <span class="co"># Output: x is greater than 5 but less than or equal to 10</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is less than or equal to 5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is greater than 5 but less than or equal to 10</code></pre>
+</div>
+</div>
+<p>In this example, Python first checks if <code>x &gt; 10</code>. Since that condition is false, it moves to the <code>elif</code> condition (<code>x &gt; 5</code>), which is true, so the second block is executed.</p>
+</section>
+<section id="using-comparison-operators" class="level3">
+<h3 class="anchored" data-anchor-id="using-comparison-operators">Using Comparison Operators</h3>
+<p>In conditional statements, we typically use <strong>comparison operators</strong> to evaluate the relationship between values. Here are some common comparison operators:</p>
+<ul>
+<li><code>==</code>: Equal to</li>
+<li><code>!=</code>: Not equal to</li>
+<li><code>&gt;</code>: Greater than</li>
+<li><code>&lt;</code>: Less than</li>
+<li><code>&gt;=</code>: Greater than or equal to</li>
+<li><code>&lt;=</code>: Less than or equal to</li>
+</ul>
+<section id="example-3" class="level4">
+<h4 class="anchored" data-anchor-id="example-3">Example:</h4>
+<div id="54fe6687" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">==</span> <span class="dv">18</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are 18 years old"</span>)  <span class="co"># Output: You are 18 years old</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">!=</span> <span class="dv">20</span>:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are not 20 years old"</span>)  <span class="co"># Output: You are not 20 years old</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>You are 18 years old
+You are not 20 years old</code></pre>
+</div>
+</div>
+<p>In this example, we use the <code>==</code> operator to check if <code>age</code> is exactly 18 and the <code>!=</code> operator to check if <code>age</code> is not 20.</p>
+</section>
+</section>
+<section id="logical-operators" class="level3">
+<h3 class="anchored" data-anchor-id="logical-operators">Logical Operators</h3>
+<p>Python also provides <strong>logical operators</strong> to combine multiple conditions:</p>
+<ul>
+<li><code>and</code>: Returns <strong>True</strong> if both conditions are true.</li>
+<li><code>or</code>: Returns <strong>True</strong> if at least one condition is true.</li>
+<li><code>not</code>: Inverts the truth value of the condition.</li>
+</ul>
+<section id="example-4" class="level4">
+<h4 class="anchored" data-anchor-id="example-4">Example:</h4>
+<div id="cee6ae01" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Using 'and' operator</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is between 5 and 10"</span>)  <span class="co"># Output: x is between 5 and 10</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using 'or' operator</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">5</span> <span class="kw">or</span> x <span class="op">&gt;</span> <span class="dv">6</span>:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is either less than 5 or greater than 6"</span>)  <span class="co"># Output: x is either less than 5 or greater than 6</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Using 'not' operator</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> x <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is not equal to 5"</span>)  <span class="co"># Output: x is not equal to 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is between 5 and 10
+x is either less than 5 or greater than 6
+x is not equal to 5</code></pre>
+</div>
+</div>
+<p>In this example, the <code>and</code> operator checks if both conditions (<code>x &gt; 5</code> and <code>x &lt; 10</code>) are true, the <code>or</code> operator checks if at least one condition is true, and the <code>not</code> operator inverts the condition, making <code>x == 5</code> false.</p>
+</section>
+</section>
+<section id="nested-if-statements" class="level3">
+<h3 class="anchored" data-anchor-id="nested-if-statements">Nested <code>if</code> Statements</h3>
+<p>You can place an <code>if</code> statement inside another <code>if</code> statement. This is called <strong>nesting</strong> and is useful when you need to check multiple conditions that depend on each other.</p>
+<section id="example-5" class="level4">
+<h4 class="anchored" data-anchor-id="example-5">Example:</h4>
+<div id="b43d150c" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> y <span class="op">&gt;</span> <span class="dv">15</span>:</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"x is greater than 5 and y is greater than 15"</span>)  <span class="co"># Output: x is greater than 5 and y is greater than 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is greater than 5 and y is greater than 15</code></pre>
+</div>
+</div>
+<p>Here, we first check if <code>x &gt; 5</code>. Since this is true, we then check if <code>y &gt; 15</code>. Since both conditions are true, the inner block is executed.</p>
+</section>
+</section>
+<section id="checking-membership-with-in-operator" class="level3">
+<h3 class="anchored" data-anchor-id="checking-membership-with-in-operator">Checking Membership with <code>in</code> Operator</h3>
+<p>The <code>in</code> operator is used to check if a value is present in a collection like a list, string, or tuple. This is particularly useful in NLP tasks when checking if a word or character exists in a string or list.</p>
+<section id="example-6" class="level4">
+<h4 class="anchored" data-anchor-id="example-6">Example:</h4>
+<div id="b00b7279" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"banana"</span> <span class="kw">in</span> fruits:</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Banana is in the list!"</span>)  <span class="co"># Output: Banana is in the list!</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking a string</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"Hello world"</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"world"</span> <span class="kw">in</span> sentence:</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The word 'world' is in the sentence."</span>)  <span class="co"># Output: The word 'world' is in the sentence.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banana is in the list!
+The word 'world' is in the sentence.</code></pre>
+</div>
+</div>
+<p>In this example, we use the <code>in</code> operator to check whether <code>"banana"</code> is present in the <code>fruits</code> list and if the word <code>"world"</code> is in the <code>sentence</code>.</p>
+</section>
+</section>
+<section id="combining-conditions-in-practical-examples" class="level3">
+<h3 class="anchored" data-anchor-id="combining-conditions-in-practical-examples">Combining Conditions in Practical Examples</h3>
+<p>Let’s take an example where we check whether a user’s input meets certain conditions, like a password validation function.</p>
+<section id="example-7" class="level4">
+<h4 class="anchored" data-anchor-id="example-7">Example:</h4>
+<div id="36c0a049" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>password <span class="op">=</span> <span class="st">"Hello123"</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(password) <span class="op">&gt;=</span> <span class="dv">8</span> <span class="kw">and</span> <span class="bu">any</span>(char.isdigit() <span class="cf">for</span> char <span class="kw">in</span> password):</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Password is valid"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Password must be at least 8 characters long and contain a number."</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Password is valid</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Password is valid</code></pre>
+</div>
+</div>
+<p>Here, we check two conditions for the password: it should be at least 8 characters long and must contain a number. The function <code>char.isdigit()</code> checks if there’s any numeric character in the password.</p>
+</section>
+</section>
+<section id="edge-cases-and-handling-errors" class="level3">
+<h3 class="anchored" data-anchor-id="edge-cases-and-handling-errors">Edge Cases and Handling Errors</h3>
+<p>When using conditional statements, it’s important to think about edge cases, i.e., situations where input values might behave differently or cause errors. For example, when dealing with empty strings, null values, or division by zero, you should handle these cases appropriately using conditionals.</p>
+<section id="example-8" class="level4">
+<h4 class="anchored" data-anchor-id="example-8">Example:</h4>
+<div id="7517b18d" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking for division by zero</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>numerator <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>denominator <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> denominator <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> numerator <span class="op">/</span> denominator</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Cannot divide by zero"</span>)  <span class="co"># Output: Cannot divide by zero</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cannot divide by zero</code></pre>
+</div>
+</div>
+<p>In this example, we use a conditional statement to prevent a division by zero error by checking if the denominator is not zero before performing the division.</p>
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -950,13 +1084,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../llm/gpt.html" class="pagination-link" aria-label="GPT: Generative Pre-trained Transformer">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GPT: Generative Pre-trained Transformer</span>
+      <a href="../python_intro/functions.html" class="pagination-link" aria-label="Functions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Functions</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../llm/exercises/ex_gpt_start.html" class="pagination-link" aria-label="Exercise: OpenAI - Getting started">
-        <span class="nav-page-text">Exercise: OpenAI - Getting started</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../nlp/overview.html" class="pagination-link" aria-label="Overview of NLP">
+        <span class="nav-page-text">Overview of NLP</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

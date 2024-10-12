@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The OpenAI API</title>
+<title>Classes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../llm/exercises/ex_gpt_start.html" rel="next">
-<link href="../llm/gpt.html" rel="prev">
+<link href="../nlp/overview.html" rel="next">
+<link href="../python_intro/dictionaries.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt_api.html">The OpenAI API</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../python_intro/classes.html">Classes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -194,13 +194,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Python Crash Course</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python_intro/overview.html" class="sidebar-item-text sidebar-link">
@@ -241,6 +241,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../python_intro/conditional_statements.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conditional Statements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python_intro/dictionaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionaries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python_intro/classes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Classes</span></a>
   </div>
 </li>
       </ul>
@@ -306,13 +318,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Large Language Models</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../llm/intro.html" class="sidebar-item-text sidebar-link">
@@ -327,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link active">
+  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The OpenAI API</span></a>
   </div>
 </li>
@@ -430,9 +442,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt_api.html">The OpenAI API</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../python_intro/classes.html">Classes</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">The OpenAI API</h1>
+<h1 class="title">Classes</h1>
 </div>
 
 
@@ -449,82 +461,147 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Resource: <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API docs</a></p>
-</div>
-</div>
-<p>Let’s finally get started working with GPT. In this seminar, we will use the OpenAI API to work with, but there are many alternatives out there. We have collected a few in the <a href="../resources/apis.html">resources</a>.</p>
-<section id="authentication" class="level3">
-<h3 class="anchored" data-anchor-id="authentication">Authentication</h3>
-<p>Getting started with the OpenAI Chat Completions API requires signing up for an account on the OpenAI platform. Once you’ve registered, you’ll gain access to an API key, which serves as a unique identifier for your application to authenticate requests to the API. This key is essential for ensuring secure communication between your application and OpenAI’s servers. Without proper authentication, your requests will be rejected. You can create your own account, but for the seminar we will provide the client with the credential within the University’s <a href="https://jupyter.fh-muenster.de/" class="external">Jupyterlab</a>.</p>
-<div id="168232d8" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setting up the client in Python</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    api_key<span class="op">=</span>os.environ.get(<span class="st">"OPENAI_API_KEY"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Classes are a fundamental part of object-oriented programming (OOP) in Python. They allow you to create your own data types that combine data (attributes) and functionality (methods) into a single structure. By using classes, you can model real-world entities, promote code reusability, and make your programs more organized and modular.</p>
+<p>In Python, a class serves as a blueprint for creating objects, encapsulating attributes and behaviors that are common to all instances of that class. Let’s dive into the concepts of classes, objects, and how to use them in Python.</p>
+<section id="defining-a-class" class="level3">
+<h3 class="anchored" data-anchor-id="defining-a-class">Defining a Class</h3>
+<p>You define a class using the <code>class</code> keyword followed by the class name. By convention, class names are written in CamelCase.</p>
+<section id="basic-syntax" class="level4">
+<h4 class="anchored" data-anchor-id="basic-syntax">Basic Syntax:</h4>
+<div id="0a4831a3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ClassName:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Class attributes and methods go here</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="requesting-completions" class="level3">
-<h3 class="anchored" data-anchor-id="requesting-completions">Requesting Completions</h3>
-<p>Most interaction with GPT and other models consist in generating completions for prompts, i.e., providing some text with instructions and letting the language model <strong>complete</strong> the text one token after the other as seen <a href="../llm/intro.html">here</a>.</p>
-<p>To request completions from the OpenAI API, we use Python to send HTTP requests to the designated API endpoint. These requests are structured to include various parameters that guide the generation of text completions. The most fundamental parameter is the prompt text, which sets the context for the completion. Additionally, you can specify the desired model configuration, such as the engine to use (e.g., “gpt-4”), as well as any constraints or preferences for the generated completions, such as the maximum number of tokens or the temperature for controlling creativity (TODO: Link parameterization)</p>
-<div id="8533d111" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a completion</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    messages<span class="op">=</span>[</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        {</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"content"</span>: <span class="st">"How old is the earth?"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    ],</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gpt-3.5-turbo"</span> <span class="co"># choose the model</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="processing" class="level3">
-<h3 class="anchored" data-anchor-id="processing">Processing</h3>
-<p>Once the OpenAI API receives your request, it proceeds to process the provided prompt using the specified model. This process involves analyzing the context provided by the prompt and leveraging the model’s pre-trained knowledge to generate text completions. The model employs advanced natural language processing techniques to ensure that the generated completions are coherent and contextually relevant. By drawing from its extensive training data and understanding of human language, the model aims to produce responses that closely align with human-like communication.</p>
-</section>
-<section id="response" class="level3">
-<h3 class="anchored" data-anchor-id="response">Response</h3>
-<p>After processing your request, the OpenAI API returns a response containing the generated text completions. Depending on the specifics of your request, you may receive multiple completions, each accompanied by additional information such as the amount of token processed in the request, the reason why the model stopped the answer etc. This response provides valuable insights into the quality and relevance of the completions, allowing you to tailor your application’s behavior accordingly. Let’s check it out briefly, before you explore the response object more in-depth in your next exercise.</p>
-<div id="4968b9cd" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check out the type of the response</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Response object type: </span><span class="sc">{</span><span class="bu">type</span>(chat_completion)<span class="sc">}</span><span class="ss">"</span>) <span class="co"># a ChatCompletion object</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print the message we want</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Response message: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># check the tokens used </span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total tokens used: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>usage<span class="sc">.</span>total_tokens<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">Example:</h4>
+<div id="ed71b373" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Text:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an instance of the Text class</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>my_text <span class="op">=</span> Text()</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text)  <span class="co"># Output: &lt;__main__.Text object at 0x...&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response object type: &lt;class 'openai.types.chat.chat_completion.ChatCompletion'&gt;
-
-Response message: The Earth is approximately 4.54 billion years old.
-
-Total tokens used: 25</code></pre>
+<pre><code>&lt;__main__.Text object at 0x1062a8920&gt;</code></pre>
 </div>
 </div>
+<p>In this example, we defined a simple class named <code>Text</code> and created an instance of it, which is stored in the variable <code>my_text</code>.</p>
 </section>
-<section id="error-handling" class="level3">
-<h3 class="anchored" data-anchor-id="error-handling">Error Handling</h3>
-<p>While interacting with the OpenAI API (or any API for that matter), it’s crucial to implement some robust error handling mechanisms to manage any potential issues that may arise. The kind of classic errors include providing invalid parameters, experiencing authentication failures due to an incorrect API key, or encountering rate limiting restrictions. But for language models in particular, there are plenty more problems that can arise simply involving the answer we get from the model. Some examples are requests involving explicit language or content or restricted content etc. which are typically blocked by the API. Other times it might simply happen that a model does not respond in a way you expected, for example, just repeating your input instead of responding properly, or not responding in the format you requested. Whenever we are using language model for applications, we need to be aware of this and implement the right measures to handle these situations.</p>
+</section>
+<section id="adding-attributes-and-methods" class="level3">
+<h3 class="anchored" data-anchor-id="adding-attributes-and-methods">Adding Attributes and Methods</h3>
+<p>Attributes are variables that belong to the class, while methods are functions defined within the class that can manipulate those attributes or perform actions.</p>
+<p>To define attributes, you typically do this inside a special method called <code>__init__()</code>, which initializes the object’s attributes when it is created.</p>
+<section id="example-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-1">Example:</h4>
+<div id="8d831fc8" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Text:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content):</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.content <span class="op">=</span> content  <span class="co"># Instance attribute</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> word_count(<span class="va">self</span>):  <span class="co"># Method</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.content.split())</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> shout(<span class="va">self</span>):  <span class="co"># Another method</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> <span class="va">self</span>.content.upper()</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> result.replace(<span class="st">"."</span>, <span class="st">"!"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> result</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an instance of Text</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>my_text <span class="op">=</span> Text(<span class="st">"Hello, World! This is a test."</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text.word_count())  <span class="co"># Output: 6</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text.shout())  <span class="co"># Output: HELLO, WORLD! THIS IS A </span><span class="al">TEST</span><span class="co">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>6
+HELLO, WORLD! THIS IS A TEST!</code></pre>
+</div>
+</div>
+<p>In this example, the <code>Text</code> class has an initializer method <code>__init__()</code> that takes <code>content</code> as a parameter and assigns it to an instance attribute. The <code>word_count()</code> method allows you to get the number of words in the text, the <code>shout()</code> method transforms all letters to upper case and replaces dots by an exclamation mark.</p>
+</section>
+</section>
+<section id="accessing-attributes-and-methods" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-attributes-and-methods">Accessing Attributes and Methods</h3>
+<p>You can access attributes and methods of a class instance using the dot <code>.</code> notation.</p>
+<section id="example-2" class="level4">
+<h4 class="anchored" data-anchor-id="example-2">Example:</h4>
+<div id="ca47b43e" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text.content)  <span class="co"># Output: Hello, World! This is a test.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, World! This is a test.</code></pre>
+</div>
+</div>
+<p>In this example, we access the <code>content</code> attribute of <code>my_text</code> using dot notation.</p>
+</section>
+</section>
+<section id="class-vs.-instance-attributes" class="level3">
+<h3 class="anchored" data-anchor-id="class-vs.-instance-attributes">Class vs.&nbsp;Instance Attributes</h3>
+<p>Attributes defined inside the <code>__init__()</code> method are called <strong>instance attributes</strong> because they belong to a specific instance of the class. In contrast, <strong>class attributes</strong> are shared by all instances of the class and are defined directly within the class body.</p>
+<section id="example-3" class="level4">
+<h4 class="anchored" data-anchor-id="example-3">Example:</h4>
+<div id="60199430" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Text:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    language <span class="op">=</span> <span class="st">"English"</span>  <span class="co"># Class attribute</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.content <span class="op">=</span> content  <span class="co"># Instance attribute</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating instances</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>text1 <span class="op">=</span> Text(<span class="st">"Hello, World!"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>text2 <span class="op">=</span> Text(<span class="st">"Bonjour, le monde!"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text1.language)  <span class="co"># Output: English</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text2.language)  <span class="co"># Output: English</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Changing class attribute</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>Text.language <span class="op">=</span> <span class="st">"French"</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text1.language)  <span class="co"># Output: French</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>English
+English
+French</code></pre>
+</div>
+</div>
+<p>In this example, we defined a class attribute <code>language</code> that is shared by all instances of the <code>Text</code> class. Changing the class attribute affects all instances.</p>
+</section>
+</section>
+<section id="inheritance" class="level3">
+<h3 class="anchored" data-anchor-id="inheritance">Inheritance</h3>
+<p>Inheritance allows you to create a new class that inherits attributes and methods from an existing class. This promotes code reuse and makes it easier to create a hierarchy of classes.</p>
+<section id="example-4" class="level4">
+<h4 class="anchored" data-anchor-id="example-4">Example:</h4>
+<div id="88e8157b" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Text:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.content <span class="op">=</span> content</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> word_count(<span class="va">self</span>):</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.content.split())</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> FormattedText(Text):  <span class="co"># Derived class</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content, format_type):</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(content)  <span class="co"># Call the parent class's constructor</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.format_type <span class="op">=</span> format_type</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> display(<span class="va">self</span>):</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"[</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>format_type<span class="sc">}</span><span class="ss">] </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating instances</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>my_text <span class="op">=</span> Text(<span class="st">"Hello, World!"</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>formatted_text <span class="op">=</span> FormattedText(<span class="st">"Hello, World!"</span>, <span class="st">"Bold"</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text.word_count())  <span class="co"># Output: 2</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(formatted_text.display())  <span class="co"># Output: [Bold] Hello, World!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2
+[Bold] Hello, World!</code></pre>
+</div>
+</div>
+<p>In this example, we have a base class <code>Text</code> and a derived class <code>FormattedText</code>. The derived class can extend the functionality of the base class.</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -950,13 +1027,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../llm/gpt.html" class="pagination-link" aria-label="GPT: Generative Pre-trained Transformer">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GPT: Generative Pre-trained Transformer</span>
+      <a href="../python_intro/dictionaries.html" class="pagination-link" aria-label="Dictionaries">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dictionaries</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../llm/exercises/ex_gpt_start.html" class="pagination-link" aria-label="Exercise: OpenAI - Getting started">
-        <span class="nav-page-text">Exercise: OpenAI - Getting started</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../nlp/overview.html" class="pagination-link" aria-label="Overview of NLP">
+        <span class="nav-page-text">Overview of NLP</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,208 @@
+---
+title: "Dictionaries"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+
+Dictionaries in Python are a powerful data structure that allows you to store and manage data in key-value pairs. They are highly versatile and widely used, especially in scenarios where you need to associate specific values with unique identifiers, such as words with their definitions or user IDs with user data.
+
+Dictionaries are unordered, which means that the items do not have a specific order, and they are mutable, allowing you to modify them after creation. This makes them an excellent choice for situations where you need fast lookups, insertions, and deletions based on keys.
+
+Let’s explore how dictionaries work in Python!
+
+
+
+### 1.6.1 Creating a Dictionary
+
+You can create a dictionary using curly braces `{}` with key-value pairs separated by colons. The key and value can be of any data type, including strings, integers, and even other dictionaries.
+
+#### Basic Syntax:
+```python
+my_dict = {
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+}
+```
+
+### Example:
+```python
+# Creating a simple dictionary
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+
+print(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York'}
+```
+
+In this example, we created a dictionary called `person` with keys like `"name"`, `"age"`, and `"city"` associated with their respective values.
+
+
+
+### 1.6.2 Accessing Values in a Dictionary
+
+You can access values in a dictionary by using their corresponding keys inside square brackets `[]`. If the key does not exist, it raises a `KeyError`.
+
+#### Example:
+```python
+# Accessing values
+print(person["name"])  # Output: Alice
+print(person["age"])   # Output: 30
+```
+
+Here, we accessed the values associated with the keys `"name"` and `"age"`.
+
+
+
+### 1.6.3 Modifying a Dictionary
+
+Dictionaries are mutable, meaning you can add, modify, or remove key-value pairs even after the dictionary has been created.
+
+#### Adding a Key-Value Pair:
+```python
+# Adding a new key-value pair
+person["occupation"] = "Engineer"
+print(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York', 'occupation': 'Engineer'}
+```
+
+#### Modifying a Value:
+```python
+# Modifying an existing value
+person["age"] = 31
+print(person)  # Output: {'name': 'Alice', 'age': 31, 'city': 'New York', 'occupation': 'Engineer'}
+```
+
+#### Removing a Key-Value Pair:
+```python
+# Removing a key-value pair
+del person["city"]
+print(person)  # Output: {'name': 'Alice', 'age': 31, 'occupation': 'Engineer'}
+```
+
+In these examples, we added a new key-value pair for `"occupation"`, modified the value associated with `"age"`, and removed the `"city"` key.
+
+
+
+### 1.6.4 Dictionary Methods
+
+Python dictionaries come with various built-in methods that make it easier to manipulate and interact with the data. Here are some common dictionary methods:
+
+#### 1.6.4.1 `get()` Method
+
+The `get()` method returns the value for a specified key. If the key doesn’t exist, it returns `None` (or a default value if provided) instead of raising a `KeyError`.
+
+#### Example:
+```python
+age = person.get("age", "Not Found")
+print(age)  # Output: 31
+
+# Trying to access a non-existent key
+location = person.get("city", "Not Found")
+print(location)  # Output: Not Found
+```
+
+In this example, we used `get()` to safely access the value for `"age"` and provided a default value for a non-existent key.
+
+#### 1.6.4.2 `keys()` Method
+
+The `keys()` method returns a view object that displays a list of all the keys in the dictionary.
+
+#### Example:
+```python
+keys = person.keys()
+print(keys)  # Output: dict_keys(['name', 'age', 'occupation'])
+```
+
+#### 1.6.4.3 `values()` Method
+
+The `values()` method returns a view object that displays a list of all the values in the dictionary.
+
+#### Example:
+```python
+values = person.values()
+print(values)  # Output: dict_values(['Alice', 31, 'Engineer'])
+```
+
+#### 1.6.4.4 `items()` Method
+
+The `items()` method returns a view object that displays a list of all the key-value pairs in the dictionary as tuples.
+
+#### Example:
+```python
+items = person.items()
+print(items)  # Output: dict_items([('name', 'Alice'), ('age', 31), ('occupation', 'Engineer')])
+```
+
+These methods are helpful when you want to loop through the keys, values, or key-value pairs of a dictionary.
+
+
+
+### 1.6.5 Looping Through a Dictionary
+
+You can loop through a dictionary using a `for` loop. By default, it iterates over the keys. If you need to access both keys and values, you can use the `items()` method.
+
+#### Example:
+```python
+# Looping through keys
+for key in person:
+    print(key)  # Output: name, age, occupation
+
+# Looping through keys and values
+for key, value in person.items():
+    print(f"{key}: {value}")
+# Output:
+# name: Alice
+# age: 31
+# occupation: Engineer
+```
+
+In this example, we demonstrate how to loop through the keys and both keys and values of the `person` dictionary.
+
+
+
+### 1.6.6 Nesting Dictionaries
+
+Dictionaries can also contain other dictionaries, allowing you to create complex data structures.
+
+#### Example:
+```python
+people = {
+    "Alice": {
+        "age": 30,
+        "city": "New York"
+    },
+    "Bob": {
+        "age": 25,
+        "city": "Los Angeles"
+    }
+}
+
+print(people["Alice"]["city"])  # Output: New York
+```
+
+In this example, we created a dictionary called `people` that contains two dictionaries for `"Alice"` and `"Bob"`, each with their own attributes.
+
+
+
+### 1.6.7 Dictionary Comprehensions
+
+Python supports a concise way to create dictionaries known as **dictionary comprehensions**. This is a compact way to transform data or filter items.
+
+#### Syntax:
+```python
+{key_expression: value_expression for item in iterable if condition}
+```
+
+#### Example:
+```python
+# Creating a dictionary using comprehension
+squares = {x: x ** 2 for x in range(5)}
+print(squares)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+```
+
+In this example, we created a dictionary of squares for numbers 0 through 4 using a dictionary comprehension.

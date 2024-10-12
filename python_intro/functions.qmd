@@ -1,0 +1,221 @@
+---
+title: "Functions"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+
+Functions are one of the most important building blocks in Python. 
+They allow you to organize your code into reusable chunks. 
+A **function** is a block of code that performs a specific task, and you can "call" the function whenever you need that task to be done. 
+Using functions helps make your code more modular, readable, and easier to maintain. 
+As we start dealing with more complex tasks, especially in NLP, functions will help simplify and structure your code.
+
+
+### Defining Functions
+
+You can define a function using the `def` keyword, followed by the function name, parentheses `()`, and a colon `:`. Inside the function, you write the code that you want the function to execute. Optionally, you can pass **arguments** to the function to customize its behavior, and the function can **return** a value after completing its task.
+
+#### **Basic Syntax:**
+```{python}
+def function_name():
+    # Code to be executed
+    pass
+```
+
+
+
+### Example: A Simple Function
+
+Let’s start with a basic example of a function that prints a greeting message.
+
+#### Example:
+```{python}
+def greet():
+    print("Hello, welcome to Python!")
+
+# Calling the function
+greet()  # Output: Hello, welcome to Python!
+```
+
+Here, we define a function called `greet()` that prints a message. Every time we call the `greet()` function, the message is printed.
+
+
+
+### Functions with Arguments
+
+Functions become more powerful when you can pass data to them via **arguments** (also called **parameters**). You can pass one or more arguments into a function, and the function can use those arguments to perform different actions.
+
+#### Example:
+```{python}
+def greet(name):
+    print(f"Hello, {name}!")
+
+# Calling the function with an argument
+greet("Alice")  # Output: Hello, Alice!
+greet("Bob")  # Output: Hello, Bob!
+```
+
+In this example, the `greet(name)` function takes one argument, `name`, and includes it in the greeting message. When we call the function with `"Alice"` and `"Bob"`, it customizes the greeting for each person.
+
+
+
+### Functions with Multiple Arguments
+
+You can define functions with multiple arguments by separating them with commas. The function will expect all the arguments when called.
+
+#### Example:
+```{python}
+def add_numbers(a, b):
+    result = a + b
+    print(f"The sum is: {result}")
+
+# Calling the function with two arguments
+add_numbers(3, 5)  # Output: The sum is: 8
+```
+
+Here, the `add_numbers(a, b)` function takes two arguments, `a` and `b`, adds them together, and prints the result.
+
+
+
+### Returning Values from Functions
+
+Sometimes, you’ll want your function to return a value instead of just printing something. You can do this using the `return` keyword. A function can return a value that you can store in a variable or use in further calculations.
+
+#### Example:
+```{python}
+def add_numbers(a, b):
+    return a + b
+
+# Storing the returned value in a variable
+sum_result = add_numbers(10, 20)
+print(sum_result)  # Output: 30
+```
+
+In this example, the function `add_numbers(a, b)` returns the sum of `a` and `b`, and we store the result in the `sum_result` variable.
+
+
+
+### Default Arguments
+
+You can assign **default values** to arguments in your function. If the caller doesn't provide a value for that argument, the default value will be used. This makes your functions more flexible.
+
+#### Example:
+```{python}
+def greet(name="there"):
+    print(f"Hello, {name}!")
+
+# Calling the function without passing an argument
+greet()  # Output: Hello, there!
+
+# Calling the function with an argument
+greet("Alice")  # Output: Hello, Alice!
+```
+
+In this example, the `greet(name="there")` function has a default value of `"there"` for the `name` argument. If no name is provided, the default message is used.
+
+
+
+### Functions with Keyword Arguments
+
+You can also call a function using **keyword arguments**. This allows you to specify the arguments by name when calling the function, which can make your code more readable, especially when you have many arguments.
+
+#### Example:
+```{python}
+def describe_person(name, age, city):
+    print(f"{name} is {age} years old and lives in {city}.")
+
+# Calling the function using keyword arguments
+describe_person(name="Alice", age=30, city="New York")
+# Output: Alice is 30 years old and lives in New York.
+```
+
+In this case, keyword arguments make it clear which value corresponds to which parameter.
+
+
+
+### Scope of Variables
+
+Variables defined inside a function have **local scope**, meaning they only exist inside that function. Once the function is finished, the variables are destroyed. However, you can define **global variables** outside the function if you need them to be accessible throughout your entire program.
+
+#### Example of Local Scope:
+```{python}
+def my_function():
+    x = 10  # This variable only exists inside the function
+    print(x)
+
+my_function()  # Output: 10
+# print(x)  # This would cause an error because x is not defined outside the function
+```
+
+#### Example of Global Scope:
+```{python}
+x = 5  # Global variable
+
+def my_function():
+    print(x)  # Accessing the global variable inside the function
+
+my_function()  # Output: 5
+```
+
+
+
+### Lambda Functions
+
+In addition to regular functions, Python supports **lambda functions**, which are small anonymous functions that can be written in a single line. Lambda functions are useful for simple operations and are often used in combination with other functions.
+
+#### Example:
+```{python}
+# Regular function to square a number
+def square(x):
+    return x ** 2
+
+# Lambda function to square a number
+square_lambda = lambda x: x ** 2
+
+# Using both functions
+print(square(5))  # Output: 25
+print(square_lambda(5))  # Output: 25
+```
+
+In this example, both the regular `square()` function and the lambda function `square_lambda` return the square of a number.
+
+
+
+### Functions and Lists
+
+Functions can be combined with lists to perform operations on groups of data. For instance, you can use a function to process each item in a list using a loop.
+
+#### Example:
+```{python}
+def square(x):
+    return x ** 2
+
+numbers = [1, 2, 3, 4, 5]
+squares = []
+
+for number in numbers:
+    squares.append(square(number))
+
+print(squares)  # Output: [1, 4, 9, 16, 25]
+```
+
+In this example, we define a function `square()` that squares a number. We then use a loop to apply this function to each item in the `numbers` list and store the results in the `squares` list.
+
+
+### Common Practices with Functions
+
+Here are some best practices for working with functions:
+
+1. **Use descriptive names** for your functions and arguments so their purpose is clear.
+   - Good: `def calculate_area(radius):`
+   - Bad: `def ca(r):`
+
+2. **Keep functions short and focused** on a single task. If a function becomes too long, consider breaking it into smaller functions.
+
+3. **Use comments** and **doc strings** to describe what your function does, especially if it’s not immediately obvious.
+
+
+

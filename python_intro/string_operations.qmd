@@ -1,0 +1,195 @@
+---
+title: "String operations"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+
+In Python, strings are one of the most fundamental data types used to handle and manipulate text. 
+Since natural language processing (NLP) revolves around working with text, understanding how to work with strings is crucial. 
+A string is simply a sequence of characters, like `"Hello"` or `"GPT"`. 
+Strings are used in everything from simple messages to complex text manipulation and analysis.
+
+Let’s dive into how to create, manipulate, and work with strings in Python.
+
+
+## Creating Strings
+
+In Python, you can create a string by enclosing text in single (`'`) or double (`"`) quotes. 
+Both work the same, so you can choose the one that suits your style or context. 
+If your string contains one type of quote, you can use the other to avoid issues with escaping characters.
+
+#### Example:
+```{python}
+# Single and double quotes for strings
+my_string = "Hello, world!"  # using double quotes
+another_string = 'Python is fun!'  # using single quotes
+```
+
+If you need to include quotes inside the string, you can mix single and double quotes or use escape characters.
+
+#### Example with quotes inside the string:
+```{python}
+quote = 'He said, "Python is amazing!"'
+print(quote)  # Output: He said, "Python is amazing!"
+```
+
+You can also turn most objects in Python into a string using `str()`, which can be useful when dealing, e.g., with IDs that should not be confused with a number: 
+```{python}
+user_id = 213 # is represented as an integer
+converted_to_string = str(user_id)
+print(type(converted_to_string))
+
+```
+
+## String Operations
+
+Python provides many powerful operations and methods to manipulate strings. Let's explore some of the most useful ones.
+
+
+
+#### String Concatenation
+
+Concatenation means joining two or more strings together. In Python, you can concatenate strings using the `+` operator.
+
+#### Example:
+```{python}
+# Concatenating two strings
+greeting = "Hello"
+name = "Alice"
+message = greeting + ", " + name + "!"
+print(message)  # Output: Hello, Alice!
+```
+
+In this example, we combine the strings `greeting`, `name`, and a punctuation mark to form a single sentence.
+
+
+
+#### String Interpolation (f-strings)
+
+An alternative, modern way of formatting strings is using f-strings (formatted string literals). This allows you to insert variables into strings easily.
+
+#### Example:
+```{python}
+name = "Alice"
+age = 25
+print(f"My name is {name} and I am {age} years old.")
+# Output: My name is Alice and I am 25 years old.
+```
+
+With f-strings, you can insert the value of a variable directly into the string by placing it inside curly braces `{}`.
+
+
+
+#### Changing Case: `.upper()`, `.lower()`, `.capitalize()`
+
+You can change the case of a string using methods like `.upper()`, `.lower()`, and `.capitalize()`.
+
+#### Example:
+```{python}
+text = "Python is Awesome!"
+print(text.upper())    # Output: PYTHON IS AWESOME!
+print(text.lower())    # Output: python is awesome!
+print(text.capitalize())  # Output: Python is awesome!
+```
+
+- `.upper()` converts all characters to uppercase.
+- `.lower()` converts all characters to lowercase.
+- `.capitalize()` capitalizes only the first letter of the string.
+
+
+
+#### Replacing Parts of a String: `.replace()`
+
+The `.replace()` method allows you to replace one part of a string with another.
+
+#### Example:
+```{python}
+text = "I love Java"
+new_text = text.replace("Java", "Python")
+print(new_text)  # Output: I love Python
+```
+
+In this case, we replaced `"Java"` with `"Python"` in the original string.
+
+
+
+#### Splitting Strings: `.split()`
+
+The `.split()` method is useful when you need to break a string into a list of words or pieces, based on a specified delimiter (such as spaces, commas, etc.). By default, it splits based on spaces.
+
+#### Example:
+```{python}
+sentence = "I am learning Python"
+words = sentence.split()  # Split by spaces
+print(words)  # Output: ['I', 'am', 'learning', 'Python']
+```
+
+In this example, the string `"I am learning Python"` is split into a list of individual words.
+
+
+
+#### Joining Strings: `.join()`
+
+If you have a list of words, you can join them back into a single string using the `.join()` method. This method takes a list of strings and joins them with the specified separator.
+
+#### Example:
+```{python}
+words = ['I', 'am', 'learning', 'Python']
+sentence = " ".join(words)  # Join with a space
+print(sentence)  # Output: I am learning Python
+```
+
+
+
+### String Indexing and Slicing
+
+Strings are sequences of characters, so you can access individual characters (or groups of characters) using indexing and slicing. Indexing starts from `0` for the first character and goes up by 1 for each subsequent character.
+
+#### Example:
+```{python}
+text = "Python"
+print(text[0])  # Output: P (the first character)
+print(text[1])  # Output: y (the second character)
+```
+
+You can also access characters starting from the end of the string using negative indices:
+```{python}
+print(text[-1])  # Output: n (the last character)
+print(text[-2])  # Output: o (the second-to-last character)
+```
+
+To extract a portion of the string, use slicing. Slicing allows you to select a range of characters by specifying the start and end positions.
+
+#### Example:
+```{python}
+text = "Python Programming"
+print(text[0:6])  # Output: Python (characters from index 0 to 5)
+print(text[-11:])  # Output: Programming (last 11 characters)
+```
+
+
+
+### Common String Functions
+
+1. Length of a String: `len()`
+   - You can find the length of a string (i.e., how many characters it contains) using the `len()` function.
+
+   #### Example:
+   ```{python}
+   text = "Python"
+   print(len(text))  # Output: 6
+   ```
+
+2. Finding Substrings: `.find()`
+   - The `.find()` method helps locate the position of a substring within a string. It returns the index of the first occurrence or `-1` if the substring is not found.
+
+   #### Example:
+   ```{python}
+   text = "Hello, Python!"
+   position = text.find("Python")
+   print(position)  # Output: 7
+   ```
+

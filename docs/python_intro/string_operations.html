@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The OpenAI API</title>
+<title>String operations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../llm/exercises/ex_gpt_start.html" rel="next">
-<link href="../llm/gpt.html" rel="prev">
+<link href="../python_intro/lists_and_loops.html" rel="next">
+<link href="../python_intro/exercises/data_types.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt_api.html">The OpenAI API</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../python_intro/string_operations.html">String operations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -194,13 +194,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Python Crash Course</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python_intro/overview.html" class="sidebar-item-text sidebar-link">
@@ -216,12 +216,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python_intro/exercises/data_types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Blub</span></a>
+ <span class="menu-text">Basic Variables and Data Types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/string_operations.html" class="sidebar-item-text sidebar-link">
+  <a href="../python_intro/string_operations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">String operations</span></a>
   </div>
 </li>
@@ -241,6 +241,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../python_intro/conditional_statements.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conditional Statements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python_intro/dictionaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dictionaries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python_intro/classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Classes</span></a>
   </div>
 </li>
       </ul>
@@ -306,13 +318,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Large Language Models</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../llm/intro.html" class="sidebar-item-text sidebar-link">
@@ -327,7 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link active">
+  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The OpenAI API</span></a>
   </div>
 </li>
@@ -430,9 +442,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../llm/intro.html">Large Language Models</a></li><li class="breadcrumb-item"><a href="../llm/gpt_api.html">The OpenAI API</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../python_intro/string_operations.html">String operations</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">The OpenAI API</h1>
+<h1 class="title">String operations</h1>
 </div>
 
 
@@ -449,82 +461,218 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>In Python, strings are one of the most fundamental data types used to handle and manipulate text. Since natural language processing (NLP) revolves around working with text, understanding how to work with strings is crucial. A string is simply a sequence of characters, like <code>"Hello"</code> or <code>"GPT"</code>. Strings are used in everything from simple messages to complex text manipulation and analysis.</p>
+<p>Let’s dive into how to create, manipulate, and work with strings in Python.</p>
+<section id="creating-strings" class="level2">
+<h2 class="anchored" data-anchor-id="creating-strings">Creating Strings</h2>
+<p>In Python, you can create a string by enclosing text in single (<code>'</code>) or double (<code>"</code>) quotes. Both work the same, so you can choose the one that suits your style or context. If your string contains one type of quote, you can use the other to avoid issues with escaping characters.</p>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example">Example:</h4>
+<div id="43825325" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single and double quotes for strings</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">"Hello, world!"</span>  <span class="co"># using double quotes</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>another_string <span class="op">=</span> <span class="st">'Python is fun!'</span>  <span class="co"># using single quotes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Resource: <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API docs</a></p>
-</div>
-</div>
-<p>Let’s finally get started working with GPT. In this seminar, we will use the OpenAI API to work with, but there are many alternatives out there. We have collected a few in the <a href="../resources/apis.html">resources</a>.</p>
-<section id="authentication" class="level3">
-<h3 class="anchored" data-anchor-id="authentication">Authentication</h3>
-<p>Getting started with the OpenAI Chat Completions API requires signing up for an account on the OpenAI platform. Once you’ve registered, you’ll gain access to an API key, which serves as a unique identifier for your application to authenticate requests to the API. This key is essential for ensuring secure communication between your application and OpenAI’s servers. Without proper authentication, your requests will be rejected. You can create your own account, but for the seminar we will provide the client with the credential within the University’s <a href="https://jupyter.fh-muenster.de/" class="external">Jupyterlab</a>.</p>
-<div id="168232d8" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setting up the client in Python</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    api_key<span class="op">=</span>os.environ.get(<span class="st">"OPENAI_API_KEY"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>If you need to include quotes inside the string, you can mix single and double quotes or use escape characters.</p>
 </section>
-<section id="requesting-completions" class="level3">
-<h3 class="anchored" data-anchor-id="requesting-completions">Requesting Completions</h3>
-<p>Most interaction with GPT and other models consist in generating completions for prompts, i.e., providing some text with instructions and letting the language model <strong>complete</strong> the text one token after the other as seen <a href="../llm/intro.html">here</a>.</p>
-<p>To request completions from the OpenAI API, we use Python to send HTTP requests to the designated API endpoint. These requests are structured to include various parameters that guide the generation of text completions. The most fundamental parameter is the prompt text, which sets the context for the completion. Additionally, you can specify the desired model configuration, such as the engine to use (e.g., “gpt-4”), as well as any constraints or preferences for the generated completions, such as the maximum number of tokens or the temperature for controlling creativity (TODO: Link parameterization)</p>
-<div id="8533d111" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creating a completion</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    messages<span class="op">=</span>[</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        {</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"content"</span>: <span class="st">"How old is the earth?"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    ],</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"gpt-3.5-turbo"</span> <span class="co"># choose the model</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="processing" class="level3">
-<h3 class="anchored" data-anchor-id="processing">Processing</h3>
-<p>Once the OpenAI API receives your request, it proceeds to process the provided prompt using the specified model. This process involves analyzing the context provided by the prompt and leveraging the model’s pre-trained knowledge to generate text completions. The model employs advanced natural language processing techniques to ensure that the generated completions are coherent and contextually relevant. By drawing from its extensive training data and understanding of human language, the model aims to produce responses that closely align with human-like communication.</p>
-</section>
-<section id="response" class="level3">
-<h3 class="anchored" data-anchor-id="response">Response</h3>
-<p>After processing your request, the OpenAI API returns a response containing the generated text completions. Depending on the specifics of your request, you may receive multiple completions, each accompanied by additional information such as the amount of token processed in the request, the reason why the model stopped the answer etc. This response provides valuable insights into the quality and relevance of the completions, allowing you to tailor your application’s behavior accordingly. Let’s check it out briefly, before you explore the response object more in-depth in your next exercise.</p>
-<div id="4968b9cd" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check out the type of the response</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Response object type: </span><span class="sc">{</span><span class="bu">type</span>(chat_completion)<span class="sc">}</span><span class="ss">"</span>) <span class="co"># a ChatCompletion object</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print the message we want</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Response message: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># check the tokens used </span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total tokens used: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>usage<span class="sc">.</span>total_tokens<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="example-with-quotes-inside-the-string" class="level4">
+<h4 class="anchored" data-anchor-id="example-with-quotes-inside-the-string">Example with quotes inside the string:</h4>
+<div id="d38772c5" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>quote <span class="op">=</span> <span class="st">'He said, "Python is amazing!"'</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quote)  <span class="co"># Output: He said, "Python is amazing!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response object type: &lt;class 'openai.types.chat.chat_completion.ChatCompletion'&gt;
-
-Response message: The Earth is approximately 4.54 billion years old.
-
-Total tokens used: 25</code></pre>
+<pre><code>He said, "Python is amazing!"</code></pre>
+</div>
+</div>
+<p>You can also turn most objects in Python into a string using <code>str()</code>, which can be useful when dealing, e.g., with IDs that should not be confused with a number:</p>
+<div id="8ee0056f" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>user_id <span class="op">=</span> <span class="dv">213</span> <span class="co"># is represented as an integer</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>converted_to_string <span class="op">=</span> <span class="bu">str</span>(user_id)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(converted_to_string))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'str'&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="error-handling" class="level3">
-<h3 class="anchored" data-anchor-id="error-handling">Error Handling</h3>
-<p>While interacting with the OpenAI API (or any API for that matter), it’s crucial to implement some robust error handling mechanisms to manage any potential issues that may arise. The kind of classic errors include providing invalid parameters, experiencing authentication failures due to an incorrect API key, or encountering rate limiting restrictions. But for language models in particular, there are plenty more problems that can arise simply involving the answer we get from the model. Some examples are requests involving explicit language or content or restricted content etc. which are typically blocked by the API. Other times it might simply happen that a model does not respond in a way you expected, for example, just repeating your input instead of responding properly, or not responding in the format you requested. Whenever we are using language model for applications, we need to be aware of this and implement the right measures to handle these situations.</p>
+</section>
+<section id="string-operations" class="level2">
+<h2 class="anchored" data-anchor-id="string-operations">String Operations</h2>
+<p>Python provides many powerful operations and methods to manipulate strings. Let’s explore some of the most useful ones.</p>
+<section id="string-concatenation" class="level4">
+<h4 class="anchored" data-anchor-id="string-concatenation">String Concatenation</h4>
+<p>Concatenation means joining two or more strings together. In Python, you can concatenate strings using the <code>+</code> operator.</p>
+</section>
+<section id="example-1" class="level4">
+<h4 class="anchored" data-anchor-id="example-1">Example:</h4>
+<div id="59fee2c1" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenating two strings</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="st">"Hello"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> greeting <span class="op">+</span> <span class="st">", "</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)  <span class="co"># Output: Hello, Alice!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Alice!</code></pre>
+</div>
+</div>
+<p>In this example, we combine the strings <code>greeting</code>, <code>name</code>, and a punctuation mark to form a single sentence.</p>
+</section>
+<section id="string-interpolation-f-strings" class="level4">
+<h4 class="anchored" data-anchor-id="string-interpolation-f-strings">String Interpolation (f-strings)</h4>
+<p>An alternative, modern way of formatting strings is using f-strings (formatted string literals). This allows you to insert variables into strings easily.</p>
+</section>
+<section id="example-2" class="level4">
+<h4 class="anchored" data-anchor-id="example-2">Example:</h4>
+<div id="04e2bc19" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"My name is </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> and I am </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old."</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: My name is Alice and I am 25 years old.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>My name is Alice and I am 25 years old.</code></pre>
+</div>
+</div>
+<p>With f-strings, you can insert the value of a variable directly into the string by placing it inside curly braces <code>{}</code>.</p>
+</section>
+<section id="changing-case-.upper-.lower-.capitalize" class="level4">
+<h4 class="anchored" data-anchor-id="changing-case-.upper-.lower-.capitalize">Changing Case: <code>.upper()</code>, <code>.lower()</code>, <code>.capitalize()</code></h4>
+<p>You can change the case of a string using methods like <code>.upper()</code>, <code>.lower()</code>, and <code>.capitalize()</code>.</p>
+</section>
+<section id="example-3" class="level4">
+<h4 class="anchored" data-anchor-id="example-3">Example:</h4>
+<div id="30419004" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Python is Awesome!"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text.upper())    <span class="co"># Output: PYTHON IS AWESOME!</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text.lower())    <span class="co"># Output: python is awesome!</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text.capitalize())  <span class="co"># Output: Python is awesome!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>PYTHON IS AWESOME!
+python is awesome!
+Python is awesome!</code></pre>
+</div>
+</div>
+<ul>
+<li><code>.upper()</code> converts all characters to uppercase.</li>
+<li><code>.lower()</code> converts all characters to lowercase.</li>
+<li><code>.capitalize()</code> capitalizes only the first letter of the string.</li>
+</ul>
+</section>
+<section id="replacing-parts-of-a-string-.replace" class="level4">
+<h4 class="anchored" data-anchor-id="replacing-parts-of-a-string-.replace">Replacing Parts of a String: <code>.replace()</code></h4>
+<p>The <code>.replace()</code> method allows you to replace one part of a string with another.</p>
+</section>
+<section id="example-4" class="level4">
+<h4 class="anchored" data-anchor-id="example-4">Example:</h4>
+<div id="7dc0cc61" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"I love Java"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>new_text <span class="op">=</span> text.replace(<span class="st">"Java"</span>, <span class="st">"Python"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(new_text)  <span class="co"># Output: I love Python</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I love Python</code></pre>
+</div>
+</div>
+<p>In this case, we replaced <code>"Java"</code> with <code>"Python"</code> in the original string.</p>
+</section>
+<section id="splitting-strings-.split" class="level4">
+<h4 class="anchored" data-anchor-id="splitting-strings-.split">Splitting Strings: <code>.split()</code></h4>
+<p>The <code>.split()</code> method is useful when you need to break a string into a list of words or pieces, based on a specified delimiter (such as spaces, commas, etc.). By default, it splits based on spaces.</p>
+</section>
+<section id="example-5" class="level4">
+<h4 class="anchored" data-anchor-id="example-5">Example:</h4>
+<div id="18be52a2" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"I am learning Python"</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> sentence.split()  <span class="co"># Split by spaces</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(words)  <span class="co"># Output: ['I', 'am', 'learning', 'Python']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['I', 'am', 'learning', 'Python']</code></pre>
+</div>
+</div>
+<p>In this example, the string <code>"I am learning Python"</code> is split into a list of individual words.</p>
+</section>
+<section id="joining-strings-.join" class="level4">
+<h4 class="anchored" data-anchor-id="joining-strings-.join">Joining Strings: <code>.join()</code></h4>
+<p>If you have a list of words, you can join them back into a single string using the <code>.join()</code> method. This method takes a list of strings and joins them with the specified separator.</p>
+</section>
+<section id="example-6" class="level4">
+<h4 class="anchored" data-anchor-id="example-6">Example:</h4>
+<div id="6415c25d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">'I'</span>, <span class="st">'am'</span>, <span class="st">'learning'</span>, <span class="st">'Python'</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">" "</span>.join(words)  <span class="co"># Join with a space</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sentence)  <span class="co"># Output: I am learning Python</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I am learning Python</code></pre>
+</div>
+</div>
+</section>
+<section id="string-indexing-and-slicing" class="level3">
+<h3 class="anchored" data-anchor-id="string-indexing-and-slicing">String Indexing and Slicing</h3>
+<p>Strings are sequences of characters, so you can access individual characters (or groups of characters) using indexing and slicing. Indexing starts from <code>0</code> for the first character and goes up by 1 for each subsequent character.</p>
+<section id="example-7" class="level4">
+<h4 class="anchored" data-anchor-id="example-7">Example:</h4>
+<div id="570b5937" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Python"</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text[<span class="dv">0</span>])  <span class="co"># Output: P (the first character)</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text[<span class="dv">1</span>])  <span class="co"># Output: y (the second character)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P
+y</code></pre>
+</div>
+</div>
+<p>You can also access characters starting from the end of the string using negative indices:</p>
+<div id="058cb811" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text[<span class="op">-</span><span class="dv">1</span>])  <span class="co"># Output: n (the last character)</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text[<span class="op">-</span><span class="dv">2</span>])  <span class="co"># Output: o (the second-to-last character)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>n
+o</code></pre>
+</div>
+</div>
+<p>To extract a portion of the string, use slicing. Slicing allows you to select a range of characters by specifying the start and end positions.</p>
+</section>
+<section id="example-8" class="level4">
+<h4 class="anchored" data-anchor-id="example-8">Example:</h4>
+<div id="80740944" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Python Programming"</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text[<span class="dv">0</span>:<span class="dv">6</span>])  <span class="co"># Output: Python (characters from index 0 to 5)</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text[<span class="op">-</span><span class="dv">11</span>:])  <span class="co"># Output: Programming (last 11 characters)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Python
+Programming</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="common-string-functions" class="level3">
+<h3 class="anchored" data-anchor-id="common-string-functions">Common String Functions</h3>
+<ol type="1">
+<li>Length of a String: <code>len()</code>
+<ul>
+<li>You can find the length of a string (i.e., how many characters it contains) using the <code>len()</code> function.</li>
+</ul>
+<h4 id="example-9" class="anchored">Example:</h4>
+<div id="e38811ae" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Python"</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(text))  <span class="co"># Output: 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>6</code></pre>
+</div>
+</div></li>
+<li>Finding Substrings: <code>.find()</code>
+<ul>
+<li>The <code>.find()</code> method helps locate the position of a substring within a string. It returns the index of the first occurrence or <code>-1</code> if the substring is not found.</li>
+</ul>
+<h4 id="example-10" class="anchored">Example:</h4>
+<div id="5124b66e" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Hello, Python!"</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>position <span class="op">=</span> text.find(<span class="st">"Python"</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(position)  <span class="co"># Output: 7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>7</code></pre>
+</div>
+</div></li>
+</ol>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -950,13 +1098,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../llm/gpt.html" class="pagination-link" aria-label="GPT: Generative Pre-trained Transformer">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GPT: Generative Pre-trained Transformer</span>
+      <a href="../python_intro/exercises/data_types.html" class="pagination-link" aria-label="Basic Variables and Data Types">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basic Variables and Data Types</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../llm/exercises/ex_gpt_start.html" class="pagination-link" aria-label="Exercise: OpenAI - Getting started">
-        <span class="nav-page-text">Exercise: OpenAI - Getting started</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../python_intro/lists_and_loops.html" class="pagination-link" aria-label="Lists and Loops">
+        <span class="nav-page-text">Lists and Loops</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

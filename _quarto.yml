@@ -39,6 +39,19 @@ website:
             - index.qmd
             - about/projects.qmd
 
+        - section: "Python Crash Course"
+          contents: 
+            - python_intro/overview.qmd
+            - python_intro/data_types.qmd
+            - python_intro/exercises/data_types.ipynb
+            - python_intro/string_operations.qmd
+            - python_intro/exercises/strings.ipynb
+            - python_intro/lists_and_loops.qmd
+            - python_intro/functions.qmd
+            - python_intro/conditional_statements.qmd
+            - python_intro/dictionaries.qmd
+            - python_intro/classes.qmd
+
         - section: "Natural Language Processing"
           contents:
             - nlp/overview.qmd

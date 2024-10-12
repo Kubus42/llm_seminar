@@ -1,0 +1,174 @@
+---
+title: "Introduction to Python"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+# TODO: Some introduction
+
+# Using VSCode
+
+Visual Studio Code (VSCode) is a powerful and popular code editor developed by Microsoft. 
+It is highly extensible, lightweight, and supports a wide range of programming languages, including Python. 
+With its robust features such as IntelliSense, debugging capabilities, and integrated terminal, VSCode is an excellent choice for Python development.
+
+### Getting Started
+
+To start using Python in VSCode, follow these steps:
+
+1. **Install VSCode**: If you haven’t already, download and install Visual Studio Code from [the official website](https://code.visualstudio.com/).
+
+2. **Install the Python Extension**: 
+   - Open VSCode.
+   - Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side or pressing `Ctrl + Shift + X`.
+   - Search for "Python" and install the official extension provided by Microsoft. This extension adds rich support for Python development, including IntelliSense and linting.
+
+3. **Select the Python Interpreter**:
+   - After installing the extension, you need to select the Python interpreter. Press `Ctrl + Shift + P` to open the Command Palette, then type and select **Python: Select Interpreter**.
+   - Choose the interpreter that matches your Python installation.
+
+### Writing and Running Python Code
+
+1. **Create a New File**: 
+   - You can create a new Python file by clicking on `File > New File` or pressing `Ctrl + N`. 
+   - Save it with a `.py` extension (e.g., `script.py`).
+
+2. **Write Your Code**: 
+   - Begin writing your Python code in the editor. For example:
+   ```python
+   print("Hello, VSCode!")
+   ```
+
+3. **Run Your Code**:
+   - There are multiple ways to run your Python code:
+     - **Using the Terminal**: Open the integrated terminal by selecting `View > Terminal` or pressing `` Ctrl + ` `` (backtick). In the terminal, type `python script.py` (replacing `script.py` with your file name) to execute the script.
+     - **Run Code Action**: You can also run your code directly from the editor by clicking the play button (▶️) that appears above the code or using the shortcut `Shift + Enter`.
+
+### Debugging in VSCode
+
+VSCode provides powerful debugging features to help you troubleshoot your code:
+
+1. **Set Breakpoints**: Click in the gutter next to the line numbers to set breakpoints where you want the execution to pause.
+
+2. **Start Debugging**: Press `F5` or go to the Debug view by clicking on the Debug icon in the Activity Bar. 
+3. You can then start debugging your Python script. The Debug Console will allow you to inspect variables, step through code, and evaluate expressions.
+
+### Using Extensions and Features
+
+VSCode has a wide variety of extensions to enhance your Python development experience:
+
+- **Linting**: The Python extension includes linting capabilities that help you catch errors and enforce coding standards. You can enable it in the settings (`Settings > Python > Linting`).
+
+- **IntelliSense**: Take advantage of IntelliSense for code suggestions, autocompletions, and quick documentation. Simply start typing, and relevant suggestions will appear.
+
+- **Jupyter Notebooks**: If you want to work with Jupyter Notebooks directly in VSCode, install the Jupyter extension. This allows you to create, edit, and run notebooks seamlessly.
+
+
+---
+
+# Jupyter Notebooks
+Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. 
+It is widely used in data science, machine learning, and scientific computing, making it a versatile tool for both beginners and advanced users.
+In a Jupyter Notebook, you can write and execute code in a variety of programming languages, including Python. 
+It provides an interactive environment where you can document your thought process alongside your code, visualize data, and quickly test ideas without the need for a complete development setup.
+
+### Getting Started
+
+Once you have Jupyter Notebook up and running, you will typically start by opening a new notebook. Here are the key components and features of Jupyter Notebook to help you navigate and utilize it effectively:
+
+
+
+### The User Interface
+
+Upon launching Jupyter Notebook, you’ll be greeted with a dashboard showing your files and notebooks. You can create a new notebook by selecting "New" and then choosing the desired kernel (like Python 3).
+
+- **Notebook Cells:** The main area consists of cells where you can write your code or text. There are two main types of cells:
+  - **Code Cells:** Where you write and execute code.
+  - **Markdown Cells:** Where you can write formatted text, including headers, lists, and links.
+
+
+
+### Writing and Executing Code
+
+To write code in a code cell:
+
+1. Click on a cell to make it active.
+2. Type your code into the cell.
+
+#### Example:
+```{python}
+print("Hello, Jupyter!")
+```
+
+To execute the code, you can either click the "Run" button in the toolbar or press `Shift + Enter`. This will run the code and display the output directly below the cell.
+
+
+
+### Using Markdown for Documentation
+
+Markdown cells allow you to document your code using plain text. You can format your text using Markdown syntax. 
+
+#### Example:
+To create a markdown cell with a header, simply type:
+```markdown
+# My Jupyter Notebook
+```
+After running the cell, it will render as a formatted header.
+
+You can also create bullet points, numbered lists, links, and more:
+```markdown
+## Key Features
+- Interactive coding
+- Inline visualizations
+- Rich text support
+```
+
+
+
+### Visualization and Output
+
+Jupyter Notebook supports various visualization libraries like Matplotlib, Seaborn, and Plotly, allowing you to create plots and graphs inline.
+
+#### Example:
+```{python}
+import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 7, 11]
+
+# Creating a plot
+plt.plot(x, y)
+plt.title("Sample Plot")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+```
+
+After running this code, the plot will be displayed directly beneath the code cell.
+
+
+
+### Saving and Sharing Notebooks
+
+You can save your notebook by clicking the save icon or using the shortcut `Ctrl + S` (or `Cmd + S` on Mac). Jupyter Notebooks are saved with a `.ipynb` extension.
+
+To share your notebook, you can export it to different formats, such as HTML or PDF, by using the "File" menu. You can also share the `.ipynb` file directly, which can be opened in any Jupyter environment.
+
+
+
+### Keyboard Shortcuts
+
+Jupyter Notebook has many handy keyboard shortcuts that can improve your efficiency. Here are a few essential ones:
+
+- `Enter`: Edit the selected cell.
+- `Esc`: Command mode (no editing).
+- `A`: Insert a new cell above.
+- `B`: Insert a new cell below.
+- `DD`: Delete the selected cell.
+- `Z`: Undo the last cell deletion.
+- `Shift + Enter`: Run the current cell and move to the next one.
+- `Ctrl + Enter`: Run the current cell and stay in it.
+

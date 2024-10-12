@@ -1,0 +1,208 @@
+---
+title: "Lists and Loops"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+
+In Python, a list is one of the most versatile data structures. 
+It allows you to store multiple items in a single variable, like a collection of numbers, words, or any other kind of data. 
+Lists are extremely useful when working with NLP tasks, where you often need to manage and process large amounts of text, words, or other data.
+
+To work efficiently with lists, loops are used to iterate over the elements. 
+By combining lists and loops, you can automate repetitive tasks and handle data efficiently. 
+Let’s dive into how lists work and how to use loops to process them.
+
+
+
+### Lists in Python
+
+A list is an ordered collection of items, which can be of any type (numbers, strings, or even other lists). Lists are created using square brackets `[]`, and each item in the list is separated by a comma.
+
+#### Example:
+```{python}
+# Creating a list
+fruits = ["apple", "banana", "cherry"]
+print(fruits)  # Output: ['apple', 'banana', 'cherry']
+```
+
+In this example, we’ve created a list called `fruits` that contains three strings: `"apple"`, `"banana"`, and `"cherry"`.
+
+
+
+### Accessing List Elements
+
+You can access individual elements in a list using indexing. Just like strings, list indexing starts at `0` for the first element.
+
+#### Example:
+```{python}
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # Output: apple (first element)
+print(fruits[1])  # Output: banana (second element)
+print(fruits[-1])  # Output: cherry (last element using negative index)
+```
+
+In this example, we access the first, second, and last elements of the list.
+
+
+
+### Modifying List Elements
+
+You can change elements in a list by accessing them via their index and assigning a new value.
+
+#### Example:
+```{python}
+fruits = ["apple", "banana", "cherry"]
+fruits[1] = "blueberry"  # Changing 'banana' to 'blueberry'
+print(fruits)  # Output: ['apple', 'blueberry', 'cherry']
+```
+
+Here, the second item in the list, `"banana"`, is replaced with `"blueberry"`.
+
+
+
+### Adding and Removing Elements
+
+Lists are dynamic, which means you can easily add or remove elements as needed.
+
+- Adding elements: Use `.append()` to add an item to the end of a list.
+- Removing elements: Use `.remove()` to remove a specific item.
+
+#### Example:
+```{python}
+fruits = ["apple", "banana"]
+fruits.append("cherry")  # Adding an item
+print(fruits)  # Output: ['apple', 'banana', 'cherry']
+
+fruits.remove("banana")  # Removing an item
+print(fruits)  # Output: ['apple', 'cherry']
+```
+
+In this example, we add `"cherry"` to the list and remove `"banana"` from it.
+
+
+
+### List Operations: Length, Sorting, and Checking Existence
+
+Here are some common operations you can perform on lists:
+
+- Finding the length of a list using `len()`.
+- Sorting a list using `.sort()`.
+- Checking if an item exists in a list using the `in` operator.
+
+#### Example:
+```{python}
+fruits = ["banana", "cherry", "apple"]
+
+# Length of the list
+print(len(fruits))  # Output: 3
+
+# Sorting the list
+fruits.sort()
+print(fruits)  # Output: ['apple', 'banana', 'cherry']
+
+# Checking if an item exists
+print("apple" in fruits)  # Output: True
+print("grape" in fruits)  # Output: False
+```
+
+Here, we find the number of items in the list, sort them alphabetically, and check whether `"apple"` and `"grape"` are in the list.
+
+
+
+### Loops in Python
+
+Loops allow you to perform repetitive tasks efficiently. The most common type of loop used in Python for lists is the `for` loop. This loop allows you to go through each element in the list one by one.
+
+
+
+### For Loops
+
+A `for` loop lets you iterate over all the elements in a list and perform actions on them.
+
+#### Example:
+```{python}
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+```
+
+This code will print:
+```
+apple
+banana
+cherry
+```
+
+In this example, the loop goes through each item in the list `fruits` and prints it.
+
+
+
+### Using Loops for Simple Operations
+
+You can also use loops to perform more complex operations, such as processing the elements or performing calculations.
+
+#### Example: Squaring numbers in a list
+```{python}
+numbers = [1, 2, 3, 4]
+squares = []
+for number in numbers:
+    squares.append(number ** 2)
+
+print(squares)  # Output: [1, 4, 9, 16]
+```
+
+In this example, we loop through the list `numbers`, square each number, and store the results in a new list called `squares`.
+
+
+
+### Looping with `range()`
+
+Sometimes, you need to loop a specific number of times rather than over a list. The `range()` function helps create sequences of numbers for iteration.
+
+#### Example:
+```{python}
+for i in range(5):
+    print(i)
+```
+
+In this example, the loop runs 5 times, printing the values from `0` to `4` (since Python's `range()` is exclusive of the upper bound).
+
+
+### Common List Methods
+
+Here are some of the most commonly used methods with lists:
+
+1. `append()`: Adds an item to the end of the list.
+   ```{python}
+   fruits.append("orange")
+   ```
+
+2. `remove()`: Removes the first occurrence of an item.
+   ```{python}
+   fruits.remove("banana")
+   ```
+
+3. `insert(index, value)`: Inserts an item at a specific position.
+   ```{python}
+   fruits.insert(1, "blueberry")
+   ```
+
+4. `pop()`: Removes and returns the last item (or an item at a specified index).
+   ```{python}
+   last_fruit = fruits.pop()
+   ```
+
+
+
+### Summary
+
+Lists and loops are essential tools in Python, allowing you to store multiple pieces of data and process them efficiently. Lists help you group related items, while loops allow you to perform repetitive tasks, like iterating over each element in a list. Together, they form the foundation of many operations in Python, including more advanced NLP tasks where you'll work with large datasets and need to process them in an automated way.
+
+Next, we’ll explore how to define functions in Python to structure your code more effectively and make it reusable.
+
+
+
+This text provides a comprehensive introduction to lists and loops in Python, with clear explanations and code examples. It’s designed to teach these essential concepts step-by-step, with practical examples for students to follow. Let me know if you’d like to refine or expand any section!
