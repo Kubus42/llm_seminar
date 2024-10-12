@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Conditional Statements</title>
+<title>Exercise: Lists and Loops</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,24 +57,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../python_intro/exercises/conditional_statements.html" rel="next">
-<link href="../python_intro/exercises/functions.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../python_intro/functions.html" rel="next">
+<link href="../../python_intro/lists_and_loops.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Seminar: Large Language Models</span>
     </a>
   </div>
@@ -124,11 +124,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
 <span class="menu-text">Seminar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources/packages.html"> 
+    <a class="nav-link" href="../../resources/packages.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../python_intro/conditional_statements.html">Conditional Statements</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../../python_intro/exercises/lists_and_loops.html">Exercise: Lists and Loops</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -180,13 +180,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Seminar: Large Language Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/projects.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about/projects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects</span></a>
   </div>
 </li>
@@ -203,92 +203,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/data_types.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/data_types.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Variables and data types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/exercises/data_types.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/exercises/data_types.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Variables and Data Types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/string_operations.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/string_operations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">String operations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/exercises/strings.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/exercises/strings.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: String Operations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/lists_and_loops.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/lists_and_loops.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lists and Loops</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/exercises/lists_and_loops.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/exercises/lists_and_loops.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Exercise: Lists and Loops</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/exercises/functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/exercises/functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/conditional_statements.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../python_intro/conditional_statements.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conditional Statements</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/exercises/conditional_statements.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Conditional Statements</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python_intro/dictionaries.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/dictionaries.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dictionaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python_intro/exercises/dictionaries.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Dictionaries</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python_intro/classes.html" class="sidebar-item-text sidebar-link">
+  <a href="../../python_intro/classes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Classes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../python_intro/exercises/classes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Classes</span></a>
   </div>
 </li>
       </ul>
@@ -304,49 +286,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview of NLP</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/tokenization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/tokenization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_tokenization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Sentence tokenization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_word_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Word matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/fuzzy_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/fuzzy_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fuzzy matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_fuzzy_matching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Fuzzy matching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/statistical_text_analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/statistical_text_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Statistical text analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/exercises/ex_tfidf.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nlp/exercises/ex_tfidf.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: TF-IDF</span></a>
   </div>
 </li>
@@ -363,55 +345,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to LLM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/gpt.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/gpt.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GPT: Generative Pre-trained Transformer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/gpt_api.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The OpenAI API</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/exercises/ex_gpt_start.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/exercises/ex_gpt_start.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: OpenAI - Getting started</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/exercises/ex_gpt_chatbot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/exercises/ex_gpt_chatbot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: GPT Chatbot</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/prompting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/prompting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prompting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/parameterization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/parameterization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Parameterization of GPT</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/exercises/ex_gpt_parameterization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/exercises/ex_gpt_parameterization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: GPT Parameterization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../llm/exercises/ex_gpt_ner_with_function_calls.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llm/exercises/ex_gpt_ner_with_function_calls.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: NER with tool calling</span></a>
   </div>
 </li>
@@ -428,19 +410,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/embeddings.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/embeddings.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Embeddings</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/exercises/ex_emb_similarity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercise: Embedding similarity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../embeddings/visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visualization &amp; clustering of embeddings</span></a>
   </div>
 </li>
@@ -457,13 +439,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ethics/bias.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ethics/bias.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bias</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ethics/data_privacy.html" class="sidebar-item-text sidebar-link">
+  <a href="../../ethics/data_privacy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Privacy</span></a>
   </div>
 </li>
@@ -478,9 +460,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../python_intro/conditional_statements.html">Conditional Statements</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../python_intro/overview.html">Python Crash Course</a></li><li class="breadcrumb-item"><a href="../../python_intro/exercises/lists_and_loops.html">Exercise: Lists and Loops</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Conditional Statements</h1>
+<h1 class="title">Exercise: Lists and Loops</h1>
 </div>
 
 
@@ -497,216 +479,145 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Conditional statements allow you to control the flow of your program based on different conditions. In Python, the most common conditional statement is the <strong><code>if</code> statement</strong>, which lets you execute code only when a certain condition is true. This is essential for decision-making in your programs. For example, when working with NLP tasks, you might want to process text differently based on certain conditions, like whether a word is in uppercase, whether a sentence contains a keyword, or whether the length of a string exceeds a certain threshold.</p>
-<p>Let’s explore how conditional statements work in Python.</p>
-<section id="the-if-statement" class="level2">
-<h2 class="anchored" data-anchor-id="the-if-statement">The <code>if</code> Statement</h2>
-<p>The <code>if</code> statement checks a condition (usually a comparison between values) and executes a block of code if the condition evaluates to <strong>True</strong>. If the condition is <strong>False</strong>, the code inside the <code>if</code> block is skipped.</p>
-<section id="basic-syntax" class="level4">
-<h4 class="anchored" data-anchor-id="basic-syntax"><strong>Basic Syntax:</strong></h4>
-<div id="639f22a6" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> condition:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code to be executed if the condition is True</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example:</h3>
-<div id="95bd00e2" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is greater than 5"</span>)  <span class="co"># Output: x is greater than 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x is greater than 5</code></pre>
-</div>
-</div>
-<p>In this example, the condition <code>x &gt; 5</code> is checked. Since <code>x</code> is 10, which is greater than 5, the print statement is executed.</p>
-</section>
-</section>
-<section id="the-else-statement" class="level2">
-<h2 class="anchored" data-anchor-id="the-else-statement">The <code>else</code> Statement</h2>
-<p>You can use the <code>else</code> statement to define what happens if the condition in the <code>if</code> statement is <strong>False</strong>. The <code>else</code> block will run when all previous conditions are false.</p>
-<section id="example-1" class="level4">
-<h4 class="anchored" data-anchor-id="example-1">Example:</h4>
-<div id="54bcf190" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is greater than 5"</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is not greater than 5"</span>)  <span class="co"># Output: x is not greater than 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x is not greater than 5</code></pre>
-</div>
-</div>
-<p>In this example, since <code>x</code> is 3 (which is not greater than 5), the <code>else</code> block is executed, and the message “x is not greater than 5” is printed.</p>
-</section>
-</section>
-<section id="the-elif-statement" class="level2">
-<h2 class="anchored" data-anchor-id="the-elif-statement">The <code>elif</code> Statement</h2>
-<p>If you want to check multiple conditions, you can use <code>elif</code> (short for “else if”). The <code>elif</code> statement allows you to test additional conditions if the previous <code>if</code> condition was False.</p>
-<section id="example-2" class="level4">
-<h4 class="anchored" data-anchor-id="example-2">Example:</h4>
-<div id="48aa8c43" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">7</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">10</span>:</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is greater than 10"</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is greater than 5 but less than or equal to 10"</span>)  <span class="co"># Output: x is greater than 5 but less than or equal to 10</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is less than or equal to 5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x is greater than 5 but less than or equal to 10</code></pre>
-</div>
-</div>
-<p>In this example, Python first checks if <code>x &gt; 10</code>. Since that condition is false, it moves to the <code>elif</code> condition (<code>x &gt; 5</code>), which is true, so the second block is executed.</p>
-</section>
-<section id="using-comparison-operators" class="level3">
-<h3 class="anchored" data-anchor-id="using-comparison-operators">Using Comparison Operators</h3>
-<p>In conditional statements, we typically use <strong>comparison operators</strong> to evaluate the relationship between values. Here are some common comparison operators:</p>
+<section id="exercise-1-count-vowels-in-a-list-of-words" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-count-vowels-in-a-list-of-words">Exercise 1: Count Vowels in a List of Words</h2>
+<p><strong>Task:</strong> Write a function that counts the total number of vowels in a list of words.</p>
+<p><strong>Instructions:</strong></p>
 <ul>
-<li><code>==</code>: Equal to</li>
-<li><code>!=</code>: Not equal to</li>
-<li><code>&gt;</code>: Greater than</li>
-<li><code>&lt;</code>: Less than</li>
-<li><code>&gt;=</code>: Greater than or equal to</li>
-<li><code>&lt;=</code>: Less than or equal to</li>
+<li>Define a function called <code>count_vowels(word_list)</code> that takes a list of strings <code>word_list</code>.</li>
+<li>Inside the function, loop through each word in the list, count the vowels (a, e, i, o, u) in each word, and keep a running total.</li>
+<li>Return the total count of vowels.</li>
+<li>Call the function with a sample list (e.g., <code>["NLP", "is", "fun"]</code>) and print the result.</li>
 </ul>
-<section id="example-3" class="level4">
-<h4 class="anchored" data-anchor-id="example-3">Example:</h4>
-<div id="54fe6687" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">18</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">==</span> <span class="dv">18</span>:</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are 18 years old"</span>)  <span class="co"># Output: You are 18 years old</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">!=</span> <span class="dv">20</span>:</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are not 20 years old"</span>)  <span class="co"># Output: You are not 20 years old</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-3" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_vowels(word_list):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    vowels <span class="op">=</span> <span class="st">'aeiouAEIOU'</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    total_vowels <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> char <span class="kw">in</span> word:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> char <span class="kw">in</span> vowels:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                total_vowels <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_vowels</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> count_vowels(words)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Total number of vowels:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>You are 18 years old
-You are not 20 years old</code></pre>
+<pre><code>Total number of vowels: 2</code></pre>
 </div>
 </div>
-<p>In this example, we use the <code>==</code> operator to check if <code>age</code> is exactly 18 and the <code>!=</code> operator to check if <code>age</code> is not 20.</p>
+</details>
 </section>
-</section>
-<section id="logical-operators" class="level3">
-<h3 class="anchored" data-anchor-id="logical-operators">Logical Operators</h3>
-<p>Python also provides <strong>logical operators</strong> to combine multiple conditions:</p>
+<section id="exercise-2-filter-long-words" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-filter-long-words">Exercise 2: Filter Long Words</h2>
+<p><strong>Task:</strong> Create a function that filters out words longer than a specified length from a list.</p>
+<p><strong>Instructions:</strong></p>
 <ul>
-<li><code>and</code>: Returns <strong>True</strong> if both conditions are true.</li>
-<li><code>or</code>: Returns <strong>True</strong> if at least one condition is true.</li>
-<li><code>not</code>: Inverts the truth value of the condition.</li>
+<li>Define a function called <code>filter_long_words(word_list, length)</code> that takes a list of strings <code>word_list</code> and an integer <code>length</code>.</li>
+<li>Inside the function, use a loop to create a new list that contains only the words from the original list that have a length less than or equal to <code>length</code>.</li>
+<li>Return the new list.</li>
+<li>Call the function with a sample list and a length (e.g., <code>["Natural", "Language", "Processing", "is", "fun"]</code>, length=4) and print the result.</li>
 </ul>
-<section id="example-4" class="level4">
-<h4 class="anchored" data-anchor-id="example-4">Example:</h4>
-<div id="cee6ae01" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">7</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Using 'and' operator</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">10</span>:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is between 5 and 10"</span>)  <span class="co"># Output: x is between 5 and 10</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using 'or' operator</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">5</span> <span class="kw">or</span> x <span class="op">&gt;</span> <span class="dv">6</span>:</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is either less than 5 or greater than 6"</span>)  <span class="co"># Output: x is either less than 5 or greater than 6</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Using 'not' operator</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> x <span class="op">==</span> <span class="dv">5</span>:</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x is not equal to 5"</span>)  <span class="co"># Output: x is not equal to 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-7" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> filter_long_words(word_list, length):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    short_words <span class="op">=</span> []</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">&lt;=</span> length:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            short_words.append(word)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> short_words</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"Natural"</span>, <span class="st">"Language"</span>, <span class="st">"Processing"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> filter_long_words(words, <span class="dv">4</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered words:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>x is between 5 and 10
-x is either less than 5 or greater than 6
-x is not equal to 5</code></pre>
+<pre><code>Filtered words: ['is', 'fun']</code></pre>
 </div>
 </div>
-<p>In this example, the <code>and</code> operator checks if both conditions (<code>x &gt; 5</code> and <code>x &lt; 10</code>) are true, the <code>or</code> operator checks if at least one condition is true, and the <code>not</code> operator inverts the condition, making <code>x == 5</code> false.</p>
-</section>
-</section>
-<section id="nested-if-statements" class="level3">
-<h3 class="anchored" data-anchor-id="nested-if-statements">Nested <code>if</code> Statements</h3>
-<p>You can place an <code>if</code> statement inside another <code>if</code> statement. This is called <strong>nesting</strong> and is useful when you need to check multiple conditions that depend on each other.</p>
-<section id="example-5" class="level4">
-<h4 class="anchored" data-anchor-id="example-5">Example:</h4>
-<div id="b43d150c" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> y <span class="op">&gt;</span> <span class="dv">15</span>:</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"x is greater than 5 and y is greater than 15"</span>)  <span class="co"># Output: x is greater than 5 and y is greater than 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details></section>
+<section id="exercise-3-create-a-word-frequency-dictionary" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-create-a-word-frequency-dictionary">Exercise 3: Create a Word Frequency Dictionary</h2>
+<p><strong>Task:</strong> Write a function that creates a frequency dictionary from a list of words.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Define a function called <code>word_frequency(word_list)</code> that takes a list of strings <code>word_list</code>.</li>
+<li>Inside the function, use a loop to create a dictionary where the keys are the words and the values are the number of times each word appears in the list.</li>
+<li>Return the frequency dictionary.</li>
+<li>Call the function with a sample list (e.g., <code>["NLP", "is", "fun", "NLP"]</code>) and print the result.</li>
+</ul>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-10" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> word_frequency(word_list):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    frequency_dict <span class="op">=</span> {}</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> word <span class="kw">in</span> frequency_dict:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            frequency_dict[word] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            frequency_dict[word] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> frequency_dict</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>, <span class="st">"NLP"</span>]</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> word_frequency(words)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Word frequency:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>x is greater than 5 and y is greater than 15</code></pre>
+<pre><code>Word frequency: {'NLP': 2, 'is': 1, 'fun': 1}</code></pre>
 </div>
 </div>
-<p>Here, we first check if <code>x &gt; 5</code>. Since this is true, we then check if <code>y &gt; 15</code>. Since both conditions are true, the inner block is executed.</p>
+</details>
 </section>
-</section>
-<section id="checking-membership-with-in-operator" class="level3">
-<h3 class="anchored" data-anchor-id="checking-membership-with-in-operator">Checking Membership with <code>in</code> Operator</h3>
-<p>The <code>in</code> operator is used to check if a value is present in a collection like a list, string, or tuple. This is particularly useful in NLP tasks when checking if a word or character exists in a string or list.</p>
-<section id="example-6" class="level4">
-<h4 class="anchored" data-anchor-id="example-6">Example:</h4>
-<div id="b00b7279" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"banana"</span> <span class="kw">in</span> fruits:</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Banana is in the list!"</span>)  <span class="co"># Output: Banana is in the list!</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking a string</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"Hello world"</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"world"</span> <span class="kw">in</span> sentence:</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"The word 'world' is in the sentence."</span>)  <span class="co"># Output: The word 'world' is in the sentence.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exercise-4-reverse-each-word-in-a-list" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4-reverse-each-word-in-a-list">Exercise 4: Reverse Each Word in a List</h2>
+<p><strong>Task:</strong> Create a function that reverses each word in a list.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Define a function called <code>reverse_words(word_list)</code> that takes a list of strings <code>word_list</code>.</li>
+<li>Inside the function, use a loop to create a new list that contains each word reversed.</li>
+<li>Return the new list.</li>
+<li>Call the function with a sample list (e.g., <code>["NLP", "is", "fun"]</code>) and print the result.</li>
+</ul>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-14" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse_words(word_list):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    reversed_list <span class="op">=</span> []</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        reversed_list.append(word[::<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> reversed_list</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> reverse_words(words)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Reversed words:"</span>, result) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Banana is in the list!
-The word 'world' is in the sentence.</code></pre>
+<pre><code>Reversed words: ['PLN', 'si', 'nuf']</code></pre>
 </div>
 </div>
-<p>In this example, we use the <code>in</code> operator to check whether <code>"banana"</code> is present in the <code>fruits</code> list and if the word <code>"world"</code> is in the <code>sentence</code>.</p>
-</section>
-</section>
-<section id="combining-conditions-in-practical-examples" class="level3">
-<h3 class="anchored" data-anchor-id="combining-conditions-in-practical-examples">Combining Conditions in Practical Examples</h3>
-<p>Let’s take an example where we check whether a user’s input meets certain conditions, like a password validation function.</p>
-<section id="example-7" class="level4">
-<h4 class="anchored" data-anchor-id="example-7">Example:</h4>
-<div id="36c0a049" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>password <span class="op">=</span> <span class="st">"Hello123"</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(password) <span class="op">&gt;=</span> <span class="dv">8</span> <span class="kw">and</span> <span class="bu">any</span>(char.isdigit() <span class="cf">for</span> char <span class="kw">in</span> password):</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Password is valid"</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Password must be at least 8 characters long and contain a number."</span>)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Password is valid</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Password is valid</code></pre>
-</div>
-</div>
-<p>Here, we check two conditions for the password: it should be at least 8 characters long and must contain a number. The function <code>char.isdigit()</code> checks if there’s any numeric character in the password.</p>
-</section>
-</section>
-<section id="edge-cases-and-handling-errors" class="level3">
-<h3 class="anchored" data-anchor-id="edge-cases-and-handling-errors">Edge Cases and Handling Errors</h3>
-<p>When using conditional statements, it’s important to think about edge cases, i.e., situations where input values might behave differently or cause errors. For example, when dealing with empty strings, null values, or division by zero, you should handle these cases appropriately using conditionals.</p>
-<section id="example-8" class="level4">
-<h4 class="anchored" data-anchor-id="example-8">Example:</h4>
-<div id="7517b18d" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checking for division by zero</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>numerator <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>denominator <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> denominator <span class="op">!=</span> <span class="dv">0</span>:</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> numerator <span class="op">/</span> denominator</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Cannot divide by zero"</span>)  <span class="co"># Output: Cannot divide by zero</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Cannot divide by zero</code></pre>
-</div>
-</div>
-<p>In this example, we use a conditional statement to prevent a division by zero error by checking if the denominator is not zero before performing the division.</p>
+</details>
 
 
-</section>
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -1132,13 +1043,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../python_intro/exercises/functions.html" class="pagination-link" aria-label="Exercise: Functions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercise: Functions</span>
+      <a href="../../python_intro/lists_and_loops.html" class="pagination-link" aria-label="Lists and Loops">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lists and Loops</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../python_intro/exercises/conditional_statements.html" class="pagination-link" aria-label="Exercise: Conditional Statements">
-        <span class="nav-page-text">Exercise: Conditional Statements</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../python_intro/functions.html" class="pagination-link" aria-label="Functions">
+        <span class="nav-page-text">Functions</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

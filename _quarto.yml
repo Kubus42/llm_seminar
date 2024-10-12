@@ -47,10 +47,15 @@ website:
             - python_intro/string_operations.qmd
             - python_intro/exercises/strings.ipynb
             - python_intro/lists_and_loops.qmd
+            - python_intro/exercises/lists_and_loops.ipynb
             - python_intro/functions.qmd
+            - python_intro/exercises/functions.ipynb
             - python_intro/conditional_statements.qmd
+            - python_intro/exercises/conditional_statements.ipynb
             - python_intro/dictionaries.qmd
+            - python_intro/exercises/dictionaries.ipynb
             - python_intro/classes.qmd
+            - python_intro/exercises/classes.ipynb
 
         - section: "Natural Language Processing"
           contents:

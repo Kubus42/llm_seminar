@@ -239,8 +239,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/lists_and_loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Lists and Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../python_intro/functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -251,14 +263,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/conditional_statements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Conditional Statements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../python_intro/dictionaries.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dictionaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/dictionaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Dictionaries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../python_intro/classes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Classes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Classes</span></a>
   </div>
 </li>
       </ul>
@@ -470,6 +500,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="todo-some-introduction" class="level1">
 <h1>TODO: Some introduction</h1>
 </section>
+<section id="installing-python-on-windows-and-macos" class="level1">
+<h1>Installing Python on Windows and macOS</h1>
+<section id="installing-python-on-windows" class="level3">
+<h3 class="anchored" data-anchor-id="installing-python-on-windows">Installing Python on Windows</h3>
+<ol type="1">
+<li><strong>Download the Installer:</strong>
+<ul>
+<li>Go to the <a href="https://www.python.org/downloads/">official Python website</a>.</li>
+<li>Click on the “Download Python” button. This will download the latest version for Windows.</li>
+</ul></li>
+<li><strong>Run the Installer:</strong>
+<ul>
+<li>Locate the downloaded <code>.exe</code> file in your downloads folder and double-click it to run the installer.</li>
+<li><strong>Important:</strong> Check the box that says “Add Python to PATH” at the bottom of the installation window.</li>
+<li>Choose “Install Now” for a standard installation or “Customize installation” for more options.</li>
+</ul></li>
+<li><strong>Verify Installation:</strong>
+<ul>
+<li>Open the Command Prompt by searching for <code>cmd</code> in the Start menu.</li>
+<li>Type <code>python --version</code> and press Enter. You should see the installed version of Python.</li>
+</ul></li>
+</ol>
+</section>
+<section id="installing-python-on-macos" class="level3">
+<h3 class="anchored" data-anchor-id="installing-python-on-macos">Installing Python on macOS</h3>
+<ol type="1">
+<li><strong>Download the Installer:</strong>
+<ul>
+<li>Visit the <a href="https://www.python.org/downloads/">official Python website</a>.</li>
+<li>Click on the “Download Python” button, which will get the latest version for macOS.</li>
+</ul></li>
+<li><strong>Run the Installer:</strong>
+<ul>
+<li>Locate the downloaded <code>.pkg</code> file and double-click it to launch the installer.</li>
+<li>Follow the on-screen instructions to complete the installation.</li>
+</ul></li>
+<li><strong>Verify Installation:</strong>
+<ul>
+<li>Open the Terminal application (you can find it using Spotlight Search by pressing <code>Command + Space</code> and typing “Terminal”).</li>
+<li>Type <code>python3 --version</code> and press Enter. You should see the installed version of Python.</li>
+</ul></li>
+</ol>
+</section>
+<section id="additional-setup-optional" class="level3">
+<h3 class="anchored" data-anchor-id="additional-setup-optional">Additional Setup (Optional)</h3>
+<p>After installing Python, it’s a good idea to install <strong>pip</strong>, Python’s package manager, which is included by default in the latest Python versions. You can use pip to install additional libraries and packages as needed.</p>
+<p>For Windows: - To install a package, open Command Prompt and type: <code>bash   pip install package_name</code></p>
+<p>For macOS: - Open Terminal and type: <code>bash   pip3 install package_name</code></p>
+<p>That’s it! You’re now ready to start programming in Python.</p>
+</section>
+</section>
 <section id="using-vscode" class="level1">
 <h1>Using VSCode</h1>
 <p>Visual Studio Code (VSCode) is a powerful and popular code editor developed by Microsoft. It is highly extensible, lightweight, and supports a wide range of programming languages, including Python. With its robust features such as IntelliSense, debugging capabilities, and integrated terminal, VSCode is an excellent choice for Python development.</p>
@@ -561,7 +642,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <section id="example" class="level4">
 <h4 class="anchored" data-anchor-id="example">Example:</h4>
-<div id="efc98800" class="cell" data-execution_count="1">
+<div id="54126b1e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, Jupyter!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, Jupyter!</code></pre>
@@ -590,7 +671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Jupyter Notebook supports various visualization libraries like Matplotlib, Seaborn, and Plotly, allowing you to create plots and graphs inline.</p>
 <section id="example-2" class="level4">
 <h4 class="anchored" data-anchor-id="example-2">Example:</h4>
-<div id="c1a9ad2b" class="cell" data-execution_count="2">
+<div id="765a42d6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>

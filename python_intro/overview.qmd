@@ -8,6 +8,57 @@ jupyter: python3
 
 # TODO: Some introduction
 
+
+# Installing Python on Windows and macOS
+
+### Installing Python on Windows
+
+1. **Download the Installer:**
+   - Go to the [official Python website](https://www.python.org/downloads/).
+   - Click on the “Download Python” button. This will download the latest version for Windows.
+
+2. **Run the Installer:**
+   - Locate the downloaded `.exe` file in your downloads folder and double-click it to run the installer.
+   - **Important:** Check the box that says “Add Python to PATH” at the bottom of the installation window.
+   - Choose "Install Now" for a standard installation or "Customize installation" for more options.
+
+3. **Verify Installation:**
+   - Open the Command Prompt by searching for `cmd` in the Start menu.
+   - Type `python --version` and press Enter. You should see the installed version of Python.
+
+### Installing Python on macOS
+
+1. **Download the Installer:**
+   - Visit the [official Python website](https://www.python.org/downloads/).
+   - Click on the “Download Python” button, which will get the latest version for macOS.
+
+2. **Run the Installer:**
+   - Locate the downloaded `.pkg` file and double-click it to launch the installer.
+   - Follow the on-screen instructions to complete the installation.
+
+3. **Verify Installation:**
+   - Open the Terminal application (you can find it using Spotlight Search by pressing `Command + Space` and typing "Terminal").
+   - Type `python3 --version` and press Enter. You should see the installed version of Python.
+
+### Additional Setup (Optional)
+
+After installing Python, it’s a good idea to install **pip**, Python's package manager, which is included by default in the latest Python versions. You can use pip to install additional libraries and packages as needed.
+
+For Windows:
+- To install a package, open Command Prompt and type:
+  ```bash
+  pip install package_name
+  ```
+
+For macOS:
+- Open Terminal and type:
+  ```bash
+  pip3 install package_name
+  ```
+
+That’s it! You’re now ready to start programming in Python. 
+
+
 # Using VSCode
 
 Visual Studio Code (VSCode) is a powerful and popular code editor developed by Microsoft. 

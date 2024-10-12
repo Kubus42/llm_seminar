@@ -1282,7 +1282,7 @@
     "href": "python_intro/overview.html",
     "title": "Introduction to Python",
     "section": "",
-    "text": "TODO: Some introduction\n\n\nUsing VSCode\nVisual Studio Code (VSCode) is a powerful and popular code editor developed by Microsoft. It is highly extensible, lightweight, and supports a wide range of programming languages, including Python. With its robust features such as IntelliSense, debugging capabilities, and integrated terminal, VSCode is an excellent choice for Python development.\n\nGetting Started\nTo start using Python in VSCode, follow these steps:\n\nInstall VSCode: If you haven’t already, download and install Visual Studio Code from the official website.\nInstall the Python Extension:\n\nOpen VSCode.\nGo to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side or pressing Ctrl + Shift + X.\nSearch for “Python” and install the official extension provided by Microsoft. This extension adds rich support for Python development, including IntelliSense and linting.\n\nSelect the Python Interpreter:\n\nAfter installing the extension, you need to select the Python interpreter. Press Ctrl + Shift + P to open the Command Palette, then type and select Python: Select Interpreter.\nChoose the interpreter that matches your Python installation.\n\n\n\n\nWriting and Running Python Code\n\nCreate a New File:\n\nYou can create a new Python file by clicking on File &gt; New File or pressing Ctrl + N.\nSave it with a .py extension (e.g., script.py).\n\nWrite Your Code:\n\nBegin writing your Python code in the editor. For example:\n\nprint(\"Hello, VSCode!\")\nRun Your Code:\n\nThere are multiple ways to run your Python code:\n\nUsing the Terminal: Open the integrated terminal by selecting View &gt; Terminal or pressing Ctrl + ` (backtick). In the terminal, type python script.py (replacing script.py with your file name) to execute the script.\nRun Code Action: You can also run your code directly from the editor by clicking the play button (▶️) that appears above the code or using the shortcut Shift + Enter.\n\n\n\n\n\nDebugging in VSCode\nVSCode provides powerful debugging features to help you troubleshoot your code:\n\nSet Breakpoints: Click in the gutter next to the line numbers to set breakpoints where you want the execution to pause.\nStart Debugging: Press F5 or go to the Debug view by clicking on the Debug icon in the Activity Bar.\nYou can then start debugging your Python script. The Debug Console will allow you to inspect variables, step through code, and evaluate expressions.\n\n\n\nUsing Extensions and Features\nVSCode has a wide variety of extensions to enhance your Python development experience:\n\nLinting: The Python extension includes linting capabilities that help you catch errors and enforce coding standards. You can enable it in the settings (Settings &gt; Python &gt; Linting).\nIntelliSense: Take advantage of IntelliSense for code suggestions, autocompletions, and quick documentation. Simply start typing, and relevant suggestions will appear.\nJupyter Notebooks: If you want to work with Jupyter Notebooks directly in VSCode, install the Jupyter extension. This allows you to create, edit, and run notebooks seamlessly.\n\n\n\n\n\nJupyter Notebooks\nJupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It is widely used in data science, machine learning, and scientific computing, making it a versatile tool for both beginners and advanced users. In a Jupyter Notebook, you can write and execute code in a variety of programming languages, including Python. It provides an interactive environment where you can document your thought process alongside your code, visualize data, and quickly test ideas without the need for a complete development setup.\n\nGetting Started\nOnce you have Jupyter Notebook up and running, you will typically start by opening a new notebook. Here are the key components and features of Jupyter Notebook to help you navigate and utilize it effectively:\n\n\nThe User Interface\nUpon launching Jupyter Notebook, you’ll be greeted with a dashboard showing your files and notebooks. You can create a new notebook by selecting “New” and then choosing the desired kernel (like Python 3).\n\nNotebook Cells: The main area consists of cells where you can write your code or text. There are two main types of cells:\n\nCode Cells: Where you write and execute code.\nMarkdown Cells: Where you can write formatted text, including headers, lists, and links.\n\n\n\n\nWriting and Executing Code\nTo write code in a code cell:\n\nClick on a cell to make it active.\nType your code into the cell.\n\n\nExample:\n\nprint(\"Hello, Jupyter!\")\n\nHello, Jupyter!\n\n\nTo execute the code, you can either click the “Run” button in the toolbar or press Shift + Enter. This will run the code and display the output directly below the cell.\n\n\n\nUsing Markdown for Documentation\nMarkdown cells allow you to document your code using plain text. You can format your text using Markdown syntax.\n\nExample:\nTo create a markdown cell with a header, simply type:\n# My Jupyter Notebook\nAfter running the cell, it will render as a formatted header.\nYou can also create bullet points, numbered lists, links, and more:\n## Key Features\n- Interactive coding\n- Inline visualizations\n- Rich text support\n\n\n\nVisualization and Output\nJupyter Notebook supports various visualization libraries like Matplotlib, Seaborn, and Plotly, allowing you to create plots and graphs inline.\n\nExample:\n\nimport matplotlib.pyplot as plt\n\n# Sample data\nx = [1, 2, 3, 4, 5]\ny = [2, 3, 5, 7, 11]\n\n# Creating a plot\nplt.plot(x, y)\nplt.title(\"Sample Plot\")\nplt.xlabel(\"X-axis\")\nplt.ylabel(\"Y-axis\")\nplt.show()\n\n\n\n\n\n\n\n\nAfter running this code, the plot will be displayed directly beneath the code cell.\n\n\n\nSaving and Sharing Notebooks\nYou can save your notebook by clicking the save icon or using the shortcut Ctrl + S (or Cmd + S on Mac). Jupyter Notebooks are saved with a .ipynb extension.\nTo share your notebook, you can export it to different formats, such as HTML or PDF, by using the “File” menu. You can also share the .ipynb file directly, which can be opened in any Jupyter environment.\n\n\nKeyboard Shortcuts\nJupyter Notebook has many handy keyboard shortcuts that can improve your efficiency. Here are a few essential ones:\n\nEnter: Edit the selected cell.\nEsc: Command mode (no editing).\nA: Insert a new cell above.\nB: Insert a new cell below.\nDD: Delete the selected cell.\nZ: Undo the last cell deletion.\nShift + Enter: Run the current cell and move to the next one.\nCtrl + Enter: Run the current cell and stay in it.\n\n\n\n\n\n\n Back to top",
+    "text": "TODO: Some introduction\n\n\nInstalling Python on Windows and macOS\n\nInstalling Python on Windows\n\nDownload the Installer:\n\nGo to the official Python website.\nClick on the “Download Python” button. This will download the latest version for Windows.\n\nRun the Installer:\n\nLocate the downloaded .exe file in your downloads folder and double-click it to run the installer.\nImportant: Check the box that says “Add Python to PATH” at the bottom of the installation window.\nChoose “Install Now” for a standard installation or “Customize installation” for more options.\n\nVerify Installation:\n\nOpen the Command Prompt by searching for cmd in the Start menu.\nType python --version and press Enter. You should see the installed version of Python.\n\n\n\n\nInstalling Python on macOS\n\nDownload the Installer:\n\nVisit the official Python website.\nClick on the “Download Python” button, which will get the latest version for macOS.\n\nRun the Installer:\n\nLocate the downloaded .pkg file and double-click it to launch the installer.\nFollow the on-screen instructions to complete the installation.\n\nVerify Installation:\n\nOpen the Terminal application (you can find it using Spotlight Search by pressing Command + Space and typing “Terminal”).\nType python3 --version and press Enter. You should see the installed version of Python.\n\n\n\n\nAdditional Setup (Optional)\nAfter installing Python, it’s a good idea to install pip, Python’s package manager, which is included by default in the latest Python versions. You can use pip to install additional libraries and packages as needed.\nFor Windows: - To install a package, open Command Prompt and type: bash   pip install package_name\nFor macOS: - Open Terminal and type: bash   pip3 install package_name\nThat’s it! You’re now ready to start programming in Python.\n\n\n\nUsing VSCode\nVisual Studio Code (VSCode) is a powerful and popular code editor developed by Microsoft. It is highly extensible, lightweight, and supports a wide range of programming languages, including Python. With its robust features such as IntelliSense, debugging capabilities, and integrated terminal, VSCode is an excellent choice for Python development.\n\nGetting Started\nTo start using Python in VSCode, follow these steps:\n\nInstall VSCode: If you haven’t already, download and install Visual Studio Code from the official website.\nInstall the Python Extension:\n\nOpen VSCode.\nGo to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side or pressing Ctrl + Shift + X.\nSearch for “Python” and install the official extension provided by Microsoft. This extension adds rich support for Python development, including IntelliSense and linting.\n\nSelect the Python Interpreter:\n\nAfter installing the extension, you need to select the Python interpreter. Press Ctrl + Shift + P to open the Command Palette, then type and select Python: Select Interpreter.\nChoose the interpreter that matches your Python installation.\n\n\n\n\nWriting and Running Python Code\n\nCreate a New File:\n\nYou can create a new Python file by clicking on File &gt; New File or pressing Ctrl + N.\nSave it with a .py extension (e.g., script.py).\n\nWrite Your Code:\n\nBegin writing your Python code in the editor. For example:\n\nprint(\"Hello, VSCode!\")\nRun Your Code:\n\nThere are multiple ways to run your Python code:\n\nUsing the Terminal: Open the integrated terminal by selecting View &gt; Terminal or pressing Ctrl + ` (backtick). In the terminal, type python script.py (replacing script.py with your file name) to execute the script.\nRun Code Action: You can also run your code directly from the editor by clicking the play button (▶️) that appears above the code or using the shortcut Shift + Enter.\n\n\n\n\n\nDebugging in VSCode\nVSCode provides powerful debugging features to help you troubleshoot your code:\n\nSet Breakpoints: Click in the gutter next to the line numbers to set breakpoints where you want the execution to pause.\nStart Debugging: Press F5 or go to the Debug view by clicking on the Debug icon in the Activity Bar.\nYou can then start debugging your Python script. The Debug Console will allow you to inspect variables, step through code, and evaluate expressions.\n\n\n\nUsing Extensions and Features\nVSCode has a wide variety of extensions to enhance your Python development experience:\n\nLinting: The Python extension includes linting capabilities that help you catch errors and enforce coding standards. You can enable it in the settings (Settings &gt; Python &gt; Linting).\nIntelliSense: Take advantage of IntelliSense for code suggestions, autocompletions, and quick documentation. Simply start typing, and relevant suggestions will appear.\nJupyter Notebooks: If you want to work with Jupyter Notebooks directly in VSCode, install the Jupyter extension. This allows you to create, edit, and run notebooks seamlessly.\n\n\n\n\n\nJupyter Notebooks\nJupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It is widely used in data science, machine learning, and scientific computing, making it a versatile tool for both beginners and advanced users. In a Jupyter Notebook, you can write and execute code in a variety of programming languages, including Python. It provides an interactive environment where you can document your thought process alongside your code, visualize data, and quickly test ideas without the need for a complete development setup.\n\nGetting Started\nOnce you have Jupyter Notebook up and running, you will typically start by opening a new notebook. Here are the key components and features of Jupyter Notebook to help you navigate and utilize it effectively:\n\n\nThe User Interface\nUpon launching Jupyter Notebook, you’ll be greeted with a dashboard showing your files and notebooks. You can create a new notebook by selecting “New” and then choosing the desired kernel (like Python 3).\n\nNotebook Cells: The main area consists of cells where you can write your code or text. There are two main types of cells:\n\nCode Cells: Where you write and execute code.\nMarkdown Cells: Where you can write formatted text, including headers, lists, and links.\n\n\n\n\nWriting and Executing Code\nTo write code in a code cell:\n\nClick on a cell to make it active.\nType your code into the cell.\n\n\nExample:\n\nprint(\"Hello, Jupyter!\")\n\nHello, Jupyter!\n\n\nTo execute the code, you can either click the “Run” button in the toolbar or press Shift + Enter. This will run the code and display the output directly below the cell.\n\n\n\nUsing Markdown for Documentation\nMarkdown cells allow you to document your code using plain text. You can format your text using Markdown syntax.\n\nExample:\nTo create a markdown cell with a header, simply type:\n# My Jupyter Notebook\nAfter running the cell, it will render as a formatted header.\nYou can also create bullet points, numbered lists, links, and more:\n## Key Features\n- Interactive coding\n- Inline visualizations\n- Rich text support\n\n\n\nVisualization and Output\nJupyter Notebook supports various visualization libraries like Matplotlib, Seaborn, and Plotly, allowing you to create plots and graphs inline.\n\nExample:\n\nimport matplotlib.pyplot as plt\n\n# Sample data\nx = [1, 2, 3, 4, 5]\ny = [2, 3, 5, 7, 11]\n\n# Creating a plot\nplt.plot(x, y)\nplt.title(\"Sample Plot\")\nplt.xlabel(\"X-axis\")\nplt.ylabel(\"Y-axis\")\nplt.show()\n\n\n\n\n\n\n\n\nAfter running this code, the plot will be displayed directly beneath the code cell.\n\n\n\nSaving and Sharing Notebooks\nYou can save your notebook by clicking the save icon or using the shortcut Ctrl + S (or Cmd + S on Mac). Jupyter Notebooks are saved with a .ipynb extension.\nTo share your notebook, you can export it to different formats, such as HTML or PDF, by using the “File” menu. You can also share the .ipynb file directly, which can be opened in any Jupyter environment.\n\n\nKeyboard Shortcuts\nJupyter Notebook has many handy keyboard shortcuts that can improve your efficiency. Here are a few essential ones:\n\nEnter: Edit the selected cell.\nEsc: Command mode (no editing).\nA: Insert a new cell above.\nB: Insert a new cell below.\nDD: Delete the selected cell.\nZ: Undo the last cell deletion.\nShift + Enter: Run the current cell and move to the next one.\nCtrl + Enter: Run the current cell and stay in it.\n\n\n\n\n\n\n Back to top",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -1599,6 +1599,258 @@
       "Seminar",
       "Python Crash Course",
       "Exercise: String Operations"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/functions.html",
+    "href": "python_intro/exercises/functions.html",
+    "title": "Exercise: Functions",
+    "section": "",
+    "text": "Task: Create a function to count the frequency of a specific word in a given sentence.\nInstructions:\n\nDefine a function called word_frequency(sentence, word) that takes a string parameter sentence and a string parameter word.\nInside the function, use the split() method to break the sentence into words, then count how many times word appears in the list. Hint: Use the list method .count().\nReturn the count.\nCall the function with a sample sentence and word, then print the result.\n\n\n\nShow solution\n\n\ndef word_frequency(sentence, word):\n    words = sentence.split()\n    return words.count(word)\n\n# Sample usage\nsentence = \"NLP is great and NLP is fun\"\nword = \"NLP\"\nresult = word_frequency(sentence, word)\nprint(f\"The word '{word}' appears {result} times.\")  # Output: The word 'NLP' appears 2 times.\n\nThe word 'NLP' appears 2 times.",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Functions"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/functions.html#exercise-1-word-frequency-counter",
+    "href": "python_intro/exercises/functions.html#exercise-1-word-frequency-counter",
+    "title": "Exercise: Functions",
+    "section": "",
+    "text": "Task: Create a function to count the frequency of a specific word in a given sentence.\nInstructions:\n\nDefine a function called word_frequency(sentence, word) that takes a string parameter sentence and a string parameter word.\nInside the function, use the split() method to break the sentence into words, then count how many times word appears in the list. Hint: Use the list method .count().\nReturn the count.\nCall the function with a sample sentence and word, then print the result.\n\n\n\nShow solution\n\n\ndef word_frequency(sentence, word):\n    words = sentence.split()\n    return words.count(word)\n\n# Sample usage\nsentence = \"NLP is great and NLP is fun\"\nword = \"NLP\"\nresult = word_frequency(sentence, word)\nprint(f\"The word '{word}' appears {result} times.\")  # Output: The word 'NLP' appears 2 times.\n\nThe word 'NLP' appears 2 times.",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Functions"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/functions.html#exercise-2-sentence-reversal",
+    "href": "python_intro/exercises/functions.html#exercise-2-sentence-reversal",
+    "title": "Exercise: Functions",
+    "section": "Exercise 2: Sentence Reversal",
+    "text": "Exercise 2: Sentence Reversal\nTask: Write a function that reverses the words in a sentence.\nInstructions:\n\nDefine a function called reverse_sentence(sentence) that takes a string parameter sentence.\nInside the function, split the sentence into words, reverse the order of the words, and then join them back into a single string.\nReturn the reversed sentence.\nCall the function with a sample sentence and print the result.\n\n\n\nShow solution\n\n\ndef reverse_sentence(sentence):\n    words = sentence.split()\n    reversed_words = words[::-1]\n    return ' '.join(reversed_words)\n\n# Sample usage\nsentence = \"Natural Language Processing is fun\"\nresult = reverse_sentence(sentence)\nprint(\"Reversed sentence:\", result)  # Output: Reversed sentence: fun is Processing Language Natural\n\nReversed sentence: fun is Processing Language Natural",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Functions"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/functions.html#exercise-3-remove-punctuation",
+    "href": "python_intro/exercises/functions.html#exercise-3-remove-punctuation",
+    "title": "Exercise: Functions",
+    "section": "Exercise 3: Remove Punctuation",
+    "text": "Exercise 3: Remove Punctuation\nTask: Create a function to remove punctuation from a given string.\nInstructions:\n\nDefine a function called remove_punctuation(text) that takes a string parameter text.\nInside the function, use a loop or list comprehension to create a new string that only includes alphanumeric characters and spaces. Hint: You can the string methods .isalnum() and .ischar().\nReturn the cleaned text.\nCall the function with a sample string (e.g., “NLP is great! Isn’t it?”) and print the result.\n\n\n\nShow solution\n\n\ndef remove_punctuation(text: str):\n    # Use list comprehension to filter out punctuation\n    cleaned_text = ''.join(char for char in text if char.isalnum() or char.isspace())\n    return cleaned_text\n\n# Sample usage\ntext = \"NLP is great! Isn't it?\"\nresult = remove_punctuation(text)\nprint(\"Cleaned text:\", result)  # Output: Cleaned text: NLP is great Isnt it\n\nCleaned text: NLP is great Isnt it",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Functions"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/functions.html#exercise-4-average-word-length",
+    "href": "python_intro/exercises/functions.html#exercise-4-average-word-length",
+    "title": "Exercise: Functions",
+    "section": "Exercise 4: Average Word Length",
+    "text": "Exercise 4: Average Word Length\nTask: Write a function to calculate the average length of words in a sentence.\nInstructions:\n\nDefine a function called average_word_length(sentence) that takes a string parameter sentence.\nInside the function, split the sentence into words, calculate the average length of the words, and return the result.\nCall the function with a sample sentence (e.g., “Natural Language Processing is powerful”) and print the average length.\n\n\n\nShow solution\n\n\ndef average_word_length(sentence):\n    words = sentence.split()\n    if len(words) == 0:\n        return 0\n    total_length = sum(len(word) for word in words)\n    return total_length / len(words)\n\n# Sample usage\nsentence = \"Natural Language Processing is powerful\"\nresult = average_word_length(sentence)\nprint(\"Average word length:\", result)  \n\nAverage word length: 7.0",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Functions"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/lists_and_loops.html",
+    "href": "python_intro/exercises/lists_and_loops.html",
+    "title": "Exercise: Lists and Loops",
+    "section": "",
+    "text": "Task: Write a function that counts the total number of vowels in a list of words.\nInstructions:\n\nDefine a function called count_vowels(word_list) that takes a list of strings word_list.\nInside the function, loop through each word in the list, count the vowels (a, e, i, o, u) in each word, and keep a running total.\nReturn the total count of vowels.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\"]) and print the result.\n\n\n\nShow solution\n\n\ndef count_vowels(word_list):\n    vowels = 'aeiouAEIOU'\n    total_vowels = 0\n\n    for word in word_list:\n        for char in word:\n            if char in vowels:\n                total_vowels += 1\n                \n    return total_vowels\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\"]\nresult = count_vowels(words)\nprint(\"Total number of vowels:\", result)  \n\nTotal number of vowels: 2",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Lists and Loops"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-1-count-vowels-in-a-list-of-words",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-1-count-vowels-in-a-list-of-words",
+    "title": "Exercise: Lists and Loops",
+    "section": "",
+    "text": "Task: Write a function that counts the total number of vowels in a list of words.\nInstructions:\n\nDefine a function called count_vowels(word_list) that takes a list of strings word_list.\nInside the function, loop through each word in the list, count the vowels (a, e, i, o, u) in each word, and keep a running total.\nReturn the total count of vowels.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\"]) and print the result.\n\n\n\nShow solution\n\n\ndef count_vowels(word_list):\n    vowels = 'aeiouAEIOU'\n    total_vowels = 0\n\n    for word in word_list:\n        for char in word:\n            if char in vowels:\n                total_vowels += 1\n                \n    return total_vowels\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\"]\nresult = count_vowels(words)\nprint(\"Total number of vowels:\", result)  \n\nTotal number of vowels: 2",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Lists and Loops"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-2-filter-long-words",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-2-filter-long-words",
+    "title": "Exercise: Lists and Loops",
+    "section": "Exercise 2: Filter Long Words",
+    "text": "Exercise 2: Filter Long Words\nTask: Create a function that filters out words longer than a specified length from a list.\nInstructions:\n\nDefine a function called filter_long_words(word_list, length) that takes a list of strings word_list and an integer length.\nInside the function, use a loop to create a new list that contains only the words from the original list that have a length less than or equal to length.\nReturn the new list.\nCall the function with a sample list and a length (e.g., [\"Natural\", \"Language\", \"Processing\", \"is\", \"fun\"], length=4) and print the result.\n\n\n\nShow solution\n\n\ndef filter_long_words(word_list, length):\n    short_words = []\n    \n    for word in word_list:\n        if len(word) &lt;= length:\n            short_words.append(word)\n    \n    return short_words\n\n# Sample usage\nwords = [\"Natural\", \"Language\", \"Processing\", \"is\", \"fun\"]\nresult = filter_long_words(words, 4)\nprint(\"Filtered words:\", result)  \n\nFiltered words: ['is', 'fun']",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Lists and Loops"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-3-create-a-word-frequency-dictionary",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-3-create-a-word-frequency-dictionary",
+    "title": "Exercise: Lists and Loops",
+    "section": "Exercise 3: Create a Word Frequency Dictionary",
+    "text": "Exercise 3: Create a Word Frequency Dictionary\nTask: Write a function that creates a frequency dictionary from a list of words.\nInstructions:\n\nDefine a function called word_frequency(word_list) that takes a list of strings word_list.\nInside the function, use a loop to create a dictionary where the keys are the words and the values are the number of times each word appears in the list.\nReturn the frequency dictionary.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\", \"NLP\"]) and print the result.\n\n\n\nShow solution\n\n\ndef word_frequency(word_list):\n    frequency_dict = {}\n\n    for word in word_list:\n        if word in frequency_dict:\n            frequency_dict[word] += 1\n        else:\n            frequency_dict[word] = 1\n            \n    return frequency_dict\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\", \"NLP\"]\nresult = word_frequency(words)\nprint(\"Word frequency:\", result)  \n\nWord frequency: {'NLP': 2, 'is': 1, 'fun': 1}",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Lists and Loops"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-4-reverse-each-word-in-a-list",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-4-reverse-each-word-in-a-list",
+    "title": "Exercise: Lists and Loops",
+    "section": "Exercise 4: Reverse Each Word in a List",
+    "text": "Exercise 4: Reverse Each Word in a List\nTask: Create a function that reverses each word in a list.\nInstructions:\n\nDefine a function called reverse_words(word_list) that takes a list of strings word_list.\nInside the function, use a loop to create a new list that contains each word reversed.\nReturn the new list.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\"]) and print the result.\n\n\n\nShow solution\n\n\ndef reverse_words(word_list):\n    reversed_list = []\n    \n    for word in word_list:\n        reversed_list.append(word[::-1])\n    \n    return reversed_list\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\"]\nresult = reverse_words(words)\nprint(\"Reversed words:\", result) \n\nReversed words: ['PLN', 'si', 'nuf']",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Lists and Loops"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/dictionaries.html",
+    "href": "python_intro/exercises/dictionaries.html",
+    "title": "Exercise: Dictionaries",
+    "section": "",
+    "text": "Task: Write a function that counts the frequency of each word in a given list.\nInstructions:\n\nDefine a function called word_count(word_list) that takes a list of strings word_list.\nInside the function, create a dictionary to store the word counts.\nLoop through the list and update the dictionary with the frequency of each word.\nReturn the dictionary.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\", \"NLP\"]) and print the result.\n\n\n\nShow solution\n\n\ndef word_count(word_list):\n    count_dict = {}\n    \n    for word in word_list:\n        count_dict[word] = count_dict.get(word, 0) + 1\n    \n    return count_dict\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\", \"NLP\"]\nresult = word_count(words)\nprint(\"Word count dictionary:\", result)  \n\nWord count dictionary: {'NLP': 2, 'is': 1, 'fun': 1}",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/dictionaries.html#exercise-1-create-a-word-count-dictionary",
+    "href": "python_intro/exercises/dictionaries.html#exercise-1-create-a-word-count-dictionary",
+    "title": "Exercise: Dictionaries",
+    "section": "",
+    "text": "Task: Write a function that counts the frequency of each word in a given list.\nInstructions:\n\nDefine a function called word_count(word_list) that takes a list of strings word_list.\nInside the function, create a dictionary to store the word counts.\nLoop through the list and update the dictionary with the frequency of each word.\nReturn the dictionary.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\", \"NLP\"]) and print the result.\n\n\n\nShow solution\n\n\ndef word_count(word_list):\n    count_dict = {}\n    \n    for word in word_list:\n        count_dict[word] = count_dict.get(word, 0) + 1\n    \n    return count_dict\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\", \"NLP\"]\nresult = word_count(words)\nprint(\"Word count dictionary:\", result)  \n\nWord count dictionary: {'NLP': 2, 'is': 1, 'fun': 1}",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/dictionaries.html#exercise-manage-a-simple-chat-log",
+    "href": "python_intro/exercises/dictionaries.html#exercise-manage-a-simple-chat-log",
+    "title": "Exercise: Dictionaries",
+    "section": "Exercise: Manage a Simple Chat Log",
+    "text": "Exercise: Manage a Simple Chat Log\nTask: Create a simple chat log data structure using a dictionary to store messages between a user and a chatbot.\nInstructions:\n\nDefine a function called create_chat_log() that initializes an empty chat log dictionary.\nDefine another function called add_message(chat_log, sender, message) that takes the chat log, a sender (“user” or “chatbot”), and the message as parameters.\n\nThe function should append the new message to a list under the appropriate sender in the chat log.\n\nDefine a function called get_chat_log(chat_log) that returns the entire chat log.\nCall the functions to create a chat log, add messages from both the user and the chatbot, and then print the entire chat log.\n\n\nExample structure of the chat log:\n{\n    \"user\": [\"Hello!\", \"What is NLP?\"],\n    \"chatbot\": [\"Hi there!\", \"NLP stands for Natural Language Processing.\"]\n}\n\n&lt;details&gt;\n&lt;summary&gt;Show solution&lt;/summary&gt;\n\n::: {#cell-7 .cell execution_count=2}\n``` {.python .cell-code}\ndef create_chat_log():\n    return {\"user\": [], \"chatbot\": []}\n\ndef add_message(chat_log, sender, message):\n    if sender in chat_log:\n        chat_log[sender].append(message)\n    else:\n        print(\"Sender not recognized. Use 'user' or 'chatbot'.\")\n\ndef get_chat_log(chat_log):\n    return chat_log\n\n# Example usage\nchat_log = create_chat_log()\nadd_message(chat_log, \"user\", \"Hello!\")\nadd_message(chat_log, \"chatbot\", \"Hi there!\")\nadd_message(chat_log, \"user\", \"What is NLP?\")\nadd_message(chat_log, \"chatbot\", \"NLP stands for Natural Language Processing.\")\n\n# Print the chat log\nprint(\"Chat Log:\", get_chat_log(chat_log))\n\nChat Log: {'user': ['Hello!', 'What is NLP?'], 'chatbot': ['Hi there!', 'NLP stands for Natural Language Processing.']}\n\n:::",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Dictionaries"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/conditional_statements.html",
+    "href": "python_intro/exercises/conditional_statements.html",
+    "title": "Exercise: Conditional Statements",
+    "section": "",
+    "text": "Task: Write a function that checks if a given word is a palindrome.\nInstructions:\n\nDefine a function called is_palindrome(word) that takes a string parameter word.\nInside the function, use conditional statements to check if the word is the same when reversed.\nReturn True if it is a palindrome and False otherwise.\nCall the function with a sample word (e.g., “radar”) and print the result.\n\n\n\nShow solution\n\n\ndef is_palindrome(word):\n    return word == word[::-1]\n\n# Sample usage\nresult = is_palindrome(\"radar\")\nprint(\"Is 'radar' a palindrome?\", result)  \n\nIs 'radar' a palindrome? True",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Conditional Statements"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/conditional_statements.html#exercise-1-check-palindrome",
+    "href": "python_intro/exercises/conditional_statements.html#exercise-1-check-palindrome",
+    "title": "Exercise: Conditional Statements",
+    "section": "",
+    "text": "Task: Write a function that checks if a given word is a palindrome.\nInstructions:\n\nDefine a function called is_palindrome(word) that takes a string parameter word.\nInside the function, use conditional statements to check if the word is the same when reversed.\nReturn True if it is a palindrome and False otherwise.\nCall the function with a sample word (e.g., “radar”) and print the result.\n\n\n\nShow solution\n\n\ndef is_palindrome(word):\n    return word == word[::-1]\n\n# Sample usage\nresult = is_palindrome(\"radar\")\nprint(\"Is 'radar' a palindrome?\", result)  \n\nIs 'radar' a palindrome? True",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Conditional Statements"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/conditional_statements.html#exercise-2-categorize-word-length",
+    "href": "python_intro/exercises/conditional_statements.html#exercise-2-categorize-word-length",
+    "title": "Exercise: Conditional Statements",
+    "section": "Exercise 2: Categorize Word Length",
+    "text": "Exercise 2: Categorize Word Length\nTask: Create a function that categorizes a word as short, medium, or long based on its length.\nInstructions:\n\nDefine a function called categorize_word_length(word) that takes a string parameter word.\nInside the function, use conditional statements to categorize the word based on the following criteria:\n\nShort: 1-3 letters\nMedium: 4-6 letters\nLong: More than 6 letters\n\nReturn the category as a string.\nCall the function with a sample word (e.g., “NLP”) and print the result.\n\n\n\nShow solution\n\n\ndef categorize_word_length(word):\n    length = len(word)\n    \n    if length &lt;= 3:\n        return \"Short\"\n    elif 4 &lt;= length &lt;= 6:\n        return \"Medium\"\n    else:\n        return \"Long\"\n\n# Sample usage\nresult = categorize_word_length(\"NLP\")",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Conditional Statements"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/conditional_statements.html#exercise-3-grade-classification",
+    "href": "python_intro/exercises/conditional_statements.html#exercise-3-grade-classification",
+    "title": "Exercise: Conditional Statements",
+    "section": "Exercise 3: Grade Classification",
+    "text": "Exercise 3: Grade Classification\nTask: Create a function that classifies a score into letter grades.\nInstructions:\n\nDefine a function called grade_classification(score) that takes an integer parameter score.\nInside the function, use conditional statements to classify the score:\n\nA: 90-100\nB: 80-89\nC: 70-79\nD: 60-69\nF: Below 60\n\nReturn the letter grade.\nCall the function with a sample score (e.g., 85) and print the result.\n\n\n\nShow solution\n\n\ndef grade_classification(score):\n    if 90 &lt;= score &lt;= 100:\n        return \"A\"\n    elif 80 &lt;= score &lt; 90:\n        return \"B\"\n    elif 70 &lt;= score &lt; 80:\n        return \"C\"\n    elif 60 &lt;= score &lt; 70:\n        return \"D\"\n    else:\n        return \"F\"\n\n# Sample usage\nresult = grade_classification(85)\nprint(\"The letter grade is:\", result)  \n\nThe letter grade is: B",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Conditional Statements"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/classes.html",
+    "href": "python_intro/exercises/classes.html",
+    "title": "Exercise: Classes",
+    "section": "",
+    "text": "Task: Write a class that represents a simple text document.\nInstructions:\n\nDefine a class called TextDocument with the following attributes:\n\ntitle (string)\ncontent (string)\n\nInclude a method called word_count() that returns the number of words in the content.\nCreate an instance of the TextDocument class, set the title and content, and print the word count.\n\n\n\nShow solution\n\n\nclass TextDocument:\n    def __init__(self, title, content):\n        self.title = title\n        self.content = content\n    \n    def word_count(self):\n        return len(self.content.split())\n\n# Sample usage\ndoc = TextDocument(\"My First Document\", \"This is a simple text document for NLP.\")\nprint(f\"Word count: {doc.word_count()}\") \n\nWord count: 8",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Classes"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/classes.html#exercise-1-create-a-simple-text-class",
+    "href": "python_intro/exercises/classes.html#exercise-1-create-a-simple-text-class",
+    "title": "Exercise: Classes",
+    "section": "",
+    "text": "Task: Write a class that represents a simple text document.\nInstructions:\n\nDefine a class called TextDocument with the following attributes:\n\ntitle (string)\ncontent (string)\n\nInclude a method called word_count() that returns the number of words in the content.\nCreate an instance of the TextDocument class, set the title and content, and print the word count.\n\n\n\nShow solution\n\n\nclass TextDocument:\n    def __init__(self, title, content):\n        self.title = title\n        self.content = content\n    \n    def word_count(self):\n        return len(self.content.split())\n\n# Sample usage\ndoc = TextDocument(\"My First Document\", \"This is a simple text document for NLP.\")\nprint(f\"Word count: {doc.word_count()}\") \n\nWord count: 8",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Classes"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/classes.html#exercise-2-extend-the-text-class-for-analysis",
+    "href": "python_intro/exercises/classes.html#exercise-2-extend-the-text-class-for-analysis",
+    "title": "Exercise: Classes",
+    "section": "Exercise 2: Extend the Text Class for Analysis",
+    "text": "Exercise 2: Extend the Text Class for Analysis\nTask: Extend the TextDocument class to include a method that counts the frequency of a specific word.\nInstructions:\n\nAdd a method called count_word_frequency(self, word) to the TextDocument class that counts how many times a specific word appears in the content.\nCreate an instance of the class and call this method with a sample word.\n\n\n\nShow solution\n\n\nclass TextDocument:\n    def __init__(self, title, content):\n        self.title = title\n        self.content = content\n    \n    def word_count(self):\n        return len(self.content.split())\n    \n    def count_word_frequency(self, word):\n        return self.content.lower().split().count(word.lower())\n\n# Sample usage\ndoc = TextDocument(\"My First Document\", \"This is a simple text document for NLP. NLP is fun.\")\nprint(f\"Word count: {doc.word_count()}\") \nprint(f\"Frequency of 'NLP': {doc.count_word_frequency('NLP')}\")  \n\nWord count: 11\nFrequency of 'NLP': 1",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Classes"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/classes.html#exercise-3-create-a-chat-class",
+    "href": "python_intro/exercises/classes.html#exercise-3-create-a-chat-class",
+    "title": "Exercise: Classes",
+    "section": "Exercise 3: Create a Chat Class",
+    "text": "Exercise 3: Create a Chat Class\nTask: Create a class that represents a chat session.\nInstructions:\n\nDefine a class called ChatSession with the following attributes:\n\nmessages (list to store messages)\n\nInclude methods to:\n\nadd_message(sender, message) that appends a message to the messages list.\nget_chat_log() that returns the chat log as a list of strings formatted as “sender: message”.\n\nCreate an instance of the ChatSession class and demonstrate adding messages and retrieving the chat log.\n\n\n\nShow solution\n\n\nclass ChatSession:\n    def __init__(self):\n        self.messages = []\n    \n    def add_message(self, sender, message):\n        self.messages.append(f\"{sender}: {message}\")\n    \n    def get_chat_log(self):\n        return self.messages\n\n# Sample usage\nchat = ChatSession()\nchat.add_message(\"User\", \"Hello!\")\nchat.add_message(\"Chatbot\", \"Hi there! How can I assist you today?\")\nchat.add_message(\"User\", \"What is NLP?\")\nlog = chat.get_chat_log()\nprint(\"Chat Log:\")\nfor message in log:\n    print(message)\n\nChat Log:\nUser: Hello!\nChatbot: Hi there! How can I assist you today?\nUser: What is NLP?",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Classes"
     ]
   }
 ]
