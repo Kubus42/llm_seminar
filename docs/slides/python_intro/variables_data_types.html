@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>The OpenAI API</title>
+  <title>Variables and Data Types in Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -392,91 +392,205 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">The OpenAI API</h1>
+  <h1 class="title">Variables and Data Types in Python</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="lets-get-started" class="slide level2">
-<h2>Let’s get started</h2>
-<p>The great thing about APIs is that we can start right away without too much preparation!</p>
-<p>In this sprint, we will use the OpenAI API for completions and embeddings.</p>
-<p>Resource: <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API docs</a></p>
-</section>
-<section id="authentication" class="slide level2">
-<h2>Authentication</h2>
-<p>Typically, it’s as simple as this:</p>
-<div id="1a519b58" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># setting up the client in Python</span></span>
-<span id="cb1-2"><a></a><span class="im">import</span> os</span>
-<span id="cb1-3"><a></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a>client <span class="op">=</span> OpenAI(</span>
-<span id="cb1-6"><a></a>    api_key<span class="op">=</span>os.environ.get(<span class="st">"OPENAI_API_KEY"</span>)</span>
-<span id="cb1-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="introduction-to-variables-and-data-types" class="slide level2">
+<h2>Introduction to Variables and Data Types</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="what-are-variables">What are Variables?</h3>
+<ul>
+<li><strong>Variables</strong> are containers for storing data values.</li>
+<li>In Python, variables are created when you assign a value to them:</li>
+</ul>
+<div id="948e0cd5" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-2"><a></a>name <span class="op">=</span> <span class="st">"Alice"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>Variables do not need explicit declaration and can change type.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="data-types-in-python">Data Types in Python</h3>
+<ul>
+<li><strong>Data types</strong> classify data. In Python, everything is an object, and every object has a type.</li>
+<li>Common data types include:
+<ul>
+<li>Integers: <code>int</code></li>
+<li>Floating-point numbers: <code>float</code></li>
+<li>Strings: <code>str</code></li>
+<li>Booleans: <code>bool</code></li>
+</ul></li>
+</ul>
+</div></div>
 </section>
-<section id="authentication-for-the-seminar" class="slide level2">
-<h2>Authentication for the seminar</h2>
-<p>For the sprint, we have hosted some models in Azure.</p>
-<div id="cf7c6700" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> os</span>
-<span id="cb2-2"><a></a><span class="im">from</span> llm_utils.client <span class="im">import</span> get_openai_client, OpenAIModels</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="bu">print</span>(<span class="ss">f"GPT3: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_3<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-5"><a></a><span class="bu">print</span>(<span class="ss">f"GPT4: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_4<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-6"><a></a><span class="bu">print</span>(<span class="ss">f"Embedding model: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>EMBED<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a>MODEL <span class="op">=</span> OpenAIModels.GPT_4.value</span>
-<span id="cb2-9"><a></a></span>
-<span id="cb2-10"><a></a>client <span class="op">=</span> get_openai_client(</span>
-<span id="cb2-11"><a></a>    model<span class="op">=</span>MODEL,</span>
-<span id="cb2-12"><a></a>    config_path<span class="op">=</span>os.environ.get(<span class="st">"CONFIG_PATH"</span>)</span>
-<span id="cb2-13"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="variable-declaration-and-assignment" class="slide level2">
+<h2>Variable Declaration and Assignment</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="declaration-and-assignment">Declaration and Assignment</h3>
+<ul>
+<li>Variables are assigned using the <code>=</code> operator.</li>
+<li>Python infers the data type based on the value assigned.</li>
+</ul>
+<div id="6308de97" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>age <span class="op">=</span> <span class="dv">25</span>  <span class="co"># Integer</span></span>
+<span id="cb2-2"><a></a>pi <span class="op">=</span> <span class="fl">3.14</span>  <span class="co"># Float</span></span>
+<span id="cb2-3"><a></a>name <span class="op">=</span> <span class="st">"John"</span>  <span class="co"># String</span></span>
+<span id="cb2-4"><a></a>is_student <span class="op">=</span> <span class="va">True</span>  <span class="co"># Boolean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="checking-variable-types">Checking Variable Types</h3>
+<ul>
+<li>You can check the type of a variable using the <code>type()</code> function.</li>
+</ul>
+<div id="e76b4889" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="bu">print</span>(<span class="bu">type</span>(age))  <span class="co"># Output: &lt;class 'int'&gt;</span></span>
+<span id="cb3-2"><a></a><span class="bu">print</span>(<span class="bu">type</span>(name))  <span class="co"># Output: &lt;class 'str'&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>GPT3: gpt3
-GPT4: gpt4
-Embedding model: embed</code></pre>
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'str'&gt;</code></pre>
 </div>
 </div>
+<ul>
+<li>Python is dynamically typed, meaning you don’t have to declare the type.</li>
+</ul>
+</div></div>
 </section>
-<section id="creating-a-completion" class="slide level2">
-<h2>Creating a completion</h2>
-<div id="b8c6b02b" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb4-2"><a></a>    messages<span class="op">=</span>[</span>
-<span id="cb4-3"><a></a>        {</span>
-<span id="cb4-4"><a></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
-<span id="cb4-5"><a></a>            <span class="st">"content"</span>: <span class="st">"How old is the earth?"</span>,</span>
-<span id="cb4-6"><a></a>        }</span>
-<span id="cb4-7"><a></a>    ],</span>
-<span id="cb4-8"><a></a>    model<span class="op">=</span>MODEL </span>
-<span id="cb4-9"><a></a>)</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a><span class="co"># check out the type of the response</span></span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a><span class="bu">print</span>(<span class="ss">f"Response: </span><span class="sc">{</span><span class="bu">type</span>(chat_completion)<span class="sc">}</span><span class="ss">"</span>) <span class="co"># a ChatCompletion object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Response: &lt;class 'openai.types.chat.chat_completion.ChatCompletion'&gt;</code></pre>
+<section id="working-with-numbers" class="slide level2">
+<h2>Working with Numbers</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="integer-operations">Integer Operations</h3>
+<ul>
+<li>Integers (<code>int</code>) are whole numbers. You can perform arithmetic operations on them.</li>
+</ul>
+<div id="98d0e357" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb5-2"><a></a>y <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb5-3"><a></a><span class="bu">sum</span> <span class="op">=</span> x <span class="op">+</span> y  <span class="co"># Addition</span></span>
+<span id="cb5-4"><a></a>product <span class="op">=</span> x <span class="op">*</span> y  <span class="co"># Multiplication</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>Common operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo)</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="float-decimal-numbers">Float (Decimal Numbers)</h3>
+<ul>
+<li><strong>Floats</strong> represent numbers with decimal points.</li>
+</ul>
+<div id="f080c5d0" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>price <span class="op">=</span> <span class="fl">19.99</span></span>
+<span id="cb6-2"><a></a>discount <span class="op">=</span> <span class="fl">0.10</span></span>
+<span id="cb6-3"><a></a>total <span class="op">=</span> price <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> discount)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>Operations on floats behave similarly to integers.</li>
+</ul>
+</div></div>
 </section>
-<section id="retrieving-the-response" class="slide level2">
-<h2>Retrieving the response</h2>
-<div id="59765b4f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># print the message we want</span></span>
-<span id="cb6-2"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Response message: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># check the tokens used </span></span>
-<span id="cb6-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total tokens used: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>usage<span class="sc">.</span>total_tokens<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="strings-in-python" class="slide level2">
+<h2>Strings in Python</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="string-basics">String Basics</h3>
+<ul>
+<li>A <strong>string</strong> is a sequence of characters enclosed in quotes.</li>
+</ul>
+<div id="973108c3" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>message <span class="op">=</span> <span class="st">"Hello, world!"</span></span>
+<span id="cb7-2"><a></a>name <span class="op">=</span> <span class="st">'Alice'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Strings can be single or double-quoted.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="string-operations">String Operations</h3>
+<ul>
+<li>Concatenation (<code>+</code>):</li>
+</ul>
+<div id="a713fb82" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>greeting <span class="op">=</span> <span class="st">"Hello, "</span> <span class="op">+</span> name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Repetition (<code>*</code>):</li>
+</ul>
+<div id="425d3789" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>laugh <span class="op">=</span> <span class="st">"ha"</span> <span class="op">*</span> <span class="dv">3</span>  <span class="co"># Output: "hahaha"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Accessing characters by index:</li>
+</ul>
+<div id="35618d60" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>first_letter <span class="op">=</span> name[<span class="dv">0</span>]  <span class="co"># Output: 'A'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="boolean-and-none-types" class="slide level2">
+<h2>Boolean and None Types</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="boolean-type">Boolean Type</h3>
+<ul>
+<li><strong>Booleans</strong> represent <code>True</code> or <code>False</code>.</li>
+</ul>
+<div id="271646ea" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>is_adult <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb11-2"><a></a>has_permission <span class="op">=</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Boolean values are often used in conditional statements.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="the-none-type">The <code>None</code> Type</h3>
+<ul>
+<li><strong>None</strong> represents the absence of a value.</li>
+</ul>
+<div id="36bf9fb9" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>result <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Often used to indicate that a variable holds no value or is a placeholder for future data.</li>
+</ul>
+</div></div>
+</section>
+<section id="type-conversion" class="slide level2">
+<h2>Type Conversion</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="converting-between-types">Converting Between Types</h3>
+<ul>
+<li>You can convert between different types using built-in functions.</li>
+</ul>
+<div id="0bed2d96" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>x <span class="op">=</span> <span class="dv">10</span>  <span class="co"># int</span></span>
+<span id="cb13-2"><a></a>y <span class="op">=</span> <span class="bu">float</span>(x)  <span class="co"># Converts to float: 10.0</span></span>
+<span id="cb13-3"><a></a>z <span class="op">=</span> <span class="bu">str</span>(x)  <span class="co"># Converts to string: '10'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="why-type-conversion-matters">Why Type Conversion Matters</h3>
+<ul>
+<li>Type conversion is important when combining different types in operations.</li>
+</ul>
+<div id="c7b3bf49" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>age <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb14-2"><a></a>message <span class="op">=</span> <span class="st">"I am "</span> <span class="op">+</span> <span class="bu">str</span>(age) <span class="op">+</span> <span class="st">" years old."</span></span>
+<span id="cb14-3"><a></a><span class="bu">print</span>(message)  <span class="co"># Output: I am 30 years old.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Response message: The Earth is approximately 4.54 billion years old.
-
-Total tokens used: 25</code></pre>
+<pre><code>I am 30 years old.</code></pre>
 </div>
 </div>
+</div></div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../assets/logo.svg" class="slide-logo"></p>
@@ -518,7 +632,7 @@ Total tokens used: 25</code></pre>
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -538,7 +652,7 @@ Total tokens used: 25</code></pre>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

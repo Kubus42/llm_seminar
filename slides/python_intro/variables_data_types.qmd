@@ -1,0 +1,206 @@
+---
+title: "Variables and Data Types in Python"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Seminar: LLM, WiSe 2024/25"
+        logo: ../../assets/logo.svg
+        slideNumber: true
+        smaller: true
+---
+
+## Introduction to Variables and Data Types
+
+:::{.columns}
+::: {.column width="50%"}
+### What are Variables?
+- **Variables** are containers for storing data values.
+- In Python, variables are created when you assign a value to them:
+
+```{python}
+#| echo: true
+x = 10
+name = "Alice"
+```
+
+- Variables do not need explicit declaration and can change type.
+:::
+::: {.column width="50%" .fragment}
+### Data Types in Python
+- **Data types** classify data. In Python, everything is an object, and every object has a type.
+- Common data types include:
+  - Integers: `int`
+  - Floating-point numbers: `float`
+  - Strings: `str`
+  - Booleans: `bool`
+:::
+:::
+
+---
+
+## Variable Declaration and Assignment
+
+:::{.columns}
+::: {.column width="50%"}
+### Declaration and Assignment
+- Variables are assigned using the `=` operator.
+- Python infers the data type based on the value assigned.
+
+```{python}
+#| echo: true
+age = 25  # Integer
+pi = 3.14  # Float
+name = "John"  # String
+is_student = True  # Boolean
+```
+:::
+::: {.column width="50%" .fragment}
+### Checking Variable Types
+- You can check the type of a variable using the `type()` function.
+
+```{python}
+#| echo: true
+print(type(age))  # Output: <class 'int'>
+print(type(name))  # Output: <class 'str'>
+```
+
+- Python is dynamically typed, meaning you don't have to declare the type.
+:::
+:::
+
+---
+
+## Working with Numbers
+
+:::{.columns}
+::: {.column width="50%"}
+### Integer Operations
+- Integers (`int`) are whole numbers. You can perform arithmetic operations on them.
+
+```{python}
+#| echo: true
+x = 10
+y = 5
+sum = x + y  # Addition
+product = x * y  # Multiplication
+```
+
+- Common operators: `+`, `-`, `*`, `/`, `%` (modulo)
+:::
+::: {.column width="50%" .fragment}
+### Float (Decimal Numbers)
+- **Floats** represent numbers with decimal points.
+
+```{python}
+#| echo: true
+price = 19.99
+discount = 0.10
+total = price * (1 - discount)
+```
+
+- Operations on floats behave similarly to integers.
+:::
+:::
+
+---
+
+## Strings in Python
+
+:::{.columns}
+::: {.column width="50%"}
+### String Basics
+- A **string** is a sequence of characters enclosed in quotes.
+
+```{python}
+#| echo: true
+message = "Hello, world!"
+name = 'Alice'
+```
+
+- Strings can be single or double-quoted.
+:::
+::: {.column width="50%" .fragment}
+### String Operations
+- Concatenation (`+`):
+
+```{python}
+#| echo: true
+greeting = "Hello, " + name
+```
+
+- Repetition (`*`):
+
+```{python}
+#| echo: true
+laugh = "ha" * 3  # Output: "hahaha"
+```
+
+- Accessing characters by index:
+
+```{python}
+#| echo: true
+first_letter = name[0]  # Output: 'A'
+```
+:::
+:::
+
+---
+
+## Boolean and None Types
+
+:::{.columns}
+::: {.column width="50%"}
+### Boolean Type
+- **Booleans** represent `True` or `False`.
+
+```{python}
+#| echo: true
+is_adult = True
+has_permission = False
+```
+
+- Boolean values are often used in conditional statements.
+:::
+::: {.column width="50%" .fragment}
+### The `None` Type
+- **None** represents the absence of a value.
+
+```{python}
+#| echo: true
+result = None
+```
+
+- Often used to indicate that a variable holds no value or is a placeholder for future data.
+:::
+:::
+
+---
+
+## Type Conversion
+
+:::{.columns}
+::: {.column width="50%"}
+### Converting Between Types
+- You can convert between different types using built-in functions.
+
+```{python}
+#| echo: true
+x = 10  # int
+y = float(x)  # Converts to float: 10.0
+z = str(x)  # Converts to string: '10'
+```
+:::
+::: {.column width="50%" .fragment}
+### Why Type Conversion Matters
+- Type conversion is important when combining different types in operations.
+
+```{python}
+#| echo: true
+age = 30
+message = "I am " + str(age) + " years old."
+print(message)  # Output: I am 30 years old.
+```
+:::
+:::
+

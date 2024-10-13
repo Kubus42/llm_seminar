@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../nlp/overview.html" rel="next">
-<link href="../python_intro/dictionaries.html" rel="prev">
+<link href="../python_intro/exercises/classes.html" rel="next">
+<link href="../python_intro/exercises/dictionaries.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../python_intro/exercises/data_types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise: Blub</span></a>
+ <span class="menu-text">Exercise: Variables and Data Types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -227,8 +227,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: String Operations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../python_intro/lists_and_loops.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lists and Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/lists_and_loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Lists and Loops</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -239,8 +251,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../python_intro/conditional_statements.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conditional Statements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/conditional_statements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Conditional Statements</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -251,8 +275,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/dictionaries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Dictionaries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../python_intro/classes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Classes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../python_intro/exercises/classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise: Classes</span></a>
   </div>
 </li>
       </ul>
@@ -468,7 +504,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You define a class using the <code>class</code> keyword followed by the class name. By convention, class names are written in CamelCase.</p>
 <section id="basic-syntax" class="level4">
 <h4 class="anchored" data-anchor-id="basic-syntax">Basic Syntax:</h4>
-<div id="0a4831a3" class="cell" data-execution_count="1">
+<div id="4ae3cb7d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ClassName:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Class attributes and methods go here</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -476,7 +512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="example" class="level4">
 <h4 class="anchored" data-anchor-id="example">Example:</h4>
-<div id="ed71b373" class="cell" data-execution_count="2">
+<div id="a0e5adda" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Text:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -484,7 +520,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>my_text <span class="op">=</span> Text()</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text)  <span class="co"># Output: &lt;__main__.Text object at 0x...&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.Text object at 0x1062a8920&gt;</code></pre>
+<pre><code>&lt;__main__.Text object at 0x137e24dd0&gt;</code></pre>
 </div>
 </div>
 <p>In this example, we defined a simple class named <code>Text</code> and created an instance of it, which is stored in the variable <code>my_text</code>.</p>
@@ -496,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To define attributes, you typically do this inside a special method called <code>__init__()</code>, which initializes the object’s attributes when it is created.</p>
 <section id="example-1" class="level4">
 <h4 class="anchored" data-anchor-id="example-1">Example:</h4>
-<div id="8d831fc8" class="cell" data-execution_count="3">
+<div id="2549971c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Text:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content):</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.content <span class="op">=</span> content  <span class="co"># Instance attribute</span></span>
@@ -526,7 +562,7 @@ HELLO, WORLD! THIS IS A TEST!</code></pre>
 <p>You can access attributes and methods of a class instance using the dot <code>.</code> notation.</p>
 <section id="example-2" class="level4">
 <h4 class="anchored" data-anchor-id="example-2">Example:</h4>
-<div id="ca47b43e" class="cell" data-execution_count="4">
+<div id="0d44939a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_text.content)  <span class="co"># Output: Hello, World! This is a test.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, World! This is a test.</code></pre>
@@ -540,7 +576,7 @@ HELLO, WORLD! THIS IS A TEST!</code></pre>
 <p>Attributes defined inside the <code>__init__()</code> method are called <strong>instance attributes</strong> because they belong to a specific instance of the class. In contrast, <strong>class attributes</strong> are shared by all instances of the class and are defined directly within the class body.</p>
 <section id="example-3" class="level4">
 <h4 class="anchored" data-anchor-id="example-3">Example:</h4>
-<div id="60199430" class="cell" data-execution_count="5">
+<div id="c6f6b307" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Text:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    language <span class="op">=</span> <span class="st">"English"</span>  <span class="co"># Class attribute</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -571,7 +607,7 @@ French</code></pre>
 <p>Inheritance allows you to create a new class that inherits attributes and methods from an existing class. This promotes code reuse and makes it easier to create a hierarchy of classes.</p>
 <section id="example-4" class="level4">
 <h4 class="anchored" data-anchor-id="example-4">Example:</h4>
-<div id="88e8157b" class="cell" data-execution_count="6">
+<div id="c329d07b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Text:</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content):</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.content <span class="op">=</span> content</span>
@@ -1027,13 +1063,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../python_intro/dictionaries.html" class="pagination-link" aria-label="Dictionaries">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dictionaries</span>
+      <a href="../python_intro/exercises/dictionaries.html" class="pagination-link" aria-label="Exercise: Dictionaries">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercise: Dictionaries</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../nlp/overview.html" class="pagination-link" aria-label="Overview of NLP">
-        <span class="nav-page-text">Overview of NLP</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../python_intro/exercises/classes.html" class="pagination-link" aria-label="Exercise: Classes">
+        <span class="nav-page-text">Exercise: Classes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

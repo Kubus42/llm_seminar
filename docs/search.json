@@ -1450,7 +1450,7 @@
     "href": "python_intro/classes.html",
     "title": "Classes",
     "section": "",
-    "text": "Classes are a fundamental part of object-oriented programming (OOP) in Python. They allow you to create your own data types that combine data (attributes) and functionality (methods) into a single structure. By using classes, you can model real-world entities, promote code reusability, and make your programs more organized and modular.\nIn Python, a class serves as a blueprint for creating objects, encapsulating attributes and behaviors that are common to all instances of that class. Let’s dive into the concepts of classes, objects, and how to use them in Python.\n\nDefining a Class\nYou define a class using the class keyword followed by the class name. By convention, class names are written in CamelCase.\n\nBasic Syntax:\n\nclass ClassName:\n    # Class attributes and methods go here\n    pass\n\n\n\nExample:\n\nclass Text:\n    pass\n\n# Creating an instance of the Text class\nmy_text = Text()\nprint(my_text)  # Output: &lt;__main__.Text object at 0x...&gt;\n\n&lt;__main__.Text object at 0x1062a8920&gt;\n\n\nIn this example, we defined a simple class named Text and created an instance of it, which is stored in the variable my_text.\n\n\n\nAdding Attributes and Methods\nAttributes are variables that belong to the class, while methods are functions defined within the class that can manipulate those attributes or perform actions.\nTo define attributes, you typically do this inside a special method called __init__(), which initializes the object’s attributes when it is created.\n\nExample:\n\nclass Text:\n    def __init__(self, content):\n        self.content = content  # Instance attribute\n\n    def word_count(self):  # Method\n        return len(self.content.split())\n\n    def shout(self):  # Another method\n        result = self.content.upper()\n        result = result.replace(\".\", \"!\")\n        return result\n\n# Creating an instance of Text\nmy_text = Text(\"Hello, World! This is a test.\")\nprint(my_text.word_count())  # Output: 6\nprint(my_text.shout())  # Output: HELLO, WORLD! THIS IS A TEST!\n\n6\nHELLO, WORLD! THIS IS A TEST!\n\n\nIn this example, the Text class has an initializer method __init__() that takes content as a parameter and assigns it to an instance attribute. The word_count() method allows you to get the number of words in the text, the shout() method transforms all letters to upper case and replaces dots by an exclamation mark.\n\n\n\nAccessing Attributes and Methods\nYou can access attributes and methods of a class instance using the dot . notation.\n\nExample:\n\nprint(my_text.content)  # Output: Hello, World! This is a test.\n\nHello, World! This is a test.\n\n\nIn this example, we access the content attribute of my_text using dot notation.\n\n\n\nClass vs. Instance Attributes\nAttributes defined inside the __init__() method are called instance attributes because they belong to a specific instance of the class. In contrast, class attributes are shared by all instances of the class and are defined directly within the class body.\n\nExample:\n\nclass Text:\n    language = \"English\"  # Class attribute\n\n    def __init__(self, content):\n        self.content = content  # Instance attribute\n\n# Creating instances\ntext1 = Text(\"Hello, World!\")\ntext2 = Text(\"Bonjour, le monde!\")\n\nprint(text1.language)  # Output: English\nprint(text2.language)  # Output: English\n\n# Changing class attribute\nText.language = \"French\"\nprint(text1.language)  # Output: French\n\nEnglish\nEnglish\nFrench\n\n\nIn this example, we defined a class attribute language that is shared by all instances of the Text class. Changing the class attribute affects all instances.\n\n\n\nInheritance\nInheritance allows you to create a new class that inherits attributes and methods from an existing class. This promotes code reuse and makes it easier to create a hierarchy of classes.\n\nExample:\n\nclass Text:\n    def __init__(self, content):\n        self.content = content\n\n    def word_count(self):\n        return len(self.content.split())\n\nclass FormattedText(Text):  # Derived class\n    def __init__(self, content, format_type):\n        super().__init__(content)  # Call the parent class's constructor\n        self.format_type = format_type\n\n    def display(self):\n        return f\"[{self.format_type}] {self.content}\"\n\n# Creating instances\nmy_text = Text(\"Hello, World!\")\nformatted_text = FormattedText(\"Hello, World!\", \"Bold\")\n\nprint(my_text.word_count())  # Output: 2\nprint(formatted_text.display())  # Output: [Bold] Hello, World!\n\n2\n[Bold] Hello, World!\n\n\nIn this example, we have a base class Text and a derived class FormattedText. The derived class can extend the functionality of the base class.\n\n\n\n\n\n Back to top",
+    "text": "Classes are a fundamental part of object-oriented programming (OOP) in Python. They allow you to create your own data types that combine data (attributes) and functionality (methods) into a single structure. By using classes, you can model real-world entities, promote code reusability, and make your programs more organized and modular.\nIn Python, a class serves as a blueprint for creating objects, encapsulating attributes and behaviors that are common to all instances of that class. Let’s dive into the concepts of classes, objects, and how to use them in Python.\n\nDefining a Class\nYou define a class using the class keyword followed by the class name. By convention, class names are written in CamelCase.\n\nBasic Syntax:\n\nclass ClassName:\n    # Class attributes and methods go here\n    pass\n\n\n\nExample:\n\nclass Text:\n    pass\n\n# Creating an instance of the Text class\nmy_text = Text()\nprint(my_text)  # Output: &lt;__main__.Text object at 0x...&gt;\n\n&lt;__main__.Text object at 0x137e24dd0&gt;\n\n\nIn this example, we defined a simple class named Text and created an instance of it, which is stored in the variable my_text.\n\n\n\nAdding Attributes and Methods\nAttributes are variables that belong to the class, while methods are functions defined within the class that can manipulate those attributes or perform actions.\nTo define attributes, you typically do this inside a special method called __init__(), which initializes the object’s attributes when it is created.\n\nExample:\n\nclass Text:\n    def __init__(self, content):\n        self.content = content  # Instance attribute\n\n    def word_count(self):  # Method\n        return len(self.content.split())\n\n    def shout(self):  # Another method\n        result = self.content.upper()\n        result = result.replace(\".\", \"!\")\n        return result\n\n# Creating an instance of Text\nmy_text = Text(\"Hello, World! This is a test.\")\nprint(my_text.word_count())  # Output: 6\nprint(my_text.shout())  # Output: HELLO, WORLD! THIS IS A TEST!\n\n6\nHELLO, WORLD! THIS IS A TEST!\n\n\nIn this example, the Text class has an initializer method __init__() that takes content as a parameter and assigns it to an instance attribute. The word_count() method allows you to get the number of words in the text, the shout() method transforms all letters to upper case and replaces dots by an exclamation mark.\n\n\n\nAccessing Attributes and Methods\nYou can access attributes and methods of a class instance using the dot . notation.\n\nExample:\n\nprint(my_text.content)  # Output: Hello, World! This is a test.\n\nHello, World! This is a test.\n\n\nIn this example, we access the content attribute of my_text using dot notation.\n\n\n\nClass vs. Instance Attributes\nAttributes defined inside the __init__() method are called instance attributes because they belong to a specific instance of the class. In contrast, class attributes are shared by all instances of the class and are defined directly within the class body.\n\nExample:\n\nclass Text:\n    language = \"English\"  # Class attribute\n\n    def __init__(self, content):\n        self.content = content  # Instance attribute\n\n# Creating instances\ntext1 = Text(\"Hello, World!\")\ntext2 = Text(\"Bonjour, le monde!\")\n\nprint(text1.language)  # Output: English\nprint(text2.language)  # Output: English\n\n# Changing class attribute\nText.language = \"French\"\nprint(text1.language)  # Output: French\n\nEnglish\nEnglish\nFrench\n\n\nIn this example, we defined a class attribute language that is shared by all instances of the Text class. Changing the class attribute affects all instances.\n\n\n\nInheritance\nInheritance allows you to create a new class that inherits attributes and methods from an existing class. This promotes code reuse and makes it easier to create a hierarchy of classes.\n\nExample:\n\nclass Text:\n    def __init__(self, content):\n        self.content = content\n\n    def word_count(self):\n        return len(self.content.split())\n\nclass FormattedText(Text):  # Derived class\n    def __init__(self, content, format_type):\n        super().__init__(content)  # Call the parent class's constructor\n        self.format_type = format_type\n\n    def display(self):\n        return f\"[{self.format_type}] {self.content}\"\n\n# Creating instances\nmy_text = Text(\"Hello, World!\")\nformatted_text = FormattedText(\"Hello, World!\", \"Bold\")\n\nprint(my_text.word_count())  # Output: 2\nprint(formatted_text.display())  # Output: [Bold] Hello, World!\n\n2\n[Bold] Hello, World!\n\n\nIn this example, we have a base class Text and a derived class FormattedText. The derived class can extend the functionality of the base class.\n\n\n\n\n\n Back to top",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -1852,5 +1852,481 @@
       "Python Crash Course",
       "Exercise: Classes"
     ]
+  },
+  {
+    "objectID": "slides/python_intro/variables_data_types.html#introduction-to-variables-and-data-types",
+    "href": "slides/python_intro/variables_data_types.html#introduction-to-variables-and-data-types",
+    "title": "Variables and Data Types in Python",
+    "section": "Introduction to Variables and Data Types",
+    "text": "Introduction to Variables and Data Types\n\n\nWhat are Variables?\n\nVariables are containers for storing data values.\nIn Python, variables are created when you assign a value to them:\n\n\nx = 10\nname = \"Alice\"\n\n\nVariables do not need explicit declaration and can change type.\n\n\n\nData Types in Python\n\nData types classify data. In Python, everything is an object, and every object has a type.\nCommon data types include:\n\nIntegers: int\nFloating-point numbers: float\nStrings: str\nBooleans: bool"
+  },
+  {
+    "objectID": "slides/python_intro/variables_data_types.html#variable-declaration-and-assignment",
+    "href": "slides/python_intro/variables_data_types.html#variable-declaration-and-assignment",
+    "title": "Variables and Data Types in Python",
+    "section": "Variable Declaration and Assignment",
+    "text": "Variable Declaration and Assignment\n\n\nDeclaration and Assignment\n\nVariables are assigned using the = operator.\nPython infers the data type based on the value assigned.\n\n\nage = 25  # Integer\npi = 3.14  # Float\nname = \"John\"  # String\nis_student = True  # Boolean\n\n\n\nChecking Variable Types\n\nYou can check the type of a variable using the type() function.\n\n\nprint(type(age))  # Output: &lt;class 'int'&gt;\nprint(type(name))  # Output: &lt;class 'str'&gt;\n\n&lt;class 'int'&gt;\n&lt;class 'str'&gt;\n\n\n\nPython is dynamically typed, meaning you don’t have to declare the type."
+  },
+  {
+    "objectID": "slides/python_intro/variables_data_types.html#working-with-numbers",
+    "href": "slides/python_intro/variables_data_types.html#working-with-numbers",
+    "title": "Variables and Data Types in Python",
+    "section": "Working with Numbers",
+    "text": "Working with Numbers\n\n\nInteger Operations\n\nIntegers (int) are whole numbers. You can perform arithmetic operations on them.\n\n\nx = 10\ny = 5\nsum = x + y  # Addition\nproduct = x * y  # Multiplication\n\n\nCommon operators: +, -, *, /, % (modulo)\n\n\n\nFloat (Decimal Numbers)\n\nFloats represent numbers with decimal points.\n\n\nprice = 19.99\ndiscount = 0.10\ntotal = price * (1 - discount)\n\n\nOperations on floats behave similarly to integers."
+  },
+  {
+    "objectID": "slides/python_intro/variables_data_types.html#strings-in-python",
+    "href": "slides/python_intro/variables_data_types.html#strings-in-python",
+    "title": "Variables and Data Types in Python",
+    "section": "Strings in Python",
+    "text": "Strings in Python\n\n\nString Basics\n\nA string is a sequence of characters enclosed in quotes.\n\n\nmessage = \"Hello, world!\"\nname = 'Alice'\n\n\nStrings can be single or double-quoted.\n\n\n\nString Operations\n\nConcatenation (+):\n\n\ngreeting = \"Hello, \" + name\n\n\nRepetition (*):\n\n\nlaugh = \"ha\" * 3  # Output: \"hahaha\"\n\n\nAccessing characters by index:\n\n\nfirst_letter = name[0]  # Output: 'A'"
+  },
+  {
+    "objectID": "slides/python_intro/variables_data_types.html#boolean-and-none-types",
+    "href": "slides/python_intro/variables_data_types.html#boolean-and-none-types",
+    "title": "Variables and Data Types in Python",
+    "section": "Boolean and None Types",
+    "text": "Boolean and None Types\n\n\nBoolean Type\n\nBooleans represent True or False.\n\n\nis_adult = True\nhas_permission = False\n\n\nBoolean values are often used in conditional statements.\n\n\n\nThe None Type\n\nNone represents the absence of a value.\n\n\nresult = None\n\n\nOften used to indicate that a variable holds no value or is a placeholder for future data."
+  },
+  {
+    "objectID": "slides/python_intro/variables_data_types.html#type-conversion",
+    "href": "slides/python_intro/variables_data_types.html#type-conversion",
+    "title": "Variables and Data Types in Python",
+    "section": "Type Conversion",
+    "text": "Type Conversion\n\n\nConverting Between Types\n\nYou can convert between different types using built-in functions.\n\n\nx = 10  # int\ny = float(x)  # Converts to float: 10.0\nz = str(x)  # Converts to string: '10'\n\n\n\nWhy Type Conversion Matters\n\nType conversion is important when combining different types in operations.\n\n\nage = 30\nmessage = \"I am \" + str(age) + \" years old.\"\nprint(message)  # Output: I am 30 years old.\n\nI am 30 years old.\n\n\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#introduction-to-strings-in-nlp",
+    "href": "slides/python_intro/string_operations.html#introduction-to-strings-in-nlp",
+    "title": "String Operations in Python",
+    "section": "Introduction to Strings in NLP",
+    "text": "Introduction to Strings in NLP\n\n\nStrings in NLP\n\nIn natural language processing (NLP), strings are used to represent text.\nStrings in Python are sequences of characters and can include letters, numbers, and symbols.\n\n\nsentence = \"Hello, how are you?\"\n\n\n\nText Data in NLP\n\nText data is central to many NLP tasks:\n\nTokenization (breaking text into words or tokens)\nCleaning (removing unwanted characters)\nManipulating text (concatenation, splitting, etc.)\n\nUnderstanding string operations is crucial for working with text data in NLP projects."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#concatenating-strings",
+    "href": "slides/python_intro/string_operations.html#concatenating-strings",
+    "title": "String Operations in Python",
+    "section": "Concatenating Strings",
+    "text": "Concatenating Strings\n\n\nWhat is Concatenation?\n\nConcatenation joins two or more strings together.\nYou can use the + operator or join() method for concatenation.\n\n\ngreeting = \"Hello, \" + \"world!\"\nprint(greeting)  # Outputs: Hello, world!\n\nHello, world!\n\n\n\n\nNLP Example: Joining Words\n\nOften in NLP, you need to combine words (tokens) back into sentences.\n\n\nwords = [\"NLP\", \"is\", \"fun\"]\nsentence = \" \".join(words)\nprint(sentence)  # Outputs: NLP is fun\n\nNLP is fun"
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#accessing-and-slicing-strings",
+    "href": "slides/python_intro/string_operations.html#accessing-and-slicing-strings",
+    "title": "String Operations in Python",
+    "section": "Accessing and Slicing Strings",
+    "text": "Accessing and Slicing Strings\n\n\nAccessing Characters\n\nEach character in a string has an index.\nYou can access them using square brackets.\n\n\nword = \"token\"\nprint(word[0])  # Outputs: t\n\nt\n\n\n\n\nSlicing Strings\n\nSlicing extracts part of a string using [start:end].\n\n\nphrase = \"language model\"\nprint(phrase[0:8])  # Outputs: language\n\nlanguage\n\n\n\nUseful in NLP when extracting parts of text."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#modifying-strings",
+    "href": "slides/python_intro/string_operations.html#modifying-strings",
+    "title": "String Operations in Python",
+    "section": "Modifying Strings",
+    "text": "Modifying Strings\n\n\nChanging Case\n\nStrings offer methods like upper() and lower() for case modification.\n\n\ntext = \"Natural Language Processing\"\nprint(text.lower())  # Outputs: natural language processing\n\nnatural language processing\n\n\n\n\nNLP Example: Normalizing Text\n\nText normalization often involves converting everything to lowercase to ensure uniformity.\n\n\nsentence = \"HELLO World!\"\nprint(sentence.lower())  # Outputs: hello world!\n\nhello world!\n\n\n\nThis is important for case-insensitive comparisons in NLP."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#splitting-and-joining-strings",
+    "href": "slides/python_intro/string_operations.html#splitting-and-joining-strings",
+    "title": "String Operations in Python",
+    "section": "Splitting and Joining Strings",
+    "text": "Splitting and Joining Strings\n\n\nSplitting Strings\n\nThe split() method divides a string into a list of words based on a delimiter.\n\n\nsentence = \"Tokenize this sentence.\"\ntokens = sentence.split(\" \")\nprint(tokens)  # Output: ['Tokenize', 'this', 'sentence.']\n\n['Tokenize', 'this', 'sentence.']\n\n\n\n\nJoining Strings\n\nAfter processing words or tokens, you may want to join them back into a string:\n\n\ntokens = [\"NLP\", \"is\", \"fun\"]\nsentence = \" \".join(tokens)\nprint(sentence)  # Output: NLP is fun\n\nNLP is fun\n\n\n\nThis is useful for recombining tokenized text after processing."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#string-search-and-replace",
+    "href": "slides/python_intro/string_operations.html#string-search-and-replace",
+    "title": "String Operations in Python",
+    "section": "String Search and Replace",
+    "text": "String Search and Replace\n\n\nSearching for Substrings\n\nUse the in keyword or find() method to search for substrings in text.\n\n\ntext = \"Natural Language Processing\"\nprint(\"Language\" in text)  # Output: True\n\nTrue\n\n\n\nThe find() method returns the starting index of the substring or -1 if not found.\n\n\n\nReplacing Substrings\n\nThe replace() method replaces occurrences of a substring with another string:\n\n\nsentence = \"I love machine learning\"\nsentence = sentence.replace(\"machine\", \"deep\")\nprint(sentence)  # Output: I love deep learning\n\nI love deep learning\n\n\n\nThis is useful in NLP when normalizing or cleaning text data."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#removing-whitespace-and-punctuation",
+    "href": "slides/python_intro/string_operations.html#removing-whitespace-and-punctuation",
+    "title": "String Operations in Python",
+    "section": "Removing Whitespace and Punctuation",
+    "text": "Removing Whitespace and Punctuation\n\n\nRemoving Extra Whitespace\n\nUse strip(), lstrip(), or rstrip() to remove unwanted spaces.\n\n\ntext = \"   clean me!   \"\nprint(text.strip())  # Outputs: \"clean me!\"\n\nclean me!\n\n\n\n\nRemoving Punctuation\n\nUse translate() to remove punctuation in strings for cleaning.\n\n\nimport string\nsentence = \"Hello, world!\"\ncleaned = sentence.translate(str.maketrans('', '', string.punctuation))\nprint(cleaned)  # Outputs: Hello world\n\nHello world\n\n\n\nThis is common in NLP preprocessing steps."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#string-formatting",
+    "href": "slides/python_intro/string_operations.html#string-formatting",
+    "title": "String Operations in Python",
+    "section": "String Formatting",
+    "text": "String Formatting\n\n\nFormatting with f-strings\n\nUse f-strings for inserting variables into strings.\n\n\nname = \"NLP\"\nprint(f\"Welcome to {name} class!\")  # Outputs: Welcome to NLP class!\n\nWelcome to NLP class!\n\n\n\n\nNLP Use: Displaying Results\n\nUse string formatting to present results clearly.\n\n\nword = \"deep learning\"\nprint(f\"The word '{word}' has {len(word)} characters.\")\n\nThe word 'deep learning' has 13 characters.\n\n\n\nThis is useful for presenting text-based results from NLP models."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#escape-characters-in-strings",
+    "href": "slides/python_intro/string_operations.html#escape-characters-in-strings",
+    "title": "String Operations in Python",
+    "section": "Escape Characters in Strings",
+    "text": "Escape Characters in Strings\n\n\nUsing Escape Characters\n\nSome characters in strings need to be “escaped” using a backslash (\\):\n\n\ntext = \"He said, \\\"Hello!\\\"\"\nprint(text)  # Output: He said, \"Hello!\"\n\nHe said, \"Hello!\"\n\n\n\n\nCommon Escape Characters\n\n\\n: New line\n\\t: Tab\n\\\\: Backslash\n\n\nmultiline = \"First line\\nSecond line\"\nprint(multiline)\n\nFirst line\nSecond line\n\n\n\nEscape characters allow you to format text across multiple lines or include special symbols.\n\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#strings-in-nlp",
+    "href": "slides/python_intro/string_operations.html#strings-in-nlp",
+    "title": "String Operations in Python",
+    "section": "Strings in NLP",
+    "text": "Strings in NLP\n\n\nWhat Are Strings?\n\nStrings represent text data in Python.\nUsed to store sequences of characters (letters, digits, punctuation).\nCentral to NLP tasks where text manipulation is required.\n\n\nsentence = \"Natural Language Processing\"\nprint(sentence)\n\nNatural Language Processing\n\n\n\n\nNLP and Strings\n\nWhy strings in NLP?\n\nTo tokenize, clean, and analyze text data.\nEach word in a sentence is processed as a string.\n\n\n\ntoken = \"word\"\nprint(len(token))  # Outputs: 4\n\n4\n\n\n\nLength of strings helps in tokenization."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#splitting-strings",
+    "href": "slides/python_intro/string_operations.html#splitting-strings",
+    "title": "String Operations in Python",
+    "section": "Splitting Strings",
+    "text": "Splitting Strings\n\n\nTokenization: Splitting Text\n\nThe split() method divides a string into a list of words.\n\n\nsentence = \"Tokenize this sentence.\"\ntokens = sentence.split(\" \")\nprint(tokens)  # Outputs: ['Tokenize', 'this', 'sentence.']\n\n['Tokenize', 'this', 'sentence.']\n\n\n\n\nTokenization in NLP\n\nTokenization is the process of breaking text into smaller units, often words or sentences.\nSplit text into tokens based on spaces or punctuation.\n\n\nsentence = \"Deep Learning and NLP\"\ntokens = sentence.split()\nprint(tokens)  # Outputs: ['Deep', 'Learning', 'and', 'NLP']\n\n['Deep', 'Learning', 'and', 'NLP']"
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#string-search",
+    "href": "slides/python_intro/string_operations.html#string-search",
+    "title": "String Operations in Python",
+    "section": "String Search",
+    "text": "String Search\n\n\nSearching in Strings\n\nUse in or find() to search for substrings.\n\n\ntext = \"machine learning is powerful\"\nprint(\"learning\" in text)  # Outputs: True\n\nTrue\n\n\n\n\nNLP: Searching for Keywords\n\nIn NLP, searching for specific words or phrases is common.\n\n\ntext = \"Neural networks are part of deep learning\"\nkeyword = \"deep\"\nprint(text.find(keyword))  # Outputs: 27 (index position)\n\n28\n\n\n\nUse this for keyword extraction in text analysis."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#replacing-substrings",
+    "href": "slides/python_intro/string_operations.html#replacing-substrings",
+    "title": "String Operations in Python",
+    "section": "Replacing Substrings",
+    "text": "Replacing Substrings\n\n\nReplacing Text\n\nThe replace() method replaces parts of a string.\n\n\nsentence = \"I love machine learning\"\nsentence = sentence.replace(\"machine\", \"deep\")\nprint(sentence)  # Outputs: I love deep learning\n\nI love deep learning\n\n\n\n\nNLP Example: Text Replacement\n\nIn text preprocessing, you may need to replace or correct words.\n\n\ntext = \"Text analysis with NLP\"\nclean_text = text.replace(\"Text\", \"Document\")\nprint(clean_text)  # Outputs: Document analysis with NLP\n\nDocument analysis with NLP\n\n\n\nThis is helpful when cleaning or transforming data."
+  },
+  {
+    "objectID": "slides/python_intro/string_operations.html#summary-of-string-operations",
+    "href": "slides/python_intro/string_operations.html#summary-of-string-operations",
+    "title": "String Operations in Python",
+    "section": "Summary of String Operations",
+    "text": "Summary of String Operations\n\nConcatenation: Joining strings together.\nAccessing and slicing: Extracting characters or parts of a string.\nModifying: Changing case or replacing parts of the string.\nSplitting: Tokenizing a sentence into words.\nSearching: Finding specific words in text.\nReplacing: Cleaning or transforming text.\nWhitespace/Punctuation removal: Important for cleaning data.\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html",
+    "href": "slides/python_intro/lists_and_loops.html",
+    "title": "",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#lists-in-python",
+    "href": "slides/python_intro/lists_and_loops.html#lists-in-python",
+    "title": "Lists and Loops in Python",
+    "section": "Lists in Python",
+    "text": "Lists in Python\n\n\nWhat Are Lists?\n\nA list is an ordered collection of items.\nItems can be any data type: numbers, strings, or other lists.\nLists are mutable, meaning you can modify them after creation.\n\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits)\n\n['apple', 'banana', 'cherry']\n\n\n\n\nWhy Use Lists in NLP?\n\nLists can store words, sentences, or entire texts.\nNLP tasks often require managing large datasets of tokens or documents.\n\n\nsentence = \"Natural language processing is fun\"\ntokens = sentence.split()  # Tokenize sentence into words\nprint(tokens)\n\n['Natural', 'language', 'processing', 'is', 'fun']"
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#accessing-list-elements",
+    "href": "slides/python_intro/lists_and_loops.html#accessing-list-elements",
+    "title": "Lists and Loops in Python",
+    "section": "Accessing List Elements",
+    "text": "Accessing List Elements\n\n\nIndexing\n\nAccess list elements using indexing.\nPython indexing starts at 0.\n\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[0])  # Outputs: apple\nprint(fruits[1])  # Outputs: banana\n\napple\nbanana\n\n\n\n\nNegative Indexing\n\nNegative indexing starts from the end of the list.\n\n\nprint(fruits[-1])  # Outputs: cherry (last element)\n\ncherry\n\n\n\nUseful for quickly accessing the last few elements of a list."
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#modifying-lists",
+    "href": "slides/python_intro/lists_and_loops.html#modifying-lists",
+    "title": "Lists and Loops in Python",
+    "section": "Modifying Lists",
+    "text": "Modifying Lists\n\n\nChanging Elements\n\nModify a list by assigning a new value at a specific index.\n\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfruits[1] = \"blueberry\"  # Replacing 'banana'\nprint(fruits)\n\n['apple', 'blueberry', 'cherry']\n\n\n\n\nReal-World NLP Use\n\nYou might replace tokens or correct errors in a tokenized sentence.\n\n\ntokens = [\"NLP\", \"is\", \"coool\"]\ntokens[2] = \"cool\"  # Fix typo\nprint(tokens)\n\n['NLP', 'is', 'cool']"
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#adding-and-removing-elements",
+    "href": "slides/python_intro/lists_and_loops.html#adding-and-removing-elements",
+    "title": "Lists and Loops in Python",
+    "section": "Adding and Removing Elements",
+    "text": "Adding and Removing Elements\n\n\nAdding Elements\n\nUse .append() to add items to the end of the list.\n\n\nfruits = [\"apple\", \"banana\"]\nfruits.append(\"cherry\")\nprint(fruits)\n\n['apple', 'banana', 'cherry']\n\n\n\n\nRemoving Elements\n\nUse .remove() to delete specific items.\n\n\nfruits.remove(\"banana\")\nprint(fruits)\n\n['apple', 'cherry']\n\n\n\nLists are flexible, allowing easy manipulation in NLP tasks."
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#list-operations-length-sorting-and-checking",
+    "href": "slides/python_intro/lists_and_loops.html#list-operations-length-sorting-and-checking",
+    "title": "Lists and Loops in Python",
+    "section": "List Operations: Length, Sorting, and Checking",
+    "text": "List Operations: Length, Sorting, and Checking\n\n\nList Length\n\nUse len() to find the number of elements in a list.\n\n\nfruits = [\"banana\", \"cherry\", \"apple\"]\nprint(len(fruits))\n\n3\n\n\n\n\nSorting and Checking Elements\n\nUse .sort() to sort the list.\nUse in to check if an item exists in a list.\n\n\nfruits.sort()\nprint(fruits)\n\nprint(\"apple\" in fruits)\nprint(\"grape\" in fruits)\n\n['apple', 'banana', 'cherry']\nTrue\nFalse"
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#loops-in-python",
+    "href": "slides/python_intro/lists_and_loops.html#loops-in-python",
+    "title": "Lists and Loops in Python",
+    "section": "Loops in Python",
+    "text": "Loops in Python\n\n\nWhat Are Loops?\n\nLoops help you iterate over a list and perform actions on each element.\nCommonly used in NLP for tasks like text processing.\n\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n\napple\nbanana\ncherry\n\n\n\n\nReal-World NLP Example\n\nTokenizing and processing text using loops.\n\n\ntokens = [\"NLP\", \"is\", \"fun\"]\nfor token in tokens:\n    print(token)\n\nNLP\nis\nfun"
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#using-loops-for-simple-operations",
+    "href": "slides/python_intro/lists_and_loops.html#using-loops-for-simple-operations",
+    "title": "Lists and Loops in Python",
+    "section": "Using Loops for Simple Operations",
+    "text": "Using Loops for Simple Operations\n\n\nSquaring Numbers in a List\n\nLoops allow you to apply operations to list elements.\n\n\nnumbers = [1, 2, 3, 4]\nsquares = []\nfor number in numbers:\n    squares.append(number ** 2)\n\nprint(squares)\n\n[1, 4, 9, 16]\n\n\n\n\nNLP Example: Word Length Calculation\n\nUse loops to calculate the length of each word in a sentence.\n\n\ntokens = [\"NLP\", \"is\", \"great\"]\nfor token in tokens:\n    print(f\"{token}: {len(token)} characters\")\n\nNLP: 3 characters\nis: 2 characters\ngreat: 5 characters"
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#looping-with-range",
+    "href": "slides/python_intro/lists_and_loops.html#looping-with-range",
+    "title": "Lists and Loops in Python",
+    "section": "Looping with range()",
+    "text": "Looping with range()\n\n\nUsing range()\n\nSometimes you need to iterate a set number of times.\nrange() generates a sequence of numbers.\n\n\nfor i in range(5):\n    print(i)\n\n0\n1\n2\n3\n4\n\n\n\n\nCombining range() with Lists\n\nUse range() to loop over list indices, allowing more control.\n\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor i in range(len(fruits)):\n    print(f\"Index {i}: {fruits[i]}\")\n\nIndex 0: apple\nIndex 1: banana\nIndex 2: cherry"
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#common-list-methods",
+    "href": "slides/python_intro/lists_and_loops.html#common-list-methods",
+    "title": "Lists and Loops in Python",
+    "section": "Common List Methods",
+    "text": "Common List Methods\n\n\nAdding and Removing Elements\n\n.append(): Adds an item to the end.\n.remove(): Removes a specific item.\n\n\nfruits.append(\"orange\")\nfruits.remove(\"banana\")\nprint(fruits)\n\n['apple', 'cherry', 'orange']\n\n\n\n\nInserting and Popping Elements\n\n.insert(): Inserts an item at a specific index.\n.pop(): Removes and returns the last item or the item at a specific index.\n\n\nfruits.insert(1, \"blueberry\")\nprint(fruits)\n\nlast_fruit = fruits.pop()\nprint(fruits)\n\n['apple', 'blueberry', 'cherry', 'orange']\n['apple', 'blueberry', 'cherry']"
+  },
+  {
+    "objectID": "slides/python_intro/lists_and_loops.html#summary-lists-and-loops",
+    "href": "slides/python_intro/lists_and_loops.html#summary-lists-and-loops",
+    "title": "Lists and Loops in Python",
+    "section": "Summary: Lists and Loops",
+    "text": "Summary: Lists and Loops\n\nLists: Allow you to store and manipulate multiple elements, useful in NLP for text processing.\nLoops: Help automate repetitive tasks and process list elements.\nYou can easily modify, sort, and check elements within lists.\nLoops and lists combined allow for efficient handling of data in Python, especially in NLP.\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
+  },
+  {
+    "objectID": "slides/python_intro/functions.html#functions-in-python",
+    "href": "slides/python_intro/functions.html#functions-in-python",
+    "title": "Functions in Python",
+    "section": "Functions in Python",
+    "text": "Functions in Python\n\n\nWhat Are Functions?\n\nFunctions are reusable blocks of code that perform specific tasks.\nThey help organize code into manageable parts.\nEssential for writing modular and maintainable code, especially in NLP.\n\n\ndef function_name():\n    # Code to be executed\n    pass\n\n\n\nWhy Use Functions in NLP?\n\nSimplify complex processes like data cleaning, preprocessing, and feature extraction.\nPromote code reusability and clarity, making it easier to manage large projects.\n\n\ndef preprocess_text(text):\n    return text.lower()  # Example function to convert text to lowercase"
+  },
+  {
+    "objectID": "slides/python_intro/functions.html#defining-functions",
+    "href": "slides/python_intro/functions.html#defining-functions",
+    "title": "Functions in Python",
+    "section": "Defining Functions",
+    "text": "Defining Functions\n\n\nBasic Function Definition\n\nUse the def keyword to define a function.\nYou can pass arguments for customization.\n\n\ndef greet():\n    print(\"Hello, welcome to Python!\")\n\n\n\nExample: Calling a Function\n\nCall a function by using its name followed by parentheses.\n\n\ngreet()  # Output: Hello, welcome to Python!\n\nHello, welcome to Python!"
+  },
+  {
+    "objectID": "slides/python_intro/functions.html#functions-with-arguments",
+    "href": "slides/python_intro/functions.html#functions-with-arguments",
+    "title": "Functions in Python",
+    "section": "Functions with Arguments",
+    "text": "Functions with Arguments\n\n\nFunctions with Arguments\n\nAccept data inputs to customize behavior.\n\n\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\n\n\nExample: Custom Greetings\n\nCall the function with different arguments.\n\n\ngreet(\"Alice\")  # Output: Hello, Alice!\ngreet(\"Bob\")    # Output: Hello, Bob!\n\nHello, Alice!\nHello, Bob!"
+  },
+  {
+    "objectID": "slides/python_intro/functions.html#returning-values-from-functions",
+    "href": "slides/python_intro/functions.html#returning-values-from-functions",
+    "title": "Functions in Python",
+    "section": "Returning Values from Functions",
+    "text": "Returning Values from Functions\n\n\nReturning Values\n\nUse return to send back a value from the function.\n\n\ndef add_numbers(a, b):\n    return a + b\n\n\n\nExample: Storing Returned Values\n\nStore the returned value for further use.\n\n\nsum_result = add_numbers(10, 20)\nprint(sum_result)  # Output: 30\n\n30"
+  },
+  {
+    "objectID": "slides/python_intro/functions.html#default-arguments",
+    "href": "slides/python_intro/functions.html#default-arguments",
+    "title": "Functions in Python",
+    "section": "Default Arguments",
+    "text": "Default Arguments\n\n\nDefault Arguments\n\nAssign default values to function arguments.\n\n\ndef greet(name=\"there\"):\n    print(f\"Hello, {name}!\")\n\n\n\nExample: Calling with Default Argument\n\nIf no argument is provided, the default value is used.\n\n\ngreet()         # Output: Hello, there!\ngreet(\"Alice\")  # Output: Hello, Alice!\n\nHello, there!\nHello, Alice!"
+  },
+  {
+    "objectID": "slides/python_intro/functions.html#lambda-functions",
+    "href": "slides/python_intro/functions.html#lambda-functions",
+    "title": "Functions in Python",
+    "section": "Lambda Functions",
+    "text": "Lambda Functions\n\n\nWhat Are Lambda Functions?\n\nSmall anonymous functions written in a single line.\nUseful for simple operations.\n\n\nsquare_lambda = lambda x: x ** 2\n\n\n\nExample: Using Lambda Functions\n\nCall the lambda function directly.\n\n\nprint(square_lambda(5))  # Output: 25\n\n25"
+  },
+  {
+    "objectID": "slides/python_intro/functions.html#functions-and-lists",
+    "href": "slides/python_intro/functions.html#functions-and-lists",
+    "title": "Functions in Python",
+    "section": "Functions and Lists",
+    "text": "Functions and Lists\n\n\nCombining Functions with Lists\n\nUse functions to process items in a list efficiently.\n\n\ndef square(x):\n    return x ** 2\n\nnumbers = [1, 2, 3, 4]\nsquares = [square(num) for num in numbers]\n\n\n\nOutput the Results\n\nPrint the resulting list after processing.\n\n\nprint(squares)  # Output: [1, 4, 9, 16]\n\n[1, 4, 9, 16]"
+  },
+  {
+    "objectID": "slides/python_intro/functions.html#best-practices-with-functions",
+    "href": "slides/python_intro/functions.html#best-practices-with-functions",
+    "title": "Functions in Python",
+    "section": "Best Practices with Functions",
+    "text": "Best Practices with Functions\n\n\nBest Practices\n\nUse descriptive names for clarity.\nKeep functions short and focused on a single task.\n\n\ndef calculate_area(radius):\n    \"\"\"Calculate the area of a circle.\"\"\"\n    return 3.14 * radius ** 2\n\n\n\nImportance of Documentation\n\nWrite docstrings and comments to explain complex functions.\n\n\ndef process_data(data):\n    \"\"\"Process the input data.\"\"\"\n    # Implementation goes here"
+  },
+  {
+    "objectID": "slides/python_intro/functions.html#summary",
+    "href": "slides/python_intro/functions.html#summary",
+    "title": "Functions in Python",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nFunctions are essential for modular programming in Python.\nThey improve code readability and maintainability, especially in NLP applications.\nCombine functions with lists to process collections of data efficiently.\n\n\n\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#conditional-statements-in-python",
+    "href": "slides/python_intro/conditional_statements.html#conditional-statements-in-python",
+    "title": "Conditional Statements in Python",
+    "section": "Conditional Statements in Python",
+    "text": "Conditional Statements in Python\n\n\nWhat Are Conditional Statements?\n\nControl the flow of your program based on conditions.\nThe most common statement is the if statement, which executes code only when a condition is true.\nUseful for decision-making in various applications, including NLP tasks.\n\n\n\nImportance in NLP\n\nAdjust processing based on conditions (e.g., text case, keyword presence).\nEnable flexible and dynamic responses to input data.\n\n\nword = \"HELLO\"\nif word.isupper():\n    print(\"The word is uppercase!\")  # Output: The word is uppercase!\n\nThe word is uppercase!"
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#the-if-statement",
+    "href": "slides/python_intro/conditional_statements.html#the-if-statement",
+    "title": "Conditional Statements in Python",
+    "section": "The if Statement",
+    "text": "The if Statement\n\n\nBasic Syntax of if\n\nCheck a condition and execute a block of code if it evaluates to True.\n\n\nx = 10\nif x &gt; 5:\n    print(\"x is greater than 5\")  # Output: x is greater than 5\n\nx is greater than 5\n\n\n\n\nExplanation\n\nThe condition x &gt; 5 is checked.\nSince x is 10, the print statement executes."
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#the-else-statement",
+    "href": "slides/python_intro/conditional_statements.html#the-else-statement",
+    "title": "Conditional Statements in Python",
+    "section": "The else Statement",
+    "text": "The else Statement\n\n\nUsing the else Statement\n\nDefines what happens when the if condition is False.\n\n\nx = 3\nif x &gt; 5:\n    print(\"x is greater than 5\")\nelse:\n    print(\"x is not greater than 5\")  # Output: x is not greater than 5\n\nx is not greater than 5\n\n\n\n\nExplanation\n\nSince x is 3, the else block executes, printing “x is not greater than 5”."
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#the-elif-statement",
+    "href": "slides/python_intro/conditional_statements.html#the-elif-statement",
+    "title": "Conditional Statements in Python",
+    "section": "The elif Statement",
+    "text": "The elif Statement\n\n\nMultiple Conditions with elif\n\nUse elif to check additional conditions if the previous ones are false.\n\n\nx = 7\nif x &gt; 10:\n    print(\"x is greater than 10\")\nelif x &gt; 5:\n    print(\"x is greater than 5 but less than or equal to 10\")  # Output: x is greater than 5 but less than or equal to 10\nelse:\n    print(\"x is less than or equal to 5\")\n\nx is greater than 5 but less than or equal to 10\n\n\n\n\nExplanation\n\nPython checks each condition sequentially; x &gt; 10 is false, but x &gt; 5 is true."
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#using-comparison-operators",
+    "href": "slides/python_intro/conditional_statements.html#using-comparison-operators",
+    "title": "Conditional Statements in Python",
+    "section": "Using Comparison Operators",
+    "text": "Using Comparison Operators\n\n\nCommon Comparison Operators\n\n==: Equal to\n!=: Not equal to\n&gt;: Greater than\n&lt;: Less than\n&gt;=: Greater than or equal to\n&lt;=: Less than or equal to\n\n\nage = 18\nif age == 18:\n    print(\"You are 18 years old\")  # Output: You are 18 years old\nif age != 20:\n    print(\"You are not 20 years old\")  # Output: You are not 20 years old\n\nYou are 18 years old\nYou are not 20 years old\n\n\n\n\nExplanation\n\nThe == operator checks if age is 18, while the != operator checks if it is not 20."
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#logical-operators",
+    "href": "slides/python_intro/conditional_statements.html#logical-operators",
+    "title": "Conditional Statements in Python",
+    "section": "Logical Operators",
+    "text": "Logical Operators\n\n\nCombining Conditions\n\nUse logical operators to evaluate multiple conditions.\n\n\nx = 7\n\nif x &gt; 5 and x &lt; 10:\n    print(\"x is between 5 and 10\")  # Output: x is between 5 and 10\n\nx is between 5 and 10\n\n\n\n\nOther Logical Operators\n\nor: True if at least one condition is true.\nnot: Inverts the truth value of the condition.\n\n\nif x &lt; 5 or x &gt; 6:\n    print(\"x is either less than 5 or greater than 6\")  # Output: x is either less than 5 or greater than 6\n\nif not x == 5:\n    print(\"x is not equal to 5\")  # Output: x is not equal to 5\n\nx is either less than 5 or greater than 6\nx is not equal to 5"
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#nested-if-statements",
+    "href": "slides/python_intro/conditional_statements.html#nested-if-statements",
+    "title": "Conditional Statements in Python",
+    "section": "Nested if Statements",
+    "text": "Nested if Statements\n\n\nWhat Are Nested if Statements?\n\nPlace one if statement inside another to check multiple conditions that depend on each other.\n\n\nx = 10\ny = 20\n\nif x &gt; 5:\n    if y &gt; 15:\n        print(\"x is greater than 5 and y is greater than 15\")  # Output: x is greater than 5 and y is greater than 15\n\nx is greater than 5 and y is greater than 15\n\n\n\n\nExplanation\n\nFirst check x &gt; 5. If true, then check y &gt; 15."
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#checking-membership-with-in-operator",
+    "href": "slides/python_intro/conditional_statements.html#checking-membership-with-in-operator",
+    "title": "Conditional Statements in Python",
+    "section": "Checking Membership with in Operator",
+    "text": "Checking Membership with in Operator\n\n\nUsing the in Operator\n\nCheck if a value exists in a collection (e.g., list, string, tuple).\n\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\n\nif \"banana\" in fruits:\n    print(\"Banana is in the list!\")  # Output: Banana is in the list!\n\nBanana is in the list!\n\n\n\n\nExample with Strings\n\nsentence = \"Hello world\"\nif \"world\" in sentence:\n    print(\"The word 'world' is in the sentence.\")  # Output: The word 'world' is in the sentence.\n\nThe word 'world' is in the sentence."
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#combining-conditions-in-practical-examples",
+    "href": "slides/python_intro/conditional_statements.html#combining-conditions-in-practical-examples",
+    "title": "Conditional Statements in Python",
+    "section": "Combining Conditions in Practical Examples",
+    "text": "Combining Conditions in Practical Examples\n\n\nExample: Password Validation\n\nCheck user input against certain conditions for validity.\n\n\npassword = \"Hello123\"\n\nif len(password) &gt;= 8 and any(char.isdigit() for char in password):\n    print(\"Password is valid\")  # Output: Password is valid\nelse:\n    print(\"Password must be at least 8 characters long and contain a number.\")\n\nPassword is valid\n\n\n\n\nExplanation\n\nChecks for length and if any character is a digit using char.isdigit()."
+  },
+  {
+    "objectID": "slides/python_intro/conditional_statements.html#edge-cases-and-handling-errors",
+    "href": "slides/python_intro/conditional_statements.html#edge-cases-and-handling-errors",
+    "title": "Conditional Statements in Python",
+    "section": "Edge Cases and Handling Errors",
+    "text": "Edge Cases and Handling Errors\n\n\nImportance of Edge Case Handling\n\nThink about situations where input values might cause errors, such as empty strings or division by zero.\n\n\n# Checking for division by zero\nnumerator = 10\ndenominator = 0\n\nif denominator != 0:\n    result = numerator / denominator\n    print(result)\nelse:\n    print(\"Cannot divide by zero\")  # Output: Cannot divide by zero\n\nCannot divide by zero\n\n\n\n\nExplanation\n\nUse conditionals to prevent errors like division by zero by checking if the denominator is not zero.\n\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
+  },
+  {
+    "objectID": "slides/python_intro/dictionaries.html#dictionaries-in-python",
+    "href": "slides/python_intro/dictionaries.html#dictionaries-in-python",
+    "title": "Dictionaries in Python",
+    "section": "Dictionaries in Python",
+    "text": "Dictionaries in Python\n\n\nWhat Are Dictionaries?\n\nA dictionary is a powerful data structure for storing data in key-value pairs.\nVersatile for associating specific values with unique identifiers (e.g., words with definitions).\nUnordered and mutable, allowing for fast lookups, insertions, and deletions.\n\n\n\nImportance in Data Management\n\nIdeal for scenarios like user IDs with user data or other associations.\nEnable efficient organization and retrieval of related data.\n\n\nperson = {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"city\": \"New York\"\n}\n\nprint(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York'}\n\n{'name': 'Alice', 'age': 30, 'city': 'New York'}"
+  },
+  {
+    "objectID": "slides/python_intro/dictionaries.html#creating-a-dictionary",
+    "href": "slides/python_intro/dictionaries.html#creating-a-dictionary",
+    "title": "Dictionaries in Python",
+    "section": "Creating a Dictionary",
+    "text": "Creating a Dictionary\n\n\nBasic Syntax\n\nUse curly braces {} with key-value pairs separated by colons.\n\n\nperson = {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"city\": \"New York\"\n}\n\n\n\nExplanation\n\nKeys and values can be of any data type (strings, integers, other dictionaries).\nExample dictionary person contains keys \"name\", \"age\", and \"city\"."
+  },
+  {
+    "objectID": "slides/python_intro/dictionaries.html#accessing-values-in-a-dictionary",
+    "href": "slides/python_intro/dictionaries.html#accessing-values-in-a-dictionary",
+    "title": "Dictionaries in Python",
+    "section": "Accessing Values in a Dictionary",
+    "text": "Accessing Values in a Dictionary\n\n\nAccessing Values\n\nUse square brackets [] to retrieve values by their keys.\n\n\nprint(person[\"name\"])  # Output: Alice\nprint(person[\"age\"])   # Output: 30\n\nAlice\n30\n\n\n\n\nKeyError Handling\n\nAccessing a non-existent key raises a KeyError."
+  },
+  {
+    "objectID": "slides/python_intro/dictionaries.html#modifying-a-dictionary",
+    "href": "slides/python_intro/dictionaries.html#modifying-a-dictionary",
+    "title": "Dictionaries in Python",
+    "section": "Modifying a Dictionary",
+    "text": "Modifying a Dictionary\n\n\nModifying Dictionary Contents\n\nDictionaries are mutable; you can add, modify, or remove key-value pairs.\n\nAdding a Key-Value Pair:\n\nperson[\"occupation\"] = \"Engineer\"\nprint(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York', 'occupation': 'Engineer'}\n\n{'name': 'Alice', 'age': 30, 'city': 'New York', 'occupation': 'Engineer'}\n\n\n\n\nModifying Values\n\nperson[\"age\"] = 31\nprint(person)  # Output: {'name': 'Alice', 'age': 31, 'city': 'New York', 'occupation': 'Engineer'}\n\n{'name': 'Alice', 'age': 31, 'city': 'New York', 'occupation': 'Engineer'}"
+  },
+  {
+    "objectID": "slides/python_intro/dictionaries.html#dictionary-methods",
+    "href": "slides/python_intro/dictionaries.html#dictionary-methods",
+    "title": "Dictionaries in Python",
+    "section": "Dictionary Methods",
+    "text": "Dictionary Methods\n\n\nBuilt-in Methods\n\nPython dictionaries have various built-in methods for data manipulation.\n\nget() Method\n\nReturns the value for a specified key, returning None if the key doesn’t exist.\n\n\nage = person.get(\"age\", \"Not Found\")\nprint(age)  # Output: 31\n\n31\n\n\n\n\nExample with get()\n\nlocation = person.get(\"city\", \"Not Found\")\nprint(location)  # Output: Not Found\n\nNew York"
+  },
+  {
+    "objectID": "slides/python_intro/dictionaries.html#dictionary-keys-values-and-items",
+    "href": "slides/python_intro/dictionaries.html#dictionary-keys-values-and-items",
+    "title": "Dictionaries in Python",
+    "section": "Dictionary Keys, Values, and Items",
+    "text": "Dictionary Keys, Values, and Items\n\n\nKeys, Values, and Items Methods\n\nRetrieve keys, values, or key-value pairs as needed.\n\nkeys() Method\n\nkeys = person.keys()\nprint(keys)  # Output: dict_keys(['name', 'age', 'occupation'])\n\ndict_keys(['name', 'age', 'city', 'occupation'])\n\n\n\n\nvalues() Method\n\nvalues = person.values()\nprint(values)  # Output: dict_values(['Alice', 31, 'Engineer'])\n\ndict_values(['Alice', 31, 'New York', 'Engineer'])"
+  },
+  {
+    "objectID": "slides/python_intro/dictionaries.html#looping-through-a-dictionary",
+    "href": "slides/python_intro/dictionaries.html#looping-through-a-dictionary",
+    "title": "Dictionaries in Python",
+    "section": "Looping Through a Dictionary",
+    "text": "Looping Through a Dictionary\n\n\nLooping Techniques\n\nLoop through dictionaries using a for loop to access keys or both keys and values.\n\nLooping Through Keys\n\nfor key in person:\n    print(key)  # Output: name, age, occupation\n\nname\nage\ncity\noccupation\n\n\n\n\nLooping Through Keys and Values\n\nfor key, value in person.items():\n    print(f\"{key}: {value}\")\n# Output:\n# name: Alice\n# age: 31\n# occupation: Engineer\n\nname: Alice\nage: 31\ncity: New York\noccupation: Engineer"
+  },
+  {
+    "objectID": "slides/python_intro/dictionaries.html#nesting-dictionaries",
+    "href": "slides/python_intro/dictionaries.html#nesting-dictionaries",
+    "title": "Dictionaries in Python",
+    "section": "Nesting Dictionaries",
+    "text": "Nesting Dictionaries\n\n\nWhat Are Nested Dictionaries?\n\nDictionaries can contain other dictionaries, enabling complex data structures.\n\n\npeople = {\n    \"Alice\": {\n        \"age\": 30,\n        \"city\": \"New York\"\n    },\n    \"Bob\": {\n        \"age\": 25,\n        \"city\": \"Los Angeles\"\n    }\n}\n\n\n\nAccessing Nested Values\n\nprint(people[\"Alice\"][\"city\"])  # Output: New York\n\nNew York"
+  },
+  {
+    "objectID": "slides/python_intro/dictionaries.html#dictionary-comprehensions",
+    "href": "slides/python_intro/dictionaries.html#dictionary-comprehensions",
+    "title": "Dictionaries in Python",
+    "section": "Dictionary Comprehensions",
+    "text": "Dictionary Comprehensions\n\n\nWhat Are Dictionary Comprehensions?\n\nA concise way to create dictionaries by transforming or filtering data.\n\nSyntax\n{key_expression: value_expression for item in iterable if condition}\n\n\nExample of Dictionary Comprehension\n\nsquares = {x: x ** 2 for x in range(5)}\nprint(squares)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n\n{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n\n\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
+  },
+  {
+    "objectID": "slides/python_intro/classes.html#introduction-to-classes",
+    "href": "slides/python_intro/classes.html#introduction-to-classes",
+    "title": "Classes in Python",
+    "section": "Introduction to Classes",
+    "text": "Introduction to Classes\n\n\nWhat Are Classes?\n\nClasses are a core concept in object-oriented programming (OOP).\nThey allow the creation of custom data types that combine attributes (data) and methods (functionality).\n\nKey Benefits\n\nModel real-world entities.\nPromote code reusability.\nEnhance organization and modularity of programs.\n\n\n\nOverview\n\nA class serves as a blueprint for creating objects, encapsulating shared attributes and behaviors."
+  },
+  {
+    "objectID": "slides/python_intro/classes.html#defining-a-class",
+    "href": "slides/python_intro/classes.html#defining-a-class",
+    "title": "Classes in Python",
+    "section": "Defining a Class",
+    "text": "Defining a Class\n\n\nBasic Syntax\n\nUse the class keyword followed by the class name (CamelCase convention).\n\n\nclass Text:\n    pass\n\n# Creating an instance of the Text class\nmy_text = Text()\nprint(my_text)  # Output: &lt;__main__.Text object at 0x...&gt;\n\n&lt;__main__.Text object at 0x108bd43e0&gt;\n\n\n\n\nExplanation\n\nDefined a simple class named Text and created an instance stored in my_text."
+  },
+  {
+    "objectID": "slides/python_intro/classes.html#adding-attributes-and-methods",
+    "href": "slides/python_intro/classes.html#adding-attributes-and-methods",
+    "title": "Classes in Python",
+    "section": "Adding Attributes and Methods",
+    "text": "Adding Attributes and Methods\n\n\nAttributes and Methods\n\nAttributes are variables belonging to the class.\nMethods are functions defined within the class that manipulate attributes or perform actions.\n\nInitializing Attributes\n\nUse the __init__() method to initialize attributes during object creation.\n\n\n\nExample with Methods\n\nclass Text:\n    def __init__(self, content):\n        self.content = content  # Instance attribute\n    \n    def word_count(self):  # Method\n        return len(self.content.split())\n\n    def shout(self):  # Another method\n        result = self.content.upper()\n        result = result.replace(\".\", \"!\")\n        return result\n\nmy_text = Text(\"Hello, World! This is a test.\")\nprint(my_text.word_count())  # Output: 6\nprint(my_text.shout())  # Output: HELLO, WORLD! THIS IS A TEST!\n\n6\nHELLO, WORLD! THIS IS A TEST!"
+  },
+  {
+    "objectID": "slides/python_intro/classes.html#accessing-attributes-and-methods",
+    "href": "slides/python_intro/classes.html#accessing-attributes-and-methods",
+    "title": "Classes in Python",
+    "section": "Accessing Attributes and Methods",
+    "text": "Accessing Attributes and Methods\n\n\nAccessing Attributes\n\nUse dot notation to access attributes and methods of a class instance.\n\n\nprint(my_text.content)  # Output: Hello, World! This is a test.\n\nHello, World! This is a test.\n\n\n\n\nExplanation\n\nAccessed the content attribute of my_text using dot notation."
+  },
+  {
+    "objectID": "slides/python_intro/classes.html#class-vs.-instance-attributes",
+    "href": "slides/python_intro/classes.html#class-vs.-instance-attributes",
+    "title": "Classes in Python",
+    "section": "Class vs. Instance Attributes",
+    "text": "Class vs. Instance Attributes\n\n\nClass vs. Instance Attributes\n\nInstance attributes are defined in __init__() and belong to a specific instance.\nClass attributes are shared by all instances and defined directly in the class body.\n\nExample:\n\nclass Text:\n    language = \"English\"  # Class attribute\n\n    def __init__(self, content):\n        self.content = content  # Instance attribute\n\n\n\nAccessing Class Attributes\n\ntext1 = Text(\"Hello, World!\")\ntext2 = Text(\"Bonjour, le monde!\")\n\nprint(text1.language)  # Output: English\nprint(text2.language)  # Output: English\n\nEnglish\nEnglish"
+  },
+  {
+    "objectID": "slides/python_intro/classes.html#changing-class-attributes",
+    "href": "slides/python_intro/classes.html#changing-class-attributes",
+    "title": "Classes in Python",
+    "section": "Changing Class Attributes",
+    "text": "Changing Class Attributes\n\n\nChanging Class Attributes\n\nModifying a class attribute affects all instances.\n\n\nText.language = \"French\"\nprint(text1.language)  # Output: French\n\nFrench\n\n\n\n\nExplanation\n\nChanging Text.language affects all instances of the class."
+  },
+  {
+    "objectID": "slides/python_intro/classes.html#inheritance",
+    "href": "slides/python_intro/classes.html#inheritance",
+    "title": "Classes in Python",
+    "section": "Inheritance",
+    "text": "Inheritance\n\n\nWhat Is Inheritance?\n\nInheritance allows creating a new class that inherits attributes and methods from an existing class.\nPromotes code reuse and enables class hierarchies.\n\nExample:\n\nclass Text:\n    def __init__(self, content):\n        self.content = content\n\nclass FormattedText(Text):  # Derived class\n    def __init__(self, content, format_type):\n        super().__init__(content)  # Call the parent class's constructor\n\n\n\nExtending Functionality\n\n    def display(self):\n        return f\"[{self.format_type}] {self.content}\"\n\n# Creating instances\nmy_text = Text(\"Hello, World!\")\nformatted_text = FormattedText(\"Hello, World!\", \"Bold\")\n\nprint(my_text.word_count())  # Output: 2\nprint(formatted_text.display())  # Output: [Bold] Hello, World!"
+  },
+  {
+    "objectID": "slides/python_intro/classes.html#summary",
+    "href": "slides/python_intro/classes.html#summary",
+    "title": "Classes in Python",
+    "section": "Summary",
+    "text": "Summary\n\n\nKey Takeaways\n\nClasses encapsulate data and functionality.\nAttributes can be instance-specific or shared across instances.\nInheritance enables the creation of new classes based on existing ones, promoting reusability.\n\n\n\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
+  },
+  {
+    "objectID": "slides/python_intro/classes.html#key-takeaways",
+    "href": "slides/python_intro/classes.html#key-takeaways",
+    "title": "Classes in Python",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\n\n\nClasses encapsulate data and functionality.\nAttributes can be instance-specific or shared across instances.\nInheritance enables the creation of new classes based on existing ones, promoting reusability.\n\n\n\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
   }
 ]

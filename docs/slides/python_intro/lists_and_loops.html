@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>The OpenAI API</title>
+  <title>Lists and Loops in Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -392,91 +392,340 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">The OpenAI API</h1>
+  <h1 class="title">Lists and Loops in Python</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="lets-get-started" class="slide level2">
-<h2>Let’s get started</h2>
-<p>The great thing about APIs is that we can start right away without too much preparation!</p>
-<p>In this sprint, we will use the OpenAI API for completions and embeddings.</p>
-<p>Resource: <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API docs</a></p>
-</section>
-<section id="authentication" class="slide level2">
-<h2>Authentication</h2>
-<p>Typically, it’s as simple as this:</p>
-<div id="1a519b58" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># setting up the client in Python</span></span>
-<span id="cb1-2"><a></a><span class="im">import</span> os</span>
-<span id="cb1-3"><a></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a>client <span class="op">=</span> OpenAI(</span>
-<span id="cb1-6"><a></a>    api_key<span class="op">=</span>os.environ.get(<span class="st">"OPENAI_API_KEY"</span>)</span>
-<span id="cb1-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="authentication-for-the-seminar" class="slide level2">
-<h2>Authentication for the seminar</h2>
-<p>For the sprint, we have hosted some models in Azure.</p>
-<div id="cf7c6700" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> os</span>
-<span id="cb2-2"><a></a><span class="im">from</span> llm_utils.client <span class="im">import</span> get_openai_client, OpenAIModels</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="bu">print</span>(<span class="ss">f"GPT3: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_3<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-5"><a></a><span class="bu">print</span>(<span class="ss">f"GPT4: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_4<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-6"><a></a><span class="bu">print</span>(<span class="ss">f"Embedding model: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>EMBED<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a>MODEL <span class="op">=</span> OpenAIModels.GPT_4.value</span>
-<span id="cb2-9"><a></a></span>
-<span id="cb2-10"><a></a>client <span class="op">=</span> get_openai_client(</span>
-<span id="cb2-11"><a></a>    model<span class="op">=</span>MODEL,</span>
-<span id="cb2-12"><a></a>    config_path<span class="op">=</span>os.environ.get(<span class="st">"CONFIG_PATH"</span>)</span>
-<span id="cb2-13"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="lists-in-python" class="slide level2">
+<h2>Lists in Python</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="what-are-lists">What Are Lists?</h3>
+<ul>
+<li>A <strong>list</strong> is an ordered collection of items.</li>
+<li>Items can be any data type: numbers, strings, or other lists.</li>
+<li>Lists are <strong>mutable</strong>, meaning you can modify them after creation.</li>
+</ul>
+<div id="86e480e7" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb1-2"><a></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>GPT3: gpt3
-GPT4: gpt4
-Embedding model: embed</code></pre>
+<pre><code>['apple', 'banana', 'cherry']</code></pre>
 </div>
 </div>
-</section>
-<section id="creating-a-completion" class="slide level2">
-<h2>Creating a completion</h2>
-<div id="b8c6b02b" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb4-2"><a></a>    messages<span class="op">=</span>[</span>
-<span id="cb4-3"><a></a>        {</span>
-<span id="cb4-4"><a></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
-<span id="cb4-5"><a></a>            <span class="st">"content"</span>: <span class="st">"How old is the earth?"</span>,</span>
-<span id="cb4-6"><a></a>        }</span>
-<span id="cb4-7"><a></a>    ],</span>
-<span id="cb4-8"><a></a>    model<span class="op">=</span>MODEL </span>
-<span id="cb4-9"><a></a>)</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a><span class="co"># check out the type of the response</span></span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a><span class="bu">print</span>(<span class="ss">f"Response: </span><span class="sc">{</span><span class="bu">type</span>(chat_completion)<span class="sc">}</span><span class="ss">"</span>) <span class="co"># a ChatCompletion object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="why-use-lists-in-nlp">Why Use Lists in NLP?</h3>
+<ul>
+<li>Lists can store words, sentences, or entire texts.</li>
+<li>NLP tasks often require managing large datasets of tokens or documents.</li>
+</ul>
+<div id="17a0bd13" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>sentence <span class="op">=</span> <span class="st">"Natural language processing is fun"</span></span>
+<span id="cb3-2"><a></a>tokens <span class="op">=</span> sentence.split()  <span class="co"># Tokenize sentence into words</span></span>
+<span id="cb3-3"><a></a><span class="bu">print</span>(tokens)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response: &lt;class 'openai.types.chat.chat_completion.ChatCompletion'&gt;</code></pre>
+<pre><code>['Natural', 'language', 'processing', 'is', 'fun']</code></pre>
 </div>
 </div>
+</div></div>
 </section>
-<section id="retrieving-the-response" class="slide level2">
-<h2>Retrieving the response</h2>
-<div id="59765b4f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># print the message we want</span></span>
-<span id="cb6-2"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Response message: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># check the tokens used </span></span>
-<span id="cb6-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total tokens used: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>usage<span class="sc">.</span>total_tokens<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="accessing-list-elements" class="slide level2">
+<h2>Accessing List Elements</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="indexing">Indexing</h3>
+<ul>
+<li>Access list elements using <strong>indexing</strong>.</li>
+<li>Python indexing starts at <code>0</code>.</li>
+</ul>
+<div id="e6a5c0fa" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb5-2"><a></a><span class="bu">print</span>(fruits[<span class="dv">0</span>])  <span class="co"># Outputs: apple</span></span>
+<span id="cb5-3"><a></a><span class="bu">print</span>(fruits[<span class="dv">1</span>])  <span class="co"># Outputs: banana</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Response message: The Earth is approximately 4.54 billion years old.
-
-Total tokens used: 25</code></pre>
+<pre><code>apple
+banana</code></pre>
 </div>
 </div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="negative-indexing">Negative Indexing</h3>
+<ul>
+<li>Negative indexing starts from the end of the list.</li>
+</ul>
+<div id="4d4242f4" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(fruits[<span class="op">-</span><span class="dv">1</span>])  <span class="co"># Outputs: cherry (last element)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cherry</code></pre>
+</div>
+</div>
+<ul>
+<li>Useful for quickly accessing the last few elements of a list.</li>
+</ul>
+</div></div>
+</section>
+<section id="modifying-lists" class="slide level2">
+<h2>Modifying Lists</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="changing-elements">Changing Elements</h3>
+<ul>
+<li>Modify a list by assigning a new value at a specific index.</li>
+</ul>
+<div id="fdc1355f" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb9-2"><a></a>fruits[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"blueberry"</span>  <span class="co"># Replacing 'banana'</span></span>
+<span id="cb9-3"><a></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['apple', 'blueberry', 'cherry']</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="real-world-nlp-use">Real-World NLP Use</h3>
+<ul>
+<li>You might replace tokens or correct errors in a tokenized sentence.</li>
+</ul>
+<div id="4e46b83c" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>tokens <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"coool"</span>]</span>
+<span id="cb11-2"><a></a>tokens[<span class="dv">2</span>] <span class="op">=</span> <span class="st">"cool"</span>  <span class="co"># Fix typo</span></span>
+<span id="cb11-3"><a></a><span class="bu">print</span>(tokens)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['NLP', 'is', 'cool']</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="adding-and-removing-elements" class="slide level2">
+<h2>Adding and Removing Elements</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="adding-elements">Adding Elements</h3>
+<ul>
+<li>Use <code>.append()</code> to add items to the end of the list.</li>
+</ul>
+<div id="8c6fc7ad" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>]</span>
+<span id="cb13-2"><a></a>fruits.append(<span class="st">"cherry"</span>)</span>
+<span id="cb13-3"><a></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['apple', 'banana', 'cherry']</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="removing-elements">Removing Elements</h3>
+<ul>
+<li>Use <code>.remove()</code> to delete specific items.</li>
+</ul>
+<div id="5fca1690" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>fruits.remove(<span class="st">"banana"</span>)</span>
+<span id="cb15-2"><a></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['apple', 'cherry']</code></pre>
+</div>
+</div>
+<ul>
+<li>Lists are flexible, allowing easy manipulation in NLP tasks.</li>
+</ul>
+</div></div>
+</section>
+<section id="list-operations-length-sorting-and-checking" class="slide level2">
+<h2>List Operations: Length, Sorting, and Checking</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="list-length">List Length</h3>
+<ul>
+<li>Use <code>len()</code> to find the number of elements in a list.</li>
+</ul>
+<div id="8167dc01" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>fruits <span class="op">=</span> [<span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"apple"</span>]</span>
+<span id="cb17-2"><a></a><span class="bu">print</span>(<span class="bu">len</span>(fruits))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="sorting-and-checking-elements">Sorting and Checking Elements</h3>
+<ul>
+<li>Use <code>.sort()</code> to sort the list.</li>
+<li>Use <code>in</code> to check if an item exists in a list.</li>
+</ul>
+<div id="ff3cd4ac" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>fruits.sort()</span>
+<span id="cb19-2"><a></a><span class="bu">print</span>(fruits)</span>
+<span id="cb19-3"><a></a></span>
+<span id="cb19-4"><a></a><span class="bu">print</span>(<span class="st">"apple"</span> <span class="kw">in</span> fruits)</span>
+<span id="cb19-5"><a></a><span class="bu">print</span>(<span class="st">"grape"</span> <span class="kw">in</span> fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['apple', 'banana', 'cherry']
+True
+False</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="loops-in-python" class="slide level2">
+<h2>Loops in Python</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="what-are-loops">What Are Loops?</h3>
+<ul>
+<li>Loops help you iterate over a list and perform actions on each element.</li>
+<li>Commonly used in NLP for tasks like text processing.</li>
+</ul>
+<div id="7251197f" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb21-2"><a></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
+<span id="cb21-3"><a></a>    <span class="bu">print</span>(fruit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>apple
+banana
+cherry</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="real-world-nlp-example">Real-World NLP Example</h3>
+<ul>
+<li>Tokenizing and processing text using loops.</li>
+</ul>
+<div id="0ef63d29" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>tokens <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
+<span id="cb23-2"><a></a><span class="cf">for</span> token <span class="kw">in</span> tokens:</span>
+<span id="cb23-3"><a></a>    <span class="bu">print</span>(token)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NLP
+is
+fun</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="using-loops-for-simple-operations" class="slide level2">
+<h2>Using Loops for Simple Operations</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="squaring-numbers-in-a-list">Squaring Numbers in a List</h3>
+<ul>
+<li>Loops allow you to apply operations to list elements.</li>
+</ul>
+<div id="49c6271e" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb25-2"><a></a>squares <span class="op">=</span> []</span>
+<span id="cb25-3"><a></a><span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
+<span id="cb25-4"><a></a>    squares.append(number <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb25-5"><a></a></span>
+<span id="cb25-6"><a></a><span class="bu">print</span>(squares)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 4, 9, 16]</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="nlp-example-word-length-calculation">NLP Example: Word Length Calculation</h3>
+<ul>
+<li>Use loops to calculate the length of each word in a sentence.</li>
+</ul>
+<div id="6becba64" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>tokens <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"great"</span>]</span>
+<span id="cb27-2"><a></a><span class="cf">for</span> token <span class="kw">in</span> tokens:</span>
+<span id="cb27-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>token<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span><span class="bu">len</span>(token)<span class="sc">}</span><span class="ss"> characters"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NLP: 3 characters
+is: 2 characters
+great: 5 characters</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="looping-with-range" class="slide level2">
+<h2>Looping with <code>range()</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="using-range">Using <code>range()</code></h3>
+<ul>
+<li>Sometimes you need to iterate a set number of times.</li>
+<li><code>range()</code> generates a sequence of numbers.</li>
+</ul>
+<div id="1be44a51" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb29-2"><a></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+1
+2
+3
+4</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="combining-range-with-lists">Combining <code>range()</code> with Lists</h3>
+<ul>
+<li>Use <code>range()</code> to loop over list indices, allowing more control.</li>
+</ul>
+<div id="c540c8f7" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb31-2"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(fruits)):</span>
+<span id="cb31-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"Index </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>fruits[i]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Index 0: apple
+Index 1: banana
+Index 2: cherry</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="common-list-methods" class="slide level2">
+<h2>Common List Methods</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="adding-and-removing-elements-1">Adding and Removing Elements</h3>
+<ul>
+<li><code>.append()</code>: Adds an item to the end.</li>
+<li><code>.remove()</code>: Removes a specific item.</li>
+</ul>
+<div id="b3c371c3" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a>fruits.append(<span class="st">"orange"</span>)</span>
+<span id="cb33-2"><a></a>fruits.remove(<span class="st">"banana"</span>)</span>
+<span id="cb33-3"><a></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['apple', 'cherry', 'orange']</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="inserting-and-popping-elements">Inserting and Popping Elements</h3>
+<ul>
+<li><code>.insert()</code>: Inserts an item at a specific index.</li>
+<li><code>.pop()</code>: Removes and returns the last item or the item at a specific index.</li>
+</ul>
+<div id="8eb6c940" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>fruits.insert(<span class="dv">1</span>, <span class="st">"blueberry"</span>)</span>
+<span id="cb35-2"><a></a><span class="bu">print</span>(fruits)</span>
+<span id="cb35-3"><a></a></span>
+<span id="cb35-4"><a></a>last_fruit <span class="op">=</span> fruits.pop()</span>
+<span id="cb35-5"><a></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['apple', 'blueberry', 'cherry', 'orange']
+['apple', 'blueberry', 'cherry']</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="summary-lists-and-loops" class="slide level2">
+<h2>Summary: Lists and Loops</h2>
+<ul>
+<li><strong>Lists</strong>: Allow you to store and manipulate multiple elements, useful in NLP for text processing.</li>
+<li><strong>Loops</strong>: Help automate repetitive tasks and process list elements.</li>
+<li>You can easily modify, sort, and check elements within lists.</li>
+<li>Loops and lists combined allow for efficient handling of data in Python, especially in NLP.</li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../assets/logo.svg" class="slide-logo"></p>
@@ -518,7 +767,7 @@ Total tokens used: 25</code></pre>
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -538,7 +787,7 @@ Total tokens used: 25</code></pre>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

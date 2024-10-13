@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>The OpenAI API</title>
+  <title>Classes in Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -392,91 +392,226 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">The OpenAI API</h1>
+  <h1 class="title">Classes in Python</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="lets-get-started" class="slide level2">
-<h2>Let’s get started</h2>
-<p>The great thing about APIs is that we can start right away without too much preparation!</p>
-<p>In this sprint, we will use the OpenAI API for completions and embeddings.</p>
-<p>Resource: <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API docs</a></p>
+<section id="introduction-to-classes" class="slide level2">
+<h2>Introduction to Classes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="what-are-classes">What Are Classes?</h3>
+<ul>
+<li>Classes are a core concept in <strong>object-oriented programming (OOP)</strong>.</li>
+<li>They allow the creation of custom data types that combine <strong>attributes</strong> (data) and <strong>methods</strong> (functionality).</li>
+</ul>
+<h3 id="key-benefits">Key Benefits</h3>
+<ul>
+<li>Model real-world entities.</li>
+<li>Promote code reusability.</li>
+<li>Enhance organization and modularity of programs.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="overview">Overview</h3>
+<ul>
+<li>A class serves as a blueprint for creating objects, encapsulating shared attributes and behaviors.</li>
+</ul>
+</div></div>
 </section>
-<section id="authentication" class="slide level2">
-<h2>Authentication</h2>
-<p>Typically, it’s as simple as this:</p>
-<div id="1a519b58" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># setting up the client in Python</span></span>
-<span id="cb1-2"><a></a><span class="im">import</span> os</span>
-<span id="cb1-3"><a></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a>client <span class="op">=</span> OpenAI(</span>
-<span id="cb1-6"><a></a>    api_key<span class="op">=</span>os.environ.get(<span class="st">"OPENAI_API_KEY"</span>)</span>
-<span id="cb1-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="authentication-for-the-seminar" class="slide level2">
-<h2>Authentication for the seminar</h2>
-<p>For the sprint, we have hosted some models in Azure.</p>
-<div id="cf7c6700" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> os</span>
-<span id="cb2-2"><a></a><span class="im">from</span> llm_utils.client <span class="im">import</span> get_openai_client, OpenAIModels</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="bu">print</span>(<span class="ss">f"GPT3: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_3<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-5"><a></a><span class="bu">print</span>(<span class="ss">f"GPT4: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_4<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-6"><a></a><span class="bu">print</span>(<span class="ss">f"Embedding model: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>EMBED<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a>MODEL <span class="op">=</span> OpenAIModels.GPT_4.value</span>
-<span id="cb2-9"><a></a></span>
-<span id="cb2-10"><a></a>client <span class="op">=</span> get_openai_client(</span>
-<span id="cb2-11"><a></a>    model<span class="op">=</span>MODEL,</span>
-<span id="cb2-12"><a></a>    config_path<span class="op">=</span>os.environ.get(<span class="st">"CONFIG_PATH"</span>)</span>
-<span id="cb2-13"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="defining-a-class" class="slide level2">
+<h2>Defining a Class</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="basic-syntax">Basic Syntax</h3>
+<ul>
+<li>Use the <code>class</code> keyword followed by the class name (CamelCase convention).</li>
+</ul>
+<div id="df2a0bab" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">class</span> Text:</span>
+<span id="cb1-2"><a></a>    <span class="cf">pass</span></span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co"># Creating an instance of the Text class</span></span>
+<span id="cb1-5"><a></a>my_text <span class="op">=</span> Text()</span>
+<span id="cb1-6"><a></a><span class="bu">print</span>(my_text)  <span class="co"># Output: &lt;__main__.Text object at 0x...&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>GPT3: gpt3
-GPT4: gpt4
-Embedding model: embed</code></pre>
+<pre><code>&lt;__main__.Text object at 0x108bd43e0&gt;</code></pre>
 </div>
 </div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation">Explanation</h3>
+<ul>
+<li>Defined a simple class named <code>Text</code> and created an instance stored in <code>my_text</code>.</li>
+</ul>
+</div></div>
 </section>
-<section id="creating-a-completion" class="slide level2">
-<h2>Creating a completion</h2>
-<div id="b8c6b02b" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb4-2"><a></a>    messages<span class="op">=</span>[</span>
-<span id="cb4-3"><a></a>        {</span>
-<span id="cb4-4"><a></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
-<span id="cb4-5"><a></a>            <span class="st">"content"</span>: <span class="st">"How old is the earth?"</span>,</span>
-<span id="cb4-6"><a></a>        }</span>
-<span id="cb4-7"><a></a>    ],</span>
-<span id="cb4-8"><a></a>    model<span class="op">=</span>MODEL </span>
-<span id="cb4-9"><a></a>)</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a><span class="co"># check out the type of the response</span></span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a><span class="bu">print</span>(<span class="ss">f"Response: </span><span class="sc">{</span><span class="bu">type</span>(chat_completion)<span class="sc">}</span><span class="ss">"</span>) <span class="co"># a ChatCompletion object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="adding-attributes-and-methods" class="slide level2">
+<h2>Adding Attributes and Methods</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="attributes-and-methods">Attributes and Methods</h3>
+<ul>
+<li><strong>Attributes</strong> are variables belonging to the class.</li>
+<li><strong>Methods</strong> are functions defined within the class that manipulate attributes or perform actions.</li>
+</ul>
+<h3 id="initializing-attributes">Initializing Attributes</h3>
+<ul>
+<li>Use the <code>__init__()</code> method to initialize attributes during object creation.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="example-with-methods">Example with Methods</h3>
+<div id="02586e38" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">class</span> Text:</span>
+<span id="cb3-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content):</span>
+<span id="cb3-3"><a></a>        <span class="va">self</span>.content <span class="op">=</span> content  <span class="co"># Instance attribute</span></span>
+<span id="cb3-4"><a></a>    </span>
+<span id="cb3-5"><a></a>    <span class="kw">def</span> word_count(<span class="va">self</span>):  <span class="co"># Method</span></span>
+<span id="cb3-6"><a></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.content.split())</span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a>    <span class="kw">def</span> shout(<span class="va">self</span>):  <span class="co"># Another method</span></span>
+<span id="cb3-9"><a></a>        result <span class="op">=</span> <span class="va">self</span>.content.upper()</span>
+<span id="cb3-10"><a></a>        result <span class="op">=</span> result.replace(<span class="st">"."</span>, <span class="st">"!"</span>)</span>
+<span id="cb3-11"><a></a>        <span class="cf">return</span> result</span>
+<span id="cb3-12"><a></a></span>
+<span id="cb3-13"><a></a>my_text <span class="op">=</span> Text(<span class="st">"Hello, World! This is a test."</span>)</span>
+<span id="cb3-14"><a></a><span class="bu">print</span>(my_text.word_count())  <span class="co"># Output: 6</span></span>
+<span id="cb3-15"><a></a><span class="bu">print</span>(my_text.shout())  <span class="co"># Output: HELLO, WORLD! THIS IS A </span><span class="al">TEST</span><span class="co">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response: &lt;class 'openai.types.chat.chat_completion.ChatCompletion'&gt;</code></pre>
+<pre><code>6
+HELLO, WORLD! THIS IS A TEST!</code></pre>
 </div>
 </div>
+</div></div>
 </section>
-<section id="retrieving-the-response" class="slide level2">
-<h2>Retrieving the response</h2>
-<div id="59765b4f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># print the message we want</span></span>
-<span id="cb6-2"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Response message: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># check the tokens used </span></span>
-<span id="cb6-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total tokens used: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>usage<span class="sc">.</span>total_tokens<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="accessing-attributes-and-methods" class="slide level2">
+<h2>Accessing Attributes and Methods</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="accessing-attributes">Accessing Attributes</h3>
+<ul>
+<li>Use dot notation to access attributes and methods of a class instance.</li>
+</ul>
+<div id="2cfe2dbd" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="bu">print</span>(my_text.content)  <span class="co"># Output: Hello, World! This is a test.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Response message: The Earth is approximately 4.54 billion years old.
+<pre><code>Hello, World! This is a test.</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation-1">Explanation</h3>
+<ul>
+<li>Accessed the <code>content</code> attribute of <code>my_text</code> using dot notation.</li>
+</ul>
+</div></div>
+</section>
+<section id="class-vs.-instance-attributes" class="slide level2">
+<h2>Class vs.&nbsp;Instance Attributes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="class-vs.-instance-attributes-1">Class vs.&nbsp;Instance Attributes</h3>
+<ul>
+<li><strong>Instance attributes</strong> are defined in <code>__init__()</code> and belong to a specific instance.</li>
+<li><strong>Class attributes</strong> are shared by all instances and defined directly in the class body.</li>
+</ul>
+<h4 id="example">Example:</h4>
+<div id="a98de8c7" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">class</span> Text:</span>
+<span id="cb7-2"><a></a>    language <span class="op">=</span> <span class="st">"English"</span>  <span class="co"># Class attribute</span></span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content):</span>
+<span id="cb7-5"><a></a>        <span class="va">self</span>.content <span class="op">=</span> content  <span class="co"># Instance attribute</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="accessing-class-attributes">Accessing Class Attributes</h3>
+<div id="ae9e5df5" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>text1 <span class="op">=</span> Text(<span class="st">"Hello, World!"</span>)</span>
+<span id="cb8-2"><a></a>text2 <span class="op">=</span> Text(<span class="st">"Bonjour, le monde!"</span>)</span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a><span class="bu">print</span>(text1.language)  <span class="co"># Output: English</span></span>
+<span id="cb8-5"><a></a><span class="bu">print</span>(text2.language)  <span class="co"># Output: English</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>English
+English</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="changing-class-attributes" class="slide level2">
+<h2>Changing Class Attributes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="changing-class-attributes-1">Changing Class Attributes</h3>
+<ul>
+<li>Modifying a class attribute affects all instances.</li>
+</ul>
+<div id="19c3ec83" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>Text.language <span class="op">=</span> <span class="st">"French"</span></span>
+<span id="cb10-2"><a></a><span class="bu">print</span>(text1.language)  <span class="co"># Output: French</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>French</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation-2">Explanation</h3>
+<ul>
+<li>Changing <code>Text.language</code> affects all instances of the class.</li>
+</ul>
+</div></div>
+</section>
+<section id="inheritance" class="slide level2">
+<h2>Inheritance</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="what-is-inheritance">What Is Inheritance?</h3>
+<ul>
+<li>Inheritance allows creating a new class that inherits attributes and methods from an existing class.</li>
+<li>Promotes code reuse and enables class hierarchies.</li>
+</ul>
+<h4 id="example-1">Example:</h4>
+<div id="731d7244" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">class</span> Text:</span>
+<span id="cb12-2"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content):</span>
+<span id="cb12-3"><a></a>        <span class="va">self</span>.content <span class="op">=</span> content</span>
+<span id="cb12-4"><a></a></span>
+<span id="cb12-5"><a></a><span class="kw">class</span> FormattedText(Text):  <span class="co"># Derived class</span></span>
+<span id="cb12-6"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, content, format_type):</span>
+<span id="cb12-7"><a></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(content)  <span class="co"># Call the parent class's constructor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="extending-functionality">Extending Functionality</h3>
+<div id="08dab031" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>    <span class="kw">def</span> display(<span class="va">self</span>):</span>
+<span id="cb13-2"><a></a>        <span class="cf">return</span> <span class="ss">f"[</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>format_type<span class="sc">}</span><span class="ss">] </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb13-3"><a></a></span>
+<span id="cb13-4"><a></a><span class="co"># Creating instances</span></span>
+<span id="cb13-5"><a></a>my_text <span class="op">=</span> Text(<span class="st">"Hello, World!"</span>)</span>
+<span id="cb13-6"><a></a>formatted_text <span class="op">=</span> FormattedText(<span class="st">"Hello, World!"</span>, <span class="st">"Bold"</span>)</span>
+<span id="cb13-7"><a></a></span>
+<span id="cb13-8"><a></a><span class="bu">print</span>(my_text.word_count())  <span class="co"># Output: 2</span></span>
+<span id="cb13-9"><a></a><span class="bu">print</span>(formatted_text.display())  <span class="co"># Output: [Bold] Hello, World!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="key-takeaways" class="slide level2">
+<h2>Key Takeaways</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Classes encapsulate data and functionality.</li>
+<li>Attributes can be instance-specific or shared across instances.</li>
+<li>Inheritance enables the creation of new classes based on existing ones, promoting reusability.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
 
-Total tokens used: 25</code></pre>
-</div>
-</div>
+</div></div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../assets/logo.svg" class="slide-logo"></p>
@@ -518,7 +653,7 @@ Total tokens used: 25</code></pre>
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -538,7 +673,7 @@ Total tokens used: 25</code></pre>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

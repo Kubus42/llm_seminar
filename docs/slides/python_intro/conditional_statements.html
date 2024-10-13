@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>The OpenAI API</title>
+  <title>Conditional Statements in Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -392,91 +392,300 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">The OpenAI API</h1>
+  <h1 class="title">Conditional Statements in Python</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="lets-get-started" class="slide level2">
-<h2>Let’s get started</h2>
-<p>The great thing about APIs is that we can start right away without too much preparation!</p>
-<p>In this sprint, we will use the OpenAI API for completions and embeddings.</p>
-<p>Resource: <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API docs</a></p>
-</section>
-<section id="authentication" class="slide level2">
-<h2>Authentication</h2>
-<p>Typically, it’s as simple as this:</p>
-<div id="1a519b58" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># setting up the client in Python</span></span>
-<span id="cb1-2"><a></a><span class="im">import</span> os</span>
-<span id="cb1-3"><a></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a>client <span class="op">=</span> OpenAI(</span>
-<span id="cb1-6"><a></a>    api_key<span class="op">=</span>os.environ.get(<span class="st">"OPENAI_API_KEY"</span>)</span>
-<span id="cb1-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="authentication-for-the-seminar" class="slide level2">
-<h2>Authentication for the seminar</h2>
-<p>For the sprint, we have hosted some models in Azure.</p>
-<div id="cf7c6700" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> os</span>
-<span id="cb2-2"><a></a><span class="im">from</span> llm_utils.client <span class="im">import</span> get_openai_client, OpenAIModels</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="bu">print</span>(<span class="ss">f"GPT3: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_3<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-5"><a></a><span class="bu">print</span>(<span class="ss">f"GPT4: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_4<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-6"><a></a><span class="bu">print</span>(<span class="ss">f"Embedding model: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>EMBED<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a>MODEL <span class="op">=</span> OpenAIModels.GPT_4.value</span>
-<span id="cb2-9"><a></a></span>
-<span id="cb2-10"><a></a>client <span class="op">=</span> get_openai_client(</span>
-<span id="cb2-11"><a></a>    model<span class="op">=</span>MODEL,</span>
-<span id="cb2-12"><a></a>    config_path<span class="op">=</span>os.environ.get(<span class="st">"CONFIG_PATH"</span>)</span>
-<span id="cb2-13"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="conditional-statements-in-python" class="slide level2">
+<h2>Conditional Statements in Python</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="what-are-conditional-statements">What Are Conditional Statements?</h3>
+<ul>
+<li>Control the flow of your program based on conditions.</li>
+<li>The most common statement is the <strong><code>if</code> statement</strong>, which executes code only when a condition is true.</li>
+<li>Useful for decision-making in various applications, including NLP tasks.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="importance-in-nlp">Importance in NLP</h3>
+<ul>
+<li>Adjust processing based on conditions (e.g., text case, keyword presence).</li>
+<li>Enable flexible and dynamic responses to input data.</li>
+</ul>
+<div id="9c19d13b" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>word <span class="op">=</span> <span class="st">"HELLO"</span></span>
+<span id="cb1-2"><a></a><span class="cf">if</span> word.isupper():</span>
+<span id="cb1-3"><a></a>    <span class="bu">print</span>(<span class="st">"The word is uppercase!"</span>)  <span class="co"># Output: The word is uppercase!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>GPT3: gpt3
-GPT4: gpt4
-Embedding model: embed</code></pre>
+<pre><code>The word is uppercase!</code></pre>
 </div>
 </div>
+</div></div>
 </section>
-<section id="creating-a-completion" class="slide level2">
-<h2>Creating a completion</h2>
-<div id="b8c6b02b" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb4-2"><a></a>    messages<span class="op">=</span>[</span>
-<span id="cb4-3"><a></a>        {</span>
-<span id="cb4-4"><a></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
-<span id="cb4-5"><a></a>            <span class="st">"content"</span>: <span class="st">"How old is the earth?"</span>,</span>
-<span id="cb4-6"><a></a>        }</span>
-<span id="cb4-7"><a></a>    ],</span>
-<span id="cb4-8"><a></a>    model<span class="op">=</span>MODEL </span>
-<span id="cb4-9"><a></a>)</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a><span class="co"># check out the type of the response</span></span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a><span class="bu">print</span>(<span class="ss">f"Response: </span><span class="sc">{</span><span class="bu">type</span>(chat_completion)<span class="sc">}</span><span class="ss">"</span>) <span class="co"># a ChatCompletion object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="the-if-statement" class="slide level2">
+<h2>The <code>if</code> Statement</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="basic-syntax-of-if">Basic Syntax of <code>if</code></h3>
+<ul>
+<li>Check a condition and execute a block of code if it evaluates to <strong>True</strong>.</li>
+</ul>
+<div id="9b8c6103" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-2"><a></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb3-3"><a></a>    <span class="bu">print</span>(<span class="st">"x is greater than 5"</span>)  <span class="co"># Output: x is greater than 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response: &lt;class 'openai.types.chat.chat_completion.ChatCompletion'&gt;</code></pre>
+<pre><code>x is greater than 5</code></pre>
 </div>
 </div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation">Explanation</h3>
+<ul>
+<li>The condition <code>x &gt; 5</code> is checked.</li>
+<li>Since <code>x</code> is 10, the print statement executes.</li>
+</ul>
+</div></div>
 </section>
-<section id="retrieving-the-response" class="slide level2">
-<h2>Retrieving the response</h2>
-<div id="59765b4f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># print the message we want</span></span>
-<span id="cb6-2"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Response message: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># check the tokens used </span></span>
-<span id="cb6-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total tokens used: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>usage<span class="sc">.</span>total_tokens<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="the-else-statement" class="slide level2">
+<h2>The <code>else</code> Statement</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="using-the-else-statement">Using the <code>else</code> Statement</h3>
+<ul>
+<li>Defines what happens when the <code>if</code> condition is <strong>False</strong>.</li>
+</ul>
+<div id="69c93d7e" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>x <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb5-2"><a></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb5-3"><a></a>    <span class="bu">print</span>(<span class="st">"x is greater than 5"</span>)</span>
+<span id="cb5-4"><a></a><span class="cf">else</span>:</span>
+<span id="cb5-5"><a></a>    <span class="bu">print</span>(<span class="st">"x is not greater than 5"</span>)  <span class="co"># Output: x is not greater than 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Response message: The Earth is approximately 4.54 billion years old.
-
-Total tokens used: 25</code></pre>
+<pre><code>x is not greater than 5</code></pre>
 </div>
 </div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation-1">Explanation</h3>
+<ul>
+<li>Since <code>x</code> is 3, the <code>else</code> block executes, printing “x is not greater than 5”.</li>
+</ul>
+</div></div>
+</section>
+<section id="the-elif-statement" class="slide level2">
+<h2>The <code>elif</code> Statement</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="multiple-conditions-with-elif">Multiple Conditions with <code>elif</code></h3>
+<ul>
+<li>Use <code>elif</code> to check additional conditions if the previous ones are false.</li>
+</ul>
+<div id="84c2524c" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>x <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb7-2"><a></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb7-3"><a></a>    <span class="bu">print</span>(<span class="st">"x is greater than 10"</span>)</span>
+<span id="cb7-4"><a></a><span class="cf">elif</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb7-5"><a></a>    <span class="bu">print</span>(<span class="st">"x is greater than 5 but less than or equal to 10"</span>)  <span class="co"># Output: x is greater than 5 but less than or equal to 10</span></span>
+<span id="cb7-6"><a></a><span class="cf">else</span>:</span>
+<span id="cb7-7"><a></a>    <span class="bu">print</span>(<span class="st">"x is less than or equal to 5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is greater than 5 but less than or equal to 10</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation-2">Explanation</h3>
+<ul>
+<li>Python checks each condition sequentially; <code>x &gt; 10</code> is false, but <code>x &gt; 5</code> is true.</li>
+</ul>
+</div></div>
+</section>
+<section id="using-comparison-operators" class="slide level2">
+<h2>Using Comparison Operators</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="common-comparison-operators">Common Comparison Operators</h3>
+<ul>
+<li><code>==</code>: Equal to</li>
+<li><code>!=</code>: Not equal to</li>
+<li><code>&gt;</code>: Greater than</li>
+<li><code>&lt;</code>: Less than</li>
+<li><code>&gt;=</code>: Greater than or equal to</li>
+<li><code>&lt;=</code>: Less than or equal to</li>
+</ul>
+<div id="e4a4cc1c" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>age <span class="op">=</span> <span class="dv">18</span></span>
+<span id="cb9-2"><a></a><span class="cf">if</span> age <span class="op">==</span> <span class="dv">18</span>:</span>
+<span id="cb9-3"><a></a>    <span class="bu">print</span>(<span class="st">"You are 18 years old"</span>)  <span class="co"># Output: You are 18 years old</span></span>
+<span id="cb9-4"><a></a><span class="cf">if</span> age <span class="op">!=</span> <span class="dv">20</span>:</span>
+<span id="cb9-5"><a></a>    <span class="bu">print</span>(<span class="st">"You are not 20 years old"</span>)  <span class="co"># Output: You are not 20 years old</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>You are 18 years old
+You are not 20 years old</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation-3">Explanation</h3>
+<ul>
+<li>The <code>==</code> operator checks if <code>age</code> is 18, while the <code>!=</code> operator checks if it is not 20.</li>
+</ul>
+</div></div>
+</section>
+<section id="logical-operators" class="slide level2">
+<h2>Logical Operators</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="combining-conditions">Combining Conditions</h3>
+<ul>
+<li>Use <strong>logical operators</strong> to evaluate multiple conditions.</li>
+</ul>
+<div id="0c14e4f0" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>x <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb11-2"><a></a></span>
+<span id="cb11-3"><a></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span> <span class="kw">and</span> x <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb11-4"><a></a>    <span class="bu">print</span>(<span class="st">"x is between 5 and 10"</span>)  <span class="co"># Output: x is between 5 and 10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is between 5 and 10</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="other-logical-operators">Other Logical Operators</h3>
+<ul>
+<li><code>or</code>: True if at least one condition is true.</li>
+<li><code>not</code>: Inverts the truth value of the condition.</li>
+</ul>
+<div id="2c37b353" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">5</span> <span class="kw">or</span> x <span class="op">&gt;</span> <span class="dv">6</span>:</span>
+<span id="cb13-2"><a></a>    <span class="bu">print</span>(<span class="st">"x is either less than 5 or greater than 6"</span>)  <span class="co"># Output: x is either less than 5 or greater than 6</span></span>
+<span id="cb13-3"><a></a></span>
+<span id="cb13-4"><a></a><span class="cf">if</span> <span class="kw">not</span> x <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb13-5"><a></a>    <span class="bu">print</span>(<span class="st">"x is not equal to 5"</span>)  <span class="co"># Output: x is not equal to 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is either less than 5 or greater than 6
+x is not equal to 5</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="nested-if-statements" class="slide level2">
+<h2>Nested <code>if</code> Statements</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="what-are-nested-if-statements">What Are Nested <code>if</code> Statements?</h3>
+<ul>
+<li>Place one <code>if</code> statement inside another to check multiple conditions that depend on each other.</li>
+</ul>
+<div id="48ef68cb" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb15-2"><a></a>y <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb15-3"><a></a></span>
+<span id="cb15-4"><a></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb15-5"><a></a>    <span class="cf">if</span> y <span class="op">&gt;</span> <span class="dv">15</span>:</span>
+<span id="cb15-6"><a></a>        <span class="bu">print</span>(<span class="st">"x is greater than 5 and y is greater than 15"</span>)  <span class="co"># Output: x is greater than 5 and y is greater than 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x is greater than 5 and y is greater than 15</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation-4">Explanation</h3>
+<ul>
+<li>First check <code>x &gt; 5</code>. If true, then check <code>y &gt; 15</code>.</li>
+</ul>
+</div></div>
+</section>
+<section id="checking-membership-with-in-operator" class="slide level2">
+<h2>Checking Membership with <code>in</code> Operator</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="using-the-in-operator">Using the <code>in</code> Operator</h3>
+<ul>
+<li>Check if a value exists in a collection (e.g., list, string, tuple).</li>
+</ul>
+<div id="d32a1625" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
+<span id="cb17-2"><a></a></span>
+<span id="cb17-3"><a></a><span class="cf">if</span> <span class="st">"banana"</span> <span class="kw">in</span> fruits:</span>
+<span id="cb17-4"><a></a>    <span class="bu">print</span>(<span class="st">"Banana is in the list!"</span>)  <span class="co"># Output: Banana is in the list!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Banana is in the list!</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="example-with-strings">Example with Strings</h3>
+<div id="177e8a18" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>sentence <span class="op">=</span> <span class="st">"Hello world"</span></span>
+<span id="cb19-2"><a></a><span class="cf">if</span> <span class="st">"world"</span> <span class="kw">in</span> sentence:</span>
+<span id="cb19-3"><a></a>    <span class="bu">print</span>(<span class="st">"The word 'world' is in the sentence."</span>)  <span class="co"># Output: The word 'world' is in the sentence.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The word 'world' is in the sentence.</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="combining-conditions-in-practical-examples" class="slide level2">
+<h2>Combining Conditions in Practical Examples</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="example-password-validation">Example: Password Validation</h3>
+<ul>
+<li>Check user input against certain conditions for validity.</li>
+</ul>
+<div id="b846510f" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>password <span class="op">=</span> <span class="st">"Hello123"</span></span>
+<span id="cb21-2"><a></a></span>
+<span id="cb21-3"><a></a><span class="cf">if</span> <span class="bu">len</span>(password) <span class="op">&gt;=</span> <span class="dv">8</span> <span class="kw">and</span> <span class="bu">any</span>(char.isdigit() <span class="cf">for</span> char <span class="kw">in</span> password):</span>
+<span id="cb21-4"><a></a>    <span class="bu">print</span>(<span class="st">"Password is valid"</span>)  <span class="co"># Output: Password is valid</span></span>
+<span id="cb21-5"><a></a><span class="cf">else</span>:</span>
+<span id="cb21-6"><a></a>    <span class="bu">print</span>(<span class="st">"Password must be at least 8 characters long and contain a number."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Password is valid</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation-5">Explanation</h3>
+<ul>
+<li>Checks for length and if any character is a digit using <code>char.isdigit()</code>.</li>
+</ul>
+</div></div>
+</section>
+<section id="edge-cases-and-handling-errors" class="slide level2">
+<h2>Edge Cases and Handling Errors</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="importance-of-edge-case-handling">Importance of Edge Case Handling</h3>
+<ul>
+<li>Think about situations where input values might cause errors, such as empty strings or division by zero.</li>
+</ul>
+<div id="09c1f7e6" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="co"># Checking for division by zero</span></span>
+<span id="cb23-2"><a></a>numerator <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb23-3"><a></a>denominator <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-4"><a></a></span>
+<span id="cb23-5"><a></a><span class="cf">if</span> denominator <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb23-6"><a></a>    result <span class="op">=</span> numerator <span class="op">/</span> denominator</span>
+<span id="cb23-7"><a></a>    <span class="bu">print</span>(result)</span>
+<span id="cb23-8"><a></a><span class="cf">else</span>:</span>
+<span id="cb23-9"><a></a>    <span class="bu">print</span>(<span class="st">"Cannot divide by zero"</span>)  <span class="co"># Output: Cannot divide by zero</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cannot divide by zero</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="explanation-6">Explanation</h3>
+<ul>
+<li>Use conditionals to prevent errors like division by zero by checking if the denominator is not zero.</li>
+</ul>
+</div></div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../assets/logo.svg" class="slide-logo"></p>
@@ -518,7 +727,7 @@ Total tokens used: 25</code></pre>
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -538,7 +747,7 @@ Total tokens used: 25</code></pre>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

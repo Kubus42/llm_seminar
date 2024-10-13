@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>The OpenAI API</title>
+  <title>String Operations in Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -392,91 +392,331 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">The OpenAI API</h1>
+  <h1 class="title">String Operations in Python</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="lets-get-started" class="slide level2">
-<h2>Let’s get started</h2>
-<p>The great thing about APIs is that we can start right away without too much preparation!</p>
-<p>In this sprint, we will use the OpenAI API for completions and embeddings.</p>
-<p>Resource: <a href="https://platform.openai.com/docs/introduction" class="external">OpenAI API docs</a></p>
-</section>
-<section id="authentication" class="slide level2">
-<h2>Authentication</h2>
-<p>Typically, it’s as simple as this:</p>
-<div id="1a519b58" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># setting up the client in Python</span></span>
-<span id="cb1-2"><a></a><span class="im">import</span> os</span>
-<span id="cb1-3"><a></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a>client <span class="op">=</span> OpenAI(</span>
-<span id="cb1-6"><a></a>    api_key<span class="op">=</span>os.environ.get(<span class="st">"OPENAI_API_KEY"</span>)</span>
-<span id="cb1-7"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="authentication-for-the-seminar" class="slide level2">
-<h2>Authentication for the seminar</h2>
-<p>For the sprint, we have hosted some models in Azure.</p>
-<div id="cf7c6700" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> os</span>
-<span id="cb2-2"><a></a><span class="im">from</span> llm_utils.client <span class="im">import</span> get_openai_client, OpenAIModels</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="bu">print</span>(<span class="ss">f"GPT3: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_3<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-5"><a></a><span class="bu">print</span>(<span class="ss">f"GPT4: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>GPT_4<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-6"><a></a><span class="bu">print</span>(<span class="ss">f"Embedding model: </span><span class="sc">{</span>OpenAIModels<span class="sc">.</span>EMBED<span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a>MODEL <span class="op">=</span> OpenAIModels.GPT_4.value</span>
-<span id="cb2-9"><a></a></span>
-<span id="cb2-10"><a></a>client <span class="op">=</span> get_openai_client(</span>
-<span id="cb2-11"><a></a>    model<span class="op">=</span>MODEL,</span>
-<span id="cb2-12"><a></a>    config_path<span class="op">=</span>os.environ.get(<span class="st">"CONFIG_PATH"</span>)</span>
-<span id="cb2-13"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="strings-in-nlp" class="slide level2">
+<h2>Strings in NLP</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="what-are-strings">What Are Strings?</h3>
+<ul>
+<li>Strings represent text data in Python.</li>
+<li>Used to store sequences of characters (letters, digits, punctuation).</li>
+<li>Central to <strong>NLP</strong> tasks where text manipulation is required.</li>
+</ul>
+<div id="9490aea8" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>sentence <span class="op">=</span> <span class="st">"Natural Language Processing"</span></span>
+<span id="cb1-2"><a></a><span class="bu">print</span>(sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>GPT3: gpt3
-GPT4: gpt4
-Embedding model: embed</code></pre>
+<pre><code>Natural Language Processing</code></pre>
 </div>
 </div>
-</section>
-<section id="creating-a-completion" class="slide level2">
-<h2>Creating a completion</h2>
-<div id="b8c6b02b" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>chat_completion <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb4-2"><a></a>    messages<span class="op">=</span>[</span>
-<span id="cb4-3"><a></a>        {</span>
-<span id="cb4-4"><a></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
-<span id="cb4-5"><a></a>            <span class="st">"content"</span>: <span class="st">"How old is the earth?"</span>,</span>
-<span id="cb4-6"><a></a>        }</span>
-<span id="cb4-7"><a></a>    ],</span>
-<span id="cb4-8"><a></a>    model<span class="op">=</span>MODEL </span>
-<span id="cb4-9"><a></a>)</span>
-<span id="cb4-10"><a></a></span>
-<span id="cb4-11"><a></a><span class="co"># check out the type of the response</span></span>
-<span id="cb4-12"><a></a></span>
-<span id="cb4-13"><a></a><span class="bu">print</span>(<span class="ss">f"Response: </span><span class="sc">{</span><span class="bu">type</span>(chat_completion)<span class="sc">}</span><span class="ss">"</span>) <span class="co"># a ChatCompletion object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="nlp-and-strings">NLP and Strings</h3>
+<ul>
+<li><strong>Why strings in NLP?</strong>
+<ul>
+<li>To tokenize, clean, and analyze text data.</li>
+<li>Each word in a sentence is processed as a string.</li>
+</ul></li>
+</ul>
+<div id="050625c1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>token <span class="op">=</span> <span class="st">"word"</span></span>
+<span id="cb3-2"><a></a><span class="bu">print</span>(<span class="bu">len</span>(token))  <span class="co"># Outputs: 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response: &lt;class 'openai.types.chat.chat_completion.ChatCompletion'&gt;</code></pre>
+<pre><code>4</code></pre>
 </div>
 </div>
+<ul>
+<li>Length of strings helps in tokenization.</li>
+</ul>
+</div></div>
 </section>
-<section id="retrieving-the-response" class="slide level2">
-<h2>Retrieving the response</h2>
-<div id="59765b4f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># print the message we want</span></span>
-<span id="cb6-2"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Response message: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># check the tokens used </span></span>
-<span id="cb6-5"><a></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Total tokens used: </span><span class="sc">{</span>chat_completion<span class="sc">.</span>usage<span class="sc">.</span>total_tokens<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="concatenating-strings" class="slide level2">
+<h2>Concatenating Strings</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="what-is-concatenation">What is Concatenation?</h3>
+<ul>
+<li>Concatenation joins two or more strings together.</li>
+<li>You can use the <code>+</code> operator or <code>join()</code> method for concatenation.</li>
+</ul>
+<div id="f5195ab9" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>greeting <span class="op">=</span> <span class="st">"Hello, "</span> <span class="op">+</span> <span class="st">"world!"</span></span>
+<span id="cb5-2"><a></a><span class="bu">print</span>(greeting)  <span class="co"># Outputs: Hello, world!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Response message: The Earth is approximately 4.54 billion years old.
-
-Total tokens used: 25</code></pre>
+<pre><code>Hello, world!</code></pre>
 </div>
 </div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="nlp-example-joining-words">NLP Example: Joining Words</h3>
+<ul>
+<li>Often in NLP, you need to combine words (tokens) back into sentences.</li>
+</ul>
+<div id="50ec4b6c" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
+<span id="cb7-2"><a></a>sentence <span class="op">=</span> <span class="st">" "</span>.join(words)</span>
+<span id="cb7-3"><a></a><span class="bu">print</span>(sentence)  <span class="co"># Outputs: NLP is fun</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NLP is fun</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="accessing-and-slicing-strings" class="slide level2">
+<h2>Accessing and Slicing Strings</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="accessing-characters">Accessing Characters</h3>
+<ul>
+<li>Each character in a string has an index.</li>
+<li>You can access them using square brackets.</li>
+</ul>
+<div id="f51cc821" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>word <span class="op">=</span> <span class="st">"token"</span></span>
+<span id="cb9-2"><a></a><span class="bu">print</span>(word[<span class="dv">0</span>])  <span class="co"># Outputs: t</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>t</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="slicing-strings">Slicing Strings</h3>
+<ul>
+<li>Slicing extracts part of a string using <code>[start:end]</code>.</li>
+</ul>
+<div id="7f1b4d83" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>phrase <span class="op">=</span> <span class="st">"language model"</span></span>
+<span id="cb11-2"><a></a><span class="bu">print</span>(phrase[<span class="dv">0</span>:<span class="dv">8</span>])  <span class="co"># Outputs: language</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>language</code></pre>
+</div>
+</div>
+<ul>
+<li>Useful in NLP when extracting parts of text.</li>
+</ul>
+</div></div>
+</section>
+<section id="modifying-strings" class="slide level2">
+<h2>Modifying Strings</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="changing-case">Changing Case</h3>
+<ul>
+<li>Strings offer methods like <code>upper()</code> and <code>lower()</code> for case modification.</li>
+</ul>
+<div id="26f1ad21" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>text <span class="op">=</span> <span class="st">"Natural Language Processing"</span></span>
+<span id="cb13-2"><a></a><span class="bu">print</span>(text.lower())  <span class="co"># Outputs: natural language processing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>natural language processing</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="nlp-example-normalizing-text">NLP Example: Normalizing Text</h3>
+<ul>
+<li>Text normalization often involves converting everything to lowercase to ensure uniformity.</li>
+</ul>
+<div id="b4502a27" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>sentence <span class="op">=</span> <span class="st">"HELLO World!"</span></span>
+<span id="cb15-2"><a></a><span class="bu">print</span>(sentence.lower())  <span class="co"># Outputs: hello world!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>hello world!</code></pre>
+</div>
+</div>
+<ul>
+<li>This is important for case-insensitive comparisons in NLP.</li>
+</ul>
+</div></div>
+</section>
+<section id="splitting-strings" class="slide level2">
+<h2>Splitting Strings</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="tokenization-splitting-text">Tokenization: Splitting Text</h3>
+<ul>
+<li>The <code>split()</code> method divides a string into a list of words.</li>
+</ul>
+<div id="65ad05cb" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>sentence <span class="op">=</span> <span class="st">"Tokenize this sentence."</span></span>
+<span id="cb17-2"><a></a>tokens <span class="op">=</span> sentence.split(<span class="st">" "</span>)</span>
+<span id="cb17-3"><a></a><span class="bu">print</span>(tokens)  <span class="co"># Outputs: ['Tokenize', 'this', 'sentence.']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Tokenize', 'this', 'sentence.']</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="tokenization-in-nlp">Tokenization in NLP</h3>
+<ul>
+<li>Tokenization is the process of breaking text into smaller units, often words or sentences.</li>
+<li>Split text into tokens based on spaces or punctuation.</li>
+</ul>
+<div id="3f9d2cb6" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>sentence <span class="op">=</span> <span class="st">"Deep Learning and NLP"</span></span>
+<span id="cb19-2"><a></a>tokens <span class="op">=</span> sentence.split()</span>
+<span id="cb19-3"><a></a><span class="bu">print</span>(tokens)  <span class="co"># Outputs: ['Deep', 'Learning', 'and', 'NLP']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Deep', 'Learning', 'and', 'NLP']</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="string-search" class="slide level2">
+<h2>String Search</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="searching-in-strings">Searching in Strings</h3>
+<ul>
+<li>Use <code>in</code> or <code>find()</code> to search for substrings.</li>
+</ul>
+<div id="ac0a3786" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>text <span class="op">=</span> <span class="st">"machine learning is powerful"</span></span>
+<span id="cb21-2"><a></a><span class="bu">print</span>(<span class="st">"learning"</span> <span class="kw">in</span> text)  <span class="co"># Outputs: True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="nlp-searching-for-keywords">NLP: Searching for Keywords</h3>
+<ul>
+<li>In NLP, searching for specific words or phrases is common.</li>
+</ul>
+<div id="408dad13" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>text <span class="op">=</span> <span class="st">"Neural networks are part of deep learning"</span></span>
+<span id="cb23-2"><a></a>keyword <span class="op">=</span> <span class="st">"deep"</span></span>
+<span id="cb23-3"><a></a><span class="bu">print</span>(text.find(keyword))  <span class="co"># Outputs: 27 (index position)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>28</code></pre>
+</div>
+</div>
+<ul>
+<li>Use this for keyword extraction in text analysis.</li>
+</ul>
+</div></div>
+</section>
+<section id="replacing-substrings" class="slide level2">
+<h2>Replacing Substrings</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="replacing-text">Replacing Text</h3>
+<ul>
+<li>The <code>replace()</code> method replaces parts of a string.</li>
+</ul>
+<div id="b2ecb01e" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>sentence <span class="op">=</span> <span class="st">"I love machine learning"</span></span>
+<span id="cb25-2"><a></a>sentence <span class="op">=</span> sentence.replace(<span class="st">"machine"</span>, <span class="st">"deep"</span>)</span>
+<span id="cb25-3"><a></a><span class="bu">print</span>(sentence)  <span class="co"># Outputs: I love deep learning</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I love deep learning</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="nlp-example-text-replacement">NLP Example: Text Replacement</h3>
+<ul>
+<li>In text preprocessing, you may need to replace or correct words.</li>
+</ul>
+<div id="eac4a457" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>text <span class="op">=</span> <span class="st">"Text analysis with NLP"</span></span>
+<span id="cb27-2"><a></a>clean_text <span class="op">=</span> text.replace(<span class="st">"Text"</span>, <span class="st">"Document"</span>)</span>
+<span id="cb27-3"><a></a><span class="bu">print</span>(clean_text)  <span class="co"># Outputs: Document analysis with NLP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Document analysis with NLP</code></pre>
+</div>
+</div>
+<ul>
+<li>This is helpful when cleaning or transforming data.</li>
+</ul>
+</div></div>
+</section>
+<section id="removing-whitespace-and-punctuation" class="slide level2">
+<h2>Removing Whitespace and Punctuation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="removing-extra-whitespace">Removing Extra Whitespace</h3>
+<ul>
+<li>Use <code>strip()</code>, <code>lstrip()</code>, or <code>rstrip()</code> to remove unwanted spaces.</li>
+</ul>
+<div id="746eed54" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>text <span class="op">=</span> <span class="st">"   clean me!   "</span></span>
+<span id="cb29-2"><a></a><span class="bu">print</span>(text.strip())  <span class="co"># Outputs: "clean me!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>clean me!</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="removing-punctuation">Removing Punctuation</h3>
+<ul>
+<li>Use <code>translate()</code> to remove punctuation in strings for cleaning.</li>
+</ul>
+<div id="6c8cdc9b" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a><span class="im">import</span> string</span>
+<span id="cb31-2"><a></a>sentence <span class="op">=</span> <span class="st">"Hello, world!"</span></span>
+<span id="cb31-3"><a></a>cleaned <span class="op">=</span> sentence.translate(<span class="bu">str</span>.maketrans(<span class="st">''</span>, <span class="st">''</span>, string.punctuation))</span>
+<span id="cb31-4"><a></a><span class="bu">print</span>(cleaned)  <span class="co"># Outputs: Hello world</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello world</code></pre>
+</div>
+</div>
+<ul>
+<li>This is common in NLP preprocessing steps.</li>
+</ul>
+</div></div>
+</section>
+<section id="string-formatting" class="slide level2">
+<h2>String Formatting</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="formatting-with-f-strings">Formatting with f-strings</h3>
+<ul>
+<li>Use f-strings for inserting variables into strings.</li>
+</ul>
+<div id="24a394f1" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a>name <span class="op">=</span> <span class="st">"NLP"</span></span>
+<span id="cb33-2"><a></a><span class="bu">print</span>(<span class="ss">f"Welcome to </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> class!"</span>)  <span class="co"># Outputs: Welcome to NLP class!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Welcome to NLP class!</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<!-- -->
+<h3 id="nlp-use-displaying-results">NLP Use: Displaying Results</h3>
+<ul>
+<li>Use string formatting to present results clearly.</li>
+</ul>
+<div id="eb85ae2d" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>word <span class="op">=</span> <span class="st">"deep learning"</span></span>
+<span id="cb35-2"><a></a><span class="bu">print</span>(<span class="ss">f"The word '</span><span class="sc">{</span>word<span class="sc">}</span><span class="ss">' has </span><span class="sc">{</span><span class="bu">len</span>(word)<span class="sc">}</span><span class="ss"> characters."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The word 'deep learning' has 13 characters.</code></pre>
+</div>
+</div>
+<ul>
+<li>This is useful for presenting text-based results from NLP models.</li>
+</ul>
+</div></div>
+</section>
+<section id="summary-of-string-operations" class="slide level2">
+<h2>Summary of String Operations</h2>
+<ul>
+<li><strong>Concatenation</strong>: Joining strings together.</li>
+<li><strong>Accessing and slicing</strong>: Extracting characters or parts of a string.</li>
+<li><strong>Modifying</strong>: Changing case or replacing parts of the string.</li>
+<li><strong>Splitting</strong>: Tokenizing a sentence into words.</li>
+<li><strong>Searching</strong>: Finding specific words in text.</li>
+<li><strong>Replacing</strong>: Cleaning or transforming text.</li>
+<li><strong>Whitespace/Punctuation removal</strong>: Important for cleaning data.</li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../../assets/logo.svg" class="slide-logo"></p>
@@ -518,7 +758,7 @@ Total tokens used: 25</code></pre>
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -538,7 +778,7 @@ Total tokens used: 25</code></pre>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
