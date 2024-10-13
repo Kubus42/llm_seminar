@@ -1,0 +1,36 @@
+---
+title: "Slides"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+### About
+- [About the Seminar](../slides/about/intro.qmd)
+- [Projects](../slides/about/projects.qmd)
+
+
+### Python Crash Course
+- [Variables and Data Types](../slides/python_intro/variables_data_types.qmd)
+- [String Operations](../slides/python_intro/string_operations.qmd)
+- [Lists and Loops](../slides/python_intro/lists_and_loops.qmd)
+- [Functions](../slides/python_intro/functions.qmd)
+- [Conditional Statements](../slides/python_intro/conditional_statements.qmd)
+- [Dictionaries](../slides/python_intro/dictionaries.qmd)
+- [Classes](../slides/python_intro/classes.qmd)
+
+
+### Natural Language Processing
+- [A Short History of NLP](../slides/nlp/short_history.qmd)
+- [Statistics](../slides/nlp/statistics.qmd)
+- [Tokenization](../slides/nlp/tokenization.qmd)
+
+
+### Large Language Models
+- [Introduction](../slides/llm/intro.qmd)
+- [OpenAI API](../slides/llm/openai_api.qmd)
+- [Prompting and Tool Calling](../slides/llm/prompting_functions.qmd)
+
+### Embeddings
+- [Embeddings](../slides/embeddings/embeddings.qmd)
