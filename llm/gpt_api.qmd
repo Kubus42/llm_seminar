@@ -44,7 +44,7 @@ Most interaction with GPT and other models consist in generating completions for
 To request completions from the OpenAI API, we use Python to send HTTP requests to the designated API endpoint. 
 These requests are structured to include various parameters that guide the generation of text completions. 
 The most fundamental parameter is the prompt text, which sets the context for the completion. 
-Additionally, you can specify the desired model configuration, such as the engine to use (e.g., "gpt-4"), as well as any constraints or preferences for the generated completions, such as the maximum number of tokens or the temperature for controlling creativity (TODO: Link parameterization)
+Additionally, you can specify the desired model configuration, such as the engine to use (e.g., "gpt-4"), as well as any constraints or preferences for the generated completions, such as the maximum number of tokens or the temperature for controlling creativity ([here](../llm/parameterization.qmd)).
 
 ```{python}
 # creating a completion

@@ -58,8 +58,20 @@ Eventually, we will have a quick look into some other applications of embeddings
 Have fun! 
 
 
-### The schedule
-TBD
+### A rough schedule
+- Introduction & Getting to know each other & Survey (experiences & expectations) & Learning goals & Evaluation criteria
+- Introduction to the general topic & Python & Jupyter 
+- Introduction NLP (tokenization, matching, statistical analysis)
+- Introduction to LLM & OpenAI API
+- Prompting
+- Embeddings
+- Advanced GPT topics (image data, parameterization, tool calling)
+- Real-world examples of applications (& implementation) & limitations
+- *App concept & Group brainstorming*
+- *Project work on prototype & mentoring*
+- *Project presentations* & reflections on the seminar
+- Backup: Ethics and data privacy 
+
 
 #### After the seminar (~1d):
   - Prototype refinement

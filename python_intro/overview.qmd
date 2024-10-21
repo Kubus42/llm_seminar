@@ -6,8 +6,6 @@ format:
 jupyter: python3
 ---
 
-# TODO: Some introduction
-
 
 # Installing Python on Windows and macOS
 
@@ -39,6 +37,7 @@ jupyter: python3
 3. **Verify Installation:**
    - Open the Terminal application (you can find it using Spotlight Search by pressing `Command + Space` and typing "Terminal").
    - Type `python3 --version` and press Enter. You should see the installed version of Python.
+
 
 ### Additional Setup (Optional)
 

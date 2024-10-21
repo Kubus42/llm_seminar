@@ -6,6 +6,21 @@ format:
 jupyter: python3
 ---
 
+#### Introduction to Python
+[Exercise: Data types](../python_intro/exercises/data_types.ipynb)
+
+[Exercise: String manipulations](../python_intro/exercises/strings.ipynb)
+
+[Exercise: Lists and loops](../python_intro/exercises/lists_and_loops.ipynb)
+
+[Exercise: Conditional statements](../python_intro/exercises/conditional_statements.ipynb)
+
+[Exercise: Functions](../python_intro/exercises/functions.ipynb)
+
+[Exercise: Dictionaries](../python_intro/exercises/dictionaries.ipynb)
+
+[Exercise: Classes](../python_intro/exercises/classes.ipynb)
+
 
 #### Natural Language Processing 
 [Exercise: Sentence tokenization](../nlp/exercises/ex_tokenization.ipynb)
