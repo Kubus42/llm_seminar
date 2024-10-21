@@ -1,0 +1,295 @@
+---
+title: "String Operations in Python"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Seminar: LLM, WiSe 2024/25"
+        logo: ../../assets/logo.svg
+        slideNumber: true
+        smaller: true
+---
+
+## Strings in NLP
+
+:::{.columns}
+::: {.column width="50%"}
+### What Are Strings?
+- Strings represent text data in Python.
+- Used to store sequences of characters (letters, digits, punctuation).
+- Central to **NLP** tasks where text manipulation is required.
+
+```{python}
+#| echo: true
+sentence = "Natural Language Processing"
+print(sentence)
+```
+
+:::
+::: {.column width="50%" .fragment}
+### NLP and Strings
+- **Why strings in NLP?**
+  - To tokenize, clean, and analyze text data.
+  - Each word in a sentence is processed as a string.
+
+```{python}
+#| echo: true
+token = "word"
+print(len(token))  # Outputs: 4
+```
+- Length of strings helps in tokenization.
+:::
+:::
+
+---
+
+## Concatenating Strings
+
+:::{.columns}
+::: {.column width="50%"}
+### What is Concatenation?
+- Concatenation joins two or more strings together.
+- You can use the `+` operator or `join()` method for concatenation.
+
+```{python}
+#| echo: true
+greeting = "Hello, " + "world!"
+print(greeting)  # Outputs: Hello, world!
+```
+
+:::
+::: {.column width="50%" .fragment}
+### NLP Example: Joining Words
+- Often in NLP, you need to combine words (tokens) back into sentences.
+
+```{python}
+#| echo: true
+words = ["NLP", "is", "fun"]
+sentence = " ".join(words)
+print(sentence)  # Outputs: NLP is fun
+```
+:::
+:::
+
+---
+
+## Accessing and Slicing Strings
+
+:::{.columns}
+::: {.column width="50%"}
+### Accessing Characters
+- Each character in a string has an index.
+- You can access them using square brackets.
+
+```{python}
+#| echo: true
+word = "token"
+print(word[0])  # Outputs: t
+```
+:::
+::: {.column width="50%" .fragment}
+### Slicing Strings
+- Slicing extracts part of a string using `[start:end]`.
+
+```{python}
+#| echo: true
+phrase = "language model"
+print(phrase[0:8])  # Outputs: language
+```
+
+- Useful in NLP when extracting parts of text.
+:::
+:::
+
+---
+
+## Modifying Strings
+
+:::{.columns}
+::: {.column width="50%"}
+### Changing Case
+- Strings offer methods like `upper()` and `lower()` for case modification.
+
+```{python}
+#| echo: true
+text = "Natural Language Processing"
+print(text.lower())  # Outputs: natural language processing
+```
+
+:::
+::: {.column width="50%" .fragment}
+### NLP Example: Normalizing Text
+- Text normalization often involves converting everything to lowercase to ensure uniformity.
+
+```{python}
+#| echo: true
+sentence = "HELLO World!"
+print(sentence.lower())  # Outputs: hello world!
+```
+
+- This is important for case-insensitive comparisons in NLP.
+:::
+:::
+
+---
+
+## Splitting Strings
+
+:::{.columns}
+::: {.column width="50%"}
+### Tokenization: Splitting Text
+- The `split()` method divides a string into a list of words.
+
+```{python}
+#| echo: true
+sentence = "Tokenize this sentence."
+tokens = sentence.split(" ")
+print(tokens)  # Outputs: ['Tokenize', 'this', 'sentence.']
+```
+:::
+::: {.column width="50%" .fragment}
+### Tokenization in NLP
+- Tokenization is the process of breaking text into smaller units, often words or sentences.
+- Split text into tokens based on spaces or punctuation.
+
+```{python}
+#| echo: true
+sentence = "Deep Learning and NLP"
+tokens = sentence.split()
+print(tokens)  # Outputs: ['Deep', 'Learning', 'and', 'NLP']
+```
+:::
+:::
+
+---
+
+## String Search
+
+:::{.columns}
+::: {.column width="50%"}
+### Searching in Strings
+- Use `in` or `find()` to search for substrings.
+
+```{python}
+#| echo: true
+text = "machine learning is powerful"
+print("learning" in text)  # Outputs: True
+```
+:::
+::: {.column width="50%" .fragment}
+### NLP: Searching for Keywords
+- In NLP, searching for specific words or phrases is common.
+
+```{python}
+#| echo: true
+text = "Neural networks are part of deep learning"
+keyword = "deep"
+print(text.find(keyword))  # Outputs: 27 (index position)
+```
+
+- Use this for keyword extraction in text analysis.
+:::
+:::
+
+---
+
+## Replacing Substrings
+
+:::{.columns}
+::: {.column width="50%"}
+### Replacing Text
+- The `replace()` method replaces parts of a string.
+
+```{python}
+#| echo: true
+sentence = "I love machine learning"
+sentence = sentence.replace("machine", "deep")
+print(sentence)  # Outputs: I love deep learning
+```
+:::
+::: {.column width="50%" .fragment}
+### NLP Example: Text Replacement
+- In text preprocessing, you may need to replace or correct words.
+
+```{python}
+#| echo: true
+text = "Text analysis with NLP"
+clean_text = text.replace("Text", "Document")
+print(clean_text)  # Outputs: Document analysis with NLP
+```
+
+- This is helpful when cleaning or transforming data.
+:::
+:::
+
+---
+
+## Removing Whitespace and Punctuation
+
+:::{.columns}
+::: {.column width="50%"}
+### Removing Extra Whitespace
+- Use `strip()`, `lstrip()`, or `rstrip()` to remove unwanted spaces.
+
+```{python}
+#| echo: true
+text = "   clean me!   "
+print(text.strip())  # Outputs: "clean me!"
+```
+:::
+::: {.column width="50%" .fragment}
+### Removing Punctuation
+- Use `translate()` to remove punctuation in strings for cleaning.
+
+```{python}
+#| echo: true
+import string
+sentence = "Hello, world!"
+cleaned = sentence.translate(str.maketrans('', '', string.punctuation))
+print(cleaned)  # Outputs: Hello world
+```
+
+- This is common in NLP preprocessing steps.
+:::
+:::
+
+---
+
+## String Formatting
+
+:::{.columns}
+::: {.column width="50%"}
+### Formatting with f-strings
+- Use f-strings for inserting variables into strings.
+
+```{python}
+#| echo: true
+name = "NLP"
+print(f"Welcome to {name} class!")  # Outputs: Welcome to NLP class!
+```
+:::
+::: {.column width="50%" .fragment}
+### NLP Use: Displaying Results
+- Use string formatting to present results clearly.
+
+```{python}
+#| echo: true
+word = "deep learning"
+print(f"The word '{word}' has {len(word)} characters.")
+```
+
+- This is useful for presenting text-based results from NLP models.
+:::
+:::
+
+---
+
+## Summary of String Operations
+
+- **Concatenation**: Joining strings together.
+- **Accessing and slicing**: Extracting characters or parts of a string.
+- **Modifying**: Changing case or replacing parts of the string.
+- **Splitting**: Tokenizing a sentence into words.
+- **Searching**: Finding specific words in text.
+- **Replacing**: Cleaning or transforming text.
+- **Whitespace/Punctuation removal**: Important for cleaning data.

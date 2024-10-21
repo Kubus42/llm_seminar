@@ -1,0 +1,258 @@
+---
+title: "Dictionaries in Python"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Seminar: LLM, WiSe 2024/25"
+        logo: ../../assets/logo.svg
+        slideNumber: true
+        smaller: true
+---
+
+## Dictionaries in Python
+
+:::{.columns}
+::: {.column width="50%"}
+### What Are Dictionaries?
+- A **dictionary** is a powerful data structure for storing data in key-value pairs.
+- Versatile for associating specific values with unique identifiers (e.g., words with definitions).
+- Unordered and mutable, allowing for fast lookups, insertions, and deletions.
+
+```{python}
+#| eval: False
+my_dict = {
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+}
+```
+:::
+::: {.column width="50%" .fragment}
+### Importance in Data Management
+- Ideal for scenarios like user IDs with user data or other associations.
+- Enable efficient organization and retrieval of related data.
+```{python}
+#| echo: true
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+
+print(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York'}
+```
+:::
+:::
+
+---
+
+## Creating a Dictionary
+
+:::{.columns}
+::: {.column width="50%"}
+### Basic Syntax
+- Use curly braces `{}` with key-value pairs separated by colons.
+
+```{python}
+#| echo: true
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+```
+:::
+::: {.column width="50%" .fragment}
+### Explanation
+- Keys and values can be of any data type (strings, integers, other dictionaries).
+- Example dictionary `person` contains keys `"name"`, `"age"`, and `"city"`.
+:::
+:::
+
+---
+
+## Accessing Values in a Dictionary
+
+:::{.columns}
+::: {.column width="50%"}
+### Accessing Values
+- Use square brackets `[]` to retrieve values by their keys.
+
+```{python}
+#| echo: true
+print(person["name"])  # Output: Alice
+print(person["age"])   # Output: 30
+```
+:::
+::: {.column width="50%" .fragment}
+### KeyError Handling
+- Accessing a non-existent key raises a `KeyError`.
+:::
+:::
+
+---
+
+## Modifying a Dictionary
+
+:::{.columns}
+::: {.column width="50%"}
+### Modifying Dictionary Contents
+- Dictionaries are mutable; you can add, modify, or remove key-value pairs.
+
+#### Adding a Key-Value Pair:
+```{python}
+#| echo: true
+person["occupation"] = "Engineer"
+print(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York', 'occupation': 'Engineer'}
+```
+:::
+::: {.column width="50%" .fragment}
+### Modifying Values
+```{python}
+#| echo: true
+person["age"] = 31
+print(person)  # Output: {'name': 'Alice', 'age': 31, 'city': 'New York', 'occupation': 'Engineer'}
+```
+:::
+:::
+
+---
+
+## Dictionary Methods
+
+:::{.columns}
+::: {.column width="50%"}
+### Built-in Methods
+- Python dictionaries have various built-in methods for data manipulation.
+
+#### `get()` Method
+- Returns the value for a specified key, returning `None` if the key doesn't exist.
+
+```{python}
+#| echo: true
+age = person.get("age", "Not Found")
+print(age)  # Output: 31
+```
+:::
+::: {.column width="50%" .fragment}
+### Example with `get()`
+```{python}
+#| echo: true
+location = person.get("city", "Not Found")
+print(location)  # Output: Not Found
+```
+:::
+:::
+
+---
+
+## Dictionary Keys, Values, and Items
+
+:::{.columns}
+::: {.column width="50%"}
+### Keys, Values, and Items Methods
+- Retrieve keys, values, or key-value pairs as needed.
+
+#### `keys()` Method
+```{python}
+#| echo: true
+keys = person.keys()
+print(keys)  # Output: dict_keys(['name', 'age', 'occupation'])
+```
+:::
+::: {.column width="50%" .fragment}
+#### `values()` Method
+```{python}
+#| echo: true
+values = person.values()
+print(values)  # Output: dict_values(['Alice', 31, 'Engineer'])
+```
+:::
+:::
+
+---
+
+## Looping Through a Dictionary
+
+:::{.columns}
+::: {.column width="50%"}
+### Looping Techniques
+- Loop through dictionaries using a `for` loop to access keys or both keys and values.
+
+#### Looping Through Keys
+```{python}
+#| echo: true
+for key in person:
+    print(key)  # Output: name, age, occupation
+```
+:::
+::: {.column width="50%" .fragment}
+#### Looping Through Keys and Values
+```{python}
+#| echo: true
+for key, value in person.items():
+    print(f"{key}: {value}")
+# Output:
+# name: Alice
+# age: 31
+# occupation: Engineer
+```
+:::
+:::
+
+---
+
+## Nesting Dictionaries
+
+:::{.columns}
+::: {.column width="50%"}
+### What Are Nested Dictionaries?
+- Dictionaries can contain other dictionaries, enabling complex data structures.
+
+```{python}
+#| echo: true
+people = {
+    "Alice": {
+        "age": 30,
+        "city": "New York"
+    },
+    "Bob": {
+        "age": 25,
+        "city": "Los Angeles"
+    }
+}
+```
+:::
+::: {.column width="50%" .fragment}
+### Accessing Nested Values
+```{python}
+#| echo: true
+print(people["Alice"]["city"])  # Output: New York
+```
+:::
+:::
+
+---
+
+## Dictionary Comprehensions
+
+:::{.columns}
+::: {.column width="50%"}
+### What Are Dictionary Comprehensions?
+- A concise way to create dictionaries by transforming or filtering data.
+
+#### Syntax
+```python
+{key_expression: value_expression for item in iterable if condition}
+```
+:::
+::: {.column width="50%" .fragment}
+### Example of Dictionary Comprehension
+```{python}
+#| echo: true
+squares = {x: x ** 2 for x in range(5)}
+print(squares)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+```
+:::
+:::

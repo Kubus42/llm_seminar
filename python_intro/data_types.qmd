@@ -1,0 +1,155 @@
+---
+title: "Variables and data types"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+### Introduction
+
+Before diving into complex tasks like natural language processing (NLP) or interacting with APIs, we need to understand the basics of how Python handles data. 
+At the core of any programming language are **variables** and **data types**. 
+Variables allow us to store data, and data types define the kind of data we are working with (like numbers, text, or booleans). 
+In Python, we do not need to explicitly declare the type of a variable – Python figures it out based on what we assign to it.
+
+Let’s take a look at the most important data types in Python, and how we can use them.
+
+
+## Variables
+
+In Python, variables are used to store information that can be referenced or manipulated later. You create a variable by simply assigning a value to it with the `=` operator. Once defined, you can use the variable by referring to its name.
+
+#### Example:
+```{python}
+# Assigning values to variables
+my_number = 10  # an integer
+my_float = 3.14  # a floating-point number
+my_text = "Hello, GPT!"  # a string of text
+is_valid = True  # a boolean (True/False)
+
+# Printing the variables
+print(my_number)   # Output: 10
+print(my_float)    # Output: 3.14
+print(my_text)     # Output: Hello, GPT!
+print(is_valid)    # Output: True
+```
+
+In this example:
+
+- `my_number` is storing an **integer** value (whole number).
+- `my_float` is storing a **floating-point number** (a number with decimal points).
+- `my_text` stores a **string**, which is simply a sequence of characters.
+- `is_valid` is a **boolean**, which can either be `True` or `False`.
+
+
+
+## Data Types
+
+Python recognizes several different data types, but let’s focus on the ones you’ll use the most often for basic NLP tasks:
+
+- **Integers (`int`)**: Whole numbers, like `-1`, `0`, and `100`.
+- **Floats (`float`)**: Numbers with decimal points, like `3.14` or `-0.001`.
+- **Strings (`str`)**: Sequences of characters, like `"OpenAI"` or `"Hello World"`.
+- **Booleans (`bool`)**: True or False values, which are often used in conditional statements.
+
+
+### Working with Numbers (Integers and Floats)
+
+Numbers are straightforward to work with in Python. 
+You can perform basic arithmetic like addition, subtraction, multiplication, and division. 
+The type of number (integer or float) depends on whether it has decimal points.
+
+#### Example:
+```{python}
+# Basic arithmetic operations
+a = 10
+b = 4
+
+sum_result = a + b  # Addition
+difference = a - b  # Subtraction
+product = a * b  # Multiplication
+quotient = a / b  # Division (always returns a float)
+
+print(sum_result)    # Output: 14
+print(difference)    # Output: 6
+print(product)       # Output: 40
+print(quotient)      # Output: 2.5
+```
+
+In this example, `a` and `b` are integers, and we perform basic arithmetic with them. 
+Notice that even though `a` and `b` are integers, the result of division is a float (`2.5`).
+
+
+### Working with Strings
+
+Strings are used to represent text in Python. 
+Strings can be created using single (`'`) or double (`"`) quotes. 
+Python provides a wide range of operations you can perform on strings, like concatenation (joining two strings) or accessing individual characters.
+
+#### Example:
+```{python}
+# Concatenating strings
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name  # Concatenating with a space in between
+print(full_name)  # Output: John Doe
+
+# String interpolation using f-strings
+age = 25
+print(f"My name is {full_name} and I am {age} years old.")
+# Output: My name is John Doe and I am 25 years old.
+```
+
+In the example above:
+- We concatenate the `first_name` and `last_name` strings to form the `full_name`.
+- We also use **f-strings** (a modern and convenient way to insert variables into a string) to print a message with the person’s name and age.
+
+
+
+### Booleans
+
+Booleans represent truth values (`True` or `False`) and are often used to control the flow of programs. 
+They commonly result from comparison operations (e.g., checking if one number is greater than another).
+
+#### Example:
+```{python}
+# Boolean values
+is_student = True
+is_teacher = False
+
+# Comparison operations
+age = 18
+is_adult = age >= 18  # True if age is greater than or equal to 18
+print(is_adult)  # Output: True
+```
+
+Here, we create two boolean variables (`is_student` and `is_teacher`) and then use a comparison (`>=`) to check if `age` qualifies as an adult (the result is stored in `is_adult`).
+
+
+### Checking Data Types
+
+Python allows you to check the type of a variable using the `type()` function. This is useful when you want to confirm what kind of data a variable is holding.
+
+#### Example:
+```{python}
+x = 10
+y = 3.14
+text = "Hello"
+is_python_fun = True
+
+print(type(x))  # Output: <class 'int'>
+print(type(y))  # Output: <class 'float'>
+print(type(text))  # Output: <class 'str'>
+print(type(is_python_fun))  # Output: <class 'bool'>
+```
+
+This will print the type of each variable, helping you understand what type of data each one holds.
+
+Variables and data types are the building blocks of any program. 
+In Python, variables can store different types of data, such as integers, floating-point numbers, strings, and booleans. 
+We’ve seen how to create and manipulate these data types, and how to perform simple operations on them. 
+These concepts will come in handy as we start working with more complex tasks like text processing.
+
+Next, we’ll explore how to manipulate strings further, as handling text is a core part of natural language processing.
+

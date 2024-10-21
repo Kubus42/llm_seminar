@@ -8,7 +8,7 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.551">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>Tokenization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +69,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +83,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -403,7 +403,7 @@
 </section>
 <section id="tokenization" class="slide level2">
 <h2>Tokenization</h2>
-<div id="55f1d863" class="cell" data-execution_count="1">
+<div id="c06828dd" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>sentence <span class="op">=</span> <span class="st">"I love reading science fiction books or books about science."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>&nbsp;</p>
@@ -426,7 +426,7 @@
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div id="a5b3e8ec" class="cell" data-execution_count="2">
+<div id="081d3946" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>tokenized_sentence <span class="op">=</span> sentence.split(<span class="st">" "</span>)</span>
 <span id="cb2-2"><a></a><span class="bu">print</span>(tokenized_sentence)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -437,7 +437,7 @@
 </section>
 <section id="counting-token" class="slide level2">
 <h2>Counting token</h2>
-<div id="a414031c" class="cell" data-execution_count="3">
+<div id="821d8e1c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
@@ -448,7 +448,7 @@
 </div>
 <p>&nbsp;</p>
 <div class="fragment">
-<div id="dfe01ad2" class="cell" data-execution_count="4">
+<div id="94a301a1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>tokenized_sentence <span class="op">=</span> sentence.replace(<span class="st">"."</span>, <span class="st">" "</span>).split(<span class="st">" "</span>)</span>
 <span id="cb6-2"><a></a></span>
 <span id="cb6-3"><a></a>token_counter <span class="op">=</span> Counter(tokenized_sentence)</span>
@@ -461,7 +461,7 @@
 </section>
 <section id="nltk-tokenization" class="slide level2">
 <h2>NLTK tokenization</h2>
-<div id="1319f1bc" class="cell" data-execution_count="5">
+<div id="4193a8d6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> wordpunct_tokenize</span>
 <span id="cb8-2"><a></a><span class="im">from</span> string <span class="im">import</span> punctuation</span>
 <span id="cb8-3"><a></a></span>
@@ -509,7 +509,7 @@
 </section>
 <section id="lemmatization-with-wordnet-nouns" class="slide level2">
 <h2>Lemmatization with WordNet: Nouns</h2>
-<div id="0648adde" class="cell" data-execution_count="6">
+<div id="bddd7f87" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
 <span id="cb10-2"><a></a></span>
 <span id="cb10-3"><a></a>sentence <span class="op">=</span> <span class="st">"The three brothers went over three big bridges"</span></span>
@@ -530,7 +530,7 @@
 </section>
 <section id="lemmatization-with-wordnet-verbs" class="slide level2">
 <h2>Lemmatization with WordNet: Verbs</h2>
-<div id="b08e7d39" class="cell" data-execution_count="7">
+<div id="0cb3f2e0" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>lemmatized_sentence_token <span class="op">=</span> [</span>
 <span id="cb12-2"><a></a>    wnl.lemmatize(w, pos<span class="op">=</span><span class="st">"v"</span>) <span class="cf">for</span> w <span class="kw">in</span> sentence.split(<span class="st">" "</span>)</span>
 <span id="cb12-3"><a></a>]</span>
@@ -545,7 +545,7 @@
 </section>
 <section id="lemmatization-with-wordnet-and-pos-tagging" class="slide level2">
 <h2>Lemmatization with WordNet and POS-tagging</h2>
-<div id="268ae1e0" class="cell" data-execution_count="8">
+<div id="d3fb842c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>pos_dict <span class="op">=</span> {</span>
 <span id="cb14-2"><a></a>  <span class="st">"brothers"</span>: <span class="st">"n"</span>, </span>
 <span id="cb14-3"><a></a>  <span class="st">"went"</span>: <span class="st">"v"</span>,</span>
@@ -631,7 +631,7 @@
 <div class="quarto-auto-generated-content">
 <p><img src="../../assets/logo.svg" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Sprint: LLM, 2024</p>
+<p>Seminar: LLM, WiSe 2024/25</p>
 </div>
 </div>
 </section></section>
@@ -879,18 +879,7 @@
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -922,7 +911,29 @@
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -930,7 +941,7 @@
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

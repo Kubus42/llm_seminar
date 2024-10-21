@@ -1,0 +1,248 @@
+---
+title: "Functions in Python"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Seminar: LLM, WiSe 2024/25"
+        logo: ../../assets/logo.svg
+        slideNumber: true
+        smaller: true
+---
+
+## Functions in Python
+
+:::{.columns}
+::: {.column width="50%"}
+### What Are Functions?
+- Functions are reusable blocks of code that perform specific tasks.
+- They help organize code into manageable parts.
+- Essential for writing modular and maintainable code, especially in NLP.
+
+```{python}
+#| echo: true
+def function_name():
+    # Code to be executed
+    pass
+```
+:::
+::: {.column width="50%" .fragment}
+### Why Use Functions in NLP?
+- Simplify complex processes like data cleaning, preprocessing, and feature extraction.
+- Promote code reusability and clarity, making it easier to manage large projects.
+
+```{python}
+#| echo: true
+def preprocess_text(text):
+    return text.lower()  # Example function to convert text to lowercase
+```
+:::
+:::
+
+---
+
+## Defining Functions
+
+:::{.columns}
+::: {.column width="50%"}
+### Basic Function Definition
+- Use the `def` keyword to define a function.
+- You can pass **arguments** for customization.
+
+```{python}
+#| echo: true
+def greet():
+    print("Hello, welcome to Python!")
+```
+:::
+::: {.column width="50%" .fragment}
+### Example: Calling a Function
+- Call a function by using its name followed by parentheses.
+
+```{python}
+#| echo: true
+greet()  # Output: Hello, welcome to Python!
+```
+:::
+:::
+
+---
+
+## Functions with Arguments
+
+:::{.columns}
+::: {.column width="50%"}
+### Functions with Arguments
+- Accept data inputs to customize behavior.
+
+```{python}
+#| echo: true
+def greet(name):
+    print(f"Hello, {name}!")
+```
+:::
+::: {.column width="50%" .fragment}
+### Example: Custom Greetings
+- Call the function with different arguments.
+
+```{python}
+#| echo: true
+greet("Alice")  # Output: Hello, Alice!
+greet("Bob")    # Output: Hello, Bob!
+```
+:::
+:::
+
+---
+
+## Returning Values from Functions
+
+:::{.columns}
+::: {.column width="50%"}
+### Returning Values
+- Use `return` to send back a value from the function.
+
+```{python}
+#| echo: true
+def add_numbers(a, b):
+    return a + b
+```
+:::
+::: {.column width="50%" .fragment}
+### Example: Storing Returned Values
+- Store the returned value for further use.
+
+```{python}
+#| echo: true
+sum_result = add_numbers(10, 20)
+print(sum_result)  # Output: 30
+```
+:::
+:::
+
+---
+
+## Default Arguments
+
+:::{.columns}
+::: {.column width="50%"}
+### Default Arguments
+- Assign default values to function arguments.
+
+```{python}
+#| echo: true
+def greet(name="there"):
+    print(f"Hello, {name}!")
+```
+:::
+::: {.column width="50%" .fragment}
+### Example: Calling with Default Argument
+- If no argument is provided, the default value is used.
+
+```{python}
+#| echo: true
+greet()         # Output: Hello, there!
+greet("Alice")  # Output: Hello, Alice!
+```
+:::
+:::
+
+---
+
+## Lambda Functions
+
+:::{.columns}
+::: {.column width="50%"}
+### What Are Lambda Functions?
+- Small anonymous functions written in a single line.
+- Useful for simple operations.
+
+```{python}
+#| echo: true
+square_lambda = lambda x: x ** 2
+```
+:::
+::: {.column width="50%" .fragment}
+### Example: Using Lambda Functions
+- Call the lambda function directly.
+
+```{python}
+#| echo: true
+print(square_lambda(5))  # Output: 25
+```
+:::
+:::
+
+---
+
+## Functions and Lists
+
+:::{.columns}
+::: {.column width="50%"}
+### Combining Functions with Lists
+- Use functions to process items in a list efficiently.
+
+```{python}
+#| echo: true
+def square(x):
+    return x ** 2
+
+numbers = [1, 2, 3, 4]
+squares = [square(num) for num in numbers]
+```
+:::
+::: {.column width="50%" .fragment}
+### Output the Results
+- Print the resulting list after processing.
+
+```{python}
+#| echo: true
+print(squares)  # Output: [1, 4, 9, 16]
+```
+:::
+:::
+
+---
+
+## Best Practices with Functions
+
+:::{.columns}
+::: {.column width="50%"}
+### Best Practices
+- Use **descriptive names** for clarity.
+- Keep functions **short** and focused on a single task.
+
+```{python}
+#| echo: true
+def calculate_area(radius):
+    """Calculate the area of a circle."""
+    return 3.14 * radius ** 2
+```
+:::
+::: {.column width="50%" .fragment}
+### Importance of Documentation
+- Write **docstrings** and comments to explain complex functions.
+
+```{python}
+#| echo: true
+def process_data(data):
+    """Process the input data."""
+    # Implementation goes here
+```
+:::
+:::
+
+---
+
+## Summary
+
+:::{.columns}
+::: {.column width="50%"}
+- Functions are essential for modular programming in Python.
+- They improve code readability and maintainability, especially in NLP applications.
+- Combine functions with lists to process collections of data efficiently.
+:::
+::: {.column width="50%" .fragment}
+
+:::
+:::

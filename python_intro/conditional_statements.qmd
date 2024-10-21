@@ -1,0 +1,212 @@
+---
+title: "Conditional Statements"
+format:
+  html:
+    code-fold: false
+jupyter: python3
+---
+
+
+Conditional statements allow you to control the flow of your program based on different conditions. 
+In Python, the most common conditional statement is the **`if` statement**, which lets you execute code only when a certain condition is true. 
+This is essential for decision-making in your programs.
+For example, when working with NLP tasks, you might want to process text differently based on certain conditions, like whether a word is in uppercase, whether a sentence contains a keyword, or whether the length of a string exceeds a certain threshold.
+
+Let’s explore how conditional statements work in Python.
+
+
+
+## The `if` Statement
+
+The `if` statement checks a condition (usually a comparison between values) and executes a block of code if the condition evaluates to **True**. 
+If the condition is **False**, the code inside the `if` block is skipped.
+
+#### **Basic Syntax:**
+```{python}
+#| eval: False
+if condition:
+    # Code to be executed if the condition is True
+    pass
+```
+
+### Example:
+```{python}
+x = 10
+if x > 5:
+    print("x is greater than 5")  # Output: x is greater than 5
+```
+
+In this example, the condition `x > 5` is checked. Since `x` is 10, which is greater than 5, the print statement is executed.
+
+
+
+## The `else` Statement
+
+You can use the `else` statement to define what happens if the condition in the `if` statement is **False**. 
+The `else` block will run when all previous conditions are false.
+
+#### Example:
+```{python}
+x = 3
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is not greater than 5")  # Output: x is not greater than 5
+```
+
+In this example, since `x` is 3 (which is not greater than 5), the `else` block is executed, and the message "x is not greater than 5" is printed.
+
+
+
+## The `elif` Statement
+
+If you want to check multiple conditions, you can use `elif` (short for "else if"). 
+The `elif` statement allows you to test additional conditions if the previous `if` condition was False.
+
+#### Example:
+```{python}
+x = 7
+if x > 10:
+    print("x is greater than 10")
+elif x > 5:
+    print("x is greater than 5 but less than or equal to 10")  # Output: x is greater than 5 but less than or equal to 10
+else:
+    print("x is less than or equal to 5")
+```
+
+In this example, Python first checks if `x > 10`. Since that condition is false, it moves to the `elif` condition (`x > 5`), which is true, so the second block is executed.
+
+
+
+### Using Comparison Operators
+
+In conditional statements, we typically use **comparison operators** to evaluate the relationship between values. 
+Here are some common comparison operators:
+
+- `==`: Equal to
+- `!=`: Not equal to
+- `>`: Greater than
+- `<`: Less than
+- `>=`: Greater than or equal to
+- `<=`: Less than or equal to
+
+#### Example:
+```{python}
+age = 18
+
+if age == 18:
+    print("You are 18 years old")  # Output: You are 18 years old
+if age != 20:
+    print("You are not 20 years old")  # Output: You are not 20 years old
+```
+
+In this example, we use the `==` operator to check if `age` is exactly 18 and the `!=` operator to check if `age` is not 20.
+
+
+
+### Logical Operators
+
+Python also provides **logical operators** to combine multiple conditions:
+
+- `and`: Returns **True** if both conditions are true.
+- `or`: Returns **True** if at least one condition is true.
+- `not`: Inverts the truth value of the condition.
+
+#### Example:
+```{python}
+x = 7
+
+# Using 'and' operator
+if x > 5 and x < 10:
+    print("x is between 5 and 10")  # Output: x is between 5 and 10
+
+# Using 'or' operator
+if x < 5 or x > 6:
+    print("x is either less than 5 or greater than 6")  # Output: x is either less than 5 or greater than 6
+
+# Using 'not' operator
+if not x == 5:
+    print("x is not equal to 5")  # Output: x is not equal to 5
+```
+
+In this example, the `and` operator checks if both conditions (`x > 5` and `x < 10`) are true, the `or` operator checks if at least one condition is true, and the `not` operator inverts the condition, making `x == 5` false.
+
+
+
+### Nested `if` Statements
+
+You can place an `if` statement inside another `if` statement. This is called **nesting** and is useful when you need to check multiple conditions that depend on each other.
+
+#### Example:
+```{python}
+x = 10
+y = 20
+
+if x > 5:
+    if y > 15:
+        print("x is greater than 5 and y is greater than 15")  # Output: x is greater than 5 and y is greater than 15
+```
+
+Here, we first check if `x > 5`. Since this is true, we then check if `y > 15`. Since both conditions are true, the inner block is executed.
+
+
+### Checking Membership with `in` Operator
+
+The `in` operator is used to check if a value is present in a collection like a list, string, or tuple. This is particularly useful in NLP tasks when checking if a word or character exists in a string or list.
+
+#### Example:
+```{python}
+fruits = ["apple", "banana", "cherry"]
+
+if "banana" in fruits:
+    print("Banana is in the list!")  # Output: Banana is in the list!
+
+# Checking a string
+sentence = "Hello world"
+if "world" in sentence:
+    print("The word 'world' is in the sentence.")  # Output: The word 'world' is in the sentence.
+```
+
+In this example, we use the `in` operator to check whether `"banana"` is present in the `fruits` list and if the word `"world"` is in the `sentence`.
+
+
+
+### Combining Conditions in Practical Examples
+
+Let’s take an example where we check whether a user’s input meets certain conditions, like a password validation function.
+
+#### Example:
+```{python}
+password = "Hello123"
+
+if len(password) >= 8 and any(char.isdigit() for char in password):
+    print("Password is valid")
+else:
+    print("Password must be at least 8 characters long and contain a number.")
+# Output: Password is valid
+```
+
+Here, we check two conditions for the password: it should be at least 8 characters long and must contain a number. 
+The function `char.isdigit()` checks if there’s any numeric character in the password.
+
+
+
+### Edge Cases and Handling Errors
+
+When using conditional statements, it’s important to think about edge cases, i.e., situations where input values might behave differently or cause errors. 
+For example, when dealing with empty strings, null values, or division by zero, you should handle these cases appropriately using conditionals.
+
+#### Example:
+```{python}
+# Checking for division by zero
+numerator = 10
+denominator = 0
+
+if denominator != 0:
+    result = numerator / denominator
+    print(result)
+else:
+    print("Cannot divide by zero")  # Output: Cannot divide by zero
+```
+
+In this example, we use a conditional statement to prevent a division by zero error by checking if the denominator is not zero before performing the division.

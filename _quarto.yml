@@ -21,7 +21,7 @@ website:
             url:  https://github.com/Kubus42/llm_seminar
           - text: Report a Bug
             url:  https://github.com/Kubus42/llm_seminar/issues
-    title: "Sprint: Large Language Models"
+    title: "Seminar: Large Language Models"
     left:
       - text: "Seminar"
         file: "index.qmd"
@@ -38,6 +38,24 @@ website:
           contents:
             - index.qmd
             - about/projects.qmd
+
+        - section: "Python Crash Course"
+          contents: 
+            - python_intro/overview.qmd
+            - python_intro/data_types.qmd
+            - python_intro/exercises/data_types.ipynb
+            - python_intro/string_operations.qmd
+            - python_intro/exercises/strings.ipynb
+            - python_intro/lists_and_loops.qmd
+            - python_intro/exercises/lists_and_loops.ipynb
+            - python_intro/functions.qmd
+            - python_intro/exercises/functions.ipynb
+            - python_intro/conditional_statements.qmd
+            - python_intro/exercises/conditional_statements.ipynb
+            - python_intro/dictionaries.qmd
+            - python_intro/exercises/dictionaries.ipynb
+            - python_intro/classes.qmd
+            - python_intro/exercises/classes.ipynb
 
         - section: "Natural Language Processing"
           contents:
@@ -84,6 +102,8 @@ website:
           url: resources/exercises.qmd
         - text: "Language model APIs"
           url: resources/apis.qmd
+        - text: "Slides"
+          url: resources/slides.qmd
             
   page-footer: 
     right: "Copyright 2024, Julian Rasch" 

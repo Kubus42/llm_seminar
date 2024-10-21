@@ -1,0 +1,293 @@
+---
+title: "Lists and Loops in Python"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Seminar: LLM, WiSe 2024/25"
+        logo: ../../assets/logo.svg
+        slideNumber: true
+        smaller: true
+---
+
+## Lists in Python
+
+:::{.columns}
+::: {.column width="50%"}
+### What Are Lists?
+- A **list** is an ordered collection of items.
+- Items can be any data type: numbers, strings, or other lists.
+- Lists are **mutable**, meaning you can modify them after creation.
+
+```{python}
+#| echo: true
+fruits = ["apple", "banana", "cherry"]
+print(fruits)
+```
+:::
+::: {.column width="50%" .fragment}
+### Why Use Lists in NLP?
+- Lists can store words, sentences, or entire texts.
+- NLP tasks often require managing large datasets of tokens or documents.
+
+```{python}
+#| echo: true
+sentence = "Natural language processing is fun"
+tokens = sentence.split()  # Tokenize sentence into words
+print(tokens)
+```
+:::
+:::
+
+---
+
+## Accessing List Elements
+
+:::{.columns}
+::: {.column width="50%"}
+### Indexing
+- Access list elements using **indexing**.
+- Python indexing starts at `0`.
+
+```{python}
+#| echo: true
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # Outputs: apple
+print(fruits[1])  # Outputs: banana
+```
+:::
+::: {.column width="50%" .fragment}
+### Negative Indexing
+- Negative indexing starts from the end of the list.
+
+```{python}
+#| echo: true
+print(fruits[-1])  # Outputs: cherry (last element)
+```
+
+- Useful for quickly accessing the last few elements of a list.
+:::
+:::
+
+---
+
+## Modifying Lists
+
+:::{.columns}
+::: {.column width="50%"}
+### Changing Elements
+- Modify a list by assigning a new value at a specific index.
+
+```{python}
+#| echo: true
+fruits = ["apple", "banana", "cherry"]
+fruits[1] = "blueberry"  # Replacing 'banana'
+print(fruits)
+```
+:::
+::: {.column width="50%" .fragment}
+### Real-World NLP Use
+- You might replace tokens or correct errors in a tokenized sentence.
+
+```{python}
+#| echo: true
+tokens = ["NLP", "is", "coool"]
+tokens[2] = "cool"  # Fix typo
+print(tokens)
+```
+:::
+:::
+
+---
+
+## Adding and Removing Elements
+
+:::{.columns}
+::: {.column width="50%"}
+### Adding Elements
+- Use `.append()` to add items to the end of the list.
+
+```{python}
+#| echo: true
+fruits = ["apple", "banana"]
+fruits.append("cherry")
+print(fruits)
+```
+:::
+::: {.column width="50%" .fragment}
+### Removing Elements
+- Use `.remove()` to delete specific items.
+
+```{python}
+#| echo: true
+fruits.remove("banana")
+print(fruits)
+```
+
+- Lists are flexible, allowing easy manipulation in NLP tasks.
+:::
+:::
+
+---
+
+## List Operations: Length, Sorting, and Checking
+
+:::{.columns}
+::: {.column width="50%"}
+### List Length
+- Use `len()` to find the number of elements in a list.
+
+```{python}
+#| echo: true
+fruits = ["banana", "cherry", "apple"]
+print(len(fruits))
+```
+:::
+::: {.column width="50%" .fragment}
+### Sorting and Checking Elements
+- Use `.sort()` to sort the list.
+- Use `in` to check if an item exists in a list.
+
+```{python}
+#| echo: true
+fruits.sort()
+print(fruits)
+
+print("apple" in fruits)
+print("grape" in fruits)
+```
+:::
+:::
+
+---
+
+## Loops in Python
+
+:::{.columns}
+::: {.column width="50%"}
+### What Are Loops?
+- Loops help you iterate over a list and perform actions on each element.
+- Commonly used in NLP for tasks like text processing.
+
+```{python}
+#| echo: true
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+```
+:::
+::: {.column width="50%" .fragment}
+### Real-World NLP Example
+- Tokenizing and processing text using loops.
+
+```{python}
+#| echo: true
+tokens = ["NLP", "is", "fun"]
+for token in tokens:
+    print(token)
+```
+:::
+:::
+
+---
+
+## Using Loops for Simple Operations
+
+:::{.columns}
+::: {.column width="50%"}
+### Squaring Numbers in a List
+- Loops allow you to apply operations to list elements.
+
+```{python}
+#| echo: true
+numbers = [1, 2, 3, 4]
+squares = []
+for number in numbers:
+    squares.append(number ** 2)
+
+print(squares)
+```
+:::
+::: {.column width="50%" .fragment}
+### NLP Example: Word Length Calculation
+- Use loops to calculate the length of each word in a sentence.
+
+```{python}
+#| echo: true
+tokens = ["NLP", "is", "great"]
+for token in tokens:
+    print(f"{token}: {len(token)} characters")
+```
+:::
+:::
+
+---
+
+## Looping with `range()`
+
+:::{.columns}
+::: {.column width="50%"}
+### Using `range()`
+- Sometimes you need to iterate a set number of times.
+- `range()` generates a sequence of numbers.
+
+```{python}
+#| echo: true
+for i in range(5):
+    print(i)
+```
+:::
+::: {.column width="50%" .fragment}
+### Combining `range()` with Lists
+- Use `range()` to loop over list indices, allowing more control.
+
+```{python}
+#| echo: true
+fruits = ["apple", "banana", "cherry"]
+for i in range(len(fruits)):
+    print(f"Index {i}: {fruits[i]}")
+```
+:::
+:::
+
+---
+
+## Common List Methods
+
+:::{.columns}
+::: {.column width="50%"}
+### Adding and Removing Elements
+- `.append()`: Adds an item to the end.
+- `.remove()`: Removes a specific item.
+
+```{python}
+#| echo: true
+fruits.append("orange")
+fruits.remove("banana")
+print(fruits)
+```
+:::
+::: {.column width="50%" .fragment}
+### Inserting and Popping Elements
+- `.insert()`: Inserts an item at a specific index.
+- `.pop()`: Removes and returns the last item or the item at a specific index.
+
+```{python}
+#| echo: true
+fruits.insert(1, "blueberry")
+print(fruits)
+
+last_fruit = fruits.pop()
+print(fruits)
+```
+:::
+:::
+
+---
+
+## Summary: Lists and Loops
+
+- **Lists**: Allow you to store and manipulate multiple elements, useful in NLP for text processing.
+- **Loops**: Help automate repetitive tasks and process list elements.
+- You can easily modify, sort, and check elements within lists.
+- Loops and lists combined allow for efficient handling of data in Python, especially in NLP.

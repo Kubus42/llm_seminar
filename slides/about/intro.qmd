@@ -1,12 +1,22 @@
 ---
-title: "Sprint: Large Language Models"
+title: "Seminar: Large Language Models"
 format: 
     revealjs:
         theme: default
         chalkboard: true
-        footer: "Sprint: LLM, 2024"
+        footer: "Seminar: LLM, WiSe 2024/25"
         logo: ../../assets/logo.svg
 ---
+
+## Why should I be here?
+
+::: {.incremental}
+- Understand how LLMs work and where their limitations are! 
+- Learn how to automate tasks with a language model
+- Learn how to process large data amounts with a language model
+- Learn how to use a large language model in a product
+:::
+
 
 ## About the seminar
 - Roughly divided into 3 parts: **theory**, **training**, and **application**
@@ -30,14 +40,29 @@ format:
   - Small application involving a language model
 
 
-## Goal
-- 4-day introduction to language models
-- Aim: Simple overview to start working with language model APIs
-- Understand basics, know how to apply in own applications
+## Intended learning outcomes (Part 1)
+- Understand the basics of natural language processing, including its tasks and challenges
+- Understand the general concept of LLMs and why it makes the above so much easier
+- Write simple Python programs / scripts and use basic data and control structures
+
+
+## Intended learning outcomes (Part 2)
+- Access an LLM via the OpenAI API and how to work with the result
+- Understand the concept of text embeddings and use them via the OpenAI API
+- Understand why and how LLMs can be used for process automation
+- Use an LLM in a small application
+
 - **Have fun!**
 
 
 ## Content 1
+- Short introduction to Programming in Python **in the context** of Natural Language Processing and Large Language Models
+  - Basics (Syntax, Variables, Data Types, Conditional Statements etc.)
+  - Lists & Loops 
+  - Dictionaries & Classes
+
+
+## Content 2
 - Quick overview of classic NLP 
   - Text processing (Tokenization, Lemmatization, etc.)
   - Applications (Classification, Sentiment Analysis, Matching, etc.)
@@ -46,7 +71,7 @@ format:
   - Text processing with neural networks
   - Sequence generation & language modeling
 
-## Content 2
+## Content 3
 - Introduction to the OpenAI API
   - Prompting
   - Parameterization
@@ -56,34 +81,27 @@ format:
   - Visualization & Clustering
 - (Ethics & Privacy)
 
+
 # The schedule
 
-## Day 1 (24.04.2024):
-- Getting to know each other + intro survey (experiences & expectations) (1h)
-- Learning goals & final evaluation criteria (0.5h)
-- Introduction & overview of the topic (0.5h)
-- Introduction to natural language processing & setup of the development environment (4h)
-- Introduction to LLM & getting to know the OpenAI API: Part 1 (2h)
+---
 
-## Day 2 (25.04.2024):
-- Introduction to LLM & getting to know the OpenAI API: Part 2 (3h)
-- Prompting (1h)
-- Embeddings (2h)
-- Group brainstorming session: Designing a simple app concept involving GPT (2h)
-  
-→ At home until next week: refine project ideas (1h)
+- **Today**: Intro & Getting to know each other & Survey (experiences & expectations) & Learning goals & Evaluation criteria
+- Introduction to the general topic & Python & Jupyter 
+- Introduction NLP (tokenization, matching, statistical analysis)
+- Introduction to LLM & OpenAI API
+- Prompting
+- Embeddings
 
-## Day 3 (30.04.2024):
-- Advanced GPT-related topics (1h)
-- Business-related topics (1h)
-- Team building for hackathon → develop app concepts (1h)
-- Work on prototypes (5h)
+--- 
 
-## Day 4 (02.05.2024):
-- Final touches for the prototypes (3h)
-- Presentation of app prototypes, peer feedback & evaluation (2h)
-- Reflections on the seminar (1h)
-- Ethics & data privacy considerations (backup)
+- Advanced GPT topics (image data, parameterization, tool calling)
+- Real-world examples of applications (& implementation) & limitations
+- *App concept & Group brainstorming*
+- *Project work on prototype & mentoring*
+- *Project presentations* & reflections on the seminar
+- Backup: Ethics and data privacy 
+
 
 ## After the seminar (~1d):
 - Prototype refinement

@@ -1,0 +1,228 @@
+---
+title: "Classes in Python"
+format: 
+    revealjs:
+        theme: default
+        chalkboard: true
+        footer: "Seminar: LLM, WiSe 2024/25"
+        logo: ../../assets/logo.svg
+        slideNumber: true
+        smaller: true
+---
+
+## Introduction to Classes
+
+:::{.columns}
+::: {.column width="50%"}
+### What Are Classes?
+- Classes are a core concept in **object-oriented programming (OOP)**.
+- They allow the creation of custom data types that combine **attributes** (data) and **methods** (functionality).
+
+### Key Benefits
+- Model real-world entities.
+- Promote code reusability.
+- Enhance organization and modularity of programs.
+:::
+::: {.column width="50%" .fragment}
+### Overview
+- A class serves as a blueprint for creating objects, encapsulating shared attributes and behaviors.
+
+```{python}
+#| eval: False
+class ClassName:
+    # Class attributes and methods go here
+    pass
+```
+:::
+:::
+
+---
+
+## Defining a Class
+
+:::{.columns}
+::: {.column width="50%"}
+### Basic Syntax
+- Use the `class` keyword followed by the class name (CamelCase convention).
+
+```{python}
+#| echo: true
+class Text:
+    pass
+
+# Creating an instance of the Text class
+my_text = Text()
+print(my_text)  # Output: <__main__.Text object at 0x...>
+```
+:::
+::: {.column width="50%" .fragment}
+### Explanation
+- Defined a simple class named `Text` and created an instance stored in `my_text`.
+:::
+:::
+
+---
+
+## Adding Attributes and Methods
+
+:::{.columns}
+::: {.column width="50%"}
+### Attributes and Methods
+- **Attributes** are variables belonging to the class.
+- **Methods** are functions defined within the class that manipulate attributes or perform actions.
+
+### Initializing Attributes
+- Use the `__init__()` method to initialize attributes during object creation.
+
+:::
+::: {.column width="50%" .fragment}
+### Example with Methods
+```{python}
+#| echo: true
+
+class Text:
+    def __init__(self, content):
+        self.content = content  # Instance attribute
+    
+    def word_count(self):  # Method
+        return len(self.content.split())
+
+    def shout(self):  # Another method
+        result = self.content.upper()
+        result = result.replace(".", "!")
+        return result
+
+my_text = Text("Hello, World! This is a test.")
+print(my_text.word_count())  # Output: 6
+print(my_text.shout())  # Output: HELLO, WORLD! THIS IS A TEST!
+```
+:::
+:::
+
+---
+
+## Accessing Attributes and Methods
+
+:::{.columns}
+::: {.column width="50%"}
+### Accessing Attributes
+- Use dot notation to access attributes and methods of a class instance.
+
+```{python}
+#| echo: true
+print(my_text.content)  # Output: Hello, World! This is a test.
+```
+:::
+::: {.column width="50%" .fragment}
+### Explanation
+- Accessed the `content` attribute of `my_text` using dot notation.
+:::
+:::
+
+---
+
+## Class vs. Instance Attributes
+
+:::{.columns}
+::: {.column width="50%"}
+### Class vs. Instance Attributes
+- **Instance attributes** are defined in `__init__()` and belong to a specific instance.
+- **Class attributes** are shared by all instances and defined directly in the class body.
+
+#### Example:
+```{python}
+#| echo: true
+class Text:
+    language = "English"  # Class attribute
+
+    def __init__(self, content):
+        self.content = content  # Instance attribute
+```
+:::
+::: {.column width="50%" .fragment}
+### Accessing Class Attributes
+```{python}
+#| echo: true
+text1 = Text("Hello, World!")
+text2 = Text("Bonjour, le monde!")
+
+print(text1.language)  # Output: English
+print(text2.language)  # Output: English
+```
+:::
+:::
+
+---
+
+## Changing Class Attributes
+
+:::{.columns}
+::: {.column width="50%"}
+### Changing Class Attributes
+- Modifying a class attribute affects all instances.
+
+```{python}
+#| echo: true
+Text.language = "French"
+print(text1.language)  # Output: French
+```
+:::
+::: {.column width="50%" .fragment}
+### Explanation
+- Changing `Text.language` affects all instances of the class.
+:::
+:::
+
+---
+
+## Inheritance
+
+:::{.columns}
+::: {.column width="50%"}
+### What Is Inheritance?
+- Inheritance allows creating a new class that inherits attributes and methods from an existing class.
+- Promotes code reuse and enables class hierarchies.
+
+#### Example:
+```{python}
+#| echo: true
+class Text:
+    def __init__(self, content):
+        self.content = content
+
+class FormattedText(Text):  # Derived class
+    def __init__(self, content, format_type):
+        super().__init__(content)  # Call the parent class's constructor
+```
+:::
+::: {.column width="50%" .fragment}
+### Extending Functionality
+```{python}
+#| echo: true
+#| eval: false
+    def display(self):
+        return f"[{self.format_type}] {self.content}"
+
+# Creating instances
+my_text = Text("Hello, World!")
+formatted_text = FormattedText("Hello, World!", "Bold")
+
+print(my_text.word_count())  # Output: 2
+print(formatted_text.display())  # Output: [Bold] Hello, World!
+```
+:::
+:::
+
+---
+
+## Key Takeaways
+
+:::{.columns}
+::: {.column width="50%"}
+- Classes encapsulate data and functionality.
+- Attributes can be instance-specific or shared across instances.
+- Inheritance enables the creation of new classes based on existing ones, promoting reusability.
+:::
+::: {.column width="50%" .fragment}
+:::
+:::

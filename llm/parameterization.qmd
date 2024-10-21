@@ -36,9 +36,9 @@ In this case, an example is better than any explanation.
 
 ```{python}
 import os
-from llm_utils.client import get_openai_client
+from llm_utils.client import get_openai_client, OpenAIModels
 
-MODEL = "gpt4"
+MODEL = OpenAIModels.GPT_4o.value
 
 client = get_openai_client(
     model=MODEL,
