@@ -737,7 +737,7 @@
     "href": "python_intro/exercises/lists_and_loops.html",
     "title": "Exercise: Lists and Loops",
     "section": "",
-    "text": "Task: Write a function that counts the total number of vowels in a list of words.\nInstructions:\n\nDefine a function called count_vowels(word_list) that takes a list of strings word_list.\nInside the function, loop through each word in the list, count the vowels (a, e, i, o, u) in each word, and keep a running total.\nReturn the total count of vowels.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\"]) and print the result.\n\n\n\nShow solution\n\n\ndef count_vowels(word_list):\n    vowels = 'aeiouAEIOU'\n    total_vowels = 0\n\n    for word in word_list:\n        for char in word:\n            if char in vowels:\n                total_vowels += 1\n                \n    return total_vowels\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\"]\nresult = count_vowels(words)\nprint(\"Total number of vowels:\", result)  \n\nTotal number of vowels: 2",
+    "text": "Task: Create a list of 5 of your favorite movies and write a loop to print each movie.\nInstructions:\n\nCreate a list named movies with 5 movie titles.\nWrite a for loop that iterates over the list and prints each movie.\n\n\n\nShow solution\n\n\nmovies = [\"Inception\", \"The Matrix\", \"Interstellar\", \"The Shawshank Redemption\", \"The Godfather\"]\nfor movie in movies:\n    print(movie)\n\nInception\nThe Matrix\nInterstellar\nThe Shawshank Redemption\nThe Godfather",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -745,11 +745,11 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-1-count-vowels-in-a-list-of-words",
-    "href": "python_intro/exercises/lists_and_loops.html#exercise-1-count-vowels-in-a-list-of-words",
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-1-printing-elements-of-a-list",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-1-printing-elements-of-a-list",
     "title": "Exercise: Lists and Loops",
     "section": "",
-    "text": "Task: Write a function that counts the total number of vowels in a list of words.\nInstructions:\n\nDefine a function called count_vowels(word_list) that takes a list of strings word_list.\nInside the function, loop through each word in the list, count the vowels (a, e, i, o, u) in each word, and keep a running total.\nReturn the total count of vowels.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\"]) and print the result.\n\n\n\nShow solution\n\n\ndef count_vowels(word_list):\n    vowels = 'aeiouAEIOU'\n    total_vowels = 0\n\n    for word in word_list:\n        for char in word:\n            if char in vowels:\n                total_vowels += 1\n                \n    return total_vowels\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\"]\nresult = count_vowels(words)\nprint(\"Total number of vowels:\", result)  \n\nTotal number of vowels: 2",
+    "text": "Task: Create a list of 5 of your favorite movies and write a loop to print each movie.\nInstructions:\n\nCreate a list named movies with 5 movie titles.\nWrite a for loop that iterates over the list and prints each movie.\n\n\n\nShow solution\n\n\nmovies = [\"Inception\", \"The Matrix\", \"Interstellar\", \"The Shawshank Redemption\", \"The Godfather\"]\nfor movie in movies:\n    print(movie)\n\nInception\nThe Matrix\nInterstellar\nThe Shawshank Redemption\nThe Godfather",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -757,11 +757,11 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-2-filter-long-words",
-    "href": "python_intro/exercises/lists_and_loops.html#exercise-2-filter-long-words",
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-2-summing-numbers-in-a-list",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-2-summing-numbers-in-a-list",
     "title": "Exercise: Lists and Loops",
-    "section": "Exercise 2: Filter Long Words",
-    "text": "Exercise 2: Filter Long Words\nTask: Create a function that filters out words longer than a specified length from a list.\nInstructions:\n\nDefine a function called filter_long_words(word_list, length) that takes a list of strings word_list and an integer length.\nInside the function, use a loop to create a new list that contains only the words from the original list that have a length less than or equal to length.\nReturn the new list.\nCall the function with a sample list and a length (e.g., [\"Natural\", \"Language\", \"Processing\", \"is\", \"fun\"], length=4) and print the result.\n\n\n\nShow solution\n\n\ndef filter_long_words(word_list, length):\n    short_words = []\n    \n    for word in word_list:\n        if len(word) &lt;= length:\n            short_words.append(word)\n    \n    return short_words\n\n# Sample usage\nwords = [\"Natural\", \"Language\", \"Processing\", \"is\", \"fun\"]\nresult = filter_long_words(words, 4)\nprint(\"Filtered words:\", result)  \n\nFiltered words: ['is', 'fun']",
+    "section": "Exercise 2: Summing Numbers in a List",
+    "text": "Exercise 2: Summing Numbers in a List\nTask: Create a list of numbers and write a loop to calculate and print the sum of all numbers in the list.\nInstructions:\n\nCreate a list named numbers with at least 5 integer values.\nUse a loop to iterate over the list and calculate the sum.\nPrint the sum after the loop completes.\n\n\n\nShow solution\n\n\nnumbers = [10, 20, 30, 40, 50]\ntotal_sum = 0\nfor num in numbers:\n    total_sum += num # Or: total_sum = total_sum + num\n\nprint(\"The total sum is:\", total_sum)  # Output: The total sum is: 150\n\nThe total sum is: 150",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -769,11 +769,11 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-3-create-a-word-frequency-dictionary",
-    "href": "python_intro/exercises/lists_and_loops.html#exercise-3-create-a-word-frequency-dictionary",
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-3-counting-number-of-characters-in-a-list-of-words",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-3-counting-number-of-characters-in-a-list-of-words",
     "title": "Exercise: Lists and Loops",
-    "section": "Exercise 3: Create a Word Frequency Dictionary",
-    "text": "Exercise 3: Create a Word Frequency Dictionary\nTask: Write a function that creates a frequency dictionary from a list of words.\nInstructions:\n\nDefine a function called word_frequency(word_list) that takes a list of strings word_list.\nInside the function, use a loop to create a dictionary where the keys are the words and the values are the number of times each word appears in the list.\nReturn the frequency dictionary.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\", \"NLP\"]) and print the result.\n\n\n\nShow solution\n\n\ndef word_frequency(word_list):\n    frequency_dict = {}\n\n    for word in word_list:\n        if word in frequency_dict:\n            frequency_dict[word] += 1\n        else:\n            frequency_dict[word] = 1\n            \n    return frequency_dict\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\", \"NLP\"]\nresult = word_frequency(words)\nprint(\"Word frequency:\", result)  \n\nWord frequency: {'NLP': 2, 'is': 1, 'fun': 1}",
+    "section": "Exercise 3: Counting Number of Characters in a List of Words",
+    "text": "Exercise 3: Counting Number of Characters in a List of Words\nTask: Create a list of words and write a loop to count how many characters (i.e., letters) the list contains in total. Print the count.\nInstructions:\n\nCreate a list named words with several words.\nWrite a loop to iterate through the list and count the letters of each word using the function len(). Sum the count.\nPrint the count.\n\n\n\nShow solution\n\n\nwords = [\"Python\", \"code\", \"Python\", \"learning\", \"tutorial\", \"Python\"]\ncount = 0\nfor word in words:\n    count += len(word)\n\nprint(f\"The list contains a total of {count} characters.\")\n\nThe list contains a total of 38 characters.",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -781,11 +781,59 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-4-reverse-each-word-in-a-list",
-    "href": "python_intro/exercises/lists_and_loops.html#exercise-4-reverse-each-word-in-a-list",
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-4-doubling-elements-of-a-list",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-4-doubling-elements-of-a-list",
     "title": "Exercise: Lists and Loops",
-    "section": "Exercise 4: Reverse Each Word in a List",
-    "text": "Exercise 4: Reverse Each Word in a List\nTask: Create a function that reverses each word in a list.\nInstructions:\n\nDefine a function called reverse_words(word_list) that takes a list of strings word_list.\nInside the function, use a loop to create a new list that contains each word reversed.\nReturn the new list.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\"]) and print the result.\n\n\n\nShow solution\n\n\ndef reverse_words(word_list):\n    reversed_list = []\n    \n    for word in word_list:\n        reversed_list.append(word[::-1])\n    \n    return reversed_list\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\"]\nresult = reverse_words(words)\nprint(\"Reversed words:\", result) \n\nReversed words: ['PLN', 'si', 'nuf']",
+    "section": "Exercise 4: Doubling Elements of a List",
+    "text": "Exercise 4: Doubling Elements of a List\nTask: Create a loop that doubles each number in a list and prints the new list.\nInstructions:\n\nCreate a list named numbers with some integer values.\nUse a loop to create a new list doubled_numbers where each element is double the corresponding element in numbers.\nPrint the new list.\n\n\n\nShow solution\n\n\nnumbers = [1, 3, 5, 7, 9]\ndoubled_numbers = []\nfor num in numbers:\n    doubled_numbers.append(num * 2)\n\nprint(doubled_numbers)  # Output: [2, 6, 10, 14, 18]\n\n[2, 6, 10, 14, 18]",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Lists and Loops"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-5-count-vowels-in-a-list-of-words",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-5-count-vowels-in-a-list-of-words",
+    "title": "Exercise: Lists and Loops",
+    "section": "Exercise 5: Count Vowels in a List of Words",
+    "text": "Exercise 5: Count Vowels in a List of Words\nTask: Write a function that counts the total number of vowels in a list of words.\nInstructions:\n\nDefine a function called count_vowels(word_list) that takes a list of strings word_list.\nInside the function, loop through each word in the list, count the vowels (a, e, i, o, u) in each word, and keep a running total.\nReturn the total count of vowels.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\"]) and print the result.\n\n\n\nShow solution\n\n\ndef count_vowels(word_list):\n    vowels = 'aeiouAEIOU'\n    total_vowels = 0\n\n    for word in word_list:\n        for char in word:\n            if char in vowels:\n                total_vowels += 1\n                \n    return total_vowels\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\"]\nresult = count_vowels(words)\nprint(\"Total number of vowels:\", result)  \n\nTotal number of vowels: 2",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Lists and Loops"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-6-filter-long-words",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-6-filter-long-words",
+    "title": "Exercise: Lists and Loops",
+    "section": "Exercise 6: Filter Long Words",
+    "text": "Exercise 6: Filter Long Words\nTask: Create a function that filters out words longer than a specified length from a list.\nInstructions:\n\nDefine a function called filter_long_words(word_list, length) that takes a list of strings word_list and an integer length.\nInside the function, use a loop to create a new list that contains only the words from the original list that have a length less than or equal to length.\nReturn the new list.\nCall the function with a sample list and a length (e.g., [\"Natural\", \"Language\", \"Processing\", \"is\", \"fun\"], length=4) and print the result.\n\n\n\nShow solution\n\n\ndef filter_long_words(word_list, length):\n    short_words = []\n    \n    for word in word_list:\n        if len(word) &lt;= length:\n            short_words.append(word)\n    \n    return short_words\n\n# Sample usage\nwords = [\"Natural\", \"Language\", \"Processing\", \"is\", \"fun\"]\nresult = filter_long_words(words, 4)\nprint(\"Filtered words:\", result)  \n\nFiltered words: ['is', 'fun']",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Lists and Loops"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-7-create-a-word-frequency-dictionary",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-7-create-a-word-frequency-dictionary",
+    "title": "Exercise: Lists and Loops",
+    "section": "Exercise 7: Create a Word Frequency Dictionary",
+    "text": "Exercise 7: Create a Word Frequency Dictionary\nTask: Write a function that creates a frequency dictionary from a list of words.\nInstructions:\n\nDefine a function called word_frequency(word_list) that takes a list of strings word_list.\nInside the function, use a loop to create a dictionary where the keys are the words and the values are the number of times each word appears in the list.\nReturn the frequency dictionary.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\", \"NLP\"]) and print the result.\n\n\n\nShow solution\n\n\ndef word_frequency(word_list):\n    frequency_dict = {}\n\n    for word in word_list:\n        if word in frequency_dict:\n            frequency_dict[word] += 1\n        else:\n            frequency_dict[word] = 1\n            \n    return frequency_dict\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\", \"NLP\"]\nresult = word_frequency(words)\nprint(\"Word frequency:\", result)  \n\nWord frequency: {'NLP': 2, 'is': 1, 'fun': 1}",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Lists and Loops"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/lists_and_loops.html#exercise-8-reverse-each-word-in-a-list",
+    "href": "python_intro/exercises/lists_and_loops.html#exercise-8-reverse-each-word-in-a-list",
+    "title": "Exercise: Lists and Loops",
+    "section": "Exercise 8: Reverse Each Word in a List",
+    "text": "Exercise 8: Reverse Each Word in a List\nTask: Create a function that reverses each word in a list.\nInstructions:\n\nDefine a function called reverse_words(word_list) that takes a list of strings word_list.\nInside the function, use a loop to create a new list that contains each word reversed.\nReturn the new list.\nCall the function with a sample list (e.g., [\"NLP\", \"is\", \"fun\"]) and print the result.\n\n\n\nShow solution\n\n\ndef reverse_words(word_list):\n    reversed_list = []\n    \n    for word in word_list:\n        reversed_list.append(word[::-1])\n    \n    return reversed_list\n\n# Sample usage\nwords = [\"NLP\", \"is\", \"fun\"]\nresult = reverse_words(words)\nprint(\"Reversed words:\", result) \n\nReversed words: ['PLN', 'si', 'nuf']",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -881,7 +929,7 @@
     "href": "python_intro/exercises/conditional_statements.html",
     "title": "Exercise: Conditional Statements",
     "section": "",
-    "text": "Task: Write a function that checks if a given word is a palindrome.\nInstructions:\n\nDefine a function called is_palindrome(word) that takes a string parameter word.\nInside the function, use conditional statements to check if the word is the same when reversed.\nReturn True if it is a palindrome and False otherwise.\nCall the function with a sample word (e.g., “radar”) and print the result.\n\n\n\nShow solution\n\n\ndef is_palindrome(word):\n    return word == word[::-1]\n\n# Sample usage\nresult = is_palindrome(\"radar\")\nprint(\"Is 'radar' a palindrome?\", result)  \n\nIs 'radar' a palindrome? True",
+    "text": "Task: Write a code snippet that checks if a specific word is present in a given text.\nInstructions:\n\nUse the in operator to check if the word “language” is in the text.\nPrint a message indicating whether the word was found or not.\n\n\n\nShow solution\n\n\ntext = \"Natural language processing is fascinating.\"\nif \"language\" in text:\n    print(\"The word 'language' is present in the text.\")\nelse:\n    print(\"The word 'language' is not present in the text.\")\n\nThe word 'language' is present in the text.",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -889,11 +937,11 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/conditional_statements.html#exercise-1-check-palindrome",
-    "href": "python_intro/exercises/conditional_statements.html#exercise-1-check-palindrome",
+    "objectID": "python_intro/exercises/conditional_statements.html#exercise-1-check-word-presence",
+    "href": "python_intro/exercises/conditional_statements.html#exercise-1-check-word-presence",
     "title": "Exercise: Conditional Statements",
     "section": "",
-    "text": "Task: Write a function that checks if a given word is a palindrome.\nInstructions:\n\nDefine a function called is_palindrome(word) that takes a string parameter word.\nInside the function, use conditional statements to check if the word is the same when reversed.\nReturn True if it is a palindrome and False otherwise.\nCall the function with a sample word (e.g., “radar”) and print the result.\n\n\n\nShow solution\n\n\ndef is_palindrome(word):\n    return word == word[::-1]\n\n# Sample usage\nresult = is_palindrome(\"radar\")\nprint(\"Is 'radar' a palindrome?\", result)  \n\nIs 'radar' a palindrome? True",
+    "text": "Task: Write a code snippet that checks if a specific word is present in a given text.\nInstructions:\n\nUse the in operator to check if the word “language” is in the text.\nPrint a message indicating whether the word was found or not.\n\n\n\nShow solution\n\n\ntext = \"Natural language processing is fascinating.\"\nif \"language\" in text:\n    print(\"The word 'language' is present in the text.\")\nelse:\n    print(\"The word 'language' is not present in the text.\")\n\nThe word 'language' is present in the text.",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -901,11 +949,11 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/conditional_statements.html#exercise-2-categorize-word-length",
-    "href": "python_intro/exercises/conditional_statements.html#exercise-2-categorize-word-length",
+    "objectID": "python_intro/exercises/conditional_statements.html#exercise-2-classify-text-length",
+    "href": "python_intro/exercises/conditional_statements.html#exercise-2-classify-text-length",
     "title": "Exercise: Conditional Statements",
-    "section": "Exercise 2: Categorize Word Length",
-    "text": "Exercise 2: Categorize Word Length\nTask: Create a function that categorizes a word as short, medium, or long based on its length.\nInstructions:\n\nDefine a function called categorize_word_length(word) that takes a string parameter word.\nInside the function, use conditional statements to categorize the word based on the following criteria:\n\nShort: 1-3 letters\nMedium: 4-6 letters\nLong: More than 6 letters\n\nReturn the category as a string.\nCall the function with a sample word (e.g., “NLP”) and print the result.\n\n\n\nShow solution\n\n\ndef categorize_word_length(word):\n    length = len(word)\n    \n    if length &lt;= 3:\n        return \"Short\"\n    elif 4 &lt;= length &lt;= 6:\n        return \"Medium\"\n    else:\n        return \"Long\"\n\n# Sample usage\nresult = categorize_word_length(\"NLP\")",
+    "section": "Exercise 2: Classify Text Length",
+    "text": "Exercise 2: Classify Text Length\nTask: Write a code snippet that classifies the length of the text as “short”, “medium”, or “long”.\nInstructions:\n\nUse conditional statements to classify the text based on its length:\n\nShort: less than 20 characters\nMedium: between 20 and 100 characters\nLong: more than 100 characters\n\nPrint a message indicating the classification.\n\n\n\nShow solution\n\n\ntext = \"Natural language processing.\"\nlength = len(text)\n\nif length &lt; 20:\n    print(\"The text is short.\")\nelif 20 &lt;= length &lt;= 100:\n    print(\"The text is medium.\")\nelse:\n    print(\"The text is long.\")\n\nThe text is medium.",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -913,11 +961,47 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/conditional_statements.html#exercise-3-grade-classification",
-    "href": "python_intro/exercises/conditional_statements.html#exercise-3-grade-classification",
+    "objectID": "python_intro/exercises/conditional_statements.html#exercise-3-check-for-uppercase",
+    "href": "python_intro/exercises/conditional_statements.html#exercise-3-check-for-uppercase",
     "title": "Exercise: Conditional Statements",
-    "section": "Exercise 3: Grade Classification",
-    "text": "Exercise 3: Grade Classification\nTask: Create a function that classifies a score into letter grades.\nInstructions:\n\nDefine a function called grade_classification(score) that takes an integer parameter score.\nInside the function, use conditional statements to classify the score:\n\nA: 90-100\nB: 80-89\nC: 70-79\nD: 60-69\nF: Below 60\n\nReturn the letter grade.\nCall the function with a sample score (e.g., 85) and print the result.\n\n\n\nShow solution\n\n\ndef grade_classification(score):\n    if 90 &lt;= score &lt;= 100:\n        return \"A\"\n    elif 80 &lt;= score &lt; 90:\n        return \"B\"\n    elif 70 &lt;= score &lt; 80:\n        return \"C\"\n    elif 60 &lt;= score &lt; 70:\n        return \"D\"\n    else:\n        return \"F\"\n\n# Sample usage\nresult = grade_classification(85)\nprint(\"The letter grade is:\", result)  \n\nThe letter grade is: B",
+    "section": "Exercise 3: Check for Uppercase",
+    "text": "Exercise 3: Check for Uppercase\nTask: Write a code snippet that checks if the first character of a sentence is uppercase.\nInstructions:\n\nUse an if statement to check if the first character of the sentence is uppercase.\nPrint a message indicating whether it is uppercase or not.\n\n\n\nShow solution\n\n\nsentence = \"Hello, world!\"\nif sentence[0].isupper():\n    print(\"The sentence starts with an uppercase letter.\")\nelse:\n    print(\"The sentence does not start with an uppercase letter.\")\n\nThe sentence starts with an uppercase letter.",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Conditional Statements"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/conditional_statements.html#exercise-4-check-palindrome",
+    "href": "python_intro/exercises/conditional_statements.html#exercise-4-check-palindrome",
+    "title": "Exercise: Conditional Statements",
+    "section": "Exercise 4: Check Palindrome",
+    "text": "Exercise 4: Check Palindrome\nTask: Write a function that checks if a given word is a palindrome.\nInstructions:\n\nDefine a function called is_palindrome(word) that takes a string parameter word.\nInside the function, use conditional statements to check if the word is the same when reversed.\nReturn True if it is a palindrome and False otherwise.\nCall the function with a sample word (e.g., “radar”) and print the result.\n\n\n\nShow solution\n\n\ndef is_palindrome(word):\n    return word == word[::-1]\n\n# Sample usage\nresult = is_palindrome(\"radar\")\nprint(\"Is 'radar' a palindrome?\", result)  \n\nIs 'radar' a palindrome? True",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Conditional Statements"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/conditional_statements.html#exercise-5-categorize-word-length",
+    "href": "python_intro/exercises/conditional_statements.html#exercise-5-categorize-word-length",
+    "title": "Exercise: Conditional Statements",
+    "section": "Exercise 5: Categorize Word Length",
+    "text": "Exercise 5: Categorize Word Length\nTask: Create a function that categorizes a word as short, medium, or long based on its length.\nInstructions:\n\nDefine a function called categorize_word_length(word) that takes a string parameter word.\nInside the function, use conditional statements to categorize the word based on the following criteria:\n\nShort: 1-3 letters\nMedium: 4-6 letters\nLong: More than 6 letters\n\nReturn the category as a string.\nCall the function with a sample word (e.g., “NLP”) and print the result.\n\n\n\nShow solution\n\n\ndef categorize_word_length(word):\n    length = len(word)\n    \n    if length &lt;= 3:\n        return \"Short\"\n    elif 4 &lt;= length &lt;= 6:\n        return \"Medium\"\n    else:\n        return \"Long\"\n\n# Sample usage\nresult = categorize_word_length(\"NLP\")",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Conditional Statements"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/conditional_statements.html#exercise-6-grade-classification",
+    "href": "python_intro/exercises/conditional_statements.html#exercise-6-grade-classification",
+    "title": "Exercise: Conditional Statements",
+    "section": "Exercise 6: Grade Classification",
+    "text": "Exercise 6: Grade Classification\nTask: Create a function that classifies a score into letter grades.\nInstructions:\n\nDefine a function called grade_classification(score) that takes an integer parameter score.\nInside the function, use conditional statements to classify the score:\n\nA: 90-100\nB: 80-89\nC: 70-79\nD: 60-69\nF: Below 60\n\nReturn the letter grade.\nCall the function with a sample score (e.g., 85) and print the result.\n\n\n\nShow solution\n\n\ndef grade_classification(score):\n    if 90 &lt;= score &lt;= 100:\n        return \"A\"\n    elif 80 &lt;= score &lt; 90:\n        return \"B\"\n    elif 70 &lt;= score &lt; 80:\n        return \"C\"\n    elif 60 &lt;= score &lt; 70:\n        return \"D\"\n    else:\n        return \"F\"\n\n# Sample usage\nresult = grade_classification(85)\nprint(\"The letter grade is:\", result)  \n\nThe letter grade is: B",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -965,7 +1049,7 @@
     "href": "python_intro/lists_and_loops.html",
     "title": "Lists and Loops",
     "section": "",
-    "text": "In Python, a list is one of the most versatile data structures. It allows you to store multiple items in a single variable, like a collection of numbers, words, or any other kind of data. Lists are extremely useful when working with NLP tasks, where you often need to manage and process large amounts of text, words, or other data.\nTo work efficiently with lists, loops are used to iterate over the elements. By combining lists and loops, you can automate repetitive tasks and handle data efficiently. Let’s dive into how lists work and how to use loops to process them.\n\nLists in Python\nA list is an ordered collection of items, which can be of any type (numbers, strings, or even other lists). Lists are created using square brackets [], and each item in the list is separated by a comma.\n\nExample:\n\n# Creating a list\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits)  # Output: ['apple', 'banana', 'cherry']\n\n['apple', 'banana', 'cherry']\n\n\nIn this example, we’ve created a list called fruits that contains three strings: \"apple\", \"banana\", and \"cherry\".\n\n\n\nAccessing List Elements\nYou can access individual elements in a list using indexing. Just like strings, list indexing starts at 0 for the first element.\n\nExample:\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[0])  # Output: apple (first element)\nprint(fruits[1])  # Output: banana (second element)\nprint(fruits[-1])  # Output: cherry (last element using negative index)\n\napple\nbanana\ncherry\n\n\nIn this example, we access the first, second, and last elements of the list.\n\n\n\nModifying List Elements\nYou can change elements in a list by accessing them via their index and assigning a new value.\n\nExample:\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfruits[1] = \"blueberry\"  # Changing 'banana' to 'blueberry'\nprint(fruits)  # Output: ['apple', 'blueberry', 'cherry']\n\n['apple', 'blueberry', 'cherry']\n\n\nHere, the second item in the list, \"banana\", is replaced with \"blueberry\".\n\n\n\nAdding and Removing Elements\nLists are dynamic, which means you can easily add or remove elements as needed.\n\nAdding elements: Use .append() to add an item to the end of a list.\nRemoving elements: Use .remove() to remove a specific item.\n\n\nExample:\n\nfruits = [\"apple\", \"banana\"]\nfruits.append(\"cherry\")  # Adding an item\nprint(fruits)  # Output: ['apple', 'banana', 'cherry']\n\nfruits.remove(\"banana\")  # Removing an item\nprint(fruits)  # Output: ['apple', 'cherry']\n\n['apple', 'banana', 'cherry']\n['apple', 'cherry']\n\n\nIn this example, we add \"cherry\" to the list and remove \"banana\" from it.\n\n\n\nList Operations: Length, Sorting, and Checking Existence\nHere are some common operations you can perform on lists:\n\nFinding the length of a list using len().\nSorting a list using .sort().\nChecking if an item exists in a list using the in operator.\n\n\nExample:\n\nfruits = [\"banana\", \"cherry\", \"apple\"]\n\n# Length of the list\nprint(len(fruits))  # Output: 3\n\n# Sorting the list\nfruits.sort()\nprint(fruits)  # Output: ['apple', 'banana', 'cherry']\n\n# Checking if an item exists\nprint(\"apple\" in fruits)  # Output: True\nprint(\"grape\" in fruits)  # Output: False\n\n3\n['apple', 'banana', 'cherry']\nTrue\nFalse\n\n\nHere, we find the number of items in the list, sort them alphabetically, and check whether \"apple\" and \"grape\" are in the list.\n\n\n\nLoops in Python\nLoops allow you to perform repetitive tasks efficiently. The most common type of loop used in Python for lists is the for loop. This loop allows you to go through each element in the list one by one.\n\n\nFor Loops\nA for loop lets you iterate over all the elements in a list and perform actions on them.\n\nExample:\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n\napple\nbanana\ncherry\n\n\nThis code will print:\napple\nbanana\ncherry\nIn this example, the loop goes through each item in the list fruits and prints it.\n\n\n\nUsing Loops for Simple Operations\nYou can also use loops to perform more complex operations, such as processing the elements or performing calculations.\n\nExample: Squaring numbers in a list\n\nnumbers = [1, 2, 3, 4]\nsquares = []\nfor number in numbers:\n    squares.append(number ** 2)\n\nprint(squares)  # Output: [1, 4, 9, 16]\n\n[1, 4, 9, 16]\n\n\nIn this example, we loop through the list numbers, square each number, and store the results in a new list called squares.\n\n\n\nLooping with range()\nSometimes, you need to loop a specific number of times rather than over a list. The range() function helps create sequences of numbers for iteration.\n\nExample:\n\nfor i in range(5):\n    print(i)\n\n0\n1\n2\n3\n4\n\n\nIn this example, the loop runs 5 times, printing the values from 0 to 4 (since Python’s range() is exclusive of the upper bound).\n\n\n\nCommon List Methods\nHere are some of the most commonly used methods with lists:\n\nappend(): Adds an item to the end of the list.\n\nfruits.append(\"orange\")\n\nremove(): Removes the first occurrence of an item.\n\nfruits.remove(\"banana\")\n\ninsert(index, value): Inserts an item at a specific position.\n\nfruits.insert(1, \"blueberry\")\n\npop(): Removes and returns the last item (or an item at a specified index).\n\nlast_fruit = fruits.pop()\n\n\n\n\nSummary\nLists and loops are essential tools in Python, allowing you to store multiple pieces of data and process them efficiently. Lists help you group related items, while loops allow you to perform repetitive tasks, like iterating over each element in a list. Together, they form the foundation of many operations in Python, including more advanced NLP tasks where you’ll work with large datasets and need to process them in an automated way.\nNext, we’ll explore how to define functions in Python to structure your code more effectively and make it reusable.\nThis text provides a comprehensive introduction to lists and loops in Python, with clear explanations and code examples. It’s designed to teach these essential concepts step-by-step, with practical examples for students to follow. Let me know if you’d like to refine or expand any section!\n\n\n\n\n Back to top",
+    "text": "In Python, a list is one of the most versatile data structures. It allows you to store multiple items in a single variable, like a collection of numbers, words, or any other kind of data. Lists are extremely useful when working with NLP tasks, where you often need to manage and process large amounts of text, words, or other data.\nTo work efficiently with lists, loops are used to iterate over the elements. By combining lists and loops, you can automate repetitive tasks and handle data efficiently. Let’s dive into how lists work and how to use loops to process them.\n\nLists in Python\nA list is an ordered collection of items, which can be of any type (numbers, strings, or even other lists). Lists are created using square brackets [], and each item in the list is separated by a comma.\n\nExample:\n\n# Creating a list\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits)  # Output: ['apple', 'banana', 'cherry']\n\n['apple', 'banana', 'cherry']\n\n\nIn this example, we’ve created a list called fruits that contains three strings: \"apple\", \"banana\", and \"cherry\".\n\n\n\nAccessing List Elements\nYou can access individual elements in a list using indexing. Just like strings, list indexing starts at 0 for the first element.\n\nExample:\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[0])  # Output: apple (first element)\nprint(fruits[1])  # Output: banana (second element)\nprint(fruits[-1])  # Output: cherry (last element using negative index)\n\napple\nbanana\ncherry\n\n\nIn this example, we access the first, second, and last elements of the list.\n\n\n\nModifying List Elements\nYou can change elements in a list by accessing them via their index and assigning a new value.\n\nExample:\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfruits[1] = \"blueberry\"  # Changing 'banana' to 'blueberry'\nprint(fruits)  # Output: ['apple', 'blueberry', 'cherry']\n\n['apple', 'blueberry', 'cherry']\n\n\nHere, the second item in the list, \"banana\", is replaced with \"blueberry\".\n\n\n\nAdding and Removing Elements\nLists are dynamic, which means you can easily add or remove elements as needed.\n\nAdding elements: Use .append() to add an item to the end of a list.\nRemoving elements: Use .remove() to remove a specific item.\n\n\nExample:\n\nfruits = [\"apple\", \"banana\"]\nfruits.append(\"cherry\")  # Adding an item\nprint(fruits)  # Output: ['apple', 'banana', 'cherry']\n\nfruits.remove(\"banana\")  # Removing an item\nprint(fruits)  # Output: ['apple', 'cherry']\n\n['apple', 'banana', 'cherry']\n['apple', 'cherry']\n\n\nIn this example, we add \"cherry\" to the list and remove \"banana\" from it.\n\n\n\nList Operations: Length, Sorting, and Checking Existence\nHere are some common operations you can perform on lists:\n\nFinding the length of a list using len().\nSorting a list using .sort().\nChecking if an item exists in a list using the in operator.\n\n\nExample:\n\nfruits = [\"banana\", \"cherry\", \"apple\"]\n\n# Length of the list\nprint(len(fruits))  # Output: 3\n\n# Sorting the list\nfruits.sort()\nprint(fruits)  # Output: ['apple', 'banana', 'cherry']\n\n# Checking if an item exists\nprint(\"apple\" in fruits)  # Output: True\nprint(\"grape\" in fruits)  # Output: False\n\n3\n['apple', 'banana', 'cherry']\nTrue\nFalse\n\n\nHere, we find the number of items in the list, sort them alphabetically, and check whether \"apple\" and \"grape\" are in the list.\n\n\n\nLoops in Python\nLoops allow you to perform repetitive tasks efficiently. The most common type of loop used in Python for lists is the for loop. This loop allows you to go through each element in the list one by one.\n\n\nFor Loops\nA for loop lets you iterate over all the elements in a list and perform actions on them.\n\nExample:\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n\napple\nbanana\ncherry\n\n\nThis code will print:\napple\nbanana\ncherry\nIn this example, the loop goes through each item in the list fruits and prints it.\n\n\n\nUsing Loops for Simple Operations\nYou can also use loops to perform more complex operations, such as processing the elements or performing calculations.\n\nExample: Squaring numbers in a list\n\nnumbers = [1, 2, 3, 4]\nsquares = []\nfor number in numbers:\n    squares.append(number ** 2)\n\nprint(squares)  # Output: [1, 4, 9, 16]\n\n[1, 4, 9, 16]\n\n\nIn this example, we loop through the list numbers, square each number, and store the results in a new list called squares.\n\n\n\nLooping with range()\nSometimes, you need to loop a specific number of times rather than over a list. The range() function helps create sequences of numbers for iteration.\n\nExample:\n\nfor i in range(5):\n    print(i)\n\n0\n1\n2\n3\n4\n\n\nIn this example, the loop runs 5 times, printing the values from 0 to 4 (since Python’s range() is exclusive of the upper bound).\n\n\n\nCommon List Methods\nHere are some of the most commonly used methods with lists:\n\nappend(): Adds an item to the end of the list.\n\nfruits.append(\"orange\")\n\nremove(): Removes the first occurrence of an item.\n\nfruits.remove(\"banana\")\n\ninsert(index, value): Inserts an item at a specific position.\n\nfruits.insert(1, \"blueberry\")\n\npop(): Removes and returns the last item (or an item at a specified index).\n\nlast_fruit = fruits.pop()\n\n\n\n\nSummary\nLists and loops are essential tools in Python, allowing you to store multiple pieces of data and process them efficiently. Lists help you group related items, while loops allow you to perform repetitive tasks, like iterating over each element in a list. Together, they form the foundation of many operations in Python, including more advanced NLP tasks where you’ll work with large datasets and need to process them in an automated way.\nNext, we’ll explore how to define functions in Python to structure your code more effectively and make it reusable.\n\n\n\n\n Back to top",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -1340,7 +1424,7 @@
     "href": "python_intro/exercises/functions.html",
     "title": "Exercise: Functions",
     "section": "",
-    "text": "Task: Create a function to count the frequency of a specific word in a given sentence.\nInstructions:\n\nDefine a function called word_frequency(sentence, word) that takes a string parameter sentence and a string parameter word.\nInside the function, use the split() method to break the sentence into words, then count how many times word appears in the list. Hint: Use the list method .count().\nReturn the count.\nCall the function with a sample sentence and word, then print the result.\n\n\n\nShow solution\n\n\ndef word_frequency(sentence, word):\n    words = sentence.split()\n    return words.count(word)\n\n# Sample usage\nsentence = \"NLP is great and NLP is fun\"\nword = \"NLP\"\nresult = word_frequency(sentence, word)\nprint(f\"The word '{word}' appears {result} times.\")  # Output: The word 'NLP' appears 2 times.\n\nThe word 'NLP' appears 2 times.",
+    "text": "Task: Write a function called count_words(text) that takes a string of text as input and returns the number of words in it.\nInstructions:\n\nDefine a function count_words(text).\nSplit the text into words using split().\nReturn the number of words.\nTest the function with different sentences.\n\n\n\nShow solution\n\n\ndef count_words(text):\n    words = text.split()\n    return len(words)\n\nsentence = \"Natural language processing is fun!\"\nprint(count_words(sentence))  # Output: 5\n\n5",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -1348,11 +1432,11 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/functions.html#exercise-1-word-frequency-counter",
-    "href": "python_intro/exercises/functions.html#exercise-1-word-frequency-counter",
+    "objectID": "python_intro/exercises/functions.html#exercise-1-function-to-count-words",
+    "href": "python_intro/exercises/functions.html#exercise-1-function-to-count-words",
     "title": "Exercise: Functions",
     "section": "",
-    "text": "Task: Create a function to count the frequency of a specific word in a given sentence.\nInstructions:\n\nDefine a function called word_frequency(sentence, word) that takes a string parameter sentence and a string parameter word.\nInside the function, use the split() method to break the sentence into words, then count how many times word appears in the list. Hint: Use the list method .count().\nReturn the count.\nCall the function with a sample sentence and word, then print the result.\n\n\n\nShow solution\n\n\ndef word_frequency(sentence, word):\n    words = sentence.split()\n    return words.count(word)\n\n# Sample usage\nsentence = \"NLP is great and NLP is fun\"\nword = \"NLP\"\nresult = word_frequency(sentence, word)\nprint(f\"The word '{word}' appears {result} times.\")  # Output: The word 'NLP' appears 2 times.\n\nThe word 'NLP' appears 2 times.",
+    "text": "Task: Write a function called count_words(text) that takes a string of text as input and returns the number of words in it.\nInstructions:\n\nDefine a function count_words(text).\nSplit the text into words using split().\nReturn the number of words.\nTest the function with different sentences.\n\n\n\nShow solution\n\n\ndef count_words(text):\n    words = text.split()\n    return len(words)\n\nsentence = \"Natural language processing is fun!\"\nprint(count_words(sentence))  # Output: 5\n\n5",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -1360,11 +1444,11 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/functions.html#exercise-2-sentence-reversal",
-    "href": "python_intro/exercises/functions.html#exercise-2-sentence-reversal",
+    "objectID": "python_intro/exercises/functions.html#exercise-2-function-to-convert-text-to-lowercase",
+    "href": "python_intro/exercises/functions.html#exercise-2-function-to-convert-text-to-lowercase",
     "title": "Exercise: Functions",
-    "section": "Exercise 2: Sentence Reversal",
-    "text": "Exercise 2: Sentence Reversal\nTask: Write a function that reverses the words in a sentence.\nInstructions:\n\nDefine a function called reverse_sentence(sentence) that takes a string parameter sentence.\nInside the function, split the sentence into words, reverse the order of the words, and then join them back into a single string.\nReturn the reversed sentence.\nCall the function with a sample sentence and print the result.\n\n\n\nShow solution\n\n\ndef reverse_sentence(sentence):\n    words = sentence.split()\n    reversed_words = words[::-1]\n    return ' '.join(reversed_words)\n\n# Sample usage\nsentence = \"Natural Language Processing is fun\"\nresult = reverse_sentence(sentence)\nprint(\"Reversed sentence:\", result)  # Output: Reversed sentence: fun is Processing Language Natural\n\nReversed sentence: fun is Processing Language Natural",
+    "section": "Exercise 2: Function to Convert Text to Lowercase",
+    "text": "Exercise 2: Function to Convert Text to Lowercase\nTask: Write a function called convert_to_lowercase(text) that takes a string of text and returns it with all characters in lowercase.\nInstructions:\n\nDefine a function convert_to_lowercase(text).\nUse the .lower() method to convert the text to lowercase.\nReturn the modified text.\nTest the function with various sentences.\n\n\n\nShow solution\n\n\ndef convert_to_lowercase(text):\n    return text.lower()\n\ntext = \"NLP Can Be Challenging But REWARDING!\"\nprint(convert_to_lowercase(text))  # Output: \"nlp can be challenging but rewarding!\"\n\nnlp can be challenging but rewarding!",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -1372,11 +1456,11 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/functions.html#exercise-3-remove-punctuation",
-    "href": "python_intro/exercises/functions.html#exercise-3-remove-punctuation",
+    "objectID": "python_intro/exercises/functions.html#exercise-3-function-to-replace-a-word",
+    "href": "python_intro/exercises/functions.html#exercise-3-function-to-replace-a-word",
     "title": "Exercise: Functions",
-    "section": "Exercise 3: Remove Punctuation",
-    "text": "Exercise 3: Remove Punctuation\nTask: Create a function to remove punctuation from a given string.\nInstructions:\n\nDefine a function called remove_punctuation(text) that takes a string parameter text.\nInside the function, use a loop or list comprehension to create a new string that only includes alphanumeric characters and spaces. Hint: You can the string methods .isalnum() and .ischar().\nReturn the cleaned text.\nCall the function with a sample string (e.g., “NLP is great! Isn’t it?”) and print the result.\n\n\n\nShow solution\n\n\ndef remove_punctuation(text: str):\n    # Use list comprehension to filter out punctuation\n    cleaned_text = ''.join(char for char in text if char.isalnum() or char.isspace())\n    return cleaned_text\n\n# Sample usage\ntext = \"NLP is great! Isn't it?\"\nresult = remove_punctuation(text)\nprint(\"Cleaned text:\", result)  # Output: Cleaned text: NLP is great Isnt it\n\nCleaned text: NLP is great Isnt it",
+    "section": "Exercise 3: Function to Replace a Word",
+    "text": "Exercise 3: Function to Replace a Word\nTask: Create a function called replace_word(text, old_word, new_word) that takes a string of text, a word to be replaced, and the new word, then returns the modified text.\nInstructions:\n\nDefine a function replace_word(text, old_word, new_word).\nUse the .replace() method to replace old_word with new_word.\nReturn the modified text.\nTest the function with different sentences.\n\n\n\nShow solution\n\n\ndef replace_word(text, old_word, new_word):\n    return text.replace(old_word, new_word)\n\ntext = \"Python is fun, and learning Python is rewarding.\"\nprint(replace_word(text, \"Python\", \"NLP\"))  # Output: \"NLP is fun, and learning NLP is rewarding.\"\n\nNLP is fun, and learning NLP is rewarding.",
     "crumbs": [
       "Seminar",
       "Python Crash Course",
@@ -1384,11 +1468,47 @@
     ]
   },
   {
-    "objectID": "python_intro/exercises/functions.html#exercise-4-average-word-length",
-    "href": "python_intro/exercises/functions.html#exercise-4-average-word-length",
+    "objectID": "python_intro/exercises/functions.html#exercise-4-word-frequency-counter",
+    "href": "python_intro/exercises/functions.html#exercise-4-word-frequency-counter",
     "title": "Exercise: Functions",
-    "section": "Exercise 4: Average Word Length",
-    "text": "Exercise 4: Average Word Length\nTask: Write a function to calculate the average length of words in a sentence.\nInstructions:\n\nDefine a function called average_word_length(sentence) that takes a string parameter sentence.\nInside the function, split the sentence into words, calculate the average length of the words, and return the result.\nCall the function with a sample sentence (e.g., “Natural Language Processing is powerful”) and print the average length.\n\n\n\nShow solution\n\n\ndef average_word_length(sentence):\n    words = sentence.split()\n    if len(words) == 0:\n        return 0\n    total_length = sum(len(word) for word in words)\n    return total_length / len(words)\n\n# Sample usage\nsentence = \"Natural Language Processing is powerful\"\nresult = average_word_length(sentence)\nprint(\"Average word length:\", result)  \n\nAverage word length: 7.0",
+    "section": "Exercise 4: Word Frequency Counter",
+    "text": "Exercise 4: Word Frequency Counter\nTask: Create a function to count the frequency of a specific word in a given sentence.\nInstructions:\n\nDefine a function called word_frequency(sentence, word) that takes a string parameter sentence and a string parameter word.\nInside the function, use the split() method to break the sentence into words, then count how many times word appears in the list. Hint: Use the list method .count().\nReturn the count.\nCall the function with a sample sentence and word, then print the result.\n\n\n\nShow solution\n\n\ndef word_frequency(sentence, word):\n    words = sentence.split()\n    return words.count(word)\n\n# Sample usage\nsentence = \"NLP is great and NLP is fun\"\nword = \"NLP\"\nresult = word_frequency(sentence, word)\nprint(f\"The word '{word}' appears {result} times.\")  # Output: The word 'NLP' appears 2 times.\n\nThe word 'NLP' appears 2 times.",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Functions"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/functions.html#exercise-5-sentence-reversal",
+    "href": "python_intro/exercises/functions.html#exercise-5-sentence-reversal",
+    "title": "Exercise: Functions",
+    "section": "Exercise 5: Sentence Reversal",
+    "text": "Exercise 5: Sentence Reversal\nTask: Write a function that reverses the words in a sentence.\nInstructions:\n\nDefine a function called reverse_sentence(sentence) that takes a string parameter sentence.\nInside the function, split the sentence into words, reverse the order of the words, and then join them back into a single string.\nReturn the reversed sentence.\nCall the function with a sample sentence and print the result.\n\n\n\nShow solution\n\n\ndef reverse_sentence(sentence):\n    words = sentence.split()\n    reversed_words = words[::-1]\n    return ' '.join(reversed_words)\n\n# Sample usage\nsentence = \"Natural Language Processing is fun\"\nresult = reverse_sentence(sentence)\nprint(\"Reversed sentence:\", result)  # Output: Reversed sentence: fun is Processing Language Natural\n\nReversed sentence: fun is Processing Language Natural",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Functions"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/functions.html#exercise-6-remove-punctuation",
+    "href": "python_intro/exercises/functions.html#exercise-6-remove-punctuation",
+    "title": "Exercise: Functions",
+    "section": "Exercise 6: Remove Punctuation",
+    "text": "Exercise 6: Remove Punctuation\nTask: Create a function to remove punctuation from a given string.\nInstructions:\n\nDefine a function called remove_punctuation(text) that takes a string parameter text.\nInside the function, use a loop or list comprehension to create a new string that only includes alphanumeric characters and spaces. Hint: You can the string methods .isalnum() and .ischar().\nReturn the cleaned text.\nCall the function with a sample string (e.g., “NLP is great! Isn’t it?”) and print the result.\n\n\n\nShow solution\n\n\ndef remove_punctuation(text: str):\n    # Use list comprehension to filter out punctuation\n    cleaned_text = ''.join(char for char in text if char.isalnum() or char.isspace())\n    return cleaned_text\n\n# Sample usage\ntext = \"NLP is great! Isn't it?\"\nresult = remove_punctuation(text)\nprint(\"Cleaned text:\", result)  # Output: Cleaned text: NLP is great Isnt it\n\nCleaned text: NLP is great Isnt it",
+    "crumbs": [
+      "Seminar",
+      "Python Crash Course",
+      "Exercise: Functions"
+    ]
+  },
+  {
+    "objectID": "python_intro/exercises/functions.html#exercise-7-average-word-length",
+    "href": "python_intro/exercises/functions.html#exercise-7-average-word-length",
+    "title": "Exercise: Functions",
+    "section": "Exercise 7: Average Word Length",
+    "text": "Exercise 7: Average Word Length\nTask: Write a function to calculate the average length of words in a sentence.\nInstructions:\n\nDefine a function called average_word_length(sentence) that takes a string parameter sentence.\nInside the function, split the sentence into words, calculate the average length of the words, and return the result.\nCall the function with a sample sentence (e.g., “Natural Language Processing is powerful”) and print the average length.\n\n\n\nShow solution\n\n\ndef average_word_length(sentence):\n    words = sentence.split()\n    if len(words) == 0:\n        return 0\n    total_length = sum(len(word) for word in words)\n    return total_length / len(words)\n\n# Sample usage\nsentence = \"Natural Language Processing is powerful\"\nresult = average_word_length(sentence)\nprint(\"Average word length:\", result)  \n\nAverage word length: 7.0",
     "crumbs": [
       "Seminar",
       "Python Crash Course",

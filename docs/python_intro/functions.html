@@ -503,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can define a function using the <code>def</code> keyword, followed by the function name, parentheses <code>()</code>, and a colon <code>:</code>. Inside the function, you write the code that you want the function to execute. Optionally, you can pass <strong>arguments</strong> to the function to customize its behavior, and the function can <strong>return</strong> a value after completing its task.</p>
 <section id="basic-syntax" class="level4">
 <h4 class="anchored" data-anchor-id="basic-syntax"><strong>Basic Syntax:</strong></h4>
-<div id="cee2f142" class="cell" data-execution_count="1">
+<div id="9f1eec24" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code to be executed</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -515,7 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s start with a basic example of a function that prints a greeting message.</p>
 <section id="example" class="level4">
 <h4 class="anchored" data-anchor-id="example">Example:</h4>
-<div id="8bee85ac" class="cell" data-execution_count="2">
+<div id="00ba4898" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello, welcome to Python!"</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -533,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Functions become more powerful when you can pass data to them via <strong>arguments</strong> (also called <strong>parameters</strong>). You can pass one or more arguments into a function, and the function can use those arguments to perform different actions.</p>
 <section id="example-1" class="level4">
 <h4 class="anchored" data-anchor-id="example-1">Example:</h4>
-<div id="7ab25b4c" class="cell" data-execution_count="3">
+<div id="028eef2d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -553,7 +553,7 @@ Hello, Bob!</code></pre>
 <p>You can define functions with multiple arguments by separating them with commas. The function will expect all the arguments when called.</p>
 <section id="example-2" class="level4">
 <h4 class="anchored" data-anchor-id="example-2">Example:</h4>
-<div id="556fb2cc" class="cell" data-execution_count="4">
+<div id="d3fb34b7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_numbers(a, b):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"The sum is: </span><span class="sc">{</span>result<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -572,7 +572,7 @@ Hello, Bob!</code></pre>
 <p>Sometimes, you’ll want your function to return a value instead of just printing something. You can do this using the <code>return</code> keyword. A function can return a value that you can store in a variable or use in further calculations.</p>
 <section id="example-3" class="level4">
 <h4 class="anchored" data-anchor-id="example-3">Example:</h4>
-<div id="44d96d5c" class="cell" data-execution_count="5">
+<div id="49184def" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_numbers(a, b):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -591,7 +591,7 @@ Hello, Bob!</code></pre>
 <p>You can assign <strong>default values</strong> to arguments in your function. If the caller doesn’t provide a value for that argument, the default value will be used. This makes your functions more flexible.</p>
 <section id="example-4" class="level4">
 <h4 class="anchored" data-anchor-id="example-4">Example:</h4>
-<div id="dc924554" class="cell" data-execution_count="6">
+<div id="0c4b57ae" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name<span class="op">=</span><span class="st">"there"</span>):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -613,7 +613,7 @@ Hello, Alice!</code></pre>
 <p>You can also call a function using <strong>keyword arguments</strong>. This allows you to specify the arguments by name when calling the function, which can make your code more readable, especially when you have many arguments.</p>
 <section id="example-5" class="level4">
 <h4 class="anchored" data-anchor-id="example-5">Example:</h4>
-<div id="bc2203fe" class="cell" data-execution_count="7">
+<div id="4516a122" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> describe_person(name, age, city):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old and lives in </span><span class="sc">{</span>city<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -632,7 +632,7 @@ Hello, Alice!</code></pre>
 <p>Variables defined inside a function have <strong>local scope</strong>, meaning they only exist inside that function. Once the function is finished, the variables are destroyed. However, you can define <strong>global variables</strong> outside the function if you need them to be accessible throughout your entire program.</p>
 <section id="example-of-local-scope" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-local-scope">Example of Local Scope:</h4>
-<div id="764140b3" class="cell" data-execution_count="8">
+<div id="2d271c28" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function():</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">10</span>  <span class="co"># This variable only exists inside the function</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span>
@@ -646,7 +646,7 @@ Hello, Alice!</code></pre>
 </section>
 <section id="example-of-global-scope" class="level4">
 <h4 class="anchored" data-anchor-id="example-of-global-scope">Example of Global Scope:</h4>
-<div id="2b17536e" class="cell" data-execution_count="9">
+<div id="18d59c00" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span>  <span class="co"># Global variable</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function():</span>
@@ -664,7 +664,7 @@ Hello, Alice!</code></pre>
 <p>In addition to regular functions, Python supports <strong>lambda functions</strong>, which are small anonymous functions that can be written in a single line. Lambda functions are useful for simple operations and are often used in combination with other functions.</p>
 <section id="example-6" class="level4">
 <h4 class="anchored" data-anchor-id="example-6">Example:</h4>
-<div id="ae901c7e" class="cell" data-execution_count="10">
+<div id="0fa8d88b" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regular function to square a number</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">**</span> <span class="dv">2</span></span>
@@ -688,7 +688,7 @@ Hello, Alice!</code></pre>
 <p>Functions can be combined with lists to perform operations on groups of data. For instance, you can use a function to process each item in a list using a loop.</p>
 <section id="example-7" class="level4">
 <h4 class="anchored" data-anchor-id="example-7">Example:</h4>
-<div id="5801220f" class="cell" data-execution_count="11">
+<div id="88f853c3" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">**</span> <span class="dv">2</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
