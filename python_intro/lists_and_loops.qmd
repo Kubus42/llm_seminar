@@ -203,6 +203,3 @@ Lists and loops are essential tools in Python, allowing you to store multiple pi
 
 Next, we’ll explore how to define functions in Python to structure your code more effectively and make it reusable.
 
-
-
-This text provides a comprehensive introduction to lists and loops in Python, with clear explanations and code examples. It’s designed to teach these essential concepts step-by-step, with practical examples for students to follow. Let me know if you’d like to refine or expand any section!

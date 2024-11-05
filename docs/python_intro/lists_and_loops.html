@@ -504,7 +504,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A list is an ordered collection of items, which can be of any type (numbers, strings, or even other lists). Lists are created using square brackets <code>[]</code>, and each item in the list is separated by a comma.</p>
 <section id="example" class="level4">
 <h4 class="anchored" data-anchor-id="example">Example:</h4>
-<div id="a861214e" class="cell" data-execution_count="1">
+<div id="500dad19" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a list</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits)  <span class="co"># Output: ['apple', 'banana', 'cherry']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -520,7 +520,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can access individual elements in a list using indexing. Just like strings, list indexing starts at <code>0</code> for the first element.</p>
 <section id="example-1" class="level4">
 <h4 class="anchored" data-anchor-id="example-1">Example:</h4>
-<div id="2af0e417" class="cell" data-execution_count="2">
+<div id="34615f81" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits[<span class="dv">0</span>])  <span class="co"># Output: apple (first element)</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits[<span class="dv">1</span>])  <span class="co"># Output: banana (second element)</span></span>
@@ -539,7 +539,7 @@ cherry</code></pre>
 <p>You can change elements in a list by accessing them via their index and assigning a new value.</p>
 <section id="example-2" class="level4">
 <h4 class="anchored" data-anchor-id="example-2">Example:</h4>
-<div id="4ee51242" class="cell" data-execution_count="3">
+<div id="61dcf161" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fruits[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"blueberry"</span>  <span class="co"># Changing 'banana' to 'blueberry'</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits)  <span class="co"># Output: ['apple', 'blueberry', 'cherry']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -559,7 +559,7 @@ cherry</code></pre>
 </ul>
 <section id="example-3" class="level4">
 <h4 class="anchored" data-anchor-id="example-3">Example:</h4>
-<div id="be81fdc1" class="cell" data-execution_count="4">
+<div id="6bc54c1e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fruits.append(<span class="st">"cherry"</span>)  <span class="co"># Adding an item</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits)  <span class="co"># Output: ['apple', 'banana', 'cherry']</span></span>
@@ -584,7 +584,7 @@ cherry</code></pre>
 </ul>
 <section id="example-4" class="level4">
 <h4 class="anchored" data-anchor-id="example-4">Example:</h4>
-<div id="63aba2e2" class="cell" data-execution_count="5">
+<div id="2bd627ae" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"apple"</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Length of the list</span></span>
@@ -616,7 +616,7 @@ False</code></pre>
 <p>A <code>for</code> loop lets you iterate over all the elements in a list and perform actions on them.</p>
 <section id="example-5" class="level4">
 <h4 class="anchored" data-anchor-id="example-5">Example:</h4>
-<div id="9992eb8c" class="cell" data-execution_count="6">
+<div id="67264706" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fruit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -638,7 +638,7 @@ cherry</code></pre>
 <p>You can also use loops to perform more complex operations, such as processing the elements or performing calculations.</p>
 <section id="example-squaring-numbers-in-a-list" class="level4">
 <h4 class="anchored" data-anchor-id="example-squaring-numbers-in-a-list">Example: Squaring numbers in a list</h4>
-<div id="ca6e2e3b" class="cell" data-execution_count="7">
+<div id="b724ae51" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> []</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
@@ -657,7 +657,7 @@ cherry</code></pre>
 <p>Sometimes, you need to loop a specific number of times rather than over a list. The <code>range()</code> function helps create sequences of numbers for iteration.</p>
 <section id="example-6" class="level4">
 <h4 class="anchored" data-anchor-id="example-6">Example:</h4>
-<div id="3d6f9626" class="cell" data-execution_count="8">
+<div id="4bbb1869" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -676,19 +676,19 @@ cherry</code></pre>
 <p>Here are some of the most commonly used methods with lists:</p>
 <ol type="1">
 <li><p><code>append()</code>: Adds an item to the end of the list.</p>
-<div id="7dc2c22f" class="cell" data-execution_count="9">
+<div id="339be933" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fruits.append(<span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 <li><p><code>remove()</code>: Removes the first occurrence of an item.</p>
-<div id="3688d1fc" class="cell" data-execution_count="10">
+<div id="21cdfec0" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fruits.remove(<span class="st">"banana"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 <li><p><code>insert(index, value)</code>: Inserts an item at a specific position.</p>
-<div id="d94c2f56" class="cell" data-execution_count="11">
+<div id="48f7d76d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fruits.insert(<span class="dv">1</span>, <span class="st">"blueberry"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 <li><p><code>pop()</code>: Removes and returns the last item (or an item at a specified index).</p>
-<div id="6626d0db" class="cell" data-execution_count="12">
+<div id="30e99979" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>last_fruit <span class="op">=</span> fruits.pop()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ol>
@@ -697,7 +697,6 @@ cherry</code></pre>
 <h3 class="anchored" data-anchor-id="summary">Summary</h3>
 <p>Lists and loops are essential tools in Python, allowing you to store multiple pieces of data and process them efficiently. Lists help you group related items, while loops allow you to perform repetitive tasks, like iterating over each element in a list. Together, they form the foundation of many operations in Python, including more advanced NLP tasks where you’ll work with large datasets and need to process them in an automated way.</p>
 <p>Next, we’ll explore how to define functions in Python to structure your code more effectively and make it reusable.</p>
-<p>This text provides a comprehensive introduction to lists and loops in Python, with clear explanations and code examples. It’s designed to teach these essential concepts step-by-step, with practical examples for students to follow. Let me know if you’d like to refine or expand any section!</p>
 
 
 </section>

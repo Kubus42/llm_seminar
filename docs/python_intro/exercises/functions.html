@@ -497,8 +497,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="exercise-1-word-frequency-counter" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-word-frequency-counter">Exercise 1: Word Frequency Counter</h2>
+<section id="exercise-1-function-to-count-words" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-function-to-count-words">Exercise 1: Function to Count Words</h2>
+<p><strong>Task:</strong> Write a function called <code>count_words(text)</code> that takes a string of text as input and returns the number of words in it.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Define a function <code>count_words(text)</code>.</li>
+<li>Split the <code>text</code> into words using <code>split()</code>.</li>
+<li>Return the number of words.</li>
+<li>Test the function with different sentences.</li>
+</ul>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-3" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_words(text):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> text.split()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(words)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"Natural language processing is fun!"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_words(sentence))  <span class="co"># Output: 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="exercise-2-function-to-convert-text-to-lowercase" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-function-to-convert-text-to-lowercase">Exercise 2: Function to Convert Text to Lowercase</h2>
+<p><strong>Task:</strong> Write a function called <code>convert_to_lowercase(text)</code> that takes a string of text and returns it with all characters in lowercase.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Define a function <code>convert_to_lowercase(text)</code>.</li>
+<li>Use the <code>.lower()</code> method to convert the text to lowercase.</li>
+<li>Return the modified text.</li>
+<li>Test the function with various sentences.</li>
+</ul>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-7" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_to_lowercase(text):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text.lower()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"NLP Can Be Challenging But REWARDING!"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(convert_to_lowercase(text))  <span class="co"># Output: "nlp can be challenging but rewarding!"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>nlp can be challenging but rewarding!</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="exercise-3-function-to-replace-a-word" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-function-to-replace-a-word">Exercise 3: Function to Replace a Word</h2>
+<p><strong>Task:</strong> Create a function called <code>replace_word(text, old_word, new_word)</code> that takes a string of text, a word to be replaced, and the new word, then returns the modified text.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Define a function <code>replace_word(text, old_word, new_word)</code>.</li>
+<li>Use the <code>.replace()</code> method to replace <code>old_word</code> with <code>new_word</code>.</li>
+<li>Return the modified text.</li>
+<li>Test the function with different sentences.</li>
+</ul>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-11" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> replace_word(text, old_word, new_word):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text.replace(old_word, new_word)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Python is fun, and learning Python is rewarding."</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(replace_word(text, <span class="st">"Python"</span>, <span class="st">"NLP"</span>))  <span class="co"># Output: "NLP is fun, and learning NLP is rewarding."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NLP is fun, and learning NLP is rewarding.</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="exercise-4-word-frequency-counter" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4-word-frequency-counter">Exercise 4: Word Frequency Counter</h2>
 <p><strong>Task:</strong> Create a function to count the frequency of a specific word in a given sentence.</p>
 <p><strong>Instructions:</strong></p>
 <ul>
@@ -511,24 +590,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>
 Show solution
 </summary>
-<div id="cell-3" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> word_frequency(sentence, word):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> sentence.split()</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> words.count(word)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"NLP is great and NLP is fun"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"NLP"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> word_frequency(sentence, word)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The word '</span><span class="sc">{</span>word<span class="sc">}</span><span class="ss">' appears </span><span class="sc">{</span>result<span class="sc">}</span><span class="ss"> times."</span>)  <span class="co"># Output: The word 'NLP' appears 2 times.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-15" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> word_frequency(sentence, word):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> sentence.split()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> words.count(word)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"NLP is great and NLP is fun"</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"NLP"</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> word_frequency(sentence, word)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The word '</span><span class="sc">{</span>word<span class="sc">}</span><span class="ss">' appears </span><span class="sc">{</span>result<span class="sc">}</span><span class="ss"> times."</span>)  <span class="co"># Output: The word 'NLP' appears 2 times.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The word 'NLP' appears 2 times.</code></pre>
 </div>
 </div>
 </details>
 </section>
-<section id="exercise-2-sentence-reversal" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-sentence-reversal">Exercise 2: Sentence Reversal</h2>
+<section id="exercise-5-sentence-reversal" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5-sentence-reversal">Exercise 5: Sentence Reversal</h2>
 <p><strong>Task:</strong> Write a function that reverses the words in a sentence.</p>
 <p><strong>Instructions:</strong></p>
 <ul>
@@ -541,23 +620,23 @@ Show solution
 <summary>
 Show solution
 </summary>
-<div id="cell-7" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse_sentence(sentence):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> sentence.split()</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    reversed_words <span class="op">=</span> words[::<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">' '</span>.join(reversed_words)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"Natural Language Processing is fun"</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> reverse_sentence(sentence)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Reversed sentence:"</span>, result)  <span class="co"># Output: Reversed sentence: fun is Processing Language Natural</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-19" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse_sentence(sentence):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> sentence.split()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    reversed_words <span class="op">=</span> words[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">' '</span>.join(reversed_words)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"Natural Language Processing is fun"</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> reverse_sentence(sentence)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Reversed sentence:"</span>, result)  <span class="co"># Output: Reversed sentence: fun is Processing Language Natural</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reversed sentence: fun is Processing Language Natural</code></pre>
 </div>
 </div>
 </details></section>
-<section id="exercise-3-remove-punctuation" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-remove-punctuation">Exercise 3: Remove Punctuation</h2>
+<section id="exercise-6-remove-punctuation" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6-remove-punctuation">Exercise 6: Remove Punctuation</h2>
 <p><strong>Task:</strong> Create a function to remove punctuation from a given string.</p>
 <p><strong>Instructions:</strong></p>
 <ul>
@@ -570,24 +649,24 @@ Show solution
 <summary>
 Show solution
 </summary>
-<div id="cell-10" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_punctuation(text: <span class="bu">str</span>):</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use list comprehension to filter out punctuation</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    cleaned_text <span class="op">=</span> <span class="st">''</span>.join(char <span class="cf">for</span> char <span class="kw">in</span> text <span class="cf">if</span> char.isalnum() <span class="kw">or</span> char.isspace())</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cleaned_text</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"NLP is great! Isn't it?"</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> remove_punctuation(text)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Cleaned text:"</span>, result)  <span class="co"># Output: Cleaned text: NLP is great Isnt it</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-22" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_punctuation(text: <span class="bu">str</span>):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use list comprehension to filter out punctuation</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    cleaned_text <span class="op">=</span> <span class="st">''</span>.join(char <span class="cf">for</span> char <span class="kw">in</span> text <span class="cf">if</span> char.isalnum() <span class="kw">or</span> char.isspace())</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cleaned_text</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"NLP is great! Isn't it?"</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> remove_punctuation(text)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Cleaned text:"</span>, result)  <span class="co"># Output: Cleaned text: NLP is great Isnt it</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Cleaned text: NLP is great Isnt it</code></pre>
 </div>
 </div>
 </details>
 </section>
-<section id="exercise-4-average-word-length" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4-average-word-length">Exercise 4: Average Word Length</h2>
+<section id="exercise-7-average-word-length" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7-average-word-length">Exercise 7: Average Word Length</h2>
 <p><strong>Task:</strong> Write a function to calculate the average length of words in a sentence.</p>
 <p><strong>Instructions:</strong></p>
 <ul>
@@ -599,18 +678,18 @@ Show solution
 <summary>
 Show solution
 </summary>
-<div id="cell-14" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> average_word_length(sentence):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> sentence.split()</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(words) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    total_length <span class="op">=</span> <span class="bu">sum</span>(<span class="bu">len</span>(word) <span class="cf">for</span> word <span class="kw">in</span> words)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_length <span class="op">/</span> <span class="bu">len</span>(words)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"Natural Language Processing is powerful"</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> average_word_length(sentence)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average word length:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-26" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> average_word_length(sentence):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    words <span class="op">=</span> sentence.split()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(words) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    total_length <span class="op">=</span> <span class="bu">sum</span>(<span class="bu">len</span>(word) <span class="cf">for</span> word <span class="kw">in</span> words)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_length <span class="op">/</span> <span class="bu">len</span>(words)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> <span class="st">"Natural Language Processing is powerful"</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> average_word_length(sentence)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average word length:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Average word length: 7.0</code></pre>
 </div>

@@ -497,8 +497,112 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="exercise-1-count-vowels-in-a-list-of-words" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-1-count-vowels-in-a-list-of-words">Exercise 1: Count Vowels in a List of Words</h2>
+<section id="exercise-1-printing-elements-of-a-list" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-printing-elements-of-a-list">Exercise 1: Printing Elements of a List</h2>
+<p><strong>Task:</strong> Create a list of 5 of your favorite movies and write a loop to print each movie.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Create a list named <code>movies</code> with 5 movie titles.</li>
+<li>Write a <code>for</code> loop that iterates over the list and prints each movie.</li>
+</ul>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-3" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>movies <span class="op">=</span> [<span class="st">"Inception"</span>, <span class="st">"The Matrix"</span>, <span class="st">"Interstellar"</span>, <span class="st">"The Shawshank Redemption"</span>, <span class="st">"The Godfather"</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> movie <span class="kw">in</span> movies:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(movie)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inception
+The Matrix
+Interstellar
+The Shawshank Redemption
+The Godfather</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="exercise-2-summing-numbers-in-a-list" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-summing-numbers-in-a-list">Exercise 2: Summing Numbers in a List</h2>
+<p><strong>Task:</strong> Create a list of numbers and write a loop to calculate and print the sum of all numbers in the list.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Create a list named <code>numbers</code> with at least 5 integer values.</li>
+<li>Use a loop to iterate over the list and calculate the sum.</li>
+<li>Print the sum after the loop completes.</li>
+</ul>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-7" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>total_sum <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> numbers:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    total_sum <span class="op">+=</span> num <span class="co"># Or: total_sum = total_sum + num</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The total sum is:"</span>, total_sum)  <span class="co"># Output: The total sum is: 150</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The total sum is: 150</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="exercise-3-counting-number-of-characters-in-a-list-of-words" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-counting-number-of-characters-in-a-list-of-words">Exercise 3: Counting Number of Characters in a List of Words</h2>
+<p><strong>Task:</strong> Create a list of words and write a loop to count how many characters (i.e., letters) the list contains in total. Print the count.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Create a list named <code>words</code> with several words.</li>
+<li>Write a loop to iterate through the list and count the letters of each word using the function <code>len()</code>. Sum the count.</li>
+<li>Print the count.</li>
+</ul>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-11" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"Python"</span>, <span class="st">"code"</span>, <span class="st">"Python"</span>, <span class="st">"learning"</span>, <span class="st">"tutorial"</span>, <span class="st">"Python"</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> words:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="bu">len</span>(word)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The list contains a total of </span><span class="sc">{</span>count<span class="sc">}</span><span class="ss"> characters."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The list contains a total of 38 characters.</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="exercise-4-doubling-elements-of-a-list" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4-doubling-elements-of-a-list">Exercise 4: Doubling Elements of a List</h2>
+<p><strong>Task:</strong> Create a loop that doubles each number in a list and prints the new list.</p>
+<p><strong>Instructions:</strong></p>
+<ul>
+<li>Create a list named <code>numbers</code> with some integer values.</li>
+<li>Use a loop to create a new list <code>doubled_numbers</code> where each element is double the corresponding element in <code>numbers</code>.</li>
+<li>Print the new list.</li>
+</ul>
+<details>
+<summary>
+Show solution
+</summary>
+<div id="cell-15" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>doubled_numbers <span class="op">=</span> []</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> numbers:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    doubled_numbers.append(num <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doubled_numbers)  <span class="co"># Output: [2, 6, 10, 14, 18]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2, 6, 10, 14, 18]</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="exercise-5-count-vowels-in-a-list-of-words" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5-count-vowels-in-a-list-of-words">Exercise 5: Count Vowels in a List of Words</h2>
 <p><strong>Task:</strong> Write a function that counts the total number of vowels in a list of words.</p>
 <p><strong>Instructions:</strong></p>
 <ul>
@@ -511,30 +615,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>
 Show solution
 </summary>
-<div id="cell-3" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_vowels(word_list):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    vowels <span class="op">=</span> <span class="st">'aeiouAEIOU'</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    total_vowels <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> char <span class="kw">in</span> word:</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> char <span class="kw">in</span> vowels:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                total_vowels <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_vowels</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> count_vowels(words)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Total number of vowels:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-19" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_vowels(word_list):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    vowels <span class="op">=</span> <span class="st">'aeiouAEIOU'</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    total_vowels <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> char <span class="kw">in</span> word:</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> char <span class="kw">in</span> vowels:</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                total_vowels <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> total_vowels</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> count_vowels(words)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Total number of vowels:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Total number of vowels: 2</code></pre>
 </div>
 </div>
 </details>
 </section>
-<section id="exercise-2-filter-long-words" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2-filter-long-words">Exercise 2: Filter Long Words</h2>
+<section id="exercise-6-filter-long-words" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6-filter-long-words">Exercise 6: Filter Long Words</h2>
 <p><strong>Task:</strong> Create a function that filters out words longer than a specified length from a list.</p>
 <p><strong>Instructions:</strong></p>
 <ul>
@@ -547,27 +651,27 @@ Show solution
 <summary>
 Show solution
 </summary>
-<div id="cell-7" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> filter_long_words(word_list, length):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    short_words <span class="op">=</span> []</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">&lt;=</span> length:</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            short_words.append(word)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> short_words</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"Natural"</span>, <span class="st">"Language"</span>, <span class="st">"Processing"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> filter_long_words(words, <span class="dv">4</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered words:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-23" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> filter_long_words(word_list, length):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    short_words <span class="op">=</span> []</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(word) <span class="op">&lt;=</span> length:</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>            short_words.append(word)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> short_words</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"Natural"</span>, <span class="st">"Language"</span>, <span class="st">"Processing"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> filter_long_words(words, <span class="dv">4</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered words:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Filtered words: ['is', 'fun']</code></pre>
 </div>
 </div>
 </details></section>
-<section id="exercise-3-create-a-word-frequency-dictionary" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3-create-a-word-frequency-dictionary">Exercise 3: Create a Word Frequency Dictionary</h2>
+<section id="exercise-7-create-a-word-frequency-dictionary" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7-create-a-word-frequency-dictionary">Exercise 7: Create a Word Frequency Dictionary</h2>
 <p><strong>Task:</strong> Write a function that creates a frequency dictionary from a list of words.</p>
 <p><strong>Instructions:</strong></p>
 <ul>
@@ -580,30 +684,30 @@ Show solution
 <summary>
 Show solution
 </summary>
-<div id="cell-10" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> word_frequency(word_list):</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    frequency_dict <span class="op">=</span> {}</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> word <span class="kw">in</span> frequency_dict:</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            frequency_dict[word] <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            frequency_dict[word] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> frequency_dict</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>, <span class="st">"NLP"</span>]</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> word_frequency(words)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Word frequency:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-26" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> word_frequency(word_list):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    frequency_dict <span class="op">=</span> {}</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> word <span class="kw">in</span> frequency_dict:</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>            frequency_dict[word] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>            frequency_dict[word] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> frequency_dict</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>, <span class="st">"NLP"</span>]</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> word_frequency(words)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Word frequency:"</span>, result)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Word frequency: {'NLP': 2, 'is': 1, 'fun': 1}</code></pre>
 </div>
 </div>
 </details>
 </section>
-<section id="exercise-4-reverse-each-word-in-a-list" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-4-reverse-each-word-in-a-list">Exercise 4: Reverse Each Word in a List</h2>
+<section id="exercise-8-reverse-each-word-in-a-list" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-8-reverse-each-word-in-a-list">Exercise 8: Reverse Each Word in a List</h2>
 <p><strong>Task:</strong> Create a function that reverses each word in a list.</p>
 <p><strong>Instructions:</strong></p>
 <ul>
@@ -616,19 +720,19 @@ Show solution
 <summary>
 Show solution
 </summary>
-<div id="cell-14" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse_words(word_list):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    reversed_list <span class="op">=</span> []</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        reversed_list.append(word[::<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> reversed_list</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> reverse_words(words)</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Reversed words:"</span>, result) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-30" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reverse_words(word_list):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    reversed_list <span class="op">=</span> []</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> word_list:</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        reversed_list.append(word[::<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> reversed_list</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample usage</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"NLP"</span>, <span class="st">"is"</span>, <span class="st">"fun"</span>]</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> reverse_words(words)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Reversed words:"</span>, result) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reversed words: ['PLN', 'si', 'nuf']</code></pre>
 </div>
