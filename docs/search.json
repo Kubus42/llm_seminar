@@ -209,6 +209,55 @@
     "text": "Bit Pair Encoding: Pros and Cons\n\nEfficient Memory Usage\nRetains Information\nFlexibility\nComputational Overhead\nLoss of Granularity\n\n\n\nReduces vocabulary size, efficient memory usage\nCaptures frequent character pairs, retains linguistic information\nAdaptable to different tokenization strategies and corpus characteristics\nIterative nature can be computationally intensive\nMay lead to loss of granularity, especially for rare words\nEffectiveness depends on tokenization strategy and corpus characteristics\n\n\n\n\n\n\nSeminar: LLM, WiSe 2024/25"
   },
   {
+    "objectID": "slides/about/projects.html#what-is-the-idea-of-the-project-phase",
+    "href": "slides/about/projects.html#what-is-the-idea-of-the-project-phase",
+    "title": "Projects: Large Language Models",
+    "section": "What is the idea of the project phase?",
+    "text": "What is the idea of the project phase?\n\nCombine the theoretical knowledge about LLMs with a practical application\nEmbed an LLM into a business use case\nExplore the possibilities of LLMs (which are not restricted to chats bots!)"
+  },
+  {
+    "objectID": "slides/about/projects.html#project-phase-schedule",
+    "href": "slides/about/projects.html#project-phase-schedule",
+    "title": "Projects: Large Language Models",
+    "section": "Project phase schedule",
+    "text": "Project phase schedule\n\nProject ideation\nTeam building\nWork on projects in teams\nProject presentation\nReflections & Summary"
+  },
+  {
+    "objectID": "slides/about/projects.html#what-your-presentation-should-include-part-1",
+    "href": "slides/about/projects.html#what-your-presentation-should-include-part-1",
+    "title": "Projects: Large Language Models",
+    "section": "What your presentation should include (Part 1)",
+    "text": "What your presentation should include (Part 1)\n\nGeneral:\n\nWhat is your prototype? What can it do?\nHow did you (technically) solve it?\nWhy/where is a language model needed here?"
+  },
+  {
+    "objectID": "slides/about/projects.html#what-your-presentation-should-include-part-2",
+    "href": "slides/about/projects.html#what-your-presentation-should-include-part-2",
+    "title": "Projects: Large Language Models",
+    "section": "What your presentation should include (Part 2)",
+    "text": "What your presentation should include (Part 2)\n\nBusiness:\n\nWhat could be a business case for your prototype, or where can it be applied?\nWho would be the main stakeholder of your application?\nWhat would be similar use cases to what you have done? Where would such a tool be needed?"
+  },
+  {
+    "objectID": "slides/about/projects.html#what-your-presentation-should-include-part-3",
+    "href": "slides/about/projects.html#what-your-presentation-should-include-part-3",
+    "title": "Projects: Large Language Models",
+    "section": "What your presentation should include (Part 3)",
+    "text": "What your presentation should include (Part 3)\n\nLearnings:\n\nWhat has been the biggest challenge(s) in your project?\nWhat do you think has been the greatest learning?\nWhich techniques from the seminar did you use?"
+  },
+  {
+    "objectID": "slides/about/projects.html#what-your-summary-should-include-part-1",
+    "href": "slides/about/projects.html#what-your-summary-should-include-part-1",
+    "title": "Projects: Large Language Models",
+    "section": "What your summary should include (Part 1)",
+    "text": "What your summary should include (Part 1)\n\n2-3 pages in total\nWhat is your prototype? What can I do?\nWhat could be a business case for your prototype, or where can it be applied? Who would be the main stakeholder of your application?\nWhere in your prototype do you need GPT/a language model and why?"
+  },
+  {
+    "objectID": "slides/about/projects.html#what-your-summary-should-include-part-2",
+    "href": "slides/about/projects.html#what-your-summary-should-include-part-2",
+    "title": "Projects: Large Language Models",
+    "section": "What your summary should include (Part 2)",
+    "text": "What your summary should include (Part 2)\n\nWhat are current limitations/challenges of your prototype and how could you (potentially) overcome them? Can you imagine challenges for your prototype in production?\nWhat have been your main learnings during the creation of your prototype (and/or) the seminar itself? Which of the techniques presented in the seminar did you use?"
+  },
+  {
     "objectID": "slides/about/projects.html#question-answering-chatbot",
     "href": "slides/about/projects.html#question-answering-chatbot",
     "title": "Projects: Large Language Models",
