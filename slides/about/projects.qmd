@@ -8,7 +8,51 @@ format:
         logo: ../../assets/logo.svg
 ---
 
-# How to develop an app with a language model: DEMO
+## What is the idea of the project phase?
+
+- Combine the theoretical knowledge about LLMs with a practical application
+- Embed an LLM into a business use case 
+- Explore the possibilities of LLMs (which are not restricted to chats bots!)
+
+
+## Project phase schedule
+- Project ideation 
+- Team building 
+- Work on projects in teams 
+- Project presentation
+- Reflections & Summary
+
+## What your presentation should include (Part 1)
+
+- **General**:
+    - What is your prototype? What can it do?
+    - How did you (technically) solve it?
+    - Why/where is a language model needed here?
+
+## What your presentation should include (Part 2)
+- **Business**:
+    - What could be a business case for your prototype, or where can it be applied?
+    - Who would be the main stakeholder of your application?
+    - What would be similar use cases to what you have done? Where would such a tool be needed?
+
+## What your presentation should include (Part 3)
+- **Learnings**:
+    - What has been the biggest challenge(s) in your project?
+    - What do you think has been the greatest learning?
+    - Which techniques from the seminar did you use?
+
+
+## What your summary should include (Part 1) 
+
+- 2-3 pages in total
+- What is your prototype? What can I do?
+- What could be a business case for your prototype, or where can it be applied? Who would be the main stakeholder of your application?
+- Where in your prototype do you need GPT/a language model and why?
+
+
+## What your summary should include (Part 2)
+- What are current limitations/challenges of your prototype and how could you (potentially) overcome them? Can you imagine challenges for your prototype in production?
+- What have been your main learnings during the creation of your prototype (and/or) the seminar itself? Which of the techniques presented in the seminar did you use?
 
 
 # Project ideas
