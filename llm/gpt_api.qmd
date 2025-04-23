@@ -25,13 +25,30 @@ Without proper authentication, your requests will be rejected.
 You can create your own account, but for the seminar we will provide the client with the credential within the University's [Jupyterlab](https://jupyter.fh-muenster.de/){.external}.
 
 ```{python}
-# setting up the client in Python
+
+#| echo: false
+#| output: false
 
 import os
-from openai import OpenAI
+from dotenv import load_dotenv
 
-client = OpenAI(
-    api_key=os.environ.get("OPENAI_API_KEY")
+load_dotenv(
+    dotenv_path=os.environ.get("CONFIG_PATH"),
+    override=True
+)
+```
+
+```{python}
+# setting up the client in Python
+import os
+from openai import AzureOpenAI
+
+MODEL = "gpt-4o"
+
+client = AzureOpenAI(
+    api_key=os.environ.get("AZURE_OPENAI_API_KEY"),
+    azure_endpoint=os.environ.get("AZURE_OPENAI_ENDPOINT"),
+    azure_deployment=MODEL
 )
 
 ```
@@ -55,7 +72,7 @@ chat_completion = client.chat.completions.create(
             "content": "How old is the earth?",
         }
     ],
-    model="gpt-3.5-turbo" # choose the model
+    model=MODEL # choose the model
 )
 ```
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1f64a611174d0987db8176e27c99ed25.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -510,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="roles">Roles</h2>
 <p>In order to cover most tasks you want to perform using a chat format, the OpenAI API let’s you define different <code>roles</code> in the chat. The available roles are <code>system</code>, <code>assistant</code>, <code>user</code> and <code>tools</code>. You should already be familiar with two of them by now: The <code>user</code> role corresponds to the actual user prompting the language model, all answers are given with the <code>assisstant</code> role.</p>
 <p>The <code>system</code> role can now be given to provide some additional general instructions to the language model that are typically not a user input, for example, the style in which the model responds. In this case, an example is better than any explanation.</p>
-<div id="cd3ea9d7" class="cell" data-execution_count="1">
+<div id="028512fc" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> llm_utils.client <span class="im">import</span> get_openai_client, OpenAIModels</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(completion.choices[<span class="dv">0</span>].message.content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Check for clogs and clean the filters.</code></pre>
+<pre><code>Check if you overloaded it. Make sure spray arms aren't blocked. Use proper detergent. Clean filters.</code></pre>
 </div>
 </div>
 </section>
@@ -539,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="function-calling">Function calling</h2>
 <p>As we have seen, most interactions with a language model happen in form of a chat with almost “free” question or instructions and answers. While this seems the most natural in most cases, it is not always a practical format if we want to use a language model for very specific purposes. This happens particularly often when we want to employ a language model in business situations, where we require a consistent output of the model.</p>
 <p>As an example, let us try to use GPT for sentiment analysis (see also <a href="../nlp/overview.html#sec-sentiment-analysis">here</a>). Let’s say we want GPT to classify a text into one of the following four categories:</p>
-<div id="1a7307c4" class="cell" data-execution_count="2">
+<div id="cf4dd5d4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sentiment_categories <span class="op">=</span> [</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"positive"</span>, </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"negative"</span>,</span>
@@ -548,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We could do the following:</p>
-<div id="08d3c633" class="cell" data-execution_count="4">
+<div id="57999489" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>messages <span class="op">=</span> []</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>messages.append(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="ss">f"Classify the given text into one of the following sentiment categories: </span><span class="sc">{</span>sentiment_categories<span class="sc">}</span><span class="ss">."</span>}</span>
@@ -564,14 +564,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>content<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c818ec7d" class="cell" data-execution_count="5">
+<div id="abda0191" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>Response: 'Category: Negative'</code></pre>
 </div>
 </div>
 <p>It is easy to spot the problem: GPT does not necessarily answer in the way we expect or want it to. In this case, instead of simply returning the correct category, it also returns the string <code>Category:</code> alongside it (and capitalized <code>Negative</code>). So if we were to use the answer in a program or data base, we’d now again have to use some NLP techniques to parse it in order eventually retrieve <strong>exactly</strong> the category we were looking for: <code>negative</code>. What we need instead is a way to constrain GPT to a specific way of answering, and this is where <code>functions</code> or <code>tools</code> come into play (see also <a href="https://platform.openai.com/docs/guides/function-calling" class="external">Function calling</a> and <a href="https://cookbook.openai.com/examples/how_to_call_functions_with_chat_models" class="external">Function calling (cookbook)</a>).</p>
 <p>This concept allows us to specify the exact output format we expect to receive from GPT (it is called functions since ideally we want to call a function directly on the output of GPT so it has to be in a specific format).</p>
-<div id="f524c318" class="cell" data-execution_count="6">
+<div id="dac67d53" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this looks intimidating but isn't that complicated</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tools <span class="op">=</span> [</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    {</span>
@@ -594,7 +594,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="45f6de2e" class="cell" data-execution_count="7">
+<div id="9e50b7cf" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>messages <span class="op">=</span> []</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>messages.append(</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="ss">f"Classify the given text into one of the following sentiment categories: </span><span class="sc">{</span>sentiment_categories<span class="sc">}</span><span class="ss">."</span>}</span>
@@ -614,13 +614,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>tool_calls[<span class="dv">0</span>]<span class="sc">.</span>function<span class="sc">.</span>arguments<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response: '{
-"sentiment": "negative"
-}'</code></pre>
+<pre><code>Response: '{"sentiment":"negative"}'</code></pre>
 </div>
 </div>
 <p>We can now easily extract what we need:</p>
-<div id="3c8beae6" class="cell" data-execution_count="8">
+<div id="f5101d6b" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> json.loads(response.choices[<span class="dv">0</span>].message.tool_calls[<span class="dv">0</span>].function.arguments) <span class="co"># remember that the answer is a string</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result[<span class="st">"sentiment"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -629,7 +627,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We can also include multiple function parameters if our desired output has multiple components. Let’s try to include another parameter which includes the <code>reason</code> for the sentiment.</p>
-<div id="0f21bb30" class="cell" data-execution_count="9">
+<div id="3020debb" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tools <span class="op">=</span> [</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    {</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"type"</span>: <span class="st">"function"</span>,</span>
@@ -655,7 +653,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d3bc93a1" class="cell" data-execution_count="10">
+<div id="7bbba00b" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>messages <span class="op">=</span> []</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>messages.append(</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: <span class="ss">f"Classify the given text into one of the following sentiment categories: </span><span class="sc">{</span>sentiment_categories<span class="sc">}</span><span class="ss">. If you can, also extract the reason."</span>}</span>
@@ -675,10 +673,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Response: '</span><span class="sc">{</span>response<span class="sc">.</span>choices[<span class="dv">0</span>]<span class="sc">.</span>message<span class="sc">.</span>tool_calls[<span class="dv">0</span>]<span class="sc">.</span>function<span class="sc">.</span>arguments<span class="sc">}</span><span class="ss">'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response: '{
-"sentiment": "positive",
-"reason": "Loved the movie and appreciates Johnny Depp's acting"
-}'</code></pre>
+<pre><code>Response: '{"sentiment":"positive","reason":"Enjoyment of the movie and appreciation for Johnny Depp's acting"}'</code></pre>
 </div>
 </div>
 <p>Here, again, we could also constrain the possibilities for the <code>reason</code> to a certain set. Hence, functions are great to have more consistent answers of the language model such that we can use it in applications.</p>
@@ -769,8 +764,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -881,7 +874,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

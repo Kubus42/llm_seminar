@@ -20,7 +20,7 @@ Let’s explore how dictionaries work in Python!
 You can create a dictionary using curly braces `{}` with key-value pairs separated by colons. The key and value can be of any data type, including strings, integers, and even other dictionaries.
 
 #### Basic Syntax:
-```python
+```{python}
 my_dict = {
     "key1": "value1",
     "key2": "value2",
@@ -29,7 +29,7 @@ my_dict = {
 ```
 
 ### Example:
-```python
+```{python}
 # Creating a simple dictionary
 person = {
     "name": "Alice",
@@ -49,7 +49,8 @@ In this example, we created a dictionary called `person` with keys like `"name"`
 You can access values in a dictionary by using their corresponding keys inside square brackets `[]`. If the key does not exist, it raises a `KeyError`.
 
 #### Example:
-```python
+
+```{python}
 # Accessing values
 print(person["name"])  # Output: Alice
 print(person["age"])   # Output: 30
@@ -64,21 +65,21 @@ Here, we accessed the values associated with the keys `"name"` and `"age"`.
 Dictionaries are mutable, meaning you can add, modify, or remove key-value pairs even after the dictionary has been created.
 
 #### Adding a Key-Value Pair:
-```python
+```{python}
 # Adding a new key-value pair
 person["occupation"] = "Engineer"
 print(person)  # Output: {'name': 'Alice', 'age': 30, 'city': 'New York', 'occupation': 'Engineer'}
 ```
 
 #### Modifying a Value:
-```python
+```{python}
 # Modifying an existing value
 person["age"] = 31
 print(person)  # Output: {'name': 'Alice', 'age': 31, 'city': 'New York', 'occupation': 'Engineer'}
 ```
 
 #### Removing a Key-Value Pair:
-```python
+```{python}
 # Removing a key-value pair
 del person["city"]
 print(person)  # Output: {'name': 'Alice', 'age': 31, 'occupation': 'Engineer'}
@@ -97,7 +98,7 @@ Python dictionaries come with various built-in methods that make it easier to ma
 The `get()` method returns the value for a specified key. If the key doesn’t exist, it returns `None` (or a default value if provided) instead of raising a `KeyError`.
 
 #### Example:
-```python
+```{python}
 age = person.get("age", "Not Found")
 print(age)  # Output: 31
 
@@ -113,7 +114,7 @@ In this example, we used `get()` to safely access the value for `"age"` and prov
 The `keys()` method returns a view object that displays a list of all the keys in the dictionary.
 
 #### Example:
-```python
+```{python}
 keys = person.keys()
 print(keys)  # Output: dict_keys(['name', 'age', 'occupation'])
 ```
@@ -123,7 +124,7 @@ print(keys)  # Output: dict_keys(['name', 'age', 'occupation'])
 The `values()` method returns a view object that displays a list of all the values in the dictionary.
 
 #### Example:
-```python
+```{python}
 values = person.values()
 print(values)  # Output: dict_values(['Alice', 31, 'Engineer'])
 ```
@@ -133,7 +134,7 @@ print(values)  # Output: dict_values(['Alice', 31, 'Engineer'])
 The `items()` method returns a view object that displays a list of all the key-value pairs in the dictionary as tuples.
 
 #### Example:
-```python
+```{python}
 items = person.items()
 print(items)  # Output: dict_items([('name', 'Alice'), ('age', 31), ('occupation', 'Engineer')])
 ```
@@ -147,7 +148,7 @@ These methods are helpful when you want to loop through the keys, values, or key
 You can loop through a dictionary using a `for` loop. By default, it iterates over the keys. If you need to access both keys and values, you can use the `items()` method.
 
 #### Example:
-```python
+```{python}
 # Looping through keys
 for key in person:
     print(key)  # Output: name, age, occupation
@@ -170,7 +171,7 @@ In this example, we demonstrate how to loop through the keys and both keys and v
 Dictionaries can also contain other dictionaries, allowing you to create complex data structures.
 
 #### Example:
-```python
+```{python}
 people = {
     "Alice": {
         "age": 30,
@@ -194,12 +195,12 @@ In this example, we created a dictionary called `people` that contains two dicti
 Python supports a concise way to create dictionaries known as **dictionary comprehensions**. This is a compact way to transform data or filter items.
 
 #### Syntax:
-```python
+```
 {key_expression: value_expression for item in iterable if condition}
 ```
 
 #### Example:
-```python
+```{python}
 # Creating a dictionary using comprehension
 squares = {x: x ** 2 for x in range(5)}
 print(squares)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}

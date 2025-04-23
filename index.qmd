@@ -9,7 +9,7 @@ jupyter: python3
 ![Robot by DALL-E](assets/dall-e-robot.jpeg){width=350 fig-align="left"}
 
 
-Hello and welcome to the seminar **Large Language Models** in the winter semester of 2024/25 at the University of Applied Sciences in Münster.
+Hello and welcome to the seminar **Large Language Models** in the summer semester of 2025 at the University of Applied Sciences in Münster.
 On this website, you will find all the information you need about and around the seminar. 
 
 
@@ -44,7 +44,7 @@ A "summary" of all exercises can be found [here](/resources/exercises.qmd).
 
 :::::: {.callout-important}
 A small disclaimer: This script is not (yet) ridiculously comprehensive.
-And, of course, we cannot cover the full realm of NLP and LLM within a 4-days-course. However, you should find everything we will do in the seminar also in this script. If there is something missing, I will make sure to include it as soon as possible, just give me a note. 
+And, of course, we cannot cover the full realm of NLP and LLM within a 3-days-course. However, you should find everything we will do in the seminar also in this script. If there is something missing, I will make sure to include it as soon as possible, just give me a note. 
 :::
 
 
@@ -59,40 +59,60 @@ Have fun!
 
 
 ### A rough schedule
-- Introduction & Getting to know each other & Survey (experiences & expectations) & Learning goals & Evaluation criteria
+
+#### Day 1 (10.04.2025):
+- data:unplugged
+
+#### Day 2 (24.04.2024):
+- Introduction & Getting to know each other
+- Survey (experiences & expectations) & Learning goals & Evaluation criteria
+- Review data:unplugged
 - Introduction to the general topic & Python & Jupyter 
-- Introduction NLP (tokenization, matching, statistical analysis)
+- Introduction NLP (tokenization, matching, statistical text analysis)
+
+#### Day 3 (30.04.2024):
 - Introduction to LLM & OpenAI API
 - Prompting
-- Embeddings
-- Advanced GPT topics (image data, parameterization, tool calling)
-- Real-world examples of applications (& implementation) & limitations
-- *App concept & Group brainstorming*
-- *Project work on prototype & mentoring*
+- *Application concept & Group brainstorming*
+- *Start: Project work on prototype & mentoring* 
+
+#### Day 4 (08.05.2024):
+- *Ctd: Project work on prototype & mentoring*
 - *Project presentations* & reflections on the seminar
 - Backup: Ethics and data privacy 
 
+#### Not included this semester or only limited:
+- ~~Embeddings~~
+- ~~Advanced GPT topics (image data, parameterization, tool calling)~~
+- ~~Real-world examples of applications (& implementation) & limitations~~
 
 #### After the seminar (~1d):
-  - Prototype refinement
-  - Code review & documentation
-  - Refine business case & potential applications of prototype
+  - Refine data:unplugged summary
+  - Refine prototype business case & potential applications of prototype
   - Reflections & lessons learned
-→ *Hand in 2-page summary*
+→ *Hand in data:unplugged summary and 2-page project summary*
 
 
 ### Evaluation
 All seminar participants will be evaluated in the following way.
 
-- Your presentation on the last day of the seminar: 25%
-- Your prototype: 35%
-- Your summary: 25%
+- Your data:unplugged summary: 35%
+- Your prototype & presentation on the last day of the seminar: 50%
 - Your activity during the seminar: 15%
 
 I will allow myself to give your evaluation a little extra boost for good activity during the seminar. 
 This seminar is designed for everyone to participate, so the more you do, the more fun it will be! 
 
-#### What is the summary? 
+
+#### What is the data:unplugged summary? 
+
+A short reflection on a session (approx. 300–500 words):
+- Summary: What key points were made during the session?
+- Practical Relevance: What specific use cases or problems were addressed?
+- Personal Assessment: Which aspects did you find particularly interesting or critical? Do you see potential for your own ideas or projects?
+
+
+#### What is the project summary? 
 As mentioned above, to finalize our seminar I want to you to take roughly a day to refine your prototype and then write a quick summary your project and your learnings.
 The summary should be 2-3 pages only (kind of like a small executive summary) and contain the following information:
 - What is your prototype? What can I do? 

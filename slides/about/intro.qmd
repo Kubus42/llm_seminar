@@ -4,7 +4,7 @@ format:
     revealjs:
         theme: default
         chalkboard: true
-        footer: "Seminar: LLM, WiSe 2024/25"
+        footer: "Seminar: LLM, SoSe 2025"
         logo: ../../assets/logo.svg
 ---
 
@@ -55,14 +55,13 @@ format:
 - **Have fun!**
 
 
-## Content 1
+## Content 0 (optional)
 - Short introduction to Programming in Python **in the context** of Natural Language Processing and Large Language Models
   - Basics (Syntax, Variables, Data Types, Conditional Statements etc.)
   - Lists & Loops 
   - Dictionaries & Classes
 
-
-## Content 2
+## Content 1
 - Quick overview of classic NLP 
   - Text processing (Tokenization, Lemmatization, etc.)
   - Applications (Classification, Sentiment Analysis, Matching, etc.)
@@ -71,51 +70,66 @@ format:
   - Text processing with neural networks
   - Sequence generation & language modeling
 
-## Content 3
+## Content 2
 - Introduction to the OpenAI API
   - Prompting
-  - Parameterization
-  - Function calling
-- Introduction to embeddings
-  - Similarity
-  - Visualization & Clustering
-- (Ethics & Privacy)
+  - ~~Parameterization~~
+  - Tool calling
+- ~~Introduction to embeddings~~
+  - ~~Similarity~~
+  - ~~Visualization & Clustering~~
+- ~~(Ethics & Privacy)~~
 
 
 # The schedule
 
----
+## Day 1 (10.04.2025):
+- data:unplugged
 
-- **Today**: Intro & Getting to know each other & Survey (experiences & expectations) & Learning goals & Evaluation criteria
+## Day 2 (24.04.2024):
+- Introduction & Getting to know each other
+- Survey (experiences & expectations) & Learning goals & Evaluation criteria
+- Review data:unplugged
 - Introduction to the general topic & Python & Jupyter 
-- Introduction NLP (tokenization, matching, statistical analysis)
+- Introduction NLP (tokenization, matching, statistical text analysis)
+
+## Day 3 (30.04.2024):
 - Introduction to LLM & OpenAI API
 - Prompting
-- Embeddings
+- *Application concept & Group brainstorming*
+- *Start: Project work on prototype & mentoring* 
 
---- 
-
-- Advanced GPT topics (image data, parameterization, tool calling)
-- Real-world examples of applications (& implementation) & limitations
-- *App concept & Group brainstorming*
-- *Project work on prototype & mentoring*
+## Day 4 (08.05.2024):
+- *Ctd: Project work on prototype & mentoring*
 - *Project presentations* & reflections on the seminar
-- Backup: Ethics and data privacy 
+- Backup: Left-over topics
 
+
+## Not included this semester or only limited:
+- ~~Embeddings~~
+- ~~Advanced GPT topics (image data, parameterization, tool calling)~~
+- ~~Real-world examples of applications (& implementation) & limitations~~
 
 ## After the seminar (~1d):
-- Prototype refinement
-- Code review & documentation
-- Refine business case & potential applications of prototype
-- Reflections & lessons learned
-→ *Hand in 2-page summary*
+  - Refine data:unplugged summary
+  - Refine prototype business case & potential applications of prototype
+  - Reflections & lessons learned
+→ *Hand in data:unplugged summary and 2-page project summary*
 
 
 ## Evaluation
-- Your presentation on the last day of the seminar: 25%
-- Your prototype: 35%
-- Your summary: 25%
+- Your data:unplugged summary: 35%
+- Your prototype & presentation on the last day of the seminar: 50%
 - Your activity during the seminar: 15%
+
+
+## What is the data:unplugged summary? 
+A short reflection on a session (approx. 300–500 words):
+
+- Summary: What key points were made during the session?
+- Practical Relevance: What specific use cases or problems were addressed?
+- Personal Assessment: Which aspects did you find particularly interesting or critical? Do you see potential for your own ideas or projects?
+
 
 ## What is the summary? 
 - 2-3 pages only!

@@ -84,7 +84,7 @@ We could do the following:
 import os
 from llm_utils.client import get_openai_client
 
-MODEL = "gpt4"
+MODEL = os.environ.get("MODEL")
 
 client = get_openai_client(
     model=MODEL,
