@@ -45,6 +45,20 @@ In the previous section we have used a bag of words to compare the three texts t
 Using embeddings, we can do the same and be a lot better.
 
 ```{python}
+#| echo: false
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv(
+    dotenv_path=os.environ.get("CONFIG_PATH"),
+    override=True
+)
+
+```
+
+
+```{python}
 texts = [
   "This is the first document.",
   "This document is the second document.",
@@ -56,16 +70,14 @@ prompt = "Is this the first document?"
 
 ```{python}
 # prerequisites
-
 import os
-from llm_utils.client import get_openai_client, OpenAIModels
+from openai import OpenAI
 
-MODEL = OpenAIModels.EMBED.value # choose the embedding model
+MODEL = "text-embedding-3-small" # choose the embedding model
 
 # get the OpenAI client
-client = get_openai_client(
-    model=MODEL,
-    config_path=os.environ.get("CONFIG_PATH")
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY")    
 )
 
 ```

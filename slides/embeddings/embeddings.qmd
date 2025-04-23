@@ -4,7 +4,7 @@ format:
     revealjs:
         theme: default
         chalkboard: true
-        footer: "Seminar: LLM, WiSe 2024/25"
+        footer: "Seminar: LLM, SoSe 2025"
         logo: ../../assets/logo.svg
 ---
 
@@ -70,6 +70,22 @@ flowchart LR
 # Matching with embeddings
 
 ## Task: Find the matching document for a prompt
+
+```{python}
+#| echo: false
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv(
+    # dotenv_path=os.environ.get("CONFIG_PATH"),
+    dotenv_path="../../config.txt",
+    override=True
+)
+
+```
+
+
 ```{python}
 #| echo: true
 texts = [
@@ -85,19 +101,17 @@ prompt = "Is this the first document?"
 ## Get the OpenAI client
 ```{python}
 #| echo: true 
+#| 
 # prerequisites
-
 import os
-from llm_utils.client import get_openai_client, OpenAIModels
+from openai import OpenAI
 
-MODEL = OpenAIModels.EMBED.value # choose the embedding model
+MODEL = "text-embedding-3-small" # choose the embedding model
 
 # get the OpenAI client
-client = get_openai_client(
-    model=MODEL,
-    config_path=os.environ.get("CONFIG_PATH")
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY")    
 )
-
 ```
 
 ## Get the embeddings
@@ -204,7 +218,7 @@ n_clusters = 5
 kmeans = KMeans(
   n_clusters=n_clusters,
   n_init="auto",
-  random_state=2 # do this to get the same output
+  random_state=1 # do this to get the same output
 )
 
 # fit the model to the data

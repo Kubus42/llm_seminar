@@ -195,8 +195,11 @@ In this example, we created a dictionary called `people` that contains two dicti
 Python supports a concise way to create dictionaries known as **dictionary comprehensions**. This is a compact way to transform data or filter items.
 
 #### Syntax:
-```
+```{python}
+#| eval: false
+
 {key_expression: value_expression for item in iterable if condition}
+
 ```
 
 #### Example:
