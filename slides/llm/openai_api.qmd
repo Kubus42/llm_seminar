@@ -4,7 +4,7 @@ format:
     revealjs:
         theme: default
         chalkboard: true
-        footer: "Seminar: LLM, WiSe 2024/25"
+        footer: "Seminar: LLM, SoSe 2025"
         logo: ../../assets/logo.svg
         fig-align: center
 ---
@@ -37,18 +37,14 @@ client = OpenAI(
 
 
 ## Authentication for the seminar
-For the sprint, we have hosted some models in Azure. 
+For the sprint, we have a model in Azure. 
 
 ``` {python}
 #| echo: true
 import os
-from llm_utils.client import get_openai_client, OpenAIModels
+from llm_utils.client import get_openai_client
 
-print(f"GPT3: {OpenAIModels.GPT_3.value}")
-print(f"GPT4: {OpenAIModels.GPT_4.value}")
-print(f"Embedding model: {OpenAIModels.EMBED.value}")
-
-MODEL = OpenAIModels.GPT_4.value
+MODEL = "gpt-4o"
 
 client = get_openai_client(
     model=MODEL,
@@ -69,7 +65,7 @@ chat_completion = client.chat.completions.create(
             "content": "How old is the earth?",
         }
     ],
-    model=MODEL 
+    model="gpt-4o" 
 )
 
 # check out the type of the response

@@ -4,7 +4,7 @@ format:
     revealjs:
         theme: default
         chalkboard: true
-        footer: "Seminar: LLM, WiSe 2024/25"
+        footer: "Seminar: LLM, SoSe 2025"
         logo: ../../assets/logo.svg
         fig-align: center
 ---
@@ -137,7 +137,7 @@ Improving performance is easier if you can measure it. In some cases a modificat
 import os
 from llm_utils.client import get_openai_client
 
-MODEL = "gpt4"
+MODEL = os.environ.get("MODEL")
 
 client = get_openai_client(
     model=MODEL,
@@ -178,7 +178,7 @@ sentiment_categories = ["positive", "negative", "neutral", "mixed"]
 import os
 from llm_utils.client import get_openai_client
 
-MODEL = "gpt4"
+MODEL = os.environ.get("MODEL")
 
 client = get_openai_client(
     model=MODEL,

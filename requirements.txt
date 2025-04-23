@@ -9,3 +9,6 @@ nltk
 spacy 
 tokenizers
 textblob
+
+openai
+python-dotenv

@@ -1,6 +1,7 @@
 /.quarto/
 *venv/
 _site/
+_environment
 
 config.txt
 *code-workspace
