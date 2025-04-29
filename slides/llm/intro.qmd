@@ -1,5 +1,5 @@
 ---
-title: "Large Language Models: A Quick Introduction"
+title: "Large Language Models: An 'intuitive' introduction"
 format: 
     revealjs:
         theme: default
@@ -8,6 +8,23 @@ format:
         logo: ../../assets/logo.svg
         fig-align: center
 ---
+
+```{python}
+#| echo: false 
+#| 
+# prerequisites
+import os
+from openai import OpenAI
+
+MODEL = "text-embedding-3-small" # choose the embedding model
+
+# get the OpenAI client
+client = OpenAI(
+    api_key=os.environ.get("OPENAI_API_KEY")    
+)
+```
+
+
 
 ## Background
 
@@ -140,7 +157,7 @@ flowchart LR
 ## What is GPT? 
 
 - current state-of-the-art language model
-- introduced in the paper "Attention is All You Need" by Vaswani et al. in 2017
+- introduced in the paper "Attention is All You Need" by Vaswani et al. in 2017 (Google)
 - GPT belongs to the family of transformer-based models
 - key advantage over previous approaches: 
   - self-attention 
@@ -161,4 +178,391 @@ flowchart LR
   - Irrelevant or less informative words receive lower weights
   - Processing all sequences in parallel
 
-# But: Let's get started!
+---
+
+## A deeper dive: What an LLM wants to do! 
+
+```{mermaid}
+flowchart LR
+  A(Token 1)
+  B(Token 2) 
+  C(Token 3)
+  D(...)
+  E(Token k)  
+
+  F(The core of the LLM)
+
+  A --> F
+  B --> F
+  C --> F
+  D --> F
+  E --> F
+
+  AA(Prob. dist. 1st output token)
+  BB(Prob. dist. 2nd output token)
+  CC(...)
+  DD(Prob. dist. nth output token)
+
+  F --> AA
+  F --> BB
+  F --> CC
+  F --> DD
+
+
+
+```
+
+---
+
+## How can we generate a probability distribution? 
+
+Idea: Transform a vector $z$ of numbers into a probability distribution! 
+
+$$
+\text{softmax}(z_i) = \frac{e^{z_i}}{\sum_{j} e^{z_j}}
+$$
+
+```{python}
+#| echo: false
+import numpy as np
+
+def softmax(x):
+    exp_x = np.exp(x - np.max(x))
+    return exp_x / np.sum(exp_x)
+
+x = np.array([2.0, 1.0, 0.1, -1, 2])
+
+# Compute softmax
+softmax_output = softmax(x)
+
+
+print("Softmax input z:", [float(k) for k in x])
+print("Softmax output:", [float(np.round(x, 2)) for x in softmax_output])
+
+```
+
+&nbsp;
+
+:::{.fragment}
+Great, so let's try to generate vectors with our model!
+:::
+
+
+## A deeper dive: What an LLM looks like! 
+
+&nbsp;
+
+```{mermaid}
+flowchart LR
+  A(Input Text) --> B(Tokenization) --> C(Token Embedding) -.-> X:::hidden 
+  
+  Y:::hidden -.-> D(Attention) --> E(Multilayer Perceptron) --> F(Attention) --> G(Multilayer Perceptron) --> H(...) -.-> Z:::hidden
+  
+  XX:::hidden -.-> I(Unembedding) --> J(Probabilities) --> K(Token Output)
+```
+
+&nbsp;
+
+General idea: Transform input vectors (embeddings) over and over such that the result encodes all the context!
+
+---
+
+## Token embeddings 
+```{python}
+#| echo: true
+input_text = "A blue guitar is"
+```
+
+&nbsp;
+
+::: {.columns}
+
+::: {.column width="25%"}
+Tokenization: 
+:::
+
+::: {.column width="75%"}
+```{mermaid}
+flowchart LR
+  A(A) --> B(blue) --> C(guitar) --> D(is) --> E(?)
+```
+:::
+:::
+
+&nbsp;
+
+::: {.columns}
+
+::: {.column width="25%"}
+Embedding: 
+:::
+
+::: {.column width="75%"}
+$$W_E =
+\begin{bmatrix}
+0.25 & -0.73 & 0.58 & 0.44 \\
+-0.53 & 0.57 & -0.61 & 0.70 \\
+0.11 & 0.33 & 0.22 & -0.49 \\
+-0.80 & -0.08 & -0.73 & 0.29 \\
+\end{bmatrix}
+$$
+
+:::
+:::
+
+
+---
+
+## Token embeddings 
+
+- One embedding $E_k$ per token (lookup table, but it's being **learned** during training!)
+- No connection ("context") between token embeddings at first
+- But: Directional information contained in embeddings which encodes "meaning"
+
+---
+
+## Embedding visualization
+```{python}
+#| echo: false
+# Define a list of words to visualize
+words = [
+    "king", "queen", "man", "woman", "apple", "banana", 
+    "grapes", "dog", "dogs", "cat", "cats"
+]
+
+# Get embeddings for the words
+response = client.embeddings.create(
+    input=words,
+    model=MODEL
+)
+
+embeddings = [emb.embedding for emb in response.data]
+```
+
+```{python}
+#| echo: false
+#| fig-align: center
+import numpy as np
+import matplotlib.pyplot as plt
+
+from sklearn.manifold import TSNE
+
+# Apply t-SNE dimensionality reduction
+tsne = TSNE(
+    n_components=2, 
+    random_state=42,
+    perplexity=5 # see documentation to set this correctly
+)
+embeddings_2d = tsne.fit_transform(np.array(embeddings))
+
+# Plot the embeddings in a two-dimensional scatter plot
+plt.figure(figsize=(9, 7))
+for i, word in enumerate(words):
+    x, y = embeddings_2d[i]
+    plt.scatter(x, y, marker='o', color='red')
+    plt.text(x, y, word, fontsize=9)
+
+plt.xlabel("t-SNE dimension 1")
+plt.ylabel("t-SNE dimension 2")
+plt.grid(True)
+plt.xticks([])
+plt.yticks([])
+plt.show()
+```
+
+
+
+---
+
+## Unembedding, probabilities and token output
+
+What happens at the end of the LLM?
+
+&nbsp;
+
+```{mermaid}
+flowchart LR
+  A(A) --> AA("$$E_1$$")
+  B(blue) --> BB("$$E_2$$")
+  C(guitar) --> CC("$$E_3$$")
+  D(is) --> DD("$$E_4$$") 
+
+  E(The core of the LLM)
+
+  AA --> E
+  BB --> E
+  CC --> E
+  DD --> E
+
+
+
+  F(Unembedding matrix)
+
+  E --> F
+
+  AAA("$$U_1$$")
+  BBB("$$U_2$$")
+  CCC("$$U_3$$")
+
+  F --> AAA
+  F --> BBB
+  F --> CCC
+
+  G(Softmax) --> GG(Prob. dist. 1st output token)
+  H(Softmax) --> HH(Prob. dist. 2nd output token)
+  I(Softmax) --> II(Prob. dist 3rd output token)
+  
+  AAA --> G
+  BBB --> H
+  CCC --> I
+
+  GG --> X("p(great)=0.31")
+  GG --> Y("p(aweful)=0.14")
+  GG --> Z("p(train)=0.001")
+
+```
+
+
+---
+
+
+## Understanding the core: Attention 
+- Problem: Embedding vectors so far do not interact with each other, so we cannot process "context".
+- Solution: Let embedding vectors $E_k$ share information! 
+
+```{mermaid}
+flowchart LR 
+  A("$$E_1^{(1)}$$")
+  B("$$E_2^{(1)}$$")
+  C("$$E_3^{(1)}$$")
+  D("$$E_k^{(1)}$$")
+
+  E("Transformation ('Attention')")
+
+  A --> E
+  B --> E
+  C --> E
+  D --> E
+
+  F("$$E_1^{(2)}$$")
+  G("$$E_2^{(2)}$$")
+  H("$$E_3^{(2)}$$")
+  I("$$E_k^{(2)}$$")
+
+  E --> F
+  E --> G
+  E --> H
+  E --> I
+
+```
+
+-- 
+
+## Understanding the core: Attention 
+
+$$ 
+\text{Attention}(Q, K, V) = \text{softmax}(K^T Q)V 
+$$
+
+
+- $Q$ is the "query", asking a question
+- $K$ is the "key", answering that question
+- $\text{softmax}$ turns the result into a weight ("How important is that question and its answer?")
+- Then we multiply with the value matrix $V$ that transforms the initial embedding vectors, that now encode shared information!
+
+---
+
+## Understanding the core: Attention 
+
+$$ 
+\text{Attention}(Q, K, V) = \text{softmax}(K^T Q)V 
+$$
+
+
+$$K_i = E_i * W_K$$
+$$Q_i = E_i * W_Q$$
+
+$$
+\text{softmax}(
+\begin{bmatrix}
+K_1 \cdot Q_1 & K_1 \cdot Q_2 & K_1 \cdot Q_3 \\
+K_2 \cdot Q_1 & K_2 \cdot Q_2 & K_2 \cdot Q_3 \\
+K_3 \cdot Q_1 & K_3 \cdot Q_2 & K_3 \cdot Q_3
+\end{bmatrix}) V
+$$
+
+
+
+---
+
+## Multilayer Perceptron 
+
+- A "standard" neural network which works in the same way that other work. 
+- Can be thought of as "more parameters to tune in the network"!
+- Won't go into details here.
+
+---
+
+## Put it all together
+
+&nbsp;
+
+```{mermaid}
+flowchart LR
+  A(A) --> AA("$$E_1$$")
+  B(blue) --> BB("$$E_2$$")
+  C(guitar) --> CC("$$E_3$$")
+  D(is) --> DD("$$E_4$$") 
+
+  E(Attention and MP)
+
+  AA --> E
+  BB --> E
+  CC --> E
+  DD --> E
+
+  REP(Repeat 10k times)
+
+  F(Unembedding matrix)
+
+  E --> REP
+  REP --> F
+
+  AAA("$$U_1$$")
+  BBB("$$U_2$$")
+  CCC("$$U_3$$")
+
+  F --> AAA
+  F --> BBB
+  F --> CCC
+
+  G(Softmax) --> GG(Prob. dist. 1st output token)
+  H(Softmax) --> HH(Prob. dist. 2nd output token)
+  I(Softmax) --> II(Prob. dist 3rd output token)
+  
+  AAA --> G
+  BBB --> H
+  CCC --> I
+
+  GG --> X("p(great)=0.31")
+  GG --> Y("p(aweful)=0.14")
+  GG --> Z("p(train)=0.001")
+
+```
+
+We have created a machine that can generate the most likely next token!
+
+--- 
+
+## There are some details that need consideration
+
+- Details of the Multilayer Perceptron layers
+- Training of an LLM involves a second step (reinforcement learning)
+- Sampling, temperature scaling, $\text{top_}{p}$ (How can an LLM be creative?)
+- How does the memory of an LLM work?
+- Many, many details we skipped! 
+
+
+:::{.fragment}
+**But for now, let's get started using one!**
+:::
